@@ -1,3 +1,7 @@
+import Row from "./Row.js";  
+import "../Style/Table.css"  ; 
+
+
 const Table = ( ) => {
      
     let arr = [ 
@@ -6,15 +10,53 @@ const Table = ( ) => {
          con_per : "bhjhkjhkjh"  , 
          status : "active"
      } 
+    , 
+
+    { nos : "asaeaa"  ,
+    con_per : "njkhkhk"  , 
+    status : "active"
+} 
+  , 
+
+  { nos : "jhhkjhkh"  ,
+  con_per : "bhjhkjhkjh"  , 
+  status : "active"
+}   , 
 
 
 
+{ nos : "asaeaa"  ,
+con_per : "njkhkhk"  , 
+status : "active"
+}   , 
 
-    ]  ;
-    return ( 
-    <div  >
-        <p>kshksdku jhkhsa </p>
-    </div> ) ; 
+{ 
+  nos : "jhhkjhkh"  ,
+         con_per : "bhjhkjhkjh"  , 
+         status : "active"
+     }  , 
+
+     { 
+      nos : "jhhkjhkh"  ,
+             con_per : "bhjhkjhkjh"  , 
+             status : "active"
+         } 
+      
+  
+
+    ]  ; 
+return( 
+    <div className="Table" >
+{arr.map((e)=>{
+
+        return (
+        <Row data = { e} className="Row" />
+  
+      );})  
+        } 
+
+</div>
+);
 }
 
 export default Table ;

@@ -1,6 +1,8 @@
 import {Link } from "react-router-dom"  ;  
 import "./Dashboard.css"  ;  
-import Sidebar from "./Sidebar.js"  ; 
+import Sidebar from "./Sidebar.js"  ;  
+import Table from "./Components/Table";
+
   
 
 // frame 24 
@@ -11,8 +13,7 @@ function AdminDashboard() {
       <Sidebar /> 
     </div> 
      <div className="Dashboard-body">
-      <p>jkhquydujd </p>  
-      
+       <Table  /> 
      </div>
     </div>
   );

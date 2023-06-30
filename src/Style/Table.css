@@ -1,0 +1,18 @@
+.Table{
+     
+    background-color: blue;
+  height : 100% ; 
+  width:  100%;
+  padding : 10px ; 
+
+  }  
+
+
+  .Row{
+
+     height : 15% ;
+     width : 80%  ; 
+     background-color: chartreuse ;
+     border: 1px solid black;
+      
+  }
