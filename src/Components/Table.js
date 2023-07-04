@@ -36,11 +36,7 @@ status : "active"
          status : "active"
      }  , 
 
-     { 
-      nos : "jhhkjhkh"  ,
-             con_per : "bhjhkjhkjh"  , 
-             status : "active"
-         } 
+    
       
   
 
@@ -54,7 +50,10 @@ return(
   
       );})  
         } 
-
+     
+     <div  className="Footer"> 
+      <p>ijikuku</p>
+     </div>
 </div>
 );
 }

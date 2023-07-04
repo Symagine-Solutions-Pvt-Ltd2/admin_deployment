@@ -10,6 +10,7 @@
   return(
     <div  className="Row"> 
       {/* <p> { data.nos} </p>  */}
+       <Cell />  
        <Cell /> 
     </div>
   )  ;

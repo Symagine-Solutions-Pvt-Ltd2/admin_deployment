@@ -3,7 +3,7 @@
     background-color: blue;
   height : 100% ; 
   width:  100%;
-  padding : 10px ; 
+  padding-top: 40px;
 
   }  
 
@@ -11,8 +11,17 @@
   .Row{
 
      height : 15% ;
-     width : 80%  ; 
+     width : 100%  ; 
      background-color: chartreuse ;
      border: 1px solid black;
       
+  }  
+
+
+
+  .Footer{
+
+   height : 15% ;
+   width : 100%  ; 
+   background-color: chartreuse ;
   }

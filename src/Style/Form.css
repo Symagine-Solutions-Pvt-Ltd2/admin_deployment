@@ -1,0 +1,33 @@
+*{
+ 
+    padding:  0 ;
+    margin : 0 ; 
+    box-sizing:  border-box;  
+   
+  
+  }
+  
+  
+.Form{  
+    display: flex;
+    text-align: center; 
+    background-color:   orangered ; 
+    height:  100vh ;  
+    width: 100vw ; 
+  }   
+  
+  
+.sidebar{
+    flex : 19%  ; 
+  background-color: "#353B55" ;
+
+
+}
+
+
+.body{
+
+    flex : 81%  ; 
+   background-color: red ; 
+
+}

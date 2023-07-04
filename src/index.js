@@ -7,7 +7,7 @@ import Error from './Error' ;
 import AdminDashboard from './AdminDashboard';
 import Login  from './Login'; 
 import PrivateRoutes  from './Utils/PrivateRoutes';
-
+import Form from './Form.js' ; 
 import About from './About';
 import reportWebVitals from './reportWebVitals';
 
@@ -19,6 +19,7 @@ root.render(
        {/* <Route index  element ={ <AdminDashboard /> } />  */}
        <Route path= "app"  element ={ <div>app</div>} />     
       <Route path= "Dashboard"  element ={ <AdminDashboard /> }  />  
+      <Route path= "Form"  element ={ <Form /> }  /> 
        <Route path= "login"  element ={ <Login /> }  />
        <Route path= "about"  element ={ <About /> }  /> 
        <Route path="*"   element= { <Error /> } />  
