@@ -1,0 +1,31 @@
+.FormRow{
+   
+    height :13% ;
+    width : 100% ; 
+    background-color: aquamarine; 
+ 
+    display:  flex ;
+    flex-direction: row ;
+    border:   1px solid black ;
+}
+
+.Description{
+
+  flex : 30% ; 
+
+}
+.Input{
+    
+     flex : 70% ; 
+    background-color: azure ; 
+    display: flex; 
+    align-items:  center ;
+    justify-content:center  ;
+
+}
+.input-box{
+
+  width : 80% ; 
+  height : 50% ; 
+
+}

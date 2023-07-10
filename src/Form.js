@@ -1,7 +1,6 @@
-import {Link } from "react-router-dom"  ;  
-import "./Dashboard.css"  ;  
-import Sidebar from "./Sidebar.js"  ;  
-import Table from "./Components/Table";
+ import "./Style/Form.css"  ;  
+import FormRow from "./Components/FormRow";
+import Sidebar  from "./Sidebar";
 
   
 
@@ -12,8 +11,12 @@ function   Form() {
     <div className="sidebar" >
       <Sidebar /> 
     </div> 
-     <div className="Dashboard-body">
-         <input   placeholder="iusiouo"/> 
+     <div className="body">
+      <FormRow /> 
+      <FormRow /> 
+      <FormRow />  
+      <FormRow /> 
+      <FormRow /> 
      </div>
     </div>
   );

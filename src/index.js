@@ -9,7 +9,8 @@ import Login  from './Login';
 import PrivateRoutes  from './Utils/PrivateRoutes';
 import Form from './Form.js' ; 
 import About from './About';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'; 
+import GettingStarted from './Pages/GettingStarted';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +20,7 @@ root.render(
        {/* <Route index  element ={ <AdminDashboard /> } />  */}
        <Route path= "app"  element ={ <div>app</div>} />     
       <Route path= "Dashboard"  element ={ <AdminDashboard /> }  />  
-      <Route path= "Form"  element ={ <Form /> }  /> 
+      <Route path= "getting"  element ={ <GettingStarted /> }  /> 
        <Route path= "login"  element ={ <Login /> }  />
        <Route path= "about"  element ={ <About /> }  /> 
        <Route path="*"   element= { <Error /> } />  
