@@ -1,10 +1,12 @@
-import "../Style/Button.css" ; 
 
-const Button = ( ) => {
 
+const Button = (  props ) => {
+    
+
+    console.log( props.name ); 
     return ( 
-    < div className="btn">
-        <p>  button </p>
+    < div style= {{ width : props.width  ,  backgroundColor : props.color , height : props.height }}  >
+        <p style= {{ color : props.color1   }}> hajkha </p>
     </div> ) ; 
 }
 
