@@ -13,7 +13,6 @@ function SideBar() {
 
      </div> 
      <div className="Logout-box"> 
-
      <p> mkjkhk hjgjhg </p>
      </div>
     </div>
