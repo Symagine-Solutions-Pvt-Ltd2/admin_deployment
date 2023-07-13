@@ -10,7 +10,10 @@ import PrivateRoutes  from './Utils/PrivateRoutes';
 import Form from './Form.js' ; 
 import About from './About';
 import reportWebVitals from './reportWebVitals'; 
-import GettingStarted from './Pages/GettingStarted';
+import GettingStarted from './Pages/GettingStarted'; 
+import DraftCourses from './Pages/DraftCourses';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +21,8 @@ root.render(
      <Routes>
        <Route path= "/"  element ={ <App />}>   
        {/* <Route index  element ={ <AdminDashboard /> } />  */}
-       <Route path= "app"  element ={ <div>app</div>} />     
+       <Route path= "app"  element ={ <div>app</div>} />   
+         <Route path="draftcourse"   element= { <DraftCourses /> } />   
       <Route path= "Dashboard"  element ={ <AdminDashboard /> }  />  
       <Route path= "getting"  element ={ <GettingStarted /> }  /> 
        <Route path= "login"  element ={ <Login /> }  />
