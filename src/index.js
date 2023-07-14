@@ -20,14 +20,16 @@ root.render(
    <BrowserRouter>
      <Routes>
        <Route path= "/"  element ={ <App />}>   
-       {/* <Route index  element ={ <AdminDashboard /> } />  */}
-       <Route path= "app"  element ={ <div>app</div>} />   
-         <Route path="draftcourse"   element= { <DraftCourses /> } />   
-      <Route path= "Dashboard"  element ={ <AdminDashboard /> }  />  
+       {/* <Route index  element ={ <AdminDashboard /> } />  */} 
+
+       <Route path= "dashboard"  element ={ <AdminDashboard /> }  />
+
+     {/*   <Route path= "app"  element ={ <div>app</div>} />   
+         <Route path="draftcourse"   element= { <DraftCourses /> } /> 
       <Route path= "getting"  element ={ <GettingStarted /> }  /> 
        <Route path= "login"  element ={ <Login /> }  />
        <Route path= "about"  element ={ <About /> }  /> 
-       <Route path="*"   element= { <Error /> } />  
+       <Route path="*"   element= { <Error /> } />   */}
        </Route>
      </Routes>
   </BrowserRouter> 

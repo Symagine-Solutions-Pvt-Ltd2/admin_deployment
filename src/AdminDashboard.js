@@ -1,5 +1,4 @@
-import {Link } from "react-router-dom"  ;  
-import "./Dashboard.css"  ;  
+import "./Style/AdminDashboard.css"
 import Sidebar from "./Sidebar.js"  ;  
 import Table from "./Components/Table";
 
@@ -12,8 +11,10 @@ function AdminDashboard() {
     <div className="Dashboard-sidebar" >
       <Sidebar /> 
     </div> 
-     <div className="Dashboard-body">
-       <Table  /> 
+     <div className="Dashboard-body"> 
+      <div className="Dashboard-body-inner"> 
+        <Table  width = "100%"   height = "100%"   /> 
+      </div>
      </div>
     </div>
   );

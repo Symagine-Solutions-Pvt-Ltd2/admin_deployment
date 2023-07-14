@@ -2,7 +2,7 @@ import Row from "./Row.js";
 import "../Style/Table.css"  ; 
 
 
-const Table = ( ) => {
+const Table = (  props ) => {
      
     let arr = [ 
         
@@ -42,18 +42,8 @@ status : "active"
 
     ]  ; 
 return( 
-    <div className="Table" >
-{arr.map((e)=>{
-
-        return (
-        <Row data = { e} className="Row" />
-  
-      );})  
-        } 
-     
-     <div  className="Footer"> 
-      <p>ijikuku</p>
-     </div>
+    <div className="Table"  style={{ height:props.height  , width: props.width  , backgroundColor : "pink" }} >
+       <p>trtyryyyyyyyyyyyyyyyyyyy</p>   
 </div>
 );
 }

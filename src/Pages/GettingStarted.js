@@ -36,7 +36,7 @@ function   GettingStarted() {
               <Button  color= "blue"  width = "50%"     height =  "90%"    color1 = "green" className = "description2-button" name = {"Get Started"} />
             </div> 
 
-
+    
             </div> 
             <div  className="illustrsation1"> 
                  illustaration 
