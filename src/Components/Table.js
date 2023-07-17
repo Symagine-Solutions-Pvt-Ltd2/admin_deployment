@@ -1,36 +1,49 @@
 import Row from "./Row.js";  
-import "../Style/Table.css"  ; 
+import "../Style/Table.css"  ;
+
 
 
 const Table = (  props ) => {
      
     let arr = [ 
         
-        { nos : "jhhkjhkh"  ,
+        {  
+            
+            id  : "1"  ,
+            nos : "jhhkjhkh"  ,
          con_per : "bhjhkjhkjh"  , 
          status : "active"
      } 
     , 
 
-    { nos : "asaeaa"  ,
+    { 
+        
+        id  : "2"  , 
+        nos : "asaeaa"  ,
     con_per : "njkhkhk"  , 
     status : "active"
 } 
   , 
 
-  { nos : "jhhkjhkh"  ,
+  {   
+    id  : "3"  ,
+    nos : "jhhkjhkh"  ,
   con_per : "bhjhkjhkjh"  , 
   status : "active"
 }   , 
 
 
 
-{ nos : "asaeaa"  ,
+{ 
+    id  : "4"  ,
+    nos : "asaeaa"  ,
 con_per : "njkhkhk"  , 
 status : "active"
 }   , 
 
-{ 
+{  
+
+    id  : "5"  ,
   nos : "jhhkjhkh"  ,
          con_per : "bhjhkjhkjh"  , 
          status : "active"
@@ -43,9 +56,13 @@ status : "active"
     ]  ; 
 return( 
     <div className="Table"  style={{ height:props.height  , width: props.width  , backgroundColor : "pink" }} >
-       <p>trtyryyyyyyyyyyyyyyyyyyy</p>   
+         {
+         arr.map( (  el )  => (
+          <Row />     
+          
+         ) )}   
 </div>
-);
+); 
 }
 
 export default Table ;

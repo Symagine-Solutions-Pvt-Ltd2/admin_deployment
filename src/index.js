@@ -11,7 +11,8 @@ import Form from './Form.js' ;
 import About from './About';
 import reportWebVitals from './reportWebVitals'; 
 import GettingStarted from './Pages/GettingStarted'; 
-import DraftCourses from './Pages/DraftCourses';
+import DraftCourses from './Pages/DraftCourses'; 
+import Movablelist from './Movablelist';
 
 
 
@@ -23,7 +24,9 @@ root.render(
        {/* <Route index  element ={ <AdminDashboard /> } />  */} 
 
        <Route path= "dashboard"  element ={ <AdminDashboard /> }  />
+       <Route path= "list"  element ={ <Movablelist /> }  /> 
 
+       
      {/*   <Route path= "app"  element ={ <div>app</div>} />   
          <Route path="draftcourse"   element= { <DraftCourses /> } /> 
       <Route path= "getting"  element ={ <GettingStarted /> }  /> 
