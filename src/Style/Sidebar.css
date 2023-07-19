@@ -20,35 +20,61 @@
 
 
 
-.Description{
+.Sidebar-description{
 
-   
-    flex : 50%  ;
+  height: 55% ;
+  width : 100% ; 
+    background-color: azure;
 }
  
  
-.Program-Name-div{ 
+.Sidebar-Program-Name-div{ 
+     
    
- 
-   height : 1%;
-   width :  101px ;
+  height: 25.45% ;
+  width : 100% ; 
+    background-color:  blanchedalmond;
+
+ }   
+
+
+ .Sidebar-profile-Name-div{
+
+     height: 33.94% ;
+     width : 100% ; 
+    background-color:  pink;
  } 
 
+ .Sidebar-Admin-info-div{
 
-.Program-Name-text{
-     
-     color: #D9D9D9;
-    text-align: center;
-   font-size: 12px; 
-   font-weight: 600;
-   line-height: 170.5%; 
+  height: 17.20% ;
+  width : 100% ; 
+ background-color: blue;
+
+ }  
+
+.Sidebar-Program-Home-Button-div{
+   
+  height: 16.97% ;
+  width : 100% ; 
+ background-color: palegreen;
+
 
 }
     
 
 
-.Logout-box{
+.Sidebar-logout-box{
 
-    flex : 50%  ;
+  height: 45% ;
+  width : 100% ; 
     
+}  
+
+
+.Sidebar-logout-button{
+
+  height:  20.11% ;
+  width: 100% ; 
+  background-color: beige ;
 }

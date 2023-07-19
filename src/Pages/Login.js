@@ -6,10 +6,14 @@ import Button from "../Components/Button";
 
 function Login() {
   return (
-    <div  className="OuterBox">  
+    <div  className="OuterBox"> 
+
+
     <div   className="InnerBox-1"> 
     <p> Login at first   </p> 
     </div>
+ 
+
 
     <div className="InnerBox-2">  
      
@@ -26,12 +30,18 @@ function Login() {
       </div>
       
 
-      <div> 
-        <p> </p>
+      <div className="password-text"> 
+        <p>Forgot password?</p>
+        <p>Click here </p>
       </div>
 
       <div className="button">
-        <p> yiuyi</p>
+        <Button /> 
+     </div>  
+
+     <div className="description2_login">
+
+      <p>For any login related problem contact system admin!</p>
      </div>
     </div>
   

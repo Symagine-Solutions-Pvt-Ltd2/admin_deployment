@@ -33,31 +33,42 @@
         
     height:  100%;
     width: 52.69%;
-    background-color: #F7E5E9;  
+    background-color: #F7E5E9;   
+   padding-left: 18px;
 
 }  
 
 
 .description1_login{
- 
- top : 27.95% ;  
+  
+ height : 12% ; 
+ top : 23.95% ;  
  position: absolute;
- height : 7% ;
- width : 20% ;  
- 
- background-color: crimson ;
+ background-color: beige ; 
+overflow:  hidden;
 
-}  
+}   
+
+
+.description1-text{
+  
+    color: #F06B6D;
+    font-size: 55px ;
+    font-weight: 800  ;  
+    line-height: normal;
+
+
+}
 
 
 
 
 .input_text1{
 
-height : 7.68% ;
+height : 8% ;
  width : 20% ;  
  background-color: brown ; 
- border-radius: 25px;
+ border-radius: 20px;
  top : 40.93% ;  
  position: absolute;
 
@@ -65,10 +76,10 @@ height : 7.68% ;
 
 .input_text2{
 
-    height : 7.68% ;
+    height : 8% ;
      width : 20% ;  
      background-color: brown ; 
-     border-radius: 25px;
+     border-radius: 20px;
      top : 51.13% ;  
      position: absolute;
     
@@ -82,16 +93,34 @@ height : 7.68% ;
 
     height : 98%;
     background-color: blueviolet ; 
-    border-radius: 25px;
+    border-radius: 25px; 
+    
 }
   
+.password-text{
 
+    top : 61.96% ;  
+    position: absolute;  
+    display:  flex;
+}
 
 
 .button{
 
-    height: 7.95% ; 
-    width:  10% ;  
-    background-color: coral ;
+    height: 8.05% ; 
+    width:  13.5% ;  
+    background-color: coral ; 
+    top : 68.38% ;  
+     position: absolute;  
+     border-radius:  20px; 
+     overflow: hidden ;
+} 
+
+
+.description2_login{
+
+
+    top : 77.70% ;  
+    position: absolute;
 }
 

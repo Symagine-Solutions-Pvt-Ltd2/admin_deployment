@@ -13,6 +13,7 @@ import reportWebVitals from './reportWebVitals';
 import GettingStarted from './Pages/GettingStarted'; 
 import DraftCourses from './Pages/DraftCourses'; 
 import Movablelist from './Movablelist';
+import Home from './Pages/Home'  ;
 
 
 
@@ -25,14 +26,15 @@ root.render(
 
        <Route path= "dashboard"  element ={ <AdminDashboard /> }  />
        <Route path= "list"  element ={ <Movablelist /> }  /> 
-
+       <Route path= "home"  element ={ <Home /> }  /> 
+       <Route path= "form"  element ={ <Form /> }  /> 
        
-     {/*   <Route path= "app"  element ={ <div>app</div>} />   
+      <Route path= "app"  element ={ <div>app</div>} />   
          <Route path="draftcourse"   element= { <DraftCourses /> } /> 
       <Route path= "getting"  element ={ <GettingStarted /> }  /> 
        <Route path= "login"  element ={ <Login /> }  />
        <Route path= "about"  element ={ <About /> }  /> 
-       <Route path="*"   element= { <Error /> } />   */}
+       <Route path="*"   element= { <Error /> } />   
        </Route>
      </Routes>
   </BrowserRouter> 
