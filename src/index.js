@@ -14,6 +14,7 @@ import GettingStarted from './Pages/GettingStarted';
 import DraftCourses from './Pages/DraftCourses'; 
 import Movablelist from './Movablelist';
 import Home from './Pages/Home'  ;
+import Test from './Test'  ; 
 
 
 
@@ -28,7 +29,9 @@ root.render(
        <Route path= "list"  element ={ <Movablelist /> }  /> 
        <Route path= "home"  element ={ <Home /> }  /> 
        <Route path= "form"  element ={ <Form /> }  /> 
-       
+       <Route path= "test"  element ={ <Test /> }  /> 
+
+
       <Route path= "app"  element ={ <div>app</div>} />   
          <Route path="draftcourse"   element= { <DraftCourses /> } /> 
       <Route path= "getting"  element ={ <GettingStarted /> }  /> 
