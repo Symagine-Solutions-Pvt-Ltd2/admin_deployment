@@ -14,7 +14,10 @@ import GettingStarted from './Pages/GettingStarted';
 import DraftCourses from './Pages/DraftCourses'; 
 import Movablelist from './Movablelist';
 import Home from './Pages/Home'  ;
-import Test from './Test'  ; 
+import Test from './Test'  ;  
+import ManageAdmin from './Pages/ManageAdmin';  
+
+import AddNewAdmin  from './Pages/AddNewAdmin';
 
 
 
@@ -29,8 +32,9 @@ root.render(
        <Route path= "list"  element ={ <Movablelist /> }  /> 
        <Route path= "home"  element ={ <Home /> }  /> 
        <Route path= "form"  element ={ <Form /> }  /> 
-       <Route path= "test"  element ={ <Test /> }  /> 
-
+       <Route path= "test"  element ={ <Test /> }  />  
+       <Route path= "manageadmin"  element ={ <ManageAdmin/> }  />  
+       <Route path= "addnewadmin"  element ={ <AddNewAdmin /> }  /> 
 
       <Route path= "app"  element ={ <div>app</div>} />   
          <Route path="draftcourse"   element= { <DraftCourses /> } /> 

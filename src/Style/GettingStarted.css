@@ -23,7 +23,7 @@
      
      height: 100%; 
      width: 82.08%; 
-     background-color: aquamarine; 
+     background-color:  #FFF8EE; 
      display:  flex ; 
      flex-direction:  column;
 
@@ -35,30 +35,41 @@
     width :  100% ;   
 
 
-}
+} 
 
-.logo{
+
+
+
+.logo-picture-text{
   
-
-      height :  2.33%  ; 
-      width : 10% ;   
-
-      position: absolute ;  
-      top : 10% ;
-      left : 8.96% ; 
-      display:  flex ; 
-      flex-direction: row;
-      background-color: chocolate ;
+    background-color:  #FFF8EE ;  
+    height : 11%  ; 
+    width : 12% ;
+     margin-top: 5% ; 
+    overflow:  hidden; 
+    display: flex ; 
+    flex-direction: row;
 
 }  
 
 
 .logo_picture{
    
-
      height : 100% ;
-     width :100% ; 
-} 
+      width :20% ; 
+}  
+ 
+
+
+
+.logo-text{
+    
+
+    font-size: 12px;
+    font-weight: 600; 
+ 
+
+}
 
 .logo_name{
     
@@ -75,7 +86,8 @@
     width : 51.50%  ;   
     background-color: #FFF8EE;  
     display: flex ; 
-    align-items: flex-end ;  
+    align-items: flex-end ;   
+    overflow: hidden;
   
 
 }   

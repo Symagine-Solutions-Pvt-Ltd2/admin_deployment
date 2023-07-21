@@ -12,10 +12,22 @@ function   GettingStarted() {
 
             
             <div className="logo-box" >  
-            <div  className="logo"> 
-            <div  className=""> logo picture </div> 
-             <div> logo text </div>
-            </div> 
+                 <div className="logo-picture-text" > 
+ 
+
+                  <div  style={{ height: "100%"    ,  marginRight : "4px" , overflow: "hidden"  }}>
+                 <p>jahj</p>
+                  </div> 
+   
+
+                  
+                   <div style={{ height: "100%"   , overflow: "hidden" ,   backgroundColor: "#FFF8EE" , display : "flex" ,  alignItems : "center" , justifyContent : "center"}}>
+                  <p  className="logo-text">Future Founders</p> 
+                  </div>
+
+                 </div>  
+              
+                 
             </div>
             
             <div  className="description1" >
@@ -32,12 +44,13 @@ function   GettingStarted() {
             In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
             </p>
                   
-             <div  style= {{  height : "40%"  ,  paddingTop : "12%"  , backgroundColor : "red" }}>
-              <Button  color= "blue"  width = "50%"     height =  "90%"    color1 = "green" className = "description2-button" name = {"Get Started"} />
+             <div  style= {{  height : "40%"  , display : "flex"  , alignItems : "flex-end", backgroundColor : "#FFF8EE" }}>
+              <Button  color= "#5E81F4"  width = "71.97%"     height =  "62.24%"    color1 = "white"  name =  "Get Started" />
             </div> 
+            </div>   
 
-    
-            </div> 
+
+
             <div  className="illustrsation1"> 
                  illustaration 
             </div>

@@ -36,7 +36,7 @@ function Login() {
       </div>
 
       <div className="button">
-        <Button /> 
+        <Button  name =  "Log In"  /> 
      </div>  
 
      <div className="description2_login">
