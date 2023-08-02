@@ -1,0 +1,45 @@
+*{
+ 
+  padding:  0 ;
+  margin : 0 ; 
+  box-sizing:  border-box;  
+ 
+}
+
+
+
+
+
+.moduleContentType{
+
+height: 100vh ;
+width : 100vw ; 
+display:  flex ;
+background-color: orangered;
+
+
+}  
+
+
+.moduleContentType-sidebar{
+
+
+  
+width : 19% ; 
+height : 100% ; 
+ background-color: #353B55 ; 
+
+} 
+
+.moduleContentType-body{
+
+ 
+  display: flex;
+  flex-direction: column;
+  width : 81% ; 
+  height :  100%; 
+ background-color: grey ;  
+  justify-content:  center;
+  align-items: center;
+
+} 

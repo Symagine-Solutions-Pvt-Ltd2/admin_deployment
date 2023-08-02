@@ -1,10 +1,79 @@
-import {Link, useNavigate } from "react-router-dom"  ;  
+import {Link, useNavigate , useLocation  } from "react-router-dom"  ;  
 import "../Style/Login.css"  ;   
 import Button from "../Components/Button";
+import { useState  } from "react";
+import axios from "axios"  ;  
+
+function Login() {    
+
+  
+  const  navigate = useNavigate() ;  
+  const[ email , setEmail] = useState( "") ; 
+  const[ password , setPassword ] = useState( "") ; 
+
+  const onChangeEmail  = ( event ) => {
+     
+
+    console.log(event.target.value); 
+    setEmail( event.target.value);
+
+    }   
+  
+
+   
+
+    
+  const onChangePassword  = ( event ) => {
+     
+
+    console.log(event.target.value); 
+    setPassword ( event.target.value);
+
+    }   
+  
+  //  function   for login 
+
+  const goToHome = () => {
+      
+
+    axios({ 
+
+      url : "http://localhost:8000/admin/login"  ,  
+      method : "POST"  , 
+      data : {
+        
+        "email_id": email , 
+        "password" : password  
+
+      }
+
+     }).then( ( res) => {   
+
+        if(   res.data.message ===  "Login successful"    ){
+         
+          alert( "login successful")  ; 
+          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  }} ,  { replace : false}  )  ;
+
+        } 
+        else {
+
+          alert( "incorrect login!")  ;
+        }
+       
 
 
+     } ).catch(( err) => { 
+         console.log( "error") ;
 
-function Login() {
+      }  ) ;  
+
+
+   // navigate(  "/home"  ,   { replace : false}  )  ; 
+
+    }   
+ 
+
+
   return (
     <div  className="OuterBox"> 
 
@@ -22,11 +91,11 @@ function Login() {
      </div>  
 
       <div className="input_text1"> 
-      <input  className="input_box_text" placeholder="Enter your email or user id" /> 
+      <input  className="input_box_text" placeholder="Enter your email or user id"  onChange={ onChangeEmail } /> 
       </div> 
 
       <div className="input_text2"> 
-      <input  className="input_box_text" placeholder="Enter your password" /> 
+      <input  className="input_box_text" placeholder="Enter your password"    onChange={ onChangePassword }/> 
       </div>
       
 
@@ -35,7 +104,7 @@ function Login() {
         <p>Click here </p>
       </div>
 
-      <div className="button">
+      <div className="button"  onClick={ () => { goToHome() }}>
         <Button  name =  "Log In"  /> 
      </div>  
 

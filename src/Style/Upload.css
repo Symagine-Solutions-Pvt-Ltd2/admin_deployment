@@ -1,0 +1,91 @@
+*{
+ 
+    padding:  0 ;
+    margin : 0 ; 
+    box-sizing:  border-box;  
+   
+  }
+
+  
+  .upload{
+
+height: 100vh ;
+width : 100vw ; 
+display:  flex ;
+background-color: orangered;
+  }  
+
+ 
+
+
+.upload-sidebar{
+
+    
+width : 19% ; 
+height : 100% ; 
+ background-color: #353B55 ; 
+
+
+}
+ 
+
+.upload-body{
+
+
+ 
+    display: flex;
+    flex-direction: column;
+    width : 81% ; 
+    height :  100%; 
+   background-color:  papayawhip ;   
+   display: flex; 
+   align-items: center;
+
+  
+
+}   
+
+
+
+
+.upload-body-div1{
+    width : 100% ; 
+    height :  22.04%;  
+    background-color: blue ;  
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+   
+}
+
+.upload-body-div2{
+
+    width : 64.51% ; 
+    height :  52.51%;   
+    background-color:  #5A6198 ; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+ 
+
+.upload-body-div3{
+
+    width :  64.51%; 
+    height :  12.97%;    
+    display: flex; 
+    align-items: flex-end; 
+    justify-content: flex-end; 
+    background-color: goldenrod;
+}     
+
+
+.upload-body-div1-input-box{
+
+   
+    width : 53.99% ; 
+    height :  44.57%;     
+    border-radius:  20px;
+
+
+}
