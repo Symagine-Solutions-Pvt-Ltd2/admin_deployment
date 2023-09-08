@@ -60,24 +60,41 @@ height : 100% ;
 
 .upload-body-div2{
 
-    width : 64.51% ; 
-    height :  52.51%;   
-    background-color:  #5A6198 ; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+    width : 100% ; 
+    height :  40.80%;   
+    background-color:  white ; 
+    display: flex;  
+    flex-direction: column;
+
 }
  
 
-.upload-body-div3{
 
-    width :  64.51%; 
-    height :  12.97%;    
-    display: flex; 
-    align-items: flex-end; 
-    justify-content: flex-end; 
-    background-color: goldenrod;
-}     
+
+.upload-body-div2-inner-div1{
+
+
+    width : 100% ;
+     height : 35.18%  ;  
+     background-color: palevioletred; 
+     display: flex; 
+     flex-direction: row;
+    
+} 
+
+
+.upload-body-div2-inner-div2{
+
+
+    width : 100% ;
+     height : 31.79%  ;  
+     background-color: palevioletred; 
+
+     display: flex; 
+     flex-direction: row;
+    
+    
+}
 
 
 .upload-body-div1-input-box{
@@ -87,5 +104,22 @@ height : 100% ;
     height :  44.57%;     
     border-radius:  20px;
 
+
+}
+ 
+
+.upload-body-input-box{
+
+    width : 90% ; 
+    height :  75.72%;   
+    
+} 
+
+
+.upload-body-input-checkbox_outer_div{
+
+    width : 10% ; 
+    height :  75.72%; 
+    background-color: aquamarine;
 
 }

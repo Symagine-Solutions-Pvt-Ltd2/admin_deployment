@@ -15,7 +15,12 @@ function AddNewAdmin() {
 
 console.log( event.target.vall  ) ;  
 
-  event.preventDefault();
+  event.preventDefault();  
+
+
+
+
+  
 }
 
 

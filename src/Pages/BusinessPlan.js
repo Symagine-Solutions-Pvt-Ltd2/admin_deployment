@@ -8,7 +8,7 @@ import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 function BusinessPlan() {    
       
 
-
+    const  navigate = useNavigate() ;  
     const goToNext = () => {
   
         navigate(  "/home/dashboard/client/addclient"   ,  { replace : false}  ) ; 

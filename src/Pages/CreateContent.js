@@ -1,7 +1,9 @@
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import { useState } from "react";  
 import Sidebar  from "../Sidebar" ;  
-import "../Style/CreateContent.css"  ; 
+import "../Style/CreateContent.css"  ;  
+import axios from "axios"  ;  
+
 
 function CreateContent() {    
       
@@ -16,7 +18,7 @@ function CreateContent() {
 
 
  //const [ typeId , setTypeId ] =  useState(location.state.typeId  ) ; 
- const [ typeId , setTypeId ] =  useState( "create_workshop" ) ; 
+ const [ typeId , setTypeId ] =  useState( location.state.typeId  ) ; 
 
 
 
@@ -32,6 +34,65 @@ function CreateContent() {
     event.preventDefault();
   }
 
+  
+
+  const saveCourse = (  event  ) => { 
+    
+       
+    console.log( event.target.course_name.value) ;   
+    console.log( event.target.course_description.value) ;    
+  
+
+    axios({ 
+
+          url : "http://localhost:8000/admin/course"  ,   
+
+          method : "POST"  ,  
+
+          data : {
+            
+            "course_name" :  event.target.course_name.value , 
+            "course_description"  : event.target.course_description.value  
+
+
+
+          }
+    
+         }).then( ( res) => {   
+     
+
+
+            console.log(  res ) ;  
+
+
+            if(   res.data.message ===  "Course added Successfully."    ){
+             
+               alert( "added Successfully.")  ;  
+           
+              navigate(  "/home/course"   ,    { state: {    typeId : "course"  }}  ,    { replace : false}  )   ;
+
+            } 
+            else {
+    
+              alert(   res.data.message  )  ;
+            }    
+
+
+           
+         } ).catch(( err) => { 
+             console.log( "error") ;
+    
+          }  ) ;  
+
+
+    
+  
+  
+      event.preventDefault();
+    }
+
+
+
 
 
 
@@ -39,7 +100,8 @@ function CreateContent() {
     switch( typeId )  { 
 
 
-    case "system_admin" :  
+    case "create_program" :   
+    
     return( 
 
 
@@ -332,7 +394,57 @@ function CreateContent() {
     
 
 
-    
+      case   "save_course" :  
+      return( 
+  
+   
+
+        <div className="course" >
+     
+        <div className="course_sidebar" >
+          <Sidebar /> 
+        </div>   
+
+
+        
+        <div className="course_body"  >   
+
+        <form className="course_body_inner_div" onSubmit={ saveCourse }    >    
+  
+             
+               
+             <input type="text"
+                     name = "course_name"
+                     placeholder="Enter course name"
+                     className="course_input-box"
+                     /> 
+              
+        
+             
+             <input type="text" 
+                     name = "course_description"
+                     placeholder="Enter short description"
+                     className="course_input-box"  style={{ marginBottom : "4.5%"}}
+                     /> 
+         
+        
+             
+             <input   className="course_form_row_btn" type="submit" value="Submit" /> 
+             
+           
+        </form>
+
+  
+
+        </div> 
+
+        </div> 
+
+
+      )   ; 
+     
+
+
 
     case "program_admin" :  
     return(

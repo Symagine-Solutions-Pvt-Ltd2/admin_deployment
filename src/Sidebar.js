@@ -1,60 +1,90 @@
+
 import {Link } from "react-router-dom"  ;  
 import "./Style/Sidebar.css"  ;   
 import Badge from '@mui/material/Badge';  
 
-       
 
 
-// frame 24 
+// import this component to  render  the sidebar in every page 
 function SideBar() {
-  return (
-    <div className= "Sidebar">  
+ 
 
-     <div  className="Sidebar-description">    
-        <div   className="Sidebar-Program-Name-div" >   
+   return(
+    <div  className= "Sidebar" >
+      <div  className="Sidebar-description">    
            
-           {/* <div className="Sidebar-Program-Name-inner-div">
-              
-               <div> 
-              <p>logo</p> 
-               </div> 
-                <div>
-                <p>Future Founders</p> 
-                </div>  
-              
-           </div> */}  
-
-   <div style={{ height: "70%"  , width:"100%"  , backgroundColor : "red" , padding : "10px" }}>
-                <Badge style={{ height: "70%"  , width:"50%" }}    badgeContent={4}  color="primary"  > 
-                   <div  style={{ height: "100%"  , width:"100%"  , backgroundColor : "yellow" }}>  
-                    <p>bavsgha</p>
-                   </div>             
-                </Badge> 
-                </div>
-        </div>  
+         <div   className="Sidebar-Program-Name-div" >   
+           
+                    <div className="Sidebar-Program-Name-inner-div">
+      
+                            <div   style={{  backgroundColor : "white"}}> 
+                               <p>logo</p> 
+                            </div> 
+                            <div style={{ color : "white"}}>
+                                 <p>Future Founders</p> 
+                            </div>  
+      
+                     </div>   
+         </div>
 
 
-        <div   className="Sidebar-profile-Name-div" > 
-         <p >ajaklsaklsk</p>
-        </div>  
+         <div   className="Sidebar-profile-Name-div" > 
+    
+                     <div style= {{ height : "60%"  , width:"40%"  , backgroundColor : "white"  ,  borderRadius : "50%" }}>
+                         <p> RM</p>
+                       </div>
+         </div>  
+          
 
-        < div  className="Sidebar-Admin-info-div" > 
-         <p>ajjkakAHKJXJKXHAK</p>
-        </div>
-        <div   className="Sidebar-Program-Home-Button-div" > 
-         <p> home button </p>
-        </div>    
+         < div  className="Sidebar-Admin-info-div" > 
+                <div  style={{  height: "55%"  , backgroundColor : "#353B55"}}>
+                 <p  style={{ color : "white"}}>Mike Hannigan</p>
+                 </div> 
+
+                 <div  style={{  height: "35%"  , backgroundColor : "#353B55"}}>
+                <p style={{ color : "white"}}> System Admin  </p>
+                  </div>
+         </div>  
+
+          
+
+         <div   className="Sidebar-Program-Home-Button-div" >  
+
+               <div style={{ backgroundColor : "#B7B7D0" ,  width : "51.70%" , height : "45.88%"}}>
+               <p>Home</p>
+               </div>
+                 
+            </div>    
 
 
 
-     </div> 
-     <div className="Sidebar-logout-box">  
-     <div className="Sidebar-logout-button">
-     <p>  jkjkjkjkj</p> 
-     </div>
-     </div>
+      </div>  
+
+
+         <div className="Sidebar-logout-box">   
+
+ 
+                      <div className="Sidebar-logout-button">   
+                      <div style={{height : "100%" , width :"20%"}}>
+
+                         <p  style={{ color : "red"}}>hgjh</p>
+                      </div>
+                      <div style={{height : "100%" , width :"80%"}}>
+
+                         <p style={{ color : "red"}}>Log out</p>
+                      </div>
+                        
+      
+                      </div>  
+         </div>
     </div>
-  );
+
+   ) ; 
 }
 
-export default SideBar ; 
+export default SideBar ;  
+
+
+
+
+

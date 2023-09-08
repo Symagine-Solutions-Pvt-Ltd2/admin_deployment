@@ -1,19 +1,57 @@
 import "../Style/AdminView.css"  ;
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
-import { useState } from "react"; 
+import { useState , useEffect  } from "react"; 
 import Sidebar from "../Sidebar"  ; 
+import axios from "axios"  ;  
 
 
 
 function  AdminView() {      
  
-
-    //frame12
     
-    const  navigate = useNavigate() ;  
+    //frame12 
+    const [ data , setData ] = useState( []);
+
+    const  navigate = useNavigate() ;   
+     
+     
+    useEffect(() => { 
+
+      axios({ 
+
+       url : "http://localhost:8000/admin/aladmin"  ,  
+       method : "POST"  , 
+       data : {
+         
+                "search_key" : "" , 
+              "page_no" :  1 ,
+               "limit" : 5   
+
+       }
+
+      }).then( ( res) => {   
+
+
+        console.log(  res.data.data ) ; 
+         setData(  res.data.data ) ;  
+         
+         
+       //  console.log(   res.data.data[1].name )  ;
+
+      } ).catch(( err) => {  
+          console.log( "error") ;
+
+       }  ) ; 
+
+  } , [])  
+
+
+
+
+    
     const goToNext = () => {
   
-       navigate(  "/home/manageadmin/addadminaccount"   ,  { replace : false}  ) ; 
+       navigate(  "/home/manageadmin/addadminaccount"  ,     { state: {    typeId : "system_admin_admin" }}    ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -37,7 +75,7 @@ function  AdminView() {
                 <div className="clientview_table_outer_div_body2">   
       
   
-                 <div className="clientview_table_inner_div_column_name">  
+                 <div className="adminview_table_inner_div_column_name">  
                  <div  style= {{   width: "9%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
                  <p>Sl No</p>
                  </div> 
@@ -58,10 +96,86 @@ function  AdminView() {
                   <p>Account status</p>
                  </div>
   
-                </div> 
-                <div  className="clientview_table_inner_div_table_row">
-                 
-                </div>
+                </div>  
+
+
+                
+                <div  className="adminview_table_inner_div_table_row"  >
+                   
+                {/* <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+
+                    <div  style= {{   width: "9%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+                     <p>1 </p>
+                     </div> 
+                     <div style= {{   width: "18%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+                     <p> mike </p>
+                     </div>
+                     <div style= {{   width: "18%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+                     <p> mike@gmail.com</p>
+                    </div>
+                     <div style= {{  width: "18%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+                      <p> content admin </p>
+                     </div> 
+  
+                    <div style= {{  width: "12%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+                     <p> Active</p>
+                     </div> 
+                     <div style= {{   width: "25%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}>  
+
+                                <div style={{ height: "100%"  , width : "40%"}}> 
+                                      <input type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                                </div>
+                                 <div  style={{ height: "100%"  , width : "40%"}} >
+                                        <input type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                                 </div>
+                    </div>
+                  
+
+
+                  </div> 
+
+
+
+
+ */}    
+             
+                     {
+         data.map( (  el )  => (
+           
+          <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+
+          <div  style= {{   width: "9%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+           <p>1 </p>
+           </div> 
+           <div style= {{   width: "18%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+           <p> { el.name }</p>
+           </div>
+           <div style= {{   width: "18%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+           <p> mike@gmail.com</p>
+          </div>
+           <div style= {{  width: "18%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+            <p> content admin </p>
+           </div> 
+
+          <div style= {{  width: "12%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+           <p> Active</p>
+           </div> 
+           <div style= {{   width: "25%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}>  
+
+                      <div style={{ height: "100%"  , width : "40%"}}> 
+                            <input type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                      </div>
+                       <div  style={{ height: "100%"  , width : "40%"}} >
+                              <input type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                       </div>
+          </div>
+        
+
+
+        </div> 
+          ) )}    
+
+          </div>
                 
                 
       

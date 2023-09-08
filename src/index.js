@@ -15,11 +15,8 @@ import DraftCourses from './Pages/DraftCourses';
 import Movablelist from './Movablelist';
 
 import Test from './Test'  ;  
-import ManageAdmin from './Pages/ManageAdmin';  
 import Parent from  "./Pages/Parent" ; 
 import AddNewAdmin  from './Pages/AddNewAdmin'; 
-import Add_Program  from './Pages/Add_Program'; 
-import Upload from './Pages/Upload';
 
   
 
@@ -46,6 +43,7 @@ import ModuleContentType  from './Pages/ModuleContentType';
 import SecondView from './Pages/SecondView';
 import StudentView from './Pages/StudentView';  
 import UploadContent from './Pages/UploadContent'; 
+
 
 
 
@@ -103,7 +101,7 @@ root.render(
 
    <Route path= "dashboard" >
    <Route index  element ={  <FirstView />  } />   
-   <Route path= "addprogram"   element ={  <CreateContent/>  }  />  
+   <Route path= "addprogram"   element ={  <CreateContent/>  }  />   
    <Route path= "client" >
      <Route index  element ={  <ClientView/> }  />  
      <Route  path= "addclient"  element ={  <AddAccount/> }  />  
@@ -112,7 +110,7 @@ root.render(
      <Route  path= "facilitator"  element ={  <FacilitatorView/> }  />    
      <Route  path= "addfacilitator"  element ={  <AddAccount/> }  />   
 
-     <Route  path= "Student"  >
+     <Route  path= "student"  >
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />    
            <Route  path= "viewplan"  element ={  <BusinessPlan /> }  />    
@@ -123,11 +121,11 @@ root.render(
 
    <Route path= "course"   >  
       <Route index  element ={  <SecondView/>  }  />   
-      <Route  path= "savecourse"  element ={  <Course /> }  />    
+      <Route  path= "savecourse"  element ={  <CreateContent /> }  />    
       <Route  path= "draftcourse"   >  
          <Route index  element ={   <Course /> } />  
          <Route  path= "draftcoursedetails"  element ={  <CourseDetails /> }  />  
-         <Route  path= "addcoursecontent"  element ={  <SecondView/> }  />   
+         <Route  path= "addcoursecontent"  element ={  <SecondView/> }  />      
          <Route  path= "createnewmodule"  element ={  <CreateContent/> }  />
          <Route  path= "createnewworkshop"  element ={  <CreateContent/> }  />
          <Route  path= "createbussinessplan"  element ={  <BusinessPlan /> }  />
@@ -142,17 +140,22 @@ root.render(
    </Route>
 
 
-   <Route path= "viewcourse"  element ={  <FirstView/> }  >
-       <Route index  element ={  <FirstView /> } /> 
+   <Route path= "viewcourse"  >
+       <Route index  element ={  <Course /> } />  
+       <Route  path= "permanentcoursedetails"  element ={  <CourseDetails /> } />  
    </Route>
 
 
 
-   <Route path= "manageadmin"  > 
+   <Route path= "manageadmin"  >  
 
+   
         <Route index  element ={  <AdminView /> } />  
         <Route  path= "addadminaccount"  element ={  <AddAccount /> }  />   
-        <Route  path= "editadminaccount"  element ={  <AddAccount /> }  />   
+        <Route  path= "editadminaccount"  element ={  <AddAccount /> }  />    
+ 
+
+
    </Route>
  </Route>   
 

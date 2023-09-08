@@ -1,5 +1,5 @@
 
-import {Link , useNavigate, Outlet } from "react-router-dom" ; 
+import {Link , useNavigate, Outlet , useLocation  } from "react-router-dom" ; 
 import "../Style/SecondView.css" ; 
 import { useState } from "react"; 
 import Sidebar from "../Sidebar"  ; 
@@ -9,12 +9,18 @@ import Sidebar from "../Sidebar"  ;
 function SecondView() { 
    
    
-  
+  const location = useLocation(); 
   const  navigate = useNavigate() ;     
-  const [ typeId , setTypeId ] =  useState( "addcoursecontent" ) ; 
+  const [ typeId , setTypeId ] =  useState( location.state.typeId   ) ;    
+
+
+
+
   const  createCourse = () => {
   
-    navigate(  "/home/course/savecourse"   ,  { replace : false}  ) ; 
+
+    
+    navigate(  "/home/course/savecourse"   ,   { state: {    typeId : "save_course"  }} , { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -26,11 +32,8 @@ function SecondView() {
 
    const goToDraftCourse = () => {
   
-    navigate(  "/home/course/draftcourse"   ,  { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse"   ,     { state: {    typeId : "draft_course"   ,     endpoint : "draftcourse" }}   ,    { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
-
-
-
 
    }    
 
@@ -38,7 +41,7 @@ function SecondView() {
    
    const createModule = () => {
   
-    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  }} ,        { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -50,7 +53,7 @@ function SecondView() {
 
    const  createWorkshop = () => {
   
-    navigate(  "/home/course/draftcourse/createnewworkshop"   ,  { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  }} ,   { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -66,7 +69,7 @@ function SecondView() {
    switch( typeId )  { 
 
 
-    case "system_admin" :  
+    case "course" :  
 
     return (
       <div className="secondview" >  
@@ -90,7 +93,10 @@ function SecondView() {
       </div>
     );  
 
-    
+     
+
+
+
     case "addcoursecontent" :  
     return(
       <div className="secondview" >  

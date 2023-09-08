@@ -24,7 +24,7 @@
 
   height: 55% ;
   width : 100% ; 
-    background-color: azure;
+    background-color: #353B55;
 }
  
  
@@ -33,15 +33,24 @@
    
   height: 25.45% ;
   width : 100% ; 
-    background-color:  blanchedalmond;
+    background-color:  #353B55;   
+    display: flex;
+   justify-content: center;
+   align-items: flex-end;
 
  }     
 
 
  .Sidebar-Program-Name-inner-div{
-
+   
     
-
+     height: 25.45% ;
+     width : 51.70% ; 
+    background-color :  #353B55; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: row; 
+   
 
  }
 
@@ -50,14 +59,24 @@
 
      height: 33.94% ;
      width : 100% ; 
-    background-color:  pink;
+    background-color: #353B55 ; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+ 
  } 
+ 
+
+
 
  .Sidebar-Admin-info-div{
 
   height: 17.20% ;
   width : 100% ; 
- background-color: blue;
+ background-color:#353B55 ; 
+ display: flex ; 
+ flex-direction: column ; 
+ justify-content: space-between;
 
  }  
 
@@ -65,7 +84,10 @@
    
   height: 16.97% ;
   width : 100% ; 
- background-color: palegreen;
+ background-color: #353B55;   
+ display: flex;
+ align-items: center; 
+ justify-content: center;
 
 
 }
@@ -75,14 +97,21 @@
 .Sidebar-logout-box{
 
   height: 45% ;
-  width : 100% ; 
+  width : 100% ;  
+  display: flex; 
+  align-items: flex-end ; 
+  justify-content: center ; 
     
 }  
 
 
 .Sidebar-logout-button{
 
-  height:  20.11% ;
-  width: 100% ; 
-  background-color: beige ;
+  height: 10% ;
+  width: 34.41% ; 
+  background-color: #353B55  ; 
+  display: flex;  
+  overflow: hidden; 
+  margin-bottom: 14%;
+  
 }
