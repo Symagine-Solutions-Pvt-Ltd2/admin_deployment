@@ -1,8 +1,8 @@
 import "../Style/ClientView.css"  ;
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
-import { useState } from "react"; 
+import { useState  , useEffect } from "react"; 
 import Sidebar from "../Sidebar"  ; 
-
+import axios from "axios"  ;  
 
 
 
@@ -16,7 +16,10 @@ function CourseDetails() {
 
  
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
+  const [  courseName  , setCourseName ]   = useState( location.state.course_name  ) ;  
+  const [ data , setData ] = useState( []); 
 
+  console.log( courseName) ;
 
     const goToNext = () => {
   
@@ -29,7 +32,39 @@ function CourseDetails() {
        }  
   
 
-  
+   
+       useEffect(() => { 
+
+        axios({ 
+
+              url : "http://127.0.0.1:8000/admin/Course_wmb"  ,  
+              method : "POST"  , 
+             data : {
+       
+                  "course_name" : "Future Founders_new"  
+
+                 }
+
+                 }).then( ( res) => {   
+
+
+                console.log(  res.data.data ) ; 
+                 setData(  res.data.data ) ;  
+       
+       
+                    //  console.log(   res.data.data[1].name )  ;
+
+                  } ).catch(( err) => {  
+                  console.log( "error") ;
+
+                }  ) ; 
+
+                   } , [])  ; 
+
+
+
+
+    
 
 
     switch( typeId )  {  
@@ -72,13 +107,18 @@ function CourseDetails() {
           </div> 
           <div  className="clientview_table_inner_div_table_row">
              
-            
+           {
+
+                 
+         data.map( (  el  , index )  => (  
+
+
           <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
           <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-           <p>1</p>
+           <p>  { index+1}  </p>
            </div> 
            <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-             <p>Module</p>
+             <p>  { el.type_id }  </p>
            </div>
          
 
@@ -112,7 +152,11 @@ function CourseDetails() {
 
     
 
-         </div>
+         </div> 
+
+         ))
+
+           }
 
           </div>
           

@@ -233,7 +233,7 @@ function Course() {
                                    <input type="button" value = "Submit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
                                 </div>
                                  <div  style={{ height: "100%"  , width : "30%"}} >
-                                        <input type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"  }}     ,  { replace : false}  )  }  } /> 
+                                        <input type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     course_name :   el.course_name  }}     ,  { replace : false}  )  }  } /> 
                                  </div> 
 
                                  <div  style={{ height: "100%"  , width : "30%"}} >
