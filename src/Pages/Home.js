@@ -29,7 +29,7 @@ function  Home() {    // frame 3
      return(
         <div className="home">  
             <div className="home-sidebar" >
-                   <Sidebar /> 
+                   <Sidebar   type= { typeId} /> 
             </div> 
             <div className="home-body">
 
@@ -82,7 +82,7 @@ function  Home() {    // frame 3
 
         <div className="home">  
             <div className="home-sidebar" >
-                   <Sidebar /> 
+                   <Sidebar   type= "hkv" /> 
             </div> 
             <div className="home-body">
 
@@ -129,7 +129,7 @@ function  Home() {    // frame 3
     
       <div className="home">  
       <div className="home-sidebar" >
-             <Sidebar /> 
+             <Sidebar    type= { typeId } /> 
       </div> 
       <div className="home-body">
 

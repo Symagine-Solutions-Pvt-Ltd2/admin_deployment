@@ -6,8 +6,10 @@ import Badge from '@mui/material/Badge';
 
 
 // import this component to  render  the sidebar in every page 
-function SideBar() {
+function SideBar( props ) {
  
+   console.log( props.type) ;  
+
 
    return(
     <div  className= "Sidebar" >
@@ -42,7 +44,7 @@ function SideBar() {
                  </div> 
 
                  <div  style={{  height: "35%"  , backgroundColor : "#353B55"}}>
-                <p style={{ color : "white"}}> System Admin  </p>
+                <p style={{ color : "white"}}>{  props.type } </p>
                   </div>
          </div>  
 
