@@ -9,10 +9,11 @@ import Sidebar from "../Sidebar"  ;
 function SecondView() { 
    
    
-  const location = useLocation(); 
+  const location = useLocation();  
   const  navigate = useNavigate() ;     
   const [ typeId , setTypeId ] =  useState( location.state.typeId   ) ;    
-
+   
+  const [ courseName , setCourseName ] =  useState( location.state.courseName    ) ;   
 
 
 
@@ -40,8 +41,9 @@ function SecondView() {
 
    
    const createModule = () => {
-  
-    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  }} ,        { replace : false}  ) ; 
+    
+    console.log( courseName) ;
+    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  , courseName : courseName    }} ,        { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -53,13 +55,21 @@ function SecondView() {
 
    const  createWorkshop = () => {
   
-    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  }} ,   { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  , courseName : courseName   }} ,   { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
 
 
-   }    
+   }      
+
+
+     
+   const  createBplan = ()  => {
+
+    navigate(  "/home/course/draftcourse/createbussinessplan"   ,    { state: {   courseName : courseName   }} ,   { replace : false}  ) ; 
+
+   }
 
    
 
@@ -120,7 +130,7 @@ function SecondView() {
 
 
                  
-                <div  className="secondview_body_innner_tab"     style={{  width: "24.54%" }} onClick={ () => {  createCourse() } } >
+                <div  className="secondview_body_innner_tab"     style={{  width: "24.54%" }} onClick={ () => {  createBplan() } } >
                   <p>Create business plan</p>
                 </div> 
 

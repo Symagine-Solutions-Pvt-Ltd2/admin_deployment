@@ -19,11 +19,13 @@ function CourseDetails() {
   const [  courseName  , setCourseName ]   = useState( location.state.course_name  ) ;  
   const [ data , setData ] = useState( []); 
 
-  console.log( courseName) ;
+  
 
     const goToNext = () => {
-  
-        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent" }}   ,  { replace : false}  ) ; 
+        
+
+       console.log( courseName) ;
+        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : courseName  }}   ,  { replace : false}  ) ; 
         console.log("ASJghshGHS") ;  
  
  
@@ -41,7 +43,7 @@ function CourseDetails() {
               method : "POST"  , 
              data : {
        
-                  "course_name" : "Future Founders_new"  
+                  "course_name" : courseName  
 
                  }
 
@@ -105,15 +107,17 @@ function CourseDetails() {
 
 
           </div> 
-          <div  className="clientview_table_inner_div_table_row">
-             
-           {
+          <div  className="clientview_table_inner_div_table_row">  
 
+
+          {
+        
+          
                  
          data.map( (  el  , index )  => (  
 
 
-          <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
           <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
            <p>  { index+1}  </p>
            </div> 
@@ -139,7 +143,7 @@ function CourseDetails() {
 
 
                              <div  style={{ height: "100%"  , width : "20%"}} >
-                                    <input type="button" value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {    typeId : "addcoursecontent" }}   ,  { replace : false}  )  }  } /> 
+                                    <input type="button" value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {    typeId : "addcoursecontent"     }}   ,  { replace : false}  )  }  } /> 
                              </div> 
 
 
@@ -154,9 +158,11 @@ function CourseDetails() {
 
          </div> 
 
-         ))
+         ))  
 
-           }
+            
+
+            }
 
           </div>
           

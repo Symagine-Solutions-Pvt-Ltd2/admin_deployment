@@ -95,14 +95,19 @@ function  Home() {    // frame 3
               <p>Ready to start your day with Future Founders?</p>
                </div>
             </div>
-            <div className="home-body2">  
+            <div className="home-body2"    >    
+
+
+              <div  style={{ width : "65%"   ,   height : "100%"   ,  display: "flex"  , backgroundColor : "pink"   , justifyContent : "space-between"}}>
              
-                <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"}} >
-                   <p style={{ color : "white"}}>Dashboard</p>
+                <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"  , width : "45%"}} >
+                   <p style={{ color : "white" }}>Dashboard</p>
                 </div> 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  }} ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  }} ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"  , width : "45%" }} > 
                 <p style={{ color : "white"}}>View Course</p>
+                </div>  
+
                 </div>
              
              </div>

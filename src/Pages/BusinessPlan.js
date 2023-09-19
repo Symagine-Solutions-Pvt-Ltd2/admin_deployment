@@ -36,8 +36,40 @@ function BusinessPlan() {
 
     <div className="clientview_table_outer_div_body2">   
     
+      <div  className="clientview_table_inner_div_column_name"  style= {{    backgroundColor : "red"  , alignItems : "center"  , justifyContent : "center",   marginBottom : "1%"   }}>
+         
 
-    <div className="clientview_table_inner_div_column_name">  
+      <input type="text" 
+              placeholder="Enter Bussiness Plan Name"
+           
+              /> 
+
+      </div>
+
+
+
+    <div className="clientview_table_inner_div_column_name"   style={{   marginBottom : "1%" }} >  
+    <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+    <p>Sl No</p>
+    </div> 
+    <div style= {{   width: "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+      <p>Type</p>
+    </div>
+    <div style= {{   width: "20%" ,  height: "100%"  , backgroundColor : "red" , borderRight : "1px solid black"}  }>
+      <p>Name of task</p>
+    </div>
+    <div style= {{  width: "20%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+      <p>Number of Characters</p>
+    </div> 
+  
+    <div style= {{   width: "25%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+    
+    </div>  
+
+   </div>  
+    
+
+   <div className="clientview_table_inner_div_column_name">  
     <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
     <p>Sl No</p>
     </div> 
@@ -56,10 +88,6 @@ function BusinessPlan() {
     </div>  
 
    </div> 
-   <div  className="clientview_table_inner_div_table_row">
-    
-   </div>
-   
    
 
    </div>   
@@ -69,7 +97,7 @@ function BusinessPlan() {
    <div className="body3"> 
 
 <div onClick={ () => { goToNext() } } className="add_new_program_button">
-  <p>Add new client</p>
+  <p>Submit</p>
 </div>
 
 </div>

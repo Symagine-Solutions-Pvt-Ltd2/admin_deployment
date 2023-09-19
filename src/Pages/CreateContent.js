@@ -19,6 +19,9 @@ function CreateContent() {
 
  //const [ typeId , setTypeId ] =  useState(location.state.typeId  ) ; 
  const [ typeId , setTypeId ] =  useState( location.state.typeId  ) ; 
+ const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ; 
+ 
+
 
 
 
@@ -92,9 +95,111 @@ function CreateContent() {
     }
 
 
+    const  createModule  =   (  event  ) => { 
+    
+       
+      console.log( event.target.module_name.value) ;   
+      console.log( event.target.subject_name.value) ;    
+    
+  
+      axios({ 
+  
+            url : "http://localhost:8000/admin/mona"  ,   
+  
+            method : "POST"  ,  
+  
+            data : {
+              
+              "module_name" : event.target.module_name.value , 
+              "subject_name" : event.target.subject_name.value , 
+               "course_name"  : courseName 
+               
+  
+  
+            }
+      
+           }).then( ( res) => {   
+       
+  
+  
+              console.log(  res ) ;    
 
 
 
+  
+  
+             /*  if(   res.data.message ===  "Course added Successfully."    ){
+               
+                 alert( "added Successfully.")  ;  
+             
+                navigate(  "/home/course"   ,    { state: {    typeId : "course"  }}  ,    { replace : false}  )   ;
+  
+              } 
+              else {
+      
+                alert(   res.data.message  )  ;
+              }    
+   */
+  
+             
+           } ).catch(( err) => { 
+               console.log( "error") ;
+      
+            }  ) ;  
+  
+  
+      
+    
+    
+        event.preventDefault();
+      }
+  
+
+      const  createWorkshop  =   (  event  ) => { 
+    
+       
+        let formData = new FormData();
+  
+        //Adding files to the formdata 
+        formData.append("course_name",  courseName  );
+        formData.append("thumb_image",   event.target.file.value);
+        formData.append("workshop_name",  event.target.workshop_name.value);
+         
+    
+        console.log( formData) ;  
+    
+    
+        axios({
+          // Endpoint to send files
+          url: "http://127.0.0.1:8000/admin/wona", 
+    
+          method: "POST", 
+    
+          headers: { 
+    
+           "Content-Type" : "multipart/form-data"  
+          
+          }, 
+    
+    
+          // Attaching the form data
+          data: formData,
+        })
+          .then((res) => {  
+              
+    
+           console.log(  res) ;  
+    
+          }) // Handle the response from backend here
+          .catch((err) => { }); // Catch errors if any
+      
+    
+    
+    
+        event.preventDefault() ;  
+
+
+        }
 
 
     switch( typeId )  { 
@@ -301,7 +406,9 @@ function CreateContent() {
  
 
 
-      case "create_module" :  
+      case "create_module" :    
+
+
       return( 
   
   
@@ -315,19 +422,20 @@ function CreateContent() {
           
            <div className="form_outer_div_body"  style={{  alignItems: "center"}}>  
       
-           <form className="course_body_inner_div" onSubmit={onTrigger }    >    
+           <form className="course_body_inner_div" onSubmit={  createModule }    >    
       
                  
                    
       <input type="text"
-           
+               name = "module_name"
               placeholder="Enter module name"
               className="course_input-box"
               /> 
        
  
       
-      <input type="text"
+      <input type="text" 
+                name = "subject_name"
               placeholder="Enter subject name"
               className="course_input-box"  style={{ marginBottom : "4.5%"}}
               /> 
@@ -361,25 +469,22 @@ function CreateContent() {
           
            <div className="form_outer_div_body"  style={{  alignItems: "center"}}>  
       
-           <form className="course_body_inner_div" onSubmit={onTrigger }    >    
+           <form className="course_body_inner_div" onSubmit={ createWorkshop }    >    
       
                  
                    
       <input type="text"
-           
+              name="workshop_name"
               placeholder="Enter workshop name"
               className="course_input-box"
               /> 
        
  
-      
-      <input type="text"
-              placeholder="Upload File"
-              className="course_input-box"  style={{ marginBottom : "4.5%"}}
-              /> 
-  
+      <input type="file"  className="course_input-box"  name="file"   id="upload"  /> 
  
-      
+        
+
+
       <input className="course_form_row_btn" type="submit" value="Submit" /> 
       
     
