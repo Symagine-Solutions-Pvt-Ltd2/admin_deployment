@@ -74,8 +74,10 @@ display:  flex ;
     width :  28.56% ; 
     height : 90.95% ; 
     background-color:  #353B55; 
-    border-radius:  25px ;
-
+    border-radius:  25px ; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }  
 

@@ -37,7 +37,7 @@ height : 100% ;
     flex-direction: column;
     width : 81% ; 
     height :  100%; 
-   background-color:  papayawhip ;   
+   background-color: #FFF8EE;   
    display: flex; 
    align-items: center;
 
@@ -51,7 +51,7 @@ height : 100% ;
 .upload-body-div1{
     width : 100% ; 
     height :  22.04%;  
-    background-color: blue ;  
+    background-color: #FFF8EE ;  
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -62,12 +62,29 @@ height : 100% ;
 
     width : 100% ; 
     height :  40.80%;   
-    background-color:  white ; 
+    background-color:  #FFF8EE ; 
     display: flex;  
-    flex-direction: column;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
 
 }
- 
+  
+
+
+
+
+.upload-body-div3{
+   
+    width : 63.61% ; 
+    height :  10%;   
+    background-color: #FFF8EE; 
+    display :flex ;
+    align-items : flex-end ;
+    justify-content : flex-end ; 
+
+
+}
 
 
 

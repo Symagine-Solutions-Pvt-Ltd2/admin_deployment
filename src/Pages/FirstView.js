@@ -17,11 +17,16 @@ function FirstView() {
   const  navigate = useNavigate() ;  
   const location = useLocation();  
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
- 
+  
+
+   
+  console.log( location.state.typeId ) ; 
 
   const goToNext = () => {
-  
-    navigate(  "/home/dashboard/addprogram"  ,    { state: {    typeId : "create_program" }} ,  { replace : false}  ) ; 
+   
+
+
+    navigate(  "/home/dashboard/addprogram"  ,    { state: {    typeId : "create_program"   , type : typeId   }} ,  { replace : false}  ) ; 
 
   }
 
@@ -86,28 +91,42 @@ function FirstView() {
                    <Sidebar /> 
             </div> 
             <div className="firstview_body">  
-             <div  className="body1"> 
-             <p>hjxgajgj</p> 
+             <div  className="body1">  
+
+
+
+            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"}}>
+           <p>
+            bjhjhjg
+           </p>
+            </div>
+
+
+
+
+      
              </div>
             
 
 
-              <div className="table_outer_div_body2">   
-              <div className="table_inner_div_column_name">  
+              <div className="table_outer_div_body2"> 
 
-              <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+
+              <div className="table_inner_div_column_name"   >  
+
+              <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                <p>Sl No</p>
                </div> 
-               <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+               <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid black" }}>
                  <p> Name of program</p>
                </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
                  <p> No of clients assigned</p>
                </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}>
                  <p> No of schools assigned</p>
                </div> 
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+               <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}> 
                 <p> No of students assinged</p>
                </div>
 
@@ -115,37 +134,47 @@ function FirstView() {
 
 
 
-              <div  className="table_inner_div_table_row">   
+              <div  className="table_inner_div_table_row"  >   
 
 
            {   
 
-data.map( (  el  , index )  => ( 
-                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+    data.map( (  el  , index )  => ( 
+                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
                
-                          <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+                          <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                               <p> {  index+1 }</p>
-                          </div> 
-                         <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}>
-                             <div style={{ height: "100%"  , width : "70%"}}> 
+                          </div>  
+
+                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}> 
+
+
+                             <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "70%"}}> 
                               <p> { el.program_name }</p>
-                             </div>
-                             <div  style={{ height: "100%"  , width : "30%"}} >
-                            <input type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                             </div>
+                             </div> 
+
+
+           <input className="inner_table_btn"  style={{ height: "40%"  , width : "30%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
+                          
                         </div>
-                         <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }>
-                                <div style={{ height: "100%"  , width : "70%"}}> 
+                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
+
+
+                                <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "70%"}}> 
                                        <p>2</p>
                                 </div>
-                                 <div     style={{ height: "100%"  , width : "30%"}} >
-                                        <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  program_name : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
-                                  </div>
-                        </div>
-                        <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+                               
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  program_name : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                             
+                        </div> 
+
+
+                        <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}>
                              <p> No of schools assigned</p>
-                         </div> 
-                         <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+                         </div>  
+
+
+                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}> 
                                    <p> No of students assinged</p>
                         </div>
                
@@ -207,116 +236,153 @@ data.map( (  el  , index )  => (
   
 
 
-  case "content_admin" : 
+  case "content_admin" :  
+
+
   return (
       
-
-    
-
     <div className="firstview">  
 
-            <div className="firstview_sidebar" >
-                   <Sidebar /> 
-            </div> 
-            <div className="firstview_body">  
-             <div  className="body1"> 
-             <p>hjxgajgj</p> 
-             </div>
-            
-
-
-              <div className="table_outer_div_body2"> 
-              <div className="table_inner_div_column_name">  
-
-              <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
-               </div> 
-               <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-                 <p> Name of program</p>
-               </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-                 <p> No of clients assigned</p>
-               </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-                 <p> No of schools assigned</p>
-               </div> 
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                <p> No of students assinged</p>
-               </div>
-
-              </div>  
+    <div className="firstview_sidebar" >
+           <Sidebar /> 
+    </div> 
+    <div className="firstview_body">  
+     <div  className="body1">  
 
 
 
-              <div  className="table_inner_div_table_row">  
-
-                  <div style= {{ width : "100%" , height: "33.33%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-               
-                          <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-                              <p>1</p>
-                          </div> 
-                         <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}>
-                             <div style={{ height: "100%"  , width : "70%"}}> 
-                              <p>Future Founders Ghana</p>
-                             </div>
-                             <div  style={{ height: "100%"  , width : "30%"}} >
-                            <input type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,      { replace : false}  )  }  } /> 
-                             </div>
-                        </div>
-                         <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }>
-                                <div style={{ height: "100%"  , width : "70%"}}> 
-                                       <p>2</p>
-                                </div>
-                                 <div  style={{ height: "100%"  , width : "30%"}} >
-                                        <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  }}  ,     { replace : false}  )  }  } /> 
-                                  </div>
-                        </div>
-                        <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-                             <p> No of schools assigned</p>
-                         </div> 
-                         <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                                   <p> No of students assinged</p>
-                        </div>
-               
+    <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"}}>
+   <p>
+    bjhjhjg
+   </p>
+    </div>
 
 
-               </div>
 
-              </div>
-             
-              <div className="table_inner_div_column_name">    
-              
-              <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
-               </div> 
-               <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-                 <p> Name of program</p>
-               </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-                 <p> No of clients assigned</p>
-               </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-                 <p> No of schools assigned</p>
-               </div> 
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                <p> No of students assinged</p>
-               </div>
 
-              </div>
+
+     </div>
     
-              </div> 
-
-              <div className="body3"> 
-
-           
-            
-              </div>
-            
-            </div>
 
 
+      <div className="table_outer_div_body2"> 
 
-    </div>  
+
+      <div className="table_inner_div_column_name"   >  
+
+      <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
+       <p>Sl No</p>
+       </div> 
+       <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid black" }}>
+         <p> Name of program</p>
+       </div>
+       <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
+         <p> No of clients assigned</p>
+       </div>
+       <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}>
+         <p> No of schools assigned</p>
+       </div> 
+       <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}> 
+        <p> No of students assinged</p>
+       </div>
+
+      </div>  
+
+
+
+      <div  className="table_inner_div_table_row"  >   
+
+
+   {   
+
+data.map( (  el  , index )  => ( 
+          <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+       
+                  <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
+                      <p> {  index+1 }</p>
+                  </div>  
+
+                 <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}> 
+
+
+                     <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "70%"}}> 
+                      <p> { el.program_name }</p>
+                     </div> 
+
+
+   {/* <input className="inner_table_btn"  style={{ height: "40%"  , width : "30%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } />  */}
+                  
+                </div>
+                 <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
+
+
+                        <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "70%"}}> 
+                               <p>2</p>
+                        </div>
+                       
+               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  program_name : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                     
+                </div> 
+
+
+                <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}>
+                     <p> No of schools assigned</p>
+                 </div>  
+
+
+                 <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}> 
+                           <p> No of students assinged</p>
+                </div>
+       
+
+
+       </div> 
+
+))
+}  
+
+
+
+
+      </div>  
+
+
+
+
+     
+      <div className="table_inner_div_column_name">    
+      
+      <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+       <p>Sl No</p>
+       </div> 
+       <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+         <p> Name of program</p>
+       </div>
+       <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+         <p> No of clients assigned</p>
+       </div>
+       <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+         <p> No of schools assigned</p>
+       </div> 
+       <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+        <p> No of students assinged</p>
+       </div>
+
+      </div>
+
+      </div> 
+
+      <div className="body3"> 
+
+     
+    
+      </div>
+    
+    </div>
+
+
+
+</div>  
   )  
 
    }

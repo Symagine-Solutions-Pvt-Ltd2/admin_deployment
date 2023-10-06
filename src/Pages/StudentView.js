@@ -1,23 +1,72 @@
 import "../Style/ClientView.css"  ;
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
-import { useState } from "react"; 
+import { useState  , useEffect   } from "react"; 
 import Sidebar from "../Sidebar"  ; 
-
+import axios from "axios"  ;  
 
 
 function StudentView() {    
     
+    
+
+  const [ data , setData ] = useState( []);  
   
+  const location = useLocation();   
+
+
+
+  
+
+  console.log( location.state.program_name  ) ;
+  console.log( location.state.school_name  ) ;
+
+
     const  navigate = useNavigate() ;  
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/student/addstudent"   ,  { state: {    typeId : "system_admin_student" }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/student/addstudent"   ,  { state: {    typeId : "system_admin_student"    ,    school_name :  location.state.school_name   , program_name : location.state.program_name  }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
+      }    
 
 
+   
 
 
-      }  
+      useEffect(() => { 
+
+        axios({ 
+  
+         url : "http://localhost:8000/admin/a_student"  ,  
+         method : "POST"  , 
+         data : {
+           
+                  "search_key" :  location.state.school_name  , 
+                "page_no" :  1 ,
+                 "limit" : 10000  
+  
+         }
+  
+        }).then( ( res) => {   
+  
+  
+          console.log(  res.data.data ) ; 
+           setData(  res.data.data ) ;  
+           
+           
+         //  console.log(   res.data.data[1].name )  ;
+  
+        } ).catch(( err) => {  
+            console.log( "error") ;
+  
+         }  ) ; 
+  
+    } , [])  ; 
+ 
+  
+   
+    
+
+
 
 
     return(
@@ -32,101 +81,135 @@ function StudentView() {
 
     
      <div  className="clientview_body1"> 
-     <p>hjxgajgj</p> 
+    
      </div>
     
+
+
+
       <div className="clientview_table_outer_div_body2">   
 
 
-       <div className="clientview_table_inner_div_column_name">  
-       <div  style= {{   width: "8%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+       <div className="clientview_table_inner_div_column_name">    
+
+
+       <div  className="clientview_table_row_box" style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
        <p>Sl No</p>
-       </div> 
-       <div style= {{   width: "11%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+       </div>
+
+       <div  className="clientview_table_row_box"  style= {{   width: "11%" , height: "100%"    , borderRight : "1px solid black" }}>
          <p>Name of school</p>
-       </div>
-       <div style= {{   width: "11%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+       </div> 
+
+       <div   className="clientview_table_row_box" style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
          <p>Name of student</p>
-       </div>
-       <div style= {{  width: "11%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+       </div> 
+
+       <div   className="clientview_table_row_box" style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
          <p>Status (submitted Business Plan)</p>
        </div> 
-       <div style= {{   width: "11%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+       <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
         <p>Certificate issued</p>
        </div> 
 
-       <div style= {{  width: "11%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+       <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
         <p>View Business Plan</p>
        </div> 
-       <div style= {{   width: "11%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+       <div className="clientview_table_row_box"  style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
         <p>Download</p>
        </div>
         
-       <div style= {{   width: "11%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+       <div    className="clientview_table_row_box" style= {{   width: "11%"  ,    height: "100%" , borderRight : "1px solid black"}}> 
         <p>Account Status</p>
        </div>
 
-       <div style= {{   width: "15%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+       <div    className="clientview_table_row_box" style= {{   width: "15%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
         <p>Account status</p>
        </div>
     </div>   
+ 
+
+
 
 
       <div  className="clientview_table_inner_div_table_row">
-         
-        
-      <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-      <div  style= {{   width: "8%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-       <p>1</p>
-       </div> 
-       <div style= {{   width: "11%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+           
+            
+
+
+      {   
+
+
+           data.map( (  el   , index )  => (  
+
+      <div  key ={index} style= {{ width : "100%" , height: "25%"  , borderBottom : "1px solid blue" , display : "flex" , flexDirection : "row"}} >  
+
+
+      <div   className="clientview_table_row_box"  style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
+       <p>{ index +1 }</p>
+       </div>  
+
+
+       <div  className="clientview_table_row_box" style= {{   width: "11%" , height: "100%" , borderRight : "1px solid black" }}>
          <p>School 1</p>
-       </div>
-       <div style= {{   width: "11%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-         <p>Asdasd Fdslkfmsdicn</p>
-       </div>
-       <div style= {{  width: "11%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+       </div> 
+
+
+       <div   className="clientview_table_row_box" style= {{   width: "11%" ,  height: "100%" , borderRight : "1px solid black"}  }>
+         <p> { el.student_name } </p>
+       </div> 
+
+
+       <div  className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
          <p>Yes</p>
        </div>  
 
-       <div style= {{  width: "11%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+       <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
          <p>Yes</p>
        </div>  
 
-       <div style= {{  width: "11%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+       <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
 
-           <div  style={{ height: "100%"  , width : "60%"}} >
-                                <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
-                         </div>     
+          
+                <input  style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+            
 
        </div> 
 
 
-       <div style= {{   width: "11%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
+       <div   className="clientview_table_row_box" style= {{   width: "11%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
+                   
                         
-                         <div  style={{ height: "100%"  , width : "60%"}} >
-                                <input type="button" value = "download"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
-                         </div>
+        <input   style={{ height: "40%"  , width : "60%"}} type="button" value = "download"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+                    
        </div>  
 
 
 
 
-       <div style= {{  width: "11%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+       <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%" , borderRight : "1px solid black"}}> 
         <p>Active</p>
        </div>   
 
+ 
 
-       <div style= {{   width: "15%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row" }}> 
-                     <div style={{ height: "100%"  , width : "40%"}}> 
-                     <input type="button" value = "status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                        </div>
-                         <div  style={{ height: "100%"  , width : "40%"}} >
-                                <input type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                         </div>
+
+       <div   className="clientview_table_row_box"   style= {{   width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
+                    
+            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                    
+                   
+        <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student" }}   , { replace : false}  )  }  } /> 
+                         
        </div>
 
-</div>
+</div>  
+
+  
+           ))
+
+
+      }
 
       </div>
       

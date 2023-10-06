@@ -158,11 +158,13 @@
 
 
 .illustrsation1{
-     
     height : 100%  ; 
 
-    width :  58.46%  ; 
-    background-color: red ;
+    width :  58.46%  ;  
+    background-color: red ; 
+    overflow:  hidden;
+
+
 
 }
 

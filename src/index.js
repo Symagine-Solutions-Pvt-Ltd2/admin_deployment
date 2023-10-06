@@ -43,7 +43,7 @@ import ModuleContentType  from './Pages/ModuleContentType';
 import SecondView from './Pages/SecondView';
 import StudentView from './Pages/StudentView';  
 import UploadContent from './Pages/UploadContent'; 
-
+import EditAccount from "./Pages/EditAccount"  ; 
 
 
 
@@ -95,24 +95,36 @@ root.render(
       
  <Route path= "/"   >  
  <Route index element={<GettingStarted />} />  
- <Route path= "login"  element ={  <Login/>  } />  
+ <Route path= "login"  element ={  <Login/>  } />   
+ 
  <Route path= "home"  >
    <Route index element ={  <Home/> } />  
 
    <Route path= "dashboard" >
    <Route index  element ={  <FirstView />  } />   
    <Route path= "addprogram"   element ={  <CreateContent/>  }  />   
+   <Route path= "editprogram"   element ={  <EditAccount />  }  />     
+
+
+
+   
    <Route path= "client" >
      <Route index  element ={  <ClientView/> }  />  
-     <Route  path= "addclient"  element ={  <AddAccount/> }  />  
+     <Route  path= "addclient"  element ={  <AddAccount/> }  />
+     <Route  path= "editclient"  element ={  <EditAccount/> }  />    
      <Route  path= "school"  element ={  <SchoolView/> }  /> 
+     <Route  path= "editschool"  element ={  <EditAccount/> }  /> 
      <Route  path= "addschool"  element ={  <AddAccount/> }  /> 
      <Route  path= "facilitator"  element ={  <FacilitatorView/> }  />    
      <Route  path= "addfacilitator"  element ={  <AddAccount/> }  />   
+     <Route  path= "editfacilitator"  element ={  <EditAccount/> }  />   
+
+
 
      <Route  path= "student"  >
            <Route index  element ={  <StudentView /> }  />  
-           <Route  path= "addstudent"  element ={  <AddAccount/> }  />    
+           <Route  path= "addstudent"  element ={  <AddAccount/> }  />  
+           <Route  path= "editstudent"  element ={  <EditAccount/> }  />    
            <Route  path= "viewplan"  element ={  <BusinessPlan /> }  />    
       </Route>  
    </Route>
@@ -152,7 +164,7 @@ root.render(
    
         <Route index  element ={  <AdminView /> } />  
         <Route  path= "addadminaccount"  element ={  <AddAccount /> }  />   
-        <Route  path= "editadminaccount"  element ={  <AddAccount /> }  />    
+        <Route  path= "editadminaccount"  element ={  <EditAccount /> }  />    
  
 
 

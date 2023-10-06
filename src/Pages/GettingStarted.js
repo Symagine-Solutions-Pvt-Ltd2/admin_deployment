@@ -1,6 +1,9 @@
 import "../Style/GettingStarted.css"  ;  
 import Button from "../Components/Button.js"; 
 import {Link , useNavigate } from "react-router-dom" ; 
+
+
+import   getStarted from "../Images/getStarted.jpg"  ; 
   
 
 // frame 24 
@@ -58,17 +61,29 @@ function   GettingStarted() {
             <p className="description2-text" >
             In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
             </p>
-                  
-             <div  onClick={() => { goToApp() }}  style= {{  height : "40%"  , display : "flex"  , alignItems : "flex-end", backgroundColor : "#FFF8EE"  , borderRadius: "18px" }}>
+                   
+
+
+
+
+             <div  onClick={() => { goToApp() }}  style= {{  height : "40%"  , display : "flex"  , alignItems : "flex-end", backgroundColor : "#FFF8EE"  , borderRadius: "18px" }}> 
+
+
+
               <Button   color= "#5E81F4"  width = "71.97%"     height =  "62.24%"    color1 = "white"  name =  "Get Started"  /> 
               
-            </div> 
+            </div>  
+
+
+            
             </div>   
 
 
 
             <div  className="illustrsation1"> 
-                 illustaration 
+              
+
+            <img src={ getStarted}  alt= { "lfd"}   width={ "100%"}  height = { "100%"}  /> 
             </div>
            </div>
 

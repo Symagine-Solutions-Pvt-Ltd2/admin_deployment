@@ -15,7 +15,9 @@
     width: 100vw;
     background-color: #F7E5E9;  
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+
+    
 }   
 
 
@@ -24,7 +26,7 @@
          
     height: 100%;
     width: 47.31%;
-    background-color: yellowgreen;    
+  
 } 
 
 
@@ -33,7 +35,7 @@
         
     height:  100%;
     width: 52.69%;
-    background-color: #F7E5E9;   
+     
    padding-left: 18px;
 
 }  

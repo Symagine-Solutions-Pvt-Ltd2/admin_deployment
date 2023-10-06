@@ -18,23 +18,68 @@ function CreateContent() {
 
 
  //const [ typeId , setTypeId ] =  useState(location.state.typeId  ) ; 
- const [ typeId , setTypeId ] =  useState( location.state.typeId  ) ; 
- const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ; 
+ const [ typeId , setTypeId ] =  useState( location.state.typeId  ) ;  
+ const [ type , setType ] =  useState( location.state.type ) ; 
+ const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ;  
+ const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( [] ) ; 
+
+
+
+
+  const createProgram  = (  e  ) => { 
+    
+
+    console.log(  e.target.program_name.value) ; 
+
+
+
+    axios({ 
+
+      url : "http://localhost:8000/admin/program"  ,   
+
+      method : "POST"  ,  
+
+      data : {
+        
+        
+            "program_name" : e.target.program_name.value   , 
+            "course_name" : "Future Founders_new"  , 
+             "feedback_by" :  feedbackGivenBy    
+
+      }
+
+     }).then( ( res) => {   
+ 
+
+
+        console.log(  res ) ;  
+
+
+        if(   res.data.message ===  "Program added Successfully."    ){
+         
+           alert( "added Successfully.")  ;  
+       
+           navigate(  "/home/dashboard"  ,    { state: {    typeId : type     }} ,  { replace : false}  )   ;
+
+        } 
+        else {
+
+          alert(   res.data.message  )  ;
+        }    
+
+
+       
+     } ).catch(( err) => { 
+         console.log( "error") ;
+
+      }  ) ;  
+
+
  
 
 
 
-
-  const onTrigger = (  event  ) => { 
-    
-
-    console.log( typeId) ; 
-    console.log("bhjgjgj") ; 
-      
-    navigate(  "/home/dashboard"  ,    { state: {    typeId : typeId  }} ,  { replace : false}  )   ;
-
-
-    event.preventDefault();
+    e.preventDefault();
   }
 
   
@@ -199,7 +244,39 @@ function CreateContent() {
         event.preventDefault() ;  
 
 
-        }
+        }  
+
+
+
+        
+   
+        const handleCheckboxChange1 = ( e ) => {  
+      
+          const { value, checked } = e.target;
+             
+
+        //  console.log(`${value} is ${checked}`); 
+
+
+           // Case 1 : The user checks the box
+            if (checked) {
+                          
+              setFeedbackGivenBy( [...feedbackGivenBy , value]) ; 
+         
+                   }
+  
+              // Case 2  .: The user unchecks the box
+                else {
+                 
+                   let newArray = feedbackGivenBy.filter((e) => e !== value) ;
+                  setFeedbackGivenBy(  newArray ) ; 
+                       }
+   
+
+                       console.log( feedbackGivenBy) ; 
+
+
+      };
 
 
     switch( typeId )  { 
@@ -216,37 +293,53 @@ function CreateContent() {
           <Sidebar /> 
         </div>   
 
+        
+        
+         <div className="createcontent_form_outer_div_body">  
+      
+
+
+
+         
+ 
+
+         <form className="createcontent_admin_form" onSubmit={  createProgram }    >     
 
         
-         <div className="form_outer_div_body">  
+
+
     
-         
-         <form className="admin_form" onSubmit={onTrigger }    >    
-    
-             <div className="admin_form_row">
-                         <div className="admin_Form-Description" >   
+             <div className="createcontent_admin_form_row"> 
+
+
+                        <div className="admin_Form-Description" >   
                         <p>Name of Program</p> 
-                        </div>        
-                        <div className="admin_Form-Input" >         
+                        </div>  
+
+              
+                        <div className="createcontent_admin_Form-Input" >         
                         <input type="text"
-                                name="myname"
-                             
+                                name="program_name"
                                 className="admin_input-box"
                                 /> 
                         </div>  
               </div> 
      
 
+   
     
-    
-              <div className="admin_form_row"> 
+              <div className="createcontent_admin_form_row"> 
     
                          <div className="admin_Form-Description" >   
                         <p> Select Course</p> 
                         </div>           
     
-                        <div className="admin_Form-Input"  >     
-    
+                        <div className="createcontent_admin_Form-Input"  >     
+     
+
+
+
+
                       <div  style={{  width : "87.46%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"}}>
 
 
@@ -298,21 +391,26 @@ function CreateContent() {
 
 
     
-                    </div> 
+                    </div>  
+
+
+
 
                     <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"  , backgroundColor : "red"}}  >
                   
                          <p> prev and next btn</p>
 
-                      </div>
+                       </div>
                
      </div>    
     </div> 
  
 
+          
+
+  
          
-         
-          <div className="admin_form_row"> 
+          <div className="createcontent_admin_form_row"> 
     
                 <div className="admin_Form-Description" >   
                  <p>Feedback to be given by</p> 
@@ -320,38 +418,48 @@ function CreateContent() {
     
     
     
-                <div className="admin_Form-Input"   style={ {  justifyContent : "space-around"}} >     
-    
-    
-                <div  style={{  width : "87.46%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"}}>
+                <div className="createcontent_admin_Form-Input"   style={ {  justifyContent : "space-around"}} >     
+      
 
 
-                          <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
-                            
-                            <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Content Admin</p>   
+
+    
+      <div  style={{  width : "87.46%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"}}> 
+
+
+
+
+
+ <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
+
+
+
+
+                        <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p >Client Supervisor</p>   
                               </div>
     
     
-                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                            <input   type="checkbox"
-                                name="vall" />   
-                             </div>
+                      <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+        <input   type="checkbox"  value="Client Supervisor"  name="feedback"  onChange={ handleCheckboxChange1 } />   
+                             </div> 
+
+
+
     
-                          </div>   
+           </div>   
     
     
                          
-                          <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+         <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
                             
-                            <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Content Admin</p>   
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p >School Head</p>   
                               </div>
     
     
-                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                            <input   type="checkbox"
-                                name="vall" />   
+                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+     <input   type="checkbox"  value="School Head"  name="feedback"   onChange={ handleCheckboxChange1 } />   
                              </div>
     
                           
@@ -361,14 +469,14 @@ function CreateContent() {
 
                            <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
                             
-                            <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Content Admin</p>   
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p >Facilitator</p>
                               </div>
     
     
-                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                            <input   type="checkbox"
-                                name="vall" />   
+                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"   }}>  
+
+                <input     type="checkbox"   value="Facilitator"   name="feedback"     onChange={handleCheckboxChange1 } /> 
                              </div>
     
                           
@@ -378,27 +486,42 @@ function CreateContent() {
 
 
 
+  
+            </div>       
 
-            </div>     
 
-            <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"  , backgroundColor : "red"}}  >
+
+            <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center" }}  >
 
 
 
             </div>
     
             </div> 
-        </div>
+        </div>  
+
+
 
                         <div  className="admin_form_row_btn_div"> 
                         <input className="admin_form_row_btn" type="submit" value="Submit" /> 
                         </div>
-                      
+                        
+
+
+          
+    
+
+
+
                     </form>
 
+        
     
-    
-         </div>
+         </div>  
+
+
+
+
         
           </div>
     )   ; 
@@ -421,7 +544,13 @@ function CreateContent() {
   
           
            <div className="form_outer_div_body"  style={{  alignItems: "center"}}>  
-      
+       
+
+
+
+
+
+
            <form className="course_body_inner_div" onSubmit={  createModule }    >    
       
                  

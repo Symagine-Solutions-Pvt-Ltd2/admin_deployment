@@ -79,10 +79,11 @@ height : 100% ;
 .admin_Form-Input{
     
   flex : 70% ; 
- background-color: azure ; 
+ background-color: #FFFFFF ; 
  display: flex; 
  align-items:  center ;
  justify-content:center  ;
+ border-left: 1px solid black ;
 
 }  
 

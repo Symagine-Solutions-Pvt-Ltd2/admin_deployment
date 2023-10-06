@@ -5,9 +5,20 @@ import  "../Style/Course.css" ;
 import axios from "axios"  ;  
 
 
+
+// popup 
+import "../Components/Popup" ; 
+import Popup from "../Components/Popup";
+
 function Course() {    
     
-       
+    
+   // for popup 
+   const[ popupInfo  , setPopupInfo ] = useState("") ;
+   const[ popup  , setPopup ] = useState( false) ; 
+  
+
+
 
   
     const [ data , setData ] = useState( []); 
@@ -15,7 +26,9 @@ function Course() {
     const [ typeId , setTypeId ] =  useState( location.state.typeId   ) ;   
     const  navigate = useNavigate() ; 
   
-    
+     
+
+   // console.log( popupInfo) ; 
     const saveCourse = (  event  ) => { 
     
        
@@ -74,10 +87,14 @@ function Course() {
 
     
 
-
+  
       
         useEffect(() => { 
+     
 
+        if(  typeId === "draft_course") {
+
+        
         axios({ 
 
               url : "http://127.0.0.1:8000/admin/draftcourse"  ,  
@@ -102,9 +119,75 @@ function Course() {
                   } ).catch(( err) => {  
                   console.log( "error") ;
 
-                }  ) ; 
+                }  ) ;   
+
+
+
+              }else {
+
+
+                axios({ 
+
+                  url : "http://127.0.0.1:8000/admin/p_course"  ,   
+
+                  method : "POST"  ,  
+                  
+                 data : {
+           
+                  "search_key" : "" , 
+                  "page_no" :  1 ,
+                  "limit" : 10000   
+    
+                     }
+    
+                     }).then( ( res) => {   
+    
+    
+                    console.log(  res) ; 
+                    setData(  res.data.data ) ;  
+           
+           
+                        //  console.log(   res.data.data[1].name )  ;
+    
+                      } ).catch(( err) => {  
+                      console.log( "error") ;
+    
+                    }  ) ;   
+
+                       
+
+
+
+
+
+              }
 
                    } , [])  ; 
+
+  
+                
+
+
+
+
+                     // to handle delete , active , inactive  
+
+                     const  handleStatusChange = ( cs  ) => {    
+    
+                          setPopupInfo( cs) ;
+                          console.log( cs) ;
+                           setPopup( true)  ;
+                       
+
+                     } 
+
+
+
+
+
+
+
+
 
 
 
@@ -182,10 +265,14 @@ function Course() {
 
         
         <div className="course_body"  >      
-        
+         
 
-        <div  className="clientview_body1"> 
-             <p>hjxgajgj</p> 
+      <Popup  trigger= { popup  } setTrigger={ setPopup }   >
+        <h3> {popupInfo } </h3>
+      </Popup>
+
+        <div  className="clientview_body1"   style= {{ backgroundColor : '#F1F2F7'}} > 
+         
              </div>
 
 
@@ -193,14 +280,17 @@ function Course() {
         <div className="clientview_table_outer_div_body2"  style={{ height :"80.47%"}}  >   
     
 
-    <div className="clientview_table_inner_div_column_name"  style={{ height :"17.96%"}}  >  
-    <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+    <div className="clientview_table_inner_div_column_name"  style={{ height :"17.96%"  , backgroundColor : "#D9D9D9"   , borderBottom : "1px solid red"}}     >   
+
+
+
+    <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
     <p>Sl No</p>
     </div> 
-    <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+    <div className="clientview_table_row_box" style= {{   width: "40%" , height: "100%"  , borderRight : "1px solid black" }}>
       <p>Name of Draft Course</p>
     </div>
-    <div style= {{   width: "45%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+    <div className="clientview_table_row_box"  style= {{   width: "45%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
    
     </div>
    
@@ -217,28 +307,30 @@ function Course() {
          
          data.map( (  el  , index )  => (  
 
-     <div key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-   <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black"   }}>
+     <div key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor :'#F1F2F7' , borderBottom : "1px solid red" ,  borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} > 
+
+
+   <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"   }}>
     <p>  { index+1}  </p>
     </div>  
 
 
-    <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+    <div className="clientview_table_row_box"   style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
       <p> { el.course_name } </p>
     </div>
-    <div style= {{   width: "45%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display : "flex" , flexDirection : "row"}  }>
+    <div  className="clientview_table_row_box"  style= {{   width: "45%" ,  height: "100%"  , borderRight : "1px solid black"  ,  display : "flex" , flexDirection : "row"}  }>
       
 
-                                <div style={{ height: "100%"  , width : "30%"}}> 
-                                   <input type="button" value = "Submit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                                </div>
-                                 <div  style={{ height: "100%"  , width : "30%"}} >
-                                        <input type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     course_name :   el.course_name  }}     ,  { replace : false}  )  }  } /> 
-                                 </div> 
+                              
+             <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Submit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                              
+                            
+              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     course_name :   el.course_name  }}     ,  { replace : false}  )  }  } /> 
+                                
 
-                                 <div  style={{ height: "100%"  , width : "30%"}} >
-                                        <input type="button" value = "Delete"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                                 </div>
+                              
+              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Delete"  onClick= { () => {handleStatusChange( el.course_name) } }  /> 
+                               
         </div> 
 
         </div>
@@ -276,25 +368,27 @@ function Course() {
 
 
         
-        <div className="course_body"  >    
+        <div className="course_body"   >    
 
-        <div  className="clientview_body1"> 
-             <p>hjxgajgj</p> 
+        <div  className="clientview_body1"  style= {{ backgroundColor : '#F1F2F7'}}  > 
+           
              </div>
 
 
 
-        <div className="clientview_table_outer_div_body2"  style={{ height :"80.47%"}}  >   
+        <div className="clientview_table_outer_div_body2"  style={{ height :"80.47%"  }}  >   
     
 
-    <div className="clientview_table_inner_div_column_name"  style={{ height :"17.96%"}}  >  
-    <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+    <div className="clientview_table_inner_div_column_name"  style={{ height :"17.96%"   , backgroundColor : "#D9D9D9"  , borderBottom : "1px solid red"}}  >   
+
+
+    <div   className="clientview_table_row_box"     style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
     <p>Sl No</p>
     </div> 
-    <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+    <div className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    , borderRight : "1px solid black" }}>
       <p>Name of course</p>
     </div>
-    <div style= {{   width: "45%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+    <div style= {{   width: "45%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
    
     </div>
    
@@ -307,29 +401,32 @@ function Course() {
    <div  className="clientview_table_inner_div_table_row"  style={{  height : "82.04%"} }>  
 
 
-{     
-
+      {     
+          data.map( (  el   , index )  => (
        
-     <div style= {{ width : "100%" , height: "20%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-   <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black"   }}>
-    <p> 1 </p>
+     <div   key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor : "#F1F2F7" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row" , borderBottom : "1px solid red"}} > 
+
+
+   <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"   }}>
+    <p> { index+1} </p>
     </div> 
-    <div style= {{   width: "40%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+    <div className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
       <p> Future Founders - fr - 2023 </p>
     </div>
-    <div style= {{   width: "45%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display : "flex" , flexDirection : "row"}  }>
+    <div  className="clientview_table_row_box" style= {{   width: "45%" ,  height: "100%"  , borderRight : "1px solid black"  ,  display : "flex" , flexDirection : "row"}  }>
       
 
                                 
-                                 <div  style={{ height: "100%"  , width : "30%"}} >
-                                        <input type="button" value = "View"  onClick={()  => {        navigate(  "/home/viewcourse/permanentcoursedetails"   ,   { state: {    typeId :  "permanent_course_content"  }}     , { replace : false}  )  }  } /> 
-                                 </div> 
-
+                         
+            <input    className="clientview_table_row_button"   style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red"}}  type="button" value = "View"  onClick={()  => {        navigate(  "/home/viewcourse/permanentcoursedetails"   ,   { state: {    typeId :  "permanent_course_content"  }}     , { replace : false}  )  }  } /> 
+                             
                                 
     </div> 
 
     </div>
 
+  
+          ))
 
   }
 

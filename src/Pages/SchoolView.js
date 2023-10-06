@@ -1,7 +1,7 @@
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import { useState   , useEffect } from "react"; 
 import Sidebar from "../Sidebar"  ; 
-import "../Style/SchoolView.css" ; 
+import "../Style/ClientView.css" ; 
 import axios from "axios"  ; 
 
 
@@ -13,17 +13,19 @@ function SchoolView() {
     const  navigate = useNavigate() ;  
     const location = useLocation();  
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-    const [  clientName   , setClientName  ]   = useState( location.state.clientName   ) ; 
- /* 
-    console.log("jhgjhghjg")  ; 
+    const [  clientName   , setClientName  ]   = useState( location.state.clientName   ) ;   
+
+  /* 
+    console.log("in school view ")  ;
 
     console.log( location.state.clientName  )  ; 
 
-    console.log( location.state.programName) ;  */
-
+    console.log( location.state.programName) ;   */  
+    
+    console.log( location.state.typeId ) ; 
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school" }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   client_name : location.state.clientName ,   program_name :  location.state.programName   }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
 
@@ -88,39 +90,51 @@ function SchoolView() {
                 </div> 
                 <div className="clientview_body">  
                  <div  className="clientview_body1"> 
-                 <p>hjxgajgj</p> 
+               
                  </div>
                 
                   <div className="clientview_table_outer_div_body2">   
         
     
                    <div className="clientview_table_inner_div_column_name">  
-                   <div  style= {{   width: "7%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-                   <p>Sl No</p>
-                   </div> 
-                   <div style= {{   width: "14%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-                     <p>Name of school</p>
-                   </div>
-                   <div style= {{   width: "17%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-                     <p>Contact Person</p>
-                   </div>
-                   <div style= {{  width: "9%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-                     <p>Contact Email Id</p>
-                   </div> 
-                   <div style= {{   width: "14%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                    <p>Facilitators</p>
-                   </div>  
-                   <div style= {{   width: "14%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                    <p>Students</p>
-                   </div> 
-                   <div style= {{  width: "7%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                    <p>Account Status</p>
-                   </div> 
-                   <div style= {{   width: "18%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                    <p>Account status</p>
-                   </div>
+
+
+                
+
+
+               <div    className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+               <p>Sl No</p>
+               </div> 
+               <div    className="clientview_table_row_box"   style= {{   width: "14%" , height: "100%"  , borderRight : "1px solid black" }}>
+                 <p>Name of school</p>
+               </div>
+               <div    className="clientview_table_row_box"  style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+                 <p>Contact Person</p>
+               </div>
+               <div    className="clientview_table_row_box"  style= {{  width: "13%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+                 <p>Contact Email Id</p>
+               </div> 
+               <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
+                <p>Facilitators</p>
+               </div> 
+
+               <div   className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
+                <p>Students</p>
+               </div> 
+               <div className="clientview_table_row_box"  style= {{   width: "7%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+                <p>Account status</p>
+               </div> 
+               <div   className="clientview_table_row_box" style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+                <p>Account status</p>
+               </div>
+              
+
+              
     
-                  </div> 
+                  </div>  
+
+
+
                   <div  className="clientview_table_inner_div_table_row">
                      
                        
@@ -130,51 +144,63 @@ function SchoolView() {
                 data.map( (  el   , index )  => ( 
 
     
-                  <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+                  <div  key= {  index} style= {{ width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"   ,   borderBottom : "1px solid black"}} > 
 
-                  <div  style= {{   width: "7%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+
+
+
+                  <div   className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
                    <p> {index+1}</p>
-                   </div> 
-                   <div style= {{   width: "14%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+                   </div>  
+
+                   <div  className="clientview_table_row_box"  style= {{   width: "14%" , height: "100%"  , borderRight : "1px solid black" }}>
                      <p> {  el.school_name}</p>
                    </div>
-                   <div style= {{   width: "17%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+                   <div   className="clientview_table_row_box"  style= {{   width: "17%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
                      <p> {  el.contact_person}</p>
                    </div>
-                   <div style= {{  width: "13%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+                   <div  className="clientview_table_row_box"   style= {{  width: "13%"  ,  height: "100%"  , borderRight : "1px solid black"  , overflow : "hidden"}}>
                      <p> { el.email_id}</p>
                    </div> 
-                   <div style= {{   width: "12%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>   
+                   <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"  , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>   
 
 
-                   <div style={{ height: "100%"  , width : "20%"}}> 
-                                       <p>2</p>
+                   <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "20%"}}>  
+                           <p>2</p>
                                 </div>
-                                 <div  style={{ height: "100%"  , width : "80%"}} >
-                                        <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator_with_add_account",   schoolName : data[index].school_name   }}           ,     { replace : false}  )  }  } /> 
-                                 </div>
+                               
+              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator_with_add_account",   school_name : data[index].school_name   ,     school_id : data[index]._id  ,      program_name : location.state.programName     }}           ,     { replace : false}  )  }  } /> 
+                             
+                   </div>   
+
+
+            <div  className="clientview_table_row_box"  style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
+
+                     <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "20%"}}> 
+                               <p>2</p>
+                     </div>
+                           
+                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : data[index].school_name   ,        program_name : location.state.programName     }}        ,  { replace : false}  )  }  } /> 
+                        
                    </div>  
-                   <div style= {{   width: "12%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
 
-                                <div style={{ height: "100%"  , width : "20%"}}> 
-                                       <p>2</p>
-                                </div>
-                                 <div  style={{ height: "100%"  , width : "80%"}} >
-                                        <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"   ,  { replace : false}  )  }  } /> 
-                                 </div>
-                   </div> 
-                   <div style= {{  width: "7%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+
+                   <div   className="clientview_table_row_box"  style= {{  width: "7%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
                     <p>Active</p>
-                   </div> 
-                   <div style= {{   width: "18%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
+                   </div>  
+
+            <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
                       
 
-                                 <div style={{ height: "100%"  , width : "40%"}}> 
-                                      <input type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                                </div>
-                                 <div  style={{ height: "100%"  , width : "40%"}} >
-                                        <input type="button" value = "Delete"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                                 </div>
+            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                            
+                             
+           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school"   ,    data : el  }}   , { replace : false}  )  }  } />   
+
+
+
+
+
                    </div>
     
 
@@ -211,118 +237,153 @@ function SchoolView() {
         return(
     
 
-          <div className="clientview">  
+         
+        <div className="clientview">  
     
-          <div className="clientview_sidebar" >
-                 <Sidebar /> 
-          </div> 
-          <div className="clientview_body">  
-           <div  className="clientview_body1"> 
-           <p>hjxgajgj</p> 
-           </div>
-          
-            <div className="clientview_table_outer_div_body2">   
-  
-
-             <div className="clientview_table_inner_div_column_name">  
-             <div  style= {{   width: "7%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-             <p>Sl No</p>
-             </div> 
-             <div style= {{   width: "14%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-               <p>Name of school</p>
-             </div>
-             <div style= {{   width: "17%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-               <p>Contact Person</p>
-             </div>
-             <div style= {{  width: "9%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-               <p>Contact Email Id</p>
-             </div> 
-             <div style= {{   width: "14%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-              <p>Facilitators</p>
-             </div>  
-             <div style= {{   width: "14%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-              <p>Students</p>
-             </div> 
-             <div style= {{  width: "7%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-              <p>Account Status</p>
-             </div> 
-             <div style= {{   width: "18%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-              <p>Account status</p>
-             </div>
-
-            </div> 
-            <div  className="clientview_table_inner_div_table_row">
+                <div className="clientview_sidebar" >
+                       <Sidebar /> 
+                </div> 
+                <div className="clientview_body">  
+                 <div  className="clientview_body1"> 
                
-               
-
-            <div style= {{ width : "100%" , height: "25%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-
-            <div  style= {{   width: "7%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-             <p> 1</p>
-             </div> 
-             <div style= {{   width: "14%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-               <p>School 1</p>
-             </div>
-             <div style= {{   width: "17%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-               <p>Asdasd Fdslkfmsdicn</p>
-             </div>
-             <div style= {{  width: "9%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-               <p> Yes</p>
-             </div> 
-             <div style= {{   width: "14%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>   
+                 </div>
+                
+                  <div className="clientview_table_outer_div_body2">   
+        
+    
+                   <div className="clientview_table_inner_div_column_name">  
 
 
-             <div style={{ height: "100%"  , width : "20%"}}> 
-                                 <p>2</p>
-                          </div>
-                           <div  style={{ height: "100%"  , width : "80%"}} >
-                                  <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,   { state: {    typeId : typeId }}   ,   { replace : false}  )  }  } /> 
-                           </div>
-             </div>  
-             <div style= {{   width: "14%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
-
-                          <div style={{ height: "100%"  , width : "20%"}}> 
-                                 <p>2</p>
-                          </div>
-                           <div  style={{ height: "100%"  , width : "80%"}} >
-                                  <input type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"   ,  { replace : false}  )  }  } /> 
-                           </div>
-             </div> 
-             <div style= {{  width: "7%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-              <p>Active</p>
-             </div> 
-             <div style= {{   width: "18%"  ,    height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
                 
 
-                           <div style={{ height: "100%"  , width : "40%"}}> 
-                                <input type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                          </div>
-                           <div  style={{ height: "100%"  , width : "40%"}} >
-                                  <input type="button" value = "Delete"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
-                           </div>
-             </div>
+
+               <div    className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+               <p>Sl No</p>
+               </div> 
+               <div    className="clientview_table_row_box"   style= {{   width: "14%" , height: "100%"  , borderRight : "1px solid black" }}>
+                 <p>Name of school</p>
+               </div>
+               <div    className="clientview_table_row_box"  style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+                 <p>Contact Person</p>
+               </div>
+               <div    className="clientview_table_row_box"  style= {{  width: "20%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+                 <p>Contact Email Id</p>
+               </div> 
+               <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
+                <p>Facilitators</p>
+               </div> 
+
+               <div   className="clientview_table_row_box"  style= {{  width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
+                <p>Students</p>
+               </div> 
+               <div className="clientview_table_row_box"  style= {{   width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+                <p>Account status</p>
+               </div>  
 
 
-           </div>
+             {/*   <div   className="clientview_table_row_box" style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+                <p>Account status</p>
+               </div>
+               */}
 
-            </div>
-            
-            
-  
-            </div> 
-
-            <div className="body3"> 
-
-          
-          
-            </div>
-          
-          </div>
+              
+    
+                  </div>  
 
 
 
-  </div>
+                  <div  className="clientview_table_inner_div_table_row">
+                     
+                       
 
+
+{
+                data.map( (  el   , index )  => ( 
+
+    
+                  <div  key= {  index} style= {{ width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"   ,   borderBottom : "1px solid black"}} > 
+
+
+
+
+                  <div   className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+                   <p> {index+1}</p>
+                   </div>  
+
+                   <div  className="clientview_table_row_box"  style= {{   width: "14%" , height: "100%"  , borderRight : "1px solid black" }}>
+                     <p> {  el.school_name}</p>
+                   </div>
+                   <div   className="clientview_table_row_box"  style= {{   width: "17%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+                     <p> {  el.contact_person}</p>
+                   </div>
+                   <div  className="clientview_table_row_box"   style= {{  width: "20%"  ,  height: "100%"  , borderRight : "1px solid black"  , overflow : "hidden"}}>
+                     <p> { el.email_id}</p>
+                   </div> 
+                   <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"  , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>   
+
+
+                   <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "20%"}}>  
+                           <p>2</p>
+                                </div>
+                               
+              <input    style={{ height: "40%"  , width : "60%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator",   school_name : data[index].school_name   ,     school_id : data[index]._id  ,      program_name : location.state.programName     }}           ,     { replace : false}  )  }  } /> 
+                             
+                   </div>   
+
+
+            <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid black"  , display: "flex"  ,   flexDirection : "row"}}>  
+
+                     <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "20%"}}> 
+                               <p>2</p>
+                     </div>
+                           
+                    <input  style={{ height: "40%"  , width : "80%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : data[index].school_name   ,        program_name : location.state.programName     }}        ,  { replace : false}  )  }  } /> 
+                        
+                   </div>  
+
+
+                   <div   className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+                    <p>Active</p>
+                   </div>  
+
+         {/*    <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
+                      
+
+            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                            
+                             
+           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school" }}   , { replace : false}  )  }  } />   
+
+
+
+
+
+                   </div>
+     */}
+
+                 </div>  
+
+))                 }
+
+                  </div>
+                  
+                  
+        
+                  </div> 
+    
+                  <div className="body3"> 
+    
+               {/*    <div onClick={ () => { goToNext() } } className="add_new_program_button">
+                    <p> Add new school </p>
+                  </div>
+                 */}
+                  </div>
+                
+                </div>
+    
+    
+    
+        </div>
 
         ) ;
     }

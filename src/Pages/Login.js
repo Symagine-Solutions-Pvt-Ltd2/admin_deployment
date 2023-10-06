@@ -2,7 +2,13 @@ import {Link, useNavigate , useLocation  } from "react-router-dom"  ;
 import "../Style/Login.css"  ;   
 import Button from "../Components/Button";
 import { useState  } from "react";
-import axios from "axios"  ;  
+import axios from "axios"  ;   
+
+
+
+
+
+import login from "../Images/login.jpg"  ; 
 
 function Login() {    
 
@@ -75,11 +81,11 @@ function Login() {
 
 
   return (
-    <div  className="OuterBox"> 
+    <div  className="OuterBox"  style={{  backgroundImage : `url(${login })`,  backgroundSize : "contain"   , backgroundRepeat : "no-repeat"   , backgroundPosition : "center"}}   > 
 
 
     <div   className="InnerBox-1"> 
-    <p> Login at first   </p> 
+
     </div>
  
 
