@@ -5,12 +5,29 @@ import { useState , useEffect  } from "react";
 import Sidebar from "../Sidebar"  ; 
 import axios from "axios"  ;   
 
+ 
+
+
+ 
+
+// popup 
+import Popup from "../Components/Popup";
+
 
 
 
 function  AdminView() {      
  
+      
+     // for popup 
+     const[ popupInfo  , setPopupInfo ] = useState("") ;
+     const[ popup  , setPopup ] = useState( false) ; 
     
+
+
+
+
+
     //frame12 
     const [ data , setData ] = useState( []);
 
@@ -59,7 +76,17 @@ function  AdminView() {
 
       }  
 
+ 
 
+
+
+      const  handleStatusChange = ( cs  ) => {    
+    
+        setPopupInfo( cs) ;
+        console.log( cs) ;
+         setPopup( true)  ;
+        
+   } 
 
 
 
@@ -71,12 +98,19 @@ function  AdminView() {
                      <Sidebar /> 
               </div>  
 
-
+  
 
 
               <div className="clientview_body" >  
 
-              
+                
+
+              <Popup  trigger= { popup  } setTrigger={ setPopup }   >
+            <h3> {popupInfo } </h3>
+          </Popup>
+
+
+
                <div  className="clientview_body1"   style= {{ backgroundColor : '#F8E5E9'}}> 
             
                </div>
@@ -151,7 +185,7 @@ function  AdminView() {
            <div className="clientview_table_row_box"  style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>  
 
                      
-                 <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"}}  type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+                 <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el.name) } }  /> 
                   
                      
                 <input    className="clientview_table_row_button"     style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/manageadmin/editadminaccount"    ,    {   state: {  typeId : "admin"   } }   ,  { replace : false}  )  }  } /> 

@@ -2,12 +2,32 @@ import "../Style/ClientView.css"  ;
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import { useState   , useEffect  } from "react"; 
 import Sidebar from "../Sidebar"  ;  
-import axios from "axios"  ;  
+import axios from "axios"  ;   
+
+
+
+// popup 
+import Popup from "../Components/Popup";
+ 
+
+ 
+
+
 
 
 
 function ClientView(   ) {    
     
+ 
+   // for popup 
+   const[ popupInfo  , setPopupInfo ] = useState("") ;
+   const[ popup  , setPopup ] = useState( false) ; 
+  
+   
+
+   
+
+
 
   const [ data , setData ] = useState( []);
   const  navigate = useNavigate() ;   
@@ -58,7 +78,18 @@ function ClientView(   ) {
   
     } , [])  ; 
  
+     
+
+
+
+    const  handleStatusChange = ( cs  ) => {    
     
+      setPopupInfo( cs) ;
+      console.log( cs) ;
+       setPopup( true)  ;
+      
+ } 
+
 
     
   switch( typeId )  {  
@@ -78,7 +109,17 @@ function ClientView(   ) {
         
             <div className="clientview_body">   
 
+             
+
             
+
+            
+          <Popup  trigger= { popup  } setTrigger={ setPopup }   >
+            <h3> {popupInfo } </h3>
+          </Popup>
+
+
+
              <div  className="clientview_body1"> 
             
              </div>
@@ -157,7 +198,7 @@ function ClientView(   ) {
                </div> 
                <div   className="clientview_table_row_box"  style= {{   width: "20.19%"  ,    height: "100%"   , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row" }}> 
                            
-               <input   style={{ height: "40%"  , width : "40%"}} type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/editaccount"   , {   state: {  typeId : "client"   } }  , { replace : false}  )  }  } /> 
+               <input   style={{ height: "40%"  , width : "40%"}} type="button" value = "Status"    onClick= { () => {handleStatusChange( el.client_name) } }  /> 
                              
                                 
              <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data : el   , type : "system_admin"  } }  , { replace : false}  )  }  } /> 

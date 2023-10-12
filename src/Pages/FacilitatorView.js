@@ -2,12 +2,29 @@ import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 import { useState  ,  useEffect  } from "react"; 
 import Sidebar from "../Sidebar"  ; 
 import axios from "axios"  ;  
-import "../Style/ClientView.css" ; 
+import "../Style/ClientView.css" ;  
+
+
+
+
+
+
+// popup 
+import Popup from "../Components/Popup";
 
 
 function  FacilitatorView() {    
     
+ 
+   
+   // for popup 
+   const[ popupInfo  , setPopupInfo ] = useState("") ;
+   const[ popup  , setPopup ] = useState( false) ; 
+  
 
+
+
+    
 
     const [ data , setData ] = useState( []);
     const  navigate = useNavigate() ;   
@@ -66,7 +83,19 @@ function  FacilitatorView() {
   
     } , [])  ; 
  
-  
+   
+
+
+
+
+    
+    const  handleStatusChange = ( cs  ) => {    
+    
+      setPopupInfo( cs) ;
+      console.log( cs) ;
+       setPopup( true)  ;
+      
+ } 
 
  
 
@@ -81,8 +110,20 @@ function  FacilitatorView() {
 
             <div className="clientview_sidebar" >
                    <Sidebar /> 
-            </div> 
-            <div className="clientview_body">  
+            </div>  
+
+
+
+            <div className="clientview_body">   
+
+
+
+            <Popup  trigger= { popup  } setTrigger={ setPopup }   >
+            <h3> {popupInfo } </h3>
+          </Popup> 
+
+
+
              <div  className="clientview_body1"> 
           
 
@@ -125,7 +166,7 @@ function  FacilitatorView() {
 
                 <div  key= { index }    style={ {  width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"   ,   borderBottom : "1px solid black" } }>  
                <div    className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-               <p>  1 </p>
+               <p> { index+1} </p>
                </div>  
 
 
@@ -140,14 +181,17 @@ function  FacilitatorView() {
                <div    className="clientview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
                  <p> {  el.status}</p>
                </div> 
-               <div  className="clientview_table_row_box"   style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}> 
-                  <div  style= {{ backgroundColor :"yellow"  , width :"40%"  , height:"50%" }} >
-                       <p>Status</p>
-                  </div> 
+               <div  className="clientview_table_row_box"   style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
 
-                  <div    style= {{ backgroundColor :"yellow"  ,  width :"40%"  , height:"50%"  }}>
-                  <input type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"    } }  , { replace : false}  )  }  } /> 
-                  </div>
+
+
+
+
+                  
+    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el.facilitator_name) } }  /> 
+
+    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el   } }  , { replace : false}  )  }  } /> 
+                
                </div> 
 
 
@@ -235,7 +279,7 @@ function  FacilitatorView() {
 
           <div  key= { index }    style={ {  width : "100%" , height: "25%"   , display : "flex" , flexDirection : "row"   ,   borderBottom : "1px solid black" } }>  
          <div    className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-         <p>  1 </p>
+         <p>  { index +1} </p>
          </div>  
 
 

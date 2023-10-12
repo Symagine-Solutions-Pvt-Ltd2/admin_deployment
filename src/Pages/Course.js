@@ -265,7 +265,9 @@ function Course() {
 
         
         <div className="course_body"  >      
-         
+          
+
+          
 
       <Popup  trigger= { popup  } setTrigger={ setPopup }   >
         <h3> {popupInfo } </h3>

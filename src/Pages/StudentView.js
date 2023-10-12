@@ -4,6 +4,17 @@ import { useState  , useEffect   } from "react";
 import Sidebar from "../Sidebar"  ; 
 import axios from "axios"  ;  
 
+ 
+
+
+
+
+// popup 
+import Popup from "../Components/Popup"; 
+
+
+
+
 
 function StudentView() {    
     
@@ -14,7 +25,12 @@ function StudentView() {
   const location = useLocation();   
 
 
-
+  
+  
+   // for popup 
+   const[ popupInfo  , setPopupInfo ] = useState("") ;
+   const[ popup  , setPopup ] = useState( false) ; 
+  
   
 
   console.log( location.state.program_name  ) ;
@@ -66,7 +82,14 @@ function StudentView() {
    
     
 
-
+   
+    const  handleStatusChange = ( cs  ) => {    
+    
+      setPopupInfo( cs) ;
+      console.log( cs) ;
+       setPopup( true)  ;
+      
+ } 
 
 
     return(
@@ -79,7 +102,19 @@ function StudentView() {
 
     <div className="clientview_body">   
 
-    
+     
+
+
+
+
+
+    <Popup  trigger= { popup  } setTrigger={ setPopup }   >
+            <h3> {popupInfo } </h3>
+          </Popup> 
+
+
+
+          
      <div  className="clientview_body1"> 
     
      </div>
@@ -196,10 +231,10 @@ function StudentView() {
 
        <div   className="clientview_table_row_box"   style= {{   width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
                     
-            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick= { () => {handleStatusChange( el.student_name) } }/> 
                     
                    
-        <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student" }}   , { replace : false}  )  }  } /> 
+        <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"     ,  data : el }}   , { replace : false}  )  }  } /> 
                          
        </div>
 

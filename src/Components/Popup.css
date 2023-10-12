@@ -5,32 +5,79 @@
     top : 0 ; 
     width: 81%; 
     height : 100vh ; 
-    background-color: aquamarine;
     display: flex;
     align-items:  center; 
-    justify-content: center;
+    justify-content: center;   
+    background-color: rgba(128, 128, 128, 0.6);
+ 
+
+ 
 } 
 
 
 
 .popup-inner{
 
-position: relative; 
-padding: 32px; 
-width : 100% ; 
-max-width: 640px ; 
-background-color: cadetblue;
+position: relative;
+width : 50% ; 
+height : 40% ;
+
+background-color: #5A6199;   
+
+
+
 
 }  
 
 
 
-.popup-inner .close-btn {
+ .close-btn {
+    
+    height : 50% ;
+    width : 30% ; 
 
-position: absolute; 
-top: 16px ; 
-right : 16px ;  
-max-width: 640px ;
+}  
 
+.popup-inner-body1{
+
+    height: 20%; 
+    background-color: peru; 
+    display : flex ; 
+    align-items:  center ; 
+    justify-content: flex-end ;
+}
+
+
+.popup-inner-body2{
+
+  
+      height: 40%; 
+      background-color:  violet;
+
+} 
+  
+
+
+
+.popup-inner-body3{
+
+  
+    height: 40%; 
+    background-color: peru; 
+    display : flex ; 
+    align-items:  center ; 
+    justify-content: space-between;
+
+}  
+
+
+
+
+
+.popup-inner-body2-button{
+
+   height : 50% ;
+   width : 30% ; 
 
 }
+

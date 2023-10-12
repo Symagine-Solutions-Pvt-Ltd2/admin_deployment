@@ -5,9 +5,29 @@ import "../Style/ClientView.css" ;
 import axios from "axios"  ; 
 
 
+ 
+
+
+
+
+// popup 
+import Popup from "../Components/Popup";
+  
+
+
+
 
 
 function SchoolView() {    
+     
+   
+
+   // for popup 
+   const[ popupInfo  , setPopupInfo ] = useState("") ;
+   const[ popup  , setPopup ] = useState( false) ; 
+  
+
+
     
     const [ data , setData ] = useState( []); 
     const  navigate = useNavigate() ;  
@@ -22,7 +42,10 @@ function SchoolView() {
 
     console.log( location.state.programName) ;   */  
     
-    console.log( location.state.typeId ) ; 
+    console.log( location.state.typeId ) ;  
+
+
+    
     const goToNext = () => {
   
        navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   client_name : location.state.clientName ,   program_name :  location.state.programName   }}   ,  { replace : false}  ) ; 
@@ -68,7 +91,22 @@ function SchoolView() {
    
     
     
- 
+    
+
+    
+    const  handleStatusChange = ( cs  ) => {    
+    
+      setPopupInfo( cs) ;
+      console.log( cs) ;
+       setPopup( true)  ;
+      
+ } 
+
+
+
+
+
+
 
 
 
@@ -88,7 +126,17 @@ function SchoolView() {
                 <div className="clientview_sidebar" >
                        <Sidebar /> 
                 </div> 
-                <div className="clientview_body">  
+                <div className="clientview_body">   
+
+
+                
+
+                <Popup  trigger= { popup  } setTrigger={ setPopup }   >
+            <h3> {popupInfo } </h3>
+          </Popup>
+
+
+                 
                  <div  className="clientview_body1"> 
                
                  </div>
@@ -192,10 +240,10 @@ function SchoolView() {
             <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"}}> 
                       
 
-            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el.school_name) } }   /> 
                             
                              
-           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school"   ,    data : el  }}   , { replace : false}  )  }  } />   
+           <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school"   ,    data : el   ,  type : "system_admin"     }}   , { replace : false}  )  }  } />   
 
 
 
