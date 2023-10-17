@@ -38,9 +38,11 @@ function  EditAccount(  {  props }) {
         console.log( event.target.name.value) ;    
         console.log( event.target.email.value) ;      
         console.log( event.target.contact_person.value) ;  
-         
+          
 
-      navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientName : data.client_name     }}     ,      { replace : false}  )   ;
+
+
+  
         
    //      console.log(  location.state.type    )   ; 
 
@@ -66,7 +68,7 @@ axios({
                             
                           console.log( res) ; 
 
-                       
+                          navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientId : data.client_id       }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
                          console.log( "error") ;
                 
@@ -119,8 +121,9 @@ axios({
                          
                           alert( "Registered Successfully.")  ;   
                             */
+                          console.log( data) ;   
                           console.log( res) ; 
-                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  program_name : data.program_name } }     ,   { replace : false}  )   ; 
+                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id } }     ,   { replace : false}  )   ; 
 /* 
                         } 
                         else {
@@ -153,7 +156,7 @@ axios({
   
          
 
-    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   school_name : data.school_name     }}    , { replace : false}  )   ;
+
         
    //      console.log(  location.state.type    )   ; 
 
@@ -177,7 +180,7 @@ axios({
                   
                             
                           console.log( res) ; 
-
+                          navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id  }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -202,7 +205,7 @@ axios({
         console.log( event.target.email.value) ;     
          
         
-      navigate(  "/home/dashboard/client/student"   ,    { state: {     school_name : data.school_name     }}    , { replace : false}  )   ;
+
         
          
 
@@ -225,6 +228,7 @@ axios({
     
               
             console.log( res) ; 
+            navigate(  "/home/dashboard/client/student"   ,    { state: {     schoolId : data.school_id    }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 
@@ -785,7 +789,7 @@ axios({
 
             <div className="admin_Form-Input" >         
                     
-               <p>  { data.program_name } </p>
+               <p>  { location.state.programName } </p>
 
            </div>  
            </div> 

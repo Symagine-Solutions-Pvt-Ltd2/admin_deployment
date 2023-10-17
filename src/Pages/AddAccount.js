@@ -21,20 +21,20 @@ function AddAccount() {
      const [  admin ,   setAdmin  ]   = useState( "" ) ; 
 
  
- /*  console.log( location.state.typeId  ) ; 
+   console.log( location.state.typeId  ) ; 
   
   console.log( location.state.type) ; 
   
-  console.log( location.state.school_id ) ; 
+  console.log( location.state.programId ) ; 
 
-  console.log( location.state.program_name ) ;  
+  console.log( location.state.programName ) ;  
 
-  console.log( location.state.school_name ) ;   
- */
+  console.log( location.state.schoolId ) ;   
+
 
 
   console.log("add account ") ;  
-  console.log(  admin   )   ;
+ // console.log(  admin   )   ;
 
 
 
@@ -45,7 +45,7 @@ function AddAccount() {
  
     
      // to keep track of the program 
-     const [ assignedProgram ,   setAssignedProgram  ]   = useState( location.state.program_name) ;     
+     const [ assignedProgram ,   setAssignedProgram  ]   = useState( location.state.programName) ;     
 
 
 
@@ -96,7 +96,7 @@ function AddAccount() {
                               "type_id" :  "client" , 
                               "contact_person" : event.target.contact_person.value, 
                               "students_assign" :  event.target.student.value , 
-                              "program_name" :  assignedProgram ,
+                              "program_id" :  location.state.programId  ,
                       }
                 
                      }).then( ( res) => {   
@@ -106,7 +106,7 @@ function AddAccount() {
                           alert( "Registered Successfully.")  ;   
                            
                           console.log( type) ; 
-                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  type    ,  program_name : assignedProgram  } }     ,   { replace : false}  )   ; 
+                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  type    ,  programName : assignedProgram  , programId :  location.state.programId  } }     ,   { replace : false}  )   ; 
 
                         } 
                         else {
@@ -159,9 +159,8 @@ function AddAccount() {
                         "email_id" :  event.target.email.value  , 
                         "password"  : event.target.password.value  , 
                         "type_id" : "facilitator" ,  
-                        "program_name" : location.state.program_name ,  
-                        "school_name" :  location.state.school_name ,  
-                        "school_id" : location.state.school_id 
+                        "program_id" : location.state.programId,  
+                        "school_id" : location.state.schoolId 
                 }
           
                }).then( ( res) => {   
@@ -171,7 +170,7 @@ function AddAccount() {
                     alert( "Registered Successfully.")  ;  
 
 
-                    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   school_name : location.state.school_name    }}    , { replace : false}  )   ;
+                    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   schoolId : location.state.schoolId   }}    , { replace : false}  )   ;
                   } 
                   else {
           
@@ -232,8 +231,8 @@ function AddAccount() {
                 "password" : event.target.password.value ,
                  "type_id" : "school"  ,
                  "contact_person" :   event.target.contact_person.value  ,
-                 "program_name" : location.state.program_name   , 
-                 "client_name" :  location.state.client_name ,    
+                 "program_id" : location.state.programId   , 
+                 "client_id" :  location.state.clientId ,    
                
               }
         
@@ -244,7 +243,7 @@ function AddAccount() {
                   alert( "Registered Successfully.")  ;  
 
 
-                   navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId :    "system_admin"   ,  clientName : location.state.client_name    }}     ,      { replace : false}  )   ;
+                   navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId :    "system_admin"   ,  clientId : location.state.clientId   ,     }}     ,      { replace : false}  )   ;
     
                 } 
                 else {
@@ -371,8 +370,8 @@ function AddAccount() {
                 "email_id" : event.target.email.value , 
                 "password" :event.target.password.value  , 
                 "type_id" :  "student"   , 
-                "program_name"   : location.state.program_name     ,
-                 "school_name"   : location.state.school_name    ,
+                "program_id" : location.state.programId,  
+                "school_id" : location.state.schoolId  ,
                  
               }
         
@@ -386,7 +385,7 @@ function AddAccount() {
                   console.log(  res.data.data) ;  
 
 
-                 navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   school_name : location.state.school_name  ,        program_name : location.state.program_name     }}        ,  { replace : false}  )  
+                 navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_add_account",   schoolId : location.state.schoolId  ,        programId : location.state.programId  }}        ,  { replace : false}  )  
     
                 } 
                 else {

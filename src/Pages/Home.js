@@ -100,7 +100,7 @@ function  Home() {    // frame 3
                
                <div className="home-body-inner-description1" > 
 
-              <p> program_Admin</p> 
+              <p>program_Admin</p> 
 
               <p>Ready to start your day with Future Founders?</p>
                </div>

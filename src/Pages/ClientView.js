@@ -36,13 +36,16 @@ function ClientView(   ) {
   const [  programId  , setProgramId ]   = useState( location.state.programId  ) ; 
    
  
-  console.log( location.state.programId   ) ; 
+  console.log(  location.state.typeId    ) ; 
+  console.log( location.state.programName   ) ; 
+
+
 
 
     const goToNext = () => {
      
         
-       navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    programId : programId  }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    programId : programId  ,   programName : location.state.programName }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -63,9 +66,18 @@ function ClientView(   ) {
         }).then( ( res) => {   
     
   
-          console.log(  res.data.data ) ; 
-          setData(  res.data.data ) ;  
-           
+      
+            
+         if(   res.data.message === "Data not found"){
+ 
+          console.log(  res ) ;  
+
+         }else if(  res.data.message === "Details retrieve successfully"  ) {
+
+          console.log(  res ) ;  
+          setData( res.data.data) ; 
+
+         }
            
          //  console.log(   res.data.data[1].name )  ;
   
@@ -181,25 +193,27 @@ function ClientView(   ) {
                </div> 
                <div    className="clientview_table_row_box"  style= {{   width: "15.76%"  ,  height: "100%"  , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
                                  <div   className="clientview_table_row_box"  style={{ height: "100%"  , width : "40%"}}> 
-                                       <p>2</p>
+                                       <p>  {  el.total_schools } </p>
                                 </div> 
 
 
 
                                 
-                <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientName : data[index].client_name   , programId: programId }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
+                <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id   , programId: programId  , programName : location.state.programName     }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
                                
-               </div> 
+               </div>  
+
+
 
                <div    className="clientview_table_row_box"   style= {{  width: "8.69%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-                <p>Active</p>
+                <p> { el.status } </p>
                </div> 
                <div   className="clientview_table_row_box"  style= {{   width: "20.19%"  ,    height: "100%"   , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row" }}> 
                            
                <input   style={{ height: "40%"  , width : "40%"}} type="button" value = "Status"    onClick= { () => {handleStatusChange( el.client_name) } }  /> 
                              
                                 
-             <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data : el   , type : "system_admin"  } }  , { replace : false}  )  }  } /> 
+             <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data : el   ,   programName : location.state.programName    , type : "system_admin"  } }  , { replace : false}  )  }  } /> 
                                  
                </div>
 
@@ -218,7 +232,8 @@ function ClientView(   ) {
     
               </div> 
 
-              <div className="clientview_body3"> 
+              <div className="clientview_body3">  
+
 
               <div onClick={ () => { goToNext() } } className="add_new_program_button">
                 <p>Add new client</p> 
@@ -329,7 +344,7 @@ function ClientView(   ) {
 
 
                         
-        <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id  , programId : programId}}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
+        <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id  , programId : programId  ,  programName : location.state.programName}}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
                        
        </div> 
 

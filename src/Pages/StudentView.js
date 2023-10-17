@@ -33,14 +33,14 @@ function StudentView() {
   
   
 
-  console.log( location.state.program_name  ) ;
-  console.log( location.state.school_name  ) ;
+  console.log( location.state.programId  ) ;
+  console.log( location.state.schoolId ) ;
 
 
     const  navigate = useNavigate() ;  
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/student/addstudent"   ,  { state: {    typeId : "system_admin_student"    ,    school_name :  location.state.school_name   , program_name : location.state.program_name  }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/student/addstudent"   ,  { state: {    typeId : "system_admin_student"        ,    schoolId :  location.state.schoolId   , programId : location.state.programId  }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
       }    
 
@@ -56,7 +56,7 @@ function StudentView() {
          method : "POST"  , 
          data : {
            
-                  "search_key" :  location.state.school_name  , 
+                  "search_key" :  location.state.schoolId  , 
                 "page_no" :  1 ,
                  "limit" : 10000  
   
@@ -186,7 +186,7 @@ function StudentView() {
 
 
        <div  className="clientview_table_row_box" style= {{   width: "11%" , height: "100%" , borderRight : "1px solid black" }}>
-         <p>School 1</p>
+         <p> {  el.school_name }</p>
        </div> 
 
 
@@ -223,7 +223,7 @@ function StudentView() {
 
 
        <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%" , borderRight : "1px solid black"}}> 
-        <p>Active</p>
+        <p> { el.status } </p>
        </div>   
 
  

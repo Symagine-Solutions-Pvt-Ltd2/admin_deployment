@@ -167,7 +167,7 @@ function FirstView() {
                                        <p>{ el.total_clients}</p>
                                 </div>
                                
-                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id  }}      ,    { replace : false}  )  }  } /> 
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
                              
                         </div> 
 

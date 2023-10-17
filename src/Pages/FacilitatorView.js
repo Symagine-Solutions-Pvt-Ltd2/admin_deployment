@@ -29,20 +29,18 @@ function  FacilitatorView() {
     const [ data , setData ] = useState( []);
     const  navigate = useNavigate() ;   
     const location = useLocation();  
-    const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-    const [  schoolName   , setSchoolName   ]   = useState( location.state.school_name  ) ;  
-    const [  schoolId  , setSchoolId  ]   = useState( location.state.school_id  ) ;  
+    const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;    ;  
     
 
 
-    console.log( location.state.school_id  ) ; 
-    console.log( location.state.program_name  ) ; 
+    console.log( location.state.schoolId  ) ; 
+    console.log( location.state.programId  ) ; 
 
 
      
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/addfacilitator"   ,   { state: {    typeId : "system_admin_facilitator"    ,   type : "facilitator_with_add_account"   ,   school_id: location.state.school_id    ,    school_name :   location.state.school_name   ,   program_name : location.state.program_name }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addfacilitator"   ,   { state: {    typeId : "system_admin_facilitator"    ,   type : "facilitator_with_add_account"   ,   schoolId : location.state.schoolId       ,   programId : location.state.programId }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -54,14 +52,14 @@ function  FacilitatorView() {
       useEffect(() => { 
       
 
-        console.log( schoolName) ; 
+        
         axios({ 
   
          url : "http://localhost:8000/facilitator/a_facilitator"  ,  
          method : "POST"  , 
          data : {
            
-                  "search_key" : schoolName , 
+                  "search_key" : location.state.schoolId  , 
                 "page_no" :  1 ,
                  "limit" : 5   
   
@@ -71,7 +69,7 @@ function  FacilitatorView() {
   
   
           console.log(  res.data.data ) ; 
-           setData(  res.data.data ) ;  
+          setData(  res.data.data ) ;  
            
            
          //  console.log(   res.data.data[1].name )  ;
@@ -190,7 +188,7 @@ function  FacilitatorView() {
                   
     <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el.facilitator_name) } }  /> 
 
-    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el   } }  , { replace : false}  )  }  } /> 
+    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el      } }  , { replace : false}  )  }  } /> 
                 
                </div> 
 

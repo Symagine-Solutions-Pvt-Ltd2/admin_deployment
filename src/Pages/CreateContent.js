@@ -436,7 +436,7 @@ function CreateContent() {
 
 
                         <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Client Supervisor</p>   
+                              <p style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Client Supervisor</p>   
                               </div>
     
     
@@ -454,7 +454,7 @@ function CreateContent() {
          <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
                             
                             <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >School Head</p>   
+                              <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >School Head</p>   
                               </div>
     
     
@@ -469,8 +469,9 @@ function CreateContent() {
 
                            <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
                             
-                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Facilitator</p>
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}> 
+                            
+                              <p style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Facilitator</p>
                               </div>
     
     
