@@ -40,7 +40,7 @@ function  Home() {    // frame 3
             <div className="home-body1">
                
                <div className="home-body-inner-description1" > 
-
+               <p> system_admin</p>
               <p>Hi, Mike</p> 
 
               <p>Ready to start your day with Future Founders?</p>
@@ -57,7 +57,7 @@ function  Home() {    // frame 3
                 <p style={{ color : "white"}}>Create Course</p>
                 </div>  
 
-                
+               
                 <div   onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>

@@ -33,16 +33,16 @@ function ClientView(   ) {
   const  navigate = useNavigate() ;   
   const location = useLocation();  
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ; 
-  const [  programName   , setProgramName  ]   = useState( location.state.program_name  ) ; 
+  const [  programId  , setProgramId ]   = useState( location.state.programId  ) ; 
    
  
-  console.log( location.state.typeId ) ; 
+  console.log( location.state.programId   ) ; 
 
 
     const goToNext = () => {
      
         
-       navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    program_name : programName  }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    programId : programId  }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -52,21 +52,19 @@ function ClientView(   ) {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/ac_program"  ,  
+         url : "http://localhost:8000/admin/c_program"  ,  
          method : "POST"  , 
          data : {
            
-                  "search_key" : programName  , 
-                "page_no" :  1 ,
-                 "limit" : 5   
+          "_id" : programId
   
          }
   
         }).then( ( res) => {   
-  
+    
   
           console.log(  res.data.data ) ; 
-           setData(  res.data.data ) ;  
+          setData(  res.data.data ) ;  
            
            
          //  console.log(   res.data.data[1].name )  ;
@@ -189,7 +187,7 @@ function ClientView(   ) {
 
 
                                 
-                <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientName : data[index].client_name   , programName : programName }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
+                <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientName : data[index].client_name   , programId: programId }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
                                
                </div> 
 
@@ -331,7 +329,7 @@ function ClientView(   ) {
 
 
                         
-        <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientName : data[index].client_name   , programName : programName }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
+        <input style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id  , programId : programId}}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
                        
        </div> 
 

@@ -20,7 +20,8 @@ function FirstView() {
   
 
    
-  console.log( location.state.typeId ) ; 
+  console.log( location.state.typeId ) ;  
+
 
   const goToNext = () => {
    
@@ -90,12 +91,14 @@ function FirstView() {
             <div className="firstview_sidebar" >
                    <Sidebar /> 
             </div> 
-            <div className="firstview_body">  
+            <div className="firstview_body"> 
+
+
              <div  className="body1">  
 
 
 
-            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"}}>
+            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"  , borderRadius : 15}}>
            <p>
             bjhjhjg
            </p>
@@ -140,7 +143,7 @@ function FirstView() {
            {   
 
     data.map( (  el  , index )  => ( 
-                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderBottom : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
                
                           <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                               <p> {  index+1 }</p>
@@ -161,10 +164,10 @@ function FirstView() {
 
 
                                 <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "70%"}}> 
-                                       <p>2</p>
+                                       <p>{ el.total_clients}</p>
                                 </div>
                                
-                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  program_name : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id  }}      ,    { replace : false}  )  }  } /> 
                              
                         </div> 
 

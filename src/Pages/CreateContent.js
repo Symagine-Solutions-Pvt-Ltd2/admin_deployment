@@ -502,7 +502,7 @@ function CreateContent() {
 
 
 
-                        <div  className="admin_form_row_btn_div"> 
+                        <div  className="admin_form_row_btn_div"   style ={{ borderBottom : "0px solid black"}}> 
                         <input className="admin_form_row_btn" type="submit" value="Submit" /> 
                         </div>
                         

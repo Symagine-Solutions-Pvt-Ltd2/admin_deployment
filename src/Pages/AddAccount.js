@@ -15,9 +15,13 @@ function AddAccount() {
    // const [ typeId , setTypeId ] =  useState(  ) ;   
    const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;    
   
-   const [  type  , setType ]   = useState( location.state.type   ) ;  
+   const [  type  , setType ]   = useState( location.state.type   ) ;   
+   
+     // to select the admin type
+     const [  admin ,   setAdmin  ]   = useState( "" ) ; 
+
  
-  console.log( location.state.typeId  ) ; 
+ /*  console.log( location.state.typeId  ) ; 
   
   console.log( location.state.type) ; 
   
@@ -26,10 +30,11 @@ function AddAccount() {
   console.log( location.state.program_name ) ;  
 
   console.log( location.state.school_name ) ;   
+ */
 
 
-
-  console.log("ggfh") ;  
+  console.log("add account ") ;  
+  console.log(  admin   )   ;
 
 
 
@@ -47,8 +52,7 @@ function AddAccount() {
      // to keep track of the client name 
      const [ client ,   setClient   ]   = useState( location.state.client_name ) ;   
      
-      // to select the admin type
-     const [  admin ,   setAdmin  ]   = useState( "program_admin" ) ;  
+     
 
 
 
@@ -62,10 +66,10 @@ function AddAccount() {
         console.log( event.target.password.value) ;    
         console.log( event.target.repeat_password.value) ;    
         console.log( event.target.contact_person.value) ;    
-        console.log( event.target.student.value) ;  */ 
+        console.log( event.target.student.value) ;  
         console.log( assignedProgram ) ;   
         console.log(  location.state.type    )   ; 
-
+*/
 
        
         if(  event.target.password.value !== event.target.repeat_password.value  ) {
@@ -310,7 +314,7 @@ function AddAccount() {
                  
                   alert( "Registered Successfully.")  ; 
                
-                 // navigate(  "/home/manageadmin"   ,  { replace : false}  )   ;
+                  navigate(  "/home/manageadmin"   ,  { replace : false}  )   ;
     
                 } 
                 else {
@@ -796,12 +800,14 @@ function AddAccount() {
           
            <div className="form_outer_div_body"    style={{  backgroundColor : "#F8E5E9"}}>  
         
+ 
+
 
 
            
            <form className="addaccount_form" onSubmit={ addAdmin }   style = {{ height : "78.58%"}}  >    
       
-               <div className="addaccount_form_row"  style = {{ height : "16.66%"}}  >
+               <div className="addaccount_form_row"  style = {{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"  }}  >
                            <div className="addaccount_admin_Form-Description" >   
                           <p>Name</p> 
                           </div>        
@@ -815,7 +821,7 @@ function AddAccount() {
                 </div> 
        
                 
-                <div className="addaccount_form_row" style = {{ height : "16.66%"}} >
+                <div className="addaccount_form_row" style = {{ height : "16.66%"  , backgroundColor : "#F8E5E9"}} >
                            <div className="addaccount_admin_Form-Description" >   
                           <p>Email id</p> 
                           </div>        
@@ -829,7 +835,7 @@ function AddAccount() {
                 </div> 
                  
 
-                <div className="addaccount_form_row" style = {{ height : "16.66%"}} >
+                <div className="addaccount_form_row" style = {{ height : "16.66%"  , backgroundColor : "#F8E5E9"}} >
                            <div className="addaccount_admin_Form-Description" >   
                           <p>Password</p> 
                           </div>        
@@ -846,7 +852,7 @@ function AddAccount() {
 
 
 
-                <div className="addaccount_form_row"  style = {{ height : "16.66%"}} >
+                <div className="addaccount_form_row"  style = {{ height : "16.66%"  , backgroundColor : "#F8E5E9"}} >
                            <div className="addaccount_admin_Form-Description" >   
                           <p>Repeat Password</p> 
                           </div>        
@@ -863,7 +869,7 @@ function AddAccount() {
 
 
 
-                <div className="addaccount_form_row"  style = {{ height : "16.66%"}} >
+                <div className="addaccount_form_row"  style = {{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"}} >
                 <div className="addaccount_admin_Form-Description" >   
                           <p>Program Assigned</p> 
                 </div>     
@@ -875,13 +881,13 @@ function AddAccount() {
 
                               <div style={ {  width : "35%"  , height : "32%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
   
-                                        <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                        <p >Content Admin</p>   
+                                        <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                                        <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}}>Content Admin</p>   
                                         </div>
 
 
-                                         <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                         <input   type="checkbox"   checked = {  admin === "Content Admin" }    onChange={  () => handleCheckboxChange('Content Admin') }/>   
+                                         <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+                                         <input   type="checkbox"   checked = {  admin === "content_admin" }    onChange={  () => handleCheckboxChange('content_admin') }/>   
                                           </div>
 
                                 </div>   
@@ -890,13 +896,13 @@ function AddAccount() {
 
                                 <div style={ {  width : "35%"  , height : "32%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
   
-                                            <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                            <p  >Program Admin</p>   
+                                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                                            <p style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Program Admin</p>   
                                             </div>
 
 
-                                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                            <input   type="checkbox"  checked = {  admin === "Program Admin" }     onChange={() => handleCheckboxChange('Program Admin')}/>   
+                                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+                                            <input   type="checkbox"  checked = {  admin === "program_admin" }     onChange={() => handleCheckboxChange('program_admin')}/>   
                                             </div>
 
 
@@ -919,7 +925,7 @@ function AddAccount() {
            
            
   
-                          <div  className="addaccount_form_row_btn_div"  style={{ height : "16.66%"}}>  
+                          <div  className="addaccount_form_row_btn_div"  style={{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"}}>  
 
 
                           <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
