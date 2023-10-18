@@ -28,6 +28,8 @@ function Course() {
   
      
 
+
+
    // console.log( popupInfo) ; 
     const saveCourse = (  event  ) => { 
     
@@ -327,7 +329,7 @@ function Course() {
              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Submit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
                               
                             
-              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     course_name :   el.course_name  }}     ,  { replace : false}  )  }  } /> 
+              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     courseId :   el._id    ,   courseName : el.course_name  }}     ,  { replace : false}  )  }  } /> 
                                 
 
                               

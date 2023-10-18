@@ -16,15 +16,25 @@ function CourseDetails() {
 
  
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-  const [  courseName  , setCourseName ]   = useState( location.state.course_name  ) ;  
-  const [ data , setData ] = useState( []); 
 
-  
+  const [  courseId , setCourseId ]   = useState( location.state.courseId  ) ;  
+  const [ data , setData ] = useState( []); 
+ 
+   
+  const [  courseName , setCourseName  ]   = useState( location.state.courseName   ) ;
+   
+
+
+
+   console.log( "coursedetails") ; 
+   console.log( location.state.courseName  ) ;
+   console.log( location.state.courseId ) ;
 
     const goToNext = () => {
         
 
-       console.log( courseName) ;
+       console.log( courseName) ; 
+
         navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : courseName  }}   ,  { replace : false}  ) ; 
         console.log("ASJghshGHS") ;  
  
@@ -47,7 +57,7 @@ function CourseDetails() {
               method : "POST"  , 
              data : {
        
-              "course_name" : "coursechnage" 
+              "_id" :  courseId 
 
                  }
 
@@ -153,7 +163,7 @@ function CourseDetails() {
                          
 
                           
-              <input type="button" value = "submit"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+              <input type="button" value = "submit"  onClick={()  => { }  } /> 
                          
 
 
@@ -164,7 +174,7 @@ function CourseDetails() {
 
 
 
-               <input   style={{ height: "40%"  , width : "20%"}} type="button" value = "delete"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+               <input   style={{ height: "40%"  , width : "20%"}} type="button" value = "delete"  onClick={()  => {     }  } /> 
                        
 
            </div> 

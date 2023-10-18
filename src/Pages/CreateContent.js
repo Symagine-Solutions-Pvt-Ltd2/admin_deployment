@@ -22,10 +22,15 @@ function CreateContent() {
  const [ type , setType ] =  useState( location.state.type ) ; 
  const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ;  
  const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( [] ) ; 
+ 
+
+ console.log ( location.state.typeId   ) ; 
 
 
+ 
 
 
+ 
   const createProgram  = (  e  ) => { 
     
 
@@ -138,6 +143,12 @@ function CreateContent() {
   
       event.preventDefault();
     }
+ 
+
+
+
+
+
 
 
     const  createModule  =   (  event  ) => { 
@@ -198,7 +209,11 @@ function CreateContent() {
     
         event.preventDefault();
       }
-  
+   
+
+
+
+
 
       const  createWorkshop  =   (  event  ) => { 
     

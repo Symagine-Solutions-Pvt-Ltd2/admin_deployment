@@ -9,7 +9,9 @@ function  Home() {    // frame 3
    const  navigate = useNavigate() ;  
 
    // to determine its a  system/ program / content  admin 
- const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
+ const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;   
+
+ //console.log(   location.state.typeId  ) ;
      
  const goToNext = () => {  
 
@@ -108,7 +110,7 @@ function  Home() {    // frame 3
             <div className="home-body2"    >    
 
 
-              <div  style={{ width : "65%"   ,   height : "100%"   ,  display: "flex"  , backgroundColor : "pink"   , justifyContent : "space-between"}}>
+              <div  style={{ width : "65%"   ,   height : "100%"   ,  display: "flex"    , justifyContent : "space-between"}}>
              
                 <div  onClick={() => { goToNext() } }     className="home-body2-button1" style={{ backgroundColor : "#353B55"  , width : "45%"}} >
                    <p style={{ color : "white" }}>Dashboard</p>
@@ -140,6 +142,8 @@ function  Home() {    // frame 3
 
 
      case "content_admin" :      
+ 
+
 
 
      return( 

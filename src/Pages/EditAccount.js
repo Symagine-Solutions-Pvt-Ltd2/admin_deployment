@@ -68,7 +68,7 @@ axios({
                             
                           console.log( res) ; 
 
-                          navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientId : data.client_id       }}     ,      { replace : false}  )   ;
+                          navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientId : data.client_id    , programId : data.program_id  , programName : location.state.programName    }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
                          console.log( "error") ;
                 
@@ -123,7 +123,7 @@ axios({
                             */
                           console.log( data) ;   
                           console.log( res) ; 
-                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id } }     ,   { replace : false}  )   ; 
+                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName } }     ,   { replace : false}  )   ; 
 /* 
                         } 
                         else {
@@ -180,7 +180,7 @@ axios({
                   
                             
                           console.log( res) ; 
-                          navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id  }}    , { replace : false}  )   ;
+                          navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id     , programId : data.program_id  }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -228,7 +228,7 @@ axios({
     
               
             console.log( res) ; 
-            navigate(  "/home/dashboard/client/student"   ,    { state: {     schoolId : data.school_id    }}    , { replace : false}  )   ;
+            navigate(  "/home/dashboard/client/student"   ,    { state: {     schoolId : data.school_id    , programId : data.program_id  }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 

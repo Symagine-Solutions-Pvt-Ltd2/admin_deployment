@@ -20,7 +20,7 @@ function  FacilitatorView() {
    // for popup 
    const[ popupInfo  , setPopupInfo ] = useState("") ;
    const[ popup  , setPopup ] = useState( false) ; 
-  
+   const[ userNameForPopup  , setUserNameForPopup ] = useState( "") ; 
 
 
 
@@ -31,10 +31,12 @@ function  FacilitatorView() {
     const location = useLocation();  
     const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;    ;  
     
+ 
 
-
+   /*  console.log( "facilitatorview" ) ; 
+    console.log( location.state.typeId  ) ; 
     console.log( location.state.schoolId  ) ; 
-    console.log( location.state.programId  ) ; 
+    console.log( location.state.programId  ) ;  */
 
 
      
@@ -79,7 +81,7 @@ function  FacilitatorView() {
   
          }  ) ; 
   
-    } , [])  ; 
+    } , [  popup])  ; 
  
    
 
@@ -90,8 +92,10 @@ function  FacilitatorView() {
     const  handleStatusChange = ( cs  ) => {    
     
       setPopupInfo( cs) ;
-      console.log( cs) ;
-       setPopup( true)  ;
+      // console.log( cs) ;
+      setUserNameForPopup( cs.facilitator_name) ;
+        setPopup( true)  ;
+       
       
  } 
 
@@ -116,8 +120,8 @@ function  FacilitatorView() {
 
 
 
-            <Popup  trigger= { popup  } setTrigger={ setPopup }   >
-            <h3> {popupInfo } </h3>
+            <Popup  trigger= { popup  } setTrigger={ setPopup }   data={ popupInfo}   >
+            <h3>{userNameForPopup}</h3>
           </Popup> 
 
 
@@ -186,7 +190,7 @@ function  FacilitatorView() {
 
 
                   
-    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el.facilitator_name) } }  /> 
+    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el) } }  /> 
 
     <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el      } }  , { replace : false}  )  }  } /> 
                 
@@ -257,10 +261,7 @@ function  FacilitatorView() {
            <p>Account Status</p>
          </div>  
 
-         {/* <div   className="clientview_table_row_box"  style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
-          <p>Account status</p>
-         </div>  */}
-
+       
 
         </div>  
 
@@ -294,16 +295,7 @@ function  FacilitatorView() {
          </div>  
 
 
-         {/* <div  className="clientview_table_row_box"   style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}> 
-            <div  style= {{ backgroundColor :"yellow"  , width :"40%"  , height:"50%" }} >
-                 <p>Status</p>
-            </div> 
-
-            <div    style= {{ backgroundColor :"yellow"  ,  width :"40%"  , height:"50%"  }}>
-            <input type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"    } }  , { replace : false}  )  }  } /> 
-            </div>
-         </div>  */}
-
+        
 
         </div>  
       
@@ -316,9 +308,7 @@ function  FacilitatorView() {
 
         <div className="body3"> 
 
-        {/* <div onClick={ () => { goToNext() } } className="add_new_program_button">
-          <p>Add new facilitator</p>
-        </div> */}
+    
       
         </div>
        

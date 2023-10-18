@@ -16,6 +16,11 @@ function SecondView() {
   const [ courseName , setCourseName ] =  useState( location.state.courseName    ) ;   
 
 
+  console.log ( location.state.typeId   ) ;   
+
+   
+
+
 
   const  createCourse = () => {
   
@@ -57,8 +62,6 @@ function SecondView() {
   
     navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  , courseName : courseName   }} ,   { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
-
-
 
 
    }      
@@ -116,7 +119,7 @@ function SecondView() {
 
      <div   className="secondview_body"> 
          
-            <div  className="secondview_body_innner_div1" style={{  width: "100%"  , backgroundColor : "yellow" , justifyContent : "space-around"}}>  
+            <div  className="secondview_body_innner_div1" style={{  width: "100%"   , justifyContent : "space-around"}}>  
 
 
 
