@@ -25,7 +25,8 @@ function   GettingStarted() {
   return (
     
     
-    <div className="OuterBox">
+    <div className="OuterBox"   style={ {  backgroundColor : "#FFF8EE"}} > 
+
         <div className="InnerBox">
 
             

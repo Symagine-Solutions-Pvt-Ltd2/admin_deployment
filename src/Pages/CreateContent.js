@@ -23,9 +23,12 @@ function CreateContent() {
  const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ;  
  const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( [] ) ; 
  
+ 
 
+ console.log ( "createcontent" ) ; 
  console.log ( location.state.typeId   ) ; 
-
+ console.log ( location.state.courseName  ) ; 
+ console.log ( location.state.courseId  ) ; 
 
  
 
@@ -168,7 +171,7 @@ function CreateContent() {
               
               "module_name" : event.target.module_name.value , 
               "subject_name" : event.target.subject_name.value , 
-               "course_name"  : courseName 
+               "course_name"  :  location.state.courseName
                
   
   
@@ -180,22 +183,18 @@ function CreateContent() {
   
               console.log(  res ) ;    
 
-
-
-  
-  
-             /*  if(   res.data.message ===  "Course added Successfully."    ){
+              if(   res.data.message ===  "Module added Successfully."    ){
                
                  alert( "added Successfully.")  ;  
              
-                navigate(  "/home/course"   ,    { state: {    typeId : "course"  }}  ,    { replace : false}  )   ;
+                navigate(  "/home/course/draftcourse/draftcoursedetails"   ,    { state: {    typeId :  "draft_course_content"    ,  courseName : location.state.courseName   , courseId :  location.state.courseId   }}  ,    { replace : false}  )   ;
   
               } 
               else {
       
                 alert(   res.data.message  )  ;
               }    
-   */
+  
   
              
            } ).catch(( err) => { 
@@ -221,7 +220,7 @@ function CreateContent() {
         let formData = new FormData();
   
         //Adding files to the formdata 
-        formData.append("course_name",  courseName  );
+        formData.append("course_name", location.state.courseName  );
         formData.append("thumb_image",   event.target.file.value);
         formData.append("workshop_name",  event.target.workshop_name.value);
          
@@ -249,6 +248,20 @@ function CreateContent() {
               
     
            console.log(  res) ;  
+            
+
+           if(   res.data.message ===  "Workshop added Successfully."    ){
+               
+            alert( "added Successfully.")  ;  
+        
+           navigate(  "/home/course/draftcourse/draftcoursedetails"   ,    { state: {    typeId :  "draft_course_content"    ,  courseName : location.state.courseName   , courseId :  location.state.courseId   }}  ,    { replace : false}  )   ;
+
+         } 
+         else {
+ 
+           alert(   res.data.message  )  ;
+         }    
+        
     
           }) // Handle the response from backend here
           .catch((err) => { }); // Catch errors if any

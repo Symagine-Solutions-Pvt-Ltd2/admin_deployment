@@ -15,18 +15,18 @@ function SecondView() {
    
   const [ courseName , setCourseName ] =  useState( location.state.courseName    ) ;   
 
+ 
 
+  console.log ( "secondview" ) ; 
   console.log ( location.state.typeId   ) ;   
-
-   
-
-
+  console.log ( location.state.courseName  ) ;  
+  console.log ( location.state.courseId  ) ;  
 
   const  createCourse = () => {
   
 
     
-    navigate(  "/home/course/savecourse"   ,   { state: {    typeId : "save_course"  }} , { replace : false}  ) ; 
+    navigate(  "/home/course/savecourse"   ,   { state: {       typeId : "save_course"  }} , { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -48,7 +48,7 @@ function SecondView() {
    const createModule = () => {
     
     console.log( courseName) ;
-    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  , courseName : courseName    }} ,        { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  , courseName : location.state.courseName   , courseId  : location.state.courseId   }} ,        { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -60,7 +60,7 @@ function SecondView() {
 
    const  createWorkshop = () => {
   
-    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  , courseName : courseName   }} ,   { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  , courseName : location.state.courseName   ,  courseId  : location.state.courseId  }} ,   { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -93,12 +93,12 @@ function SecondView() {
         <div   className="secondview_body"> 
             
                <div  className="secondview_body_innner_div1">
-                   <div  className="secondview_body_innner_tab"  onClick={ () => {  createCourse() } } >
-                     <p>Create New Course</p>
+                   <div  className="secondview_body_innner_tab"  style= {{ backgroundColor : "#F06B6E"  }}  onClick={ () => {  createCourse() } } >
+                     <p style={{ color : "#FFF"  , fontWeight: "800"}} >Create New Course</p>
                    </div> 
 
-                   <div className="secondview_body_innner_tab"  onClick={ () => { goToDraftCourse()  } } >
-                   <p>Draft Courses</p>
+                   <div className="secondview_body_innner_tab"   style= {{ backgroundColor : "#5E82F4"  }}  onClick={ () => { goToDraftCourse()  } } >
+                   <p style={{ color : "#FFF"  , fontWeight: "800"}}>Draft Courses</p>
                     </div>
                </div>
            

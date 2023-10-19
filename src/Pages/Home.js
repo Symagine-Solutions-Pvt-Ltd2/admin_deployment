@@ -55,7 +55,7 @@ function  Home() {    // frame 3
                 </div> 
 
 
-                <div    onClick={() => { navigate(  "/home/course"  ,    { state: {    typeId : "course"  }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#5A6199"}}>
+                <div    onClick={() => { navigate(  "/home/course"  ,    { state: {    typeId : "course"     }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#5A6199"}}>
                 <p style={{ color : "white"}}>Create Course</p>
                 </div>  
 

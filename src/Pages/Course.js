@@ -26,7 +26,12 @@ function Course() {
     const [ typeId , setTypeId ] =  useState( location.state.typeId   ) ;   
     const  navigate = useNavigate() ; 
   
-     
+      
+    console.log ( "course" ) ; 
+    console.log ( location.state.typeId  ) ;   
+  
+
+
 
 
 
@@ -162,7 +167,9 @@ function Course() {
 
 
 
-              }
+              } 
+
+
 
                    } , [])  ; 
 
@@ -326,14 +333,14 @@ function Course() {
       
 
                               
-             <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Submit"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,  { replace : false}  )  }  } /> 
+             <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Submit"  onClick={()  => {  }  } /> 
                               
                             
-              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     courseId :   el._id    ,   courseName : el.course_name  }}     ,  { replace : false}  )  }  } /> 
+              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Edit"  onClick={()  => {   navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     courseId :   el._id    ,   courseName : el.course_name  }}     ,  { replace : false}  )  }  } /> 
                                 
 
                               
-              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Delete"  onClick= { () => {handleStatusChange( el.course_name) } }  /> 
+              <input style={{ height: "40%"  , width : "30%"}}  type="button" value = "Delete"  onClick= { () => { } }  /> 
                                
         </div> 
 

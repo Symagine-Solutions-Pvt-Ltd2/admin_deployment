@@ -26,16 +26,20 @@ function CourseDetails() {
 
 
 
-   console.log( "coursedetails") ; 
+   console.log( "coursedetails") ;  
+   console.log( location.state.typeId  ) ;
    console.log( location.state.courseName  ) ;
-   console.log( location.state.courseId ) ;
+   console.log( location.state.courseId ) ; 
+
+
+
 
     const goToNext = () => {
         
 
        console.log( courseName) ; 
 
-        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : courseName  }}   ,  { replace : false}  ) ; 
+        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : location.state.courseName   , courseId : location.state.courseId  }}   ,  { replace : false}  ) ; 
         console.log("ASJghshGHS") ;  
  
  

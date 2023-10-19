@@ -19,7 +19,9 @@ function  Module() {
   const [  name  , setName ]   = useState( location.state.type_name  ) ; 
   const [  type  , setType ]   = useState( location.state.type  ) ; 
 
-   
+    
+
+  console.log("module" ) ; 
   console.log( location.state.courseName )  ; 
   console.log( location.state.type_name)  ; 
   console.log( location.state.type )  ; 
@@ -28,7 +30,7 @@ function  Module() {
 
   const goToNext = () => {
 
-      navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   ,   courseName :  courseName  ,  type_name :   name   }}   ,  { replace : false}  ) ; 
+      navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   ,   courseName :  location.state.courseName  ,  type_name :  location.state.type_name   }}   ,  { replace : false}  ) ; 
       console.log("ASJghshGHS") ;  
 
 
@@ -52,8 +54,8 @@ function  Module() {
            data : {
      
                 
-                 "course_name" :  "coursechnage"  ,
-                  "module_name" : "bhjhjg"  , 
+                 "course_name" : location.state.courseName  ,
+                  "module_name" : location.state.type_name  , 
                   "type_id"  : location.state.type
 
                }
@@ -63,14 +65,17 @@ function  Module() {
                 
               
                console.log(  res ) ; 
-               setData(  res.data.data ) ;  
+           
      
      
-                  //  console.log(   res.data.data[1].name )  ;   
+               if(  res.data.message === "data not found"){
+                      
+                alert(   res.data.message)  ; 
+               }else{
+                   
+                setData(  res.data.data ) ;  
 
-
-
-
+               }
 
 
                 } ).catch(( err) => {  
@@ -102,10 +107,8 @@ function  Module() {
                     
                   
                    console.log(  res ) ; 
-                   setData(  res.data.data ) ;  
-         
-         
-                      //  console.log(   res.data.data[1].name )  ;   
+                  // setData(  res.data.data ) ;  
+           
     
     
     
@@ -190,7 +193,7 @@ function  Module() {
   
   
        
-            <input style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent" }}   ,  { replace : false}  )  }  } /> 
+            <input style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {   }  } /> 
                          
   
   

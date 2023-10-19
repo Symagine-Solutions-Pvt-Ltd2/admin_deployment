@@ -28,14 +28,14 @@ function  ModuleContentType() {
   const [  courseName  , setCourseName ]   = useState( location.state.courseName  ) ;  
   const [  name  , setName ]   = useState( location.state.type_name  ) ;  
  
-
-  /* console.log( location.state.courseName )  ; 
-  console.log( location.state.type_name)  ; 
-  console.log( location.state.type)  ; */
-
   
 
+  console.log(  "modulecontenttype" ) ; 
+   console.log( location.state.courseName )  ; 
   console.log( location.state.type_name)  ; 
+  console.log( location.state.type)  ; 
+
+ 
 
   const goToNext = () => {
   
@@ -82,20 +82,20 @@ function  ModuleContentType() {
           <div  style = {{ height : "49.72%"  ,  width : "100%"  , backgroundColor : "#F1F2F7"   , display : "flex"  ,   justifyContent : "space-between"  , flexDirection : "column"}}> 
 
 
-          <div onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"    ,    type : type ,   sub_type : "video"    ,     course_name :  courseName  ,  type_name :   name    }}    ,     { replace : false}  )   } } style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1" }}>
+          <div  className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"    ,    type : type ,   sub_type : "video"    ,     course_name :  courseName  ,  type_name :   name    }}    ,     { replace : false}  )   } } style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  , borderRadius : 30 }}>
           <p>Upload video</p>
           </div> 
 
-          <div onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_text"     ,   sub_type : "text"   ,     course_name :  courseName  ,  type_name :   name  }}   ,   { replace : false}  )   } }  style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_text"     ,   sub_type : "text"   ,     course_name :  courseName  ,  type_name :   name  }}   ,   { replace : false}  )   } }  style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
           <p>Upload text</p>
           </div> 
 
 
-          <div  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_content"  ,  sub_type : "picture"    ,     course_name :  courseName  ,  type_name :   name   }}  ,  { replace : false}  )   } }   style={{ height: "19.85%" , width : "45%",  backgroundColor : "#B7B7D1" }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_content"  ,  sub_type : "picture"    ,     course_name :  courseName  ,  type_name :   name   }}  ,  { replace : false}  )   } }   style={{ height: "19.85%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
           <p>Upload picture</p>
           </div>
 
-          <div  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "quiz"   ,  sub_type : "quiz"   ,  course_name :  courseName  ,  type_name :   name    }}   ,  { replace : false}  )   } }    style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1" }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "quiz"   ,  sub_type : "quiz"   ,  course_name :  courseName  ,  type_name :   name    }}   ,  { replace : false}  )   } }    style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
           <p>Upload quiz</p>
           </div>
 
@@ -110,15 +110,15 @@ function  ModuleContentType() {
           <div  style = {{ height : "36.96%"   , backgroundColor : "#F1F2F7"  , display : "flex"  ,   justifyContent : "space-between"  , flexDirection : "column"  ,  alignItems : "flex-end"}}>  
 
 
-          <div   onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_text"   ,   sub_type : "upload picture"   }}  ,  { replace : false}  )   } }         style={{ height: "26.5%" , width : "45%",  backgroundColor : "#B7B7D1" }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_text"   ,   sub_type : "upload picture"   }}  ,  { replace : false}  )   } }         style={{ height: "26.5%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30}}>
           <p>Create task: picture upload </p>
           </div>
 
-          <div  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_text"   ,   sub_type : "write text"    }}  ,  { replace : false}  )   } }       style={{ height: "26.5%" , width : "45%" ,  backgroundColor : "#B7B7D1"   }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_text"   ,   sub_type : "write text"    }}  ,  { replace : false}  )   } }       style={{ height: "26.5%" , width : "45%" ,  backgroundColor : "#B7B7D1"    ,  borderRadius : 30 }}>
           <p>Create task: write text</p>
           </div>
 
-          <div   onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"  ,  sub_type : "calculation"  }}  ,  { replace : false}  )   } }       style={{ height: "26.5%" , width : "45%" ,  backgroundColor : "#B7B7D1" }}>
+          <div    className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"  ,  sub_type : "calculation"  }}  ,  { replace : false}  )   } }       style={{ height: "26.5%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
           <p>Create task: calculation</p>
           </div>
              
