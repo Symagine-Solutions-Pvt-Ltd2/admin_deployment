@@ -42,7 +42,9 @@ function  Home() {    // frame 3
             <div className="home-body1">
                
                <div className="home-body-inner-description1" > 
-               <p> system_admin</p>
+
+
+              
               <p>Hi, Mike</p> 
 
               <p>Ready to start your day with Future Founders?</p>

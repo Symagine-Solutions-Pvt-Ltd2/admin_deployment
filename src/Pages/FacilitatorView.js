@@ -190,9 +190,9 @@ function  FacilitatorView() {
 
 
                   
-    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el) } }  /> 
+    <input    className="inner_table_btn"   style={{  width :"36%"  , height:"40%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el) } }  /> 
 
-    <input  style={{  width :"40%"  , height:"50%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el      } }  , { replace : false}  )  }  } /> 
+    <input     className="inner_table_btn"    style={{  width :"36%"  , height:"40%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el      } }  , { replace : false}  )  }  } /> 
                 
                </div> 
 

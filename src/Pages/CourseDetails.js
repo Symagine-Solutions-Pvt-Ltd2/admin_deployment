@@ -120,7 +120,7 @@ function CourseDetails() {
           <div className="clientview_table_outer_div_body2">   
 
 
-           <div className="clientview_table_inner_div_column_name"    style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid red"}}  >   
+           <div className="clientview_table_inner_div_column_name"    style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid #B6B7D0"}}  >   
 
            <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
            <p>Sl No</p>
@@ -145,7 +145,7 @@ function CourseDetails() {
          data.map( (  el  , index )  => (  
 
 
-          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "#F1F2F7" ,   borderBottom : "1px solid red"  , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "#F1F2F7" ,   borderBottom : "1px solid #B6B7D0"  , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
           <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
            <p>  { index+1}  </p>
            </div> 
@@ -167,18 +167,18 @@ function CourseDetails() {
                          
 
                           
-              <input type="button" value = "submit"  onClick={()  => { }  } /> 
+              <input className="inner_table_btn"  style={{ height: "40%"  , width : "16%"}}   type="button" value = "submit"  onClick={()  => { }  } /> 
                          
 
 
 
                        
-              <input   type="button"   style={{ height: "40%"  , width : "20%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name      }}   ,  { replace : false}  )  }  } /> 
+              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "16%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name      }}   ,  { replace : false}  )  }  } /> 
                       
 
 
 
-               <input   style={{ height: "40%"  , width : "20%"}} type="button" value = "delete"  onClick={()  => {     }  } /> 
+               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "16%"}} type="button" value = "delete"  onClick={()  => {     }  } /> 
                        
 
            </div> 

@@ -149,25 +149,25 @@ function FirstView() {
                               <p> {  index+1 }</p>
                           </div>  
 
-                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}> 
+                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}}> 
 
 
-                             <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "70%"}}> 
+                             <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "60%"}}> 
                               <p> { el.program_name }</p>
                              </div> 
 
 
-           <input className="inner_table_btn"  style={{ height: "40%"  , width : "30%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
+                     <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
-                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
+                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}  }> 
 
 
-                                <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "70%"}}> 
+                                <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "45%"}}> 
                                        <p>{ el.total_clients}</p>
                                 </div>
                                
-                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "38%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
                              
                         </div> 
 
@@ -311,22 +311,22 @@ function FirstView() {
                          <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}> 
 
 
-                             <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "70%"}}> 
+                             <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "60%"}}> 
                               <p> { el.program_name }</p>
                              </div> 
 
 
-           <input className="inner_table_btn"  style={{ height: "40%"  , width : "30%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
+           <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
                          <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
 
 
-                                <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "70%"}}> 
+                                <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "45%"}}> 
                                        <p>{ el.total_clients}</p>
                                 </div>
                                
-                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "30%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "38%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
                              
                         </div> 
 

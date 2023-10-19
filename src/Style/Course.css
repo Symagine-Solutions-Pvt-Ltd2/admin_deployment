@@ -70,7 +70,8 @@
     display:  flex ;  
 
     flex-direction: row ;
-    border:   1px solid black ; 
+    border:   1px solid #5E82F4 ;  
+    text-align: center;
     margin-bottom: 1.5%; 
     border-radius: 20px;
 
@@ -82,6 +83,8 @@
     width : 20% ;  
     height: 13.62%; 
     border-radius: 30px;
+    background-color: #FCC046; 
+    border:  0px solid black;
 
 
 }

@@ -219,7 +219,7 @@ function StudentView() {
        <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
 
           
-                <input  style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn" style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {  }  } /> 
             
 
        </div> 
@@ -228,7 +228,7 @@ function StudentView() {
        <div   className="clientview_table_row_box" style= {{   width: "11%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
                    
                         
-        <input   style={{ height: "40%"  , width : "60%"}} type="button" value = "download"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+      <input   className="inner_table_btn"  style={{ height: "40%"  , width : "65%"}} type="button" value = "download"  onClick={()  => {    }  } /> 
                     
        </div>  
 
@@ -244,10 +244,10 @@ function StudentView() {
 
        <div   className="clientview_table_row_box"   style= {{   width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
                     
-            <input   style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick= { () => {handleStatusChange( el) } }/> 
+         <input   className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick= { () => {handleStatusChange( el) } }/> 
                     
                    
-        <input  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"     ,  data : el }}   , { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"     ,  data : el }}   , { replace : false}  )  }  } /> 
                          
        </div>
 
@@ -394,7 +394,7 @@ function StudentView() {
        <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
 
           
-                <input  style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+        <input    className="inner_table_btn"  style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
             
 
        </div> 
@@ -403,7 +403,7 @@ function StudentView() {
        <div   className="clientview_table_row_box" style= {{   width: "11%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}> 
                    
                         
-        <input   style={{ height: "40%"  , width : "60%"}} type="button" value = "download"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+        <input     className="inner_table_btn"  style={{ height: "40%"  , width : "65%"}} type="button" value = "download"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
                     
        </div>  
 

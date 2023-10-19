@@ -83,20 +83,20 @@ function  ModuleContentType() {
 
 
           <div  className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"    ,    type : type ,   sub_type : "video"    ,     course_name :  courseName  ,  type_name :   name    }}    ,     { replace : false}  )   } } style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  , borderRadius : 30 }}>
-          <p>Upload video</p>
+          <p  style= {{  fontWeight : 600 }}>Upload video</p>
           </div> 
 
           <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_text"     ,   sub_type : "text"   ,     course_name :  courseName  ,  type_name :   name  }}   ,   { replace : false}  )   } }  style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
-          <p>Upload text</p>
+          <p style= {{  fontWeight : 600 }} >Upload text</p>
           </div> 
 
 
           <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_content"  ,  sub_type : "picture"    ,     course_name :  courseName  ,  type_name :   name   }}  ,  { replace : false}  )   } }   style={{ height: "19.85%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
-          <p>Upload picture</p>
+          <p style= {{  fontWeight : 600 }} >Upload picture</p>
           </div>
 
           <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "quiz"   ,  sub_type : "quiz"   ,  course_name :  courseName  ,  type_name :   name    }}   ,  { replace : false}  )   } }    style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
-          <p>Upload quiz</p>
+          <p style= {{  fontWeight : 600 }}>Upload quiz</p>
           </div>
 
           </div>  
@@ -111,15 +111,15 @@ function  ModuleContentType() {
 
 
           <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_text"   ,   sub_type : "upload picture"   }}  ,  { replace : false}  )   } }         style={{ height: "26.5%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30}}>
-          <p>Create task: picture upload </p>
+          <p style= {{  fontWeight : 600 }}>Create task: picture upload</p>
           </div>
 
           <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_text"   ,   sub_type : "write text"    }}  ,  { replace : false}  )   } }       style={{ height: "26.5%" , width : "45%" ,  backgroundColor : "#B7B7D1"    ,  borderRadius : 30 }}>
-          <p>Create task: write text</p>
+          <p style= {{  fontWeight : 600 }}>Create task: write text</p>
           </div>
 
           <div    className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"  ,  sub_type : "calculation"  }}  ,  { replace : false}  )   } }       style={{ height: "26.5%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
-          <p>Create task: calculation</p>
+          <p style= {{  fontWeight : 600 }} >Create task: calculation</p>
           </div>
              
 

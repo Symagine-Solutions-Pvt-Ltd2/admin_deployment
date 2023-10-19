@@ -94,11 +94,11 @@ function SecondView() {
             
                <div  className="secondview_body_innner_div1">
                    <div  className="secondview_body_innner_tab"  style= {{ backgroundColor : "#F06B6E"  }}  onClick={ () => {  createCourse() } } >
-                     <p style={{ color : "#FFF"  , fontWeight: "800"}} >Create New Course</p>
+                     <p style={{ color : "#FFF"  , fontWeight: "500"}} >Create New Course</p>
                    </div> 
 
                    <div className="secondview_body_innner_tab"   style= {{ backgroundColor : "#5E82F4"  }}  onClick={ () => { goToDraftCourse()  } } >
-                   <p style={{ color : "#FFF"  , fontWeight: "800"}}>Draft Courses</p>
+                   <p style={{ color : "#FFF"  , fontWeight: "500"}}>Draft Courses</p>
                     </div>
                </div>
            
@@ -124,17 +124,17 @@ function SecondView() {
 
 
                 <div  className="secondview_body_innner_tab"  style={{  width: "24.54%"  }}  onClick={ () => {  createModule() } } >
-                  <p>Create new Module</p>
+                  <p style= {{  fontWeight : 600 }} >Create new Module</p>
                 </div> 
 
                 <div className="secondview_body_innner_tab"  style={{  width: "24.54%" }}  onClick={ () => {   createWorkshop()  } } >
-                <p>Create new Workshop</p>
+                <p style= {{  fontWeight : 600 }} >Create new Workshop</p>
                  </div> 
 
 
                  
                 <div  className="secondview_body_innner_tab"     style={{  width: "24.54%" }} onClick={ () => {  createBplan() } } >
-                  <p>Create business plan</p>
+                  <p style= {{  fontWeight : 600 }}>Create business plan</p>
                 </div> 
 
             </div>

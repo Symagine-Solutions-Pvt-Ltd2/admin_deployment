@@ -110,7 +110,8 @@ display:  flex ;
 
     width : 85% ; 
     height: 40.46% ; 
-    background-color: cadetblue; 
-    border-radius:  25px ;
+    background-color: #D9D9D9; 
+    border-radius:  25px ; 
+    padding: 1% ; 
 }
 

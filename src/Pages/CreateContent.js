@@ -692,7 +692,7 @@ function CreateContent() {
          
         
              
-             <input   className="course_form_row_btn" type="submit" value="Submit" /> 
+             <input   className="course_form_row_btn" type="submit" value="Save" /> 
              
            
         </form>
