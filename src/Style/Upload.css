@@ -93,7 +93,7 @@ height : 100% ;
 
     width : 100% ;
      height : 35.18%  ;  
-     background-color: palevioletred; 
+    background-color: #D9D9D9;
      display: flex; 
      flex-direction: row;
     
@@ -105,7 +105,7 @@ height : 100% ;
 
     width : 100% ;
      height : 31.79%  ;  
-     background-color: palevioletred; 
+     background-color: #FFF8EE; 
 
      display: flex; 
      flex-direction: row;
@@ -139,4 +139,14 @@ height : 100% ;
     height :  75.72%; 
     background-color: aquamarine;
 
+} 
+
+
+ 
+.upload-body-box{
+
+
+    display:flex; 
+    align-items: center; 
+    justify-content: center;
 }

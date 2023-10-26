@@ -39,4 +39,16 @@
  align-items:  center;
 
 
+} 
+  
+
+.BusinessPlan_inner_box{
+
+  
+
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
 }
+
+

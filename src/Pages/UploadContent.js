@@ -180,54 +180,57 @@ function  UploadContent() {
         <div className ="upload-body-div2"  >   
 
 
-             <div className="upload-body-div2-inner-div1" >
-             <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+             <div className="upload-body-div2-inner-div1"   style={{ borderTop : "1px solid blue"  , borderBottom : "1px solid blue"}}> 
+
+
+             <div   className=  "upload-body-box" style= {{   width: "10%"  ,  height: "100%" ,  borderRight : "1px solid black" }}>
                <p>Sl No</p>
                </div> 
-               <div style= {{   width: "22.5%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+               <div className=  "upload-body-box"  style= {{   width: "22.5%" , height: "100%"   , borderRight : "1px solid black" }}>
                  <p>Question</p>
                </div>
-               <div style= {{   width: "22.5%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
+               <div className=  "upload-body-box" style= {{   width: "22.5%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
                  <p>Answer 1</p>
                </div>
-               <div style= {{  width: "22.5%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+               <div className=  "upload-body-box" style= {{  width: "22.5%"  ,  height: "100%"    , borderRight : "1px solid black"}}>
                  <p>Answer 2</p>
                </div> 
-               <div style= {{   width: "22.5%"  ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
+               <div  className=  "upload-body-box" style= {{   width: "22.5%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
                 <p>Answer 3</p>
                </div> 
 
              </div> 
 
-             <div className="upload-body-div2-inner-div2">
+             <div className="upload-body-div2-inner-div2" style={{ borderBottom : "1px solid blue" }} >
     
-             <div  style= {{   width: "10%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+             <div className=  "upload-body-box" style= {{   width: "10%"  ,  height: "100%" ,  borderRight : "1px solid black" }}>
               <p>1</p>
                </div>  
 
 
 
-               <div style= {{   width: "22.5%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
+               <div className=  "upload-body-box" style= {{   width: "22.5%" ,  height: "100%" , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
 
-                <div style={{ width: "100%" , height :"100%"  ,  display: "flex" , alignItems :"center" , justifyContent: "center"}} >
 
                    <input type="text"
                    name="question"
-                   className=  "upload-body-input-box"
+                   className=  "upload-body-input-box"  
+                   style ={{ borderRadius : 20}}
                    />         
-               </div> 
+         
               
                 </div>  
 
 
 
-               <div style= {{   width: "22.5%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
+               <div style= {{   width: "22.5%" ,  height: "100%"  , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
 
                     <div style={{ width: "80%" , height :"100%"  ,  display: "flex" , alignItems :"center" , justifyContent: "center"}} >
              
                            <input type="text"
                                   name="option1"
-                                  className=  "upload-body-input-box"
+                                  className=  "upload-body-input-box" 
+                                  style ={{ borderRadius : 20}}
                                   />         
                     </div> 
                     <div style={{ width: "20%" , height :"100%" , }}>
@@ -237,13 +240,14 @@ function  UploadContent() {
                 </div>  
 
 
-                <div style= {{   width: "22.5%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
+                <div style= {{   width: "22.5%" ,  height: "100%"   , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
 
                     <div style={{ width: "80%" , height :"100%"  ,  display: "flex" , alignItems :"center" , justifyContent: "center"}} >
              
                            <input type="text"
                                   name="option2" 
-                                  className=  "upload-body-input-box"
+                                  className=  "upload-body-input-box" 
+                                  style ={{ borderRadius : 20}}
                                   />         
                     </div> 
                     <div style={{ width: "20%" , height :"100%" , }}>
@@ -253,18 +257,19 @@ function  UploadContent() {
                 </div>  
 
 
-                <div style= {{   width: "22.5%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
+                <div style= {{   width: "22.5%" ,  height: "100%"   , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
 
                      <div style={{ width: "80%" , height :"100%"  ,  display: "flex" , alignItems :"center" , justifyContent: "center"}} >
 
                             <input type="text"
                               name="option3" 
-                              className=  "upload-body-input-box"
+                              className=  "upload-body-input-box" 
+                              style ={{ borderRadius : 20}}
                               />         
                       </div>  
 
 
-                 <div style={{ width: "20%" , height :"100%" , }}>
+                 <div style={{ width: "20%" , height :"100%" }}>
          
                      <input  name="option3_checked"  type="checkbox" /> 
                  </div> 
@@ -277,9 +282,11 @@ function  UploadContent() {
 
 
               
-              <div className="upload-body-div2-inner-div2"   style={{ alignItems : "flex-end" , justifyContent : "flex-end" , backgroundColor : "pink" , paddingBottom :"1%" , paddingRight : "3%"}}  > 
+          <div className="upload-body-div2-inner-div2"   style={{ alignItems : "flex-end" , justifyContent : "flex-end" , paddingBottom :"1%" , paddingRight : "3%"}}  > 
+ 
 
-             <input type="submit" value="Submit"   />   
+
+             <input type="submit" value="Submit" style={{ height : "56%"  , width : "15%" , borderRadius : 15 }}   />   
 
              </div>
          </div>

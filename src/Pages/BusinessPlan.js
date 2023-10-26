@@ -7,7 +7,7 @@ import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 
 function BusinessPlan() {    
      
-    const [ businessPlan  , setBusinessPlan ] =  useState( "bp" )  ;
+    const [ businessPlan  , setBusinessPlan ] =  useState( "")  ;
     const [ typeOfPlan  , setTypeOfPlan  ] =  useState( "bp" )  ;
     const [ taskName   , setTaskName ] =  useState( "bp" )  ;
     const [ noOfCharacter  , setNoOfCharacter] =  useState( "bp" )  ;
@@ -15,7 +15,7 @@ function BusinessPlan() {
     const  navigate = useNavigate() ;  
     const goToNext = () => {
   
-        navigate(  "/home/dashboard/client/addclient"   ,  { replace : false}  ) ; 
+      
         console.log("ASJghshGHS") ;  
  
  
@@ -77,35 +77,45 @@ function BusinessPlan() {
 
 
     <div  className="clientview_body1"> 
-             <p>hjxgajgj</p> 
+    
              </div>
 
 
 
-    <div className="clientview_table_outer_div_body2">   
-    
-      <div  className="clientview_table_inner_div_column_name"  style= {{    backgroundColor : "red"  , alignItems : "center"  , justifyContent : "center",   marginBottom : "1%"   }}>
-      
+    <div className="clientview_table_outer_div_body2"  style={{backgroundColor : "#FFF"}}>   
+     
+
+
+
+      <div  className="clientview_table_inner_div_column_name"  style= {{    alignItems : "center"  , justifyContent : "center" ,  borderBottom : "1px solid black" }}>
+       
+
+
+
       <input type="text" 
               placeholder="Enter Bussiness Plan Name"
-              value= {businessPlan }    onChange={ handleChange1 }  
+              value= {businessPlan }    onChange={ handleChange1 }   
+       style = {{  height : "60%"   , width  : "60%" , border : "1px solid red"  ,  borderRadius : 15}}
               /> 
 
       </div>
 
 
+ 
 
-    <div className="clientview_table_inner_div_column_name"   style={{   marginBottom : "1%" }} >  
-    <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
+
+    <div className="clientview_table_inner_div_column_name"   style={{backgroundColor : "#FFF"}}   > 
+
+    <div  className="BusinessPlan_inner_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
     <p>Sl No</p>
     </div> 
-    <div style= {{   width: "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
+    <div   className="BusinessPlan_inner_box"  style= {{   width: "20%" , height: "100%"  , borderRight : "1px solid black" }}>
       <p>Type</p>
     </div>
-    <div style= {{   width: "20%" ,  height: "100%"  , backgroundColor : "red" , borderRight : "1px solid black"}  }>
+    <div  className="BusinessPlan_inner_box"   style= {{   width: "20%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
       <p>Name of task</p>
     </div>
-    <div style= {{  width: "45%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
+    <div  className="BusinessPlan_inner_box"   style= {{  width: "45%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
       <p>Number of Characters</p>
     </div> 
   
@@ -114,23 +124,37 @@ function BusinessPlan() {
    </div>  
     
 
-   <div className="clientview_table_inner_div_column_name">  
-    <div  style= {{   width: "15%"  ,  height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-     <p> si no </p>
+   <div className="clientview_table_inner_div_column_name"   style={{backgroundColor : "#FFF"  , borderBottom : "1px solid black"  , borderTop : "1px solid black"}}   >  
+    <div  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center" }}>
+     <p>1</p>
     </div> 
-    <div style= {{   width: "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-    <input type="text"  value= {  typeOfPlan }    onChange={ handleChange2 }  /> 
+    <div style= {{   width: "20%" , height: "100%"   , borderRight : "1px solid black"  , display: "flex"  , alignItems: "center" , justifyContent : "center"   }}> 
+
+    <input   style ={{ height: "60%"  , borderRadius : 15  }}   type="text"  value= {  typeOfPlan }    onChange={ handleChange2 }  /> 
+    </div> 
+
+    <div style= {{   width: "20%" ,  height: "100%"  , borderRight : "1px solid black"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center"}  }>
+    <input style ={{ height: "60%"  , borderRadius : 15  }}  type="text"  value= { taskName }    onChange={ handleChange3 }     /> 
     </div>
-    <div style= {{   width: "20%" ,  height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-    <input type="text"  value= { taskName }    onChange={ handleChange3 }     /> 
-    </div>
-    <div style= {{  width: "45%"  ,  height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-    <input type="text"   value= { noOfCharacter }    onChange={ handleChange4 }    /> 
+
+
+    <div style= {{  width: "45%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  , alignItems: "center" , justifyContent : "center"}}>
+    <input  style ={{ height: "60%"  , borderRadius : 15  ,  width :"85%" }}  type="text"   value= { noOfCharacter }    onChange={ handleChange4 }    /> 
     </div> 
   
     
-   </div> 
-   
+   </div>  
+
+
+   <div className="clientview_table_inner_div_column_name" style={{ justifyContent : "flex-end"  , backgroundColor : "#FFF" }}>    
+
+
+   <button onClick={ () => { goToNext() } }  className="add_new_program_button"  style ={{  height : "50%"  , border : "0px solid black"}} >
+   Submit
+   </button>
+   </div>
+
+    
 
    </div>   
    
@@ -138,9 +162,6 @@ function BusinessPlan() {
 
    <div className="body3"> 
 
-<div onClick={ () => { goToNext() } } className="add_new_program_button">
-  <p>Submit</p>
-</div>
 
 </div>
 
