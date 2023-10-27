@@ -44,6 +44,8 @@ import SecondView from './Pages/SecondView';
 import StudentView from './Pages/StudentView';  
 import UploadContent from './Pages/UploadContent'; 
 import EditAccount from "./Pages/EditAccount"  ; 
+import ForgotPassword from "./Pages/ForgotPassword" ; 
+import Password from "./Pages/Password" ; 
 
 
 
@@ -95,7 +97,9 @@ root.render(
       
  <Route path= "/"   >  
  <Route index element={<GettingStarted />} />  
- <Route path= "login"  element ={  <Login/>  } />   
+ <Route path= "login"  element ={  <Login/>  } /> 
+ <Route path= "forgotpassword"  element ={  <ForgotPassword/>  } />   
+ <Route path= "password"  element ={  <Password/>  } />    
  
  <Route path= "home"  >
    <Route index element ={  <Home/> } />  

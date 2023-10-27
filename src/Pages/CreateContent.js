@@ -1,8 +1,9 @@
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
-import { useState } from "react";  
+import { useState , useEffect } from "react";  
 import Sidebar  from "../Sidebar" ;  
 import "../Style/CreateContent.css"  ;  
-import axios from "axios"  ;  
+import axios from "axios"  ;   
+
 
 
 function CreateContent() {    
@@ -22,8 +23,63 @@ function CreateContent() {
  const [ type , setType ] =  useState( location.state.type ) ; 
  const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ;  
  const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( [] ) ; 
+ const [ pageNo  , setPageNo ] =  useState( 1 ) ; 
+ const [ courseList  , setCourseList  ] =  useState( []) ; 
+ const [ selectedCourse  , setSelectedCourse  ] =  useState( "") ; 
+
+
+
+
+
+
+ // to fetch all the permanent courses 
+
  
+
+ useEffect(() => { 
+  
+
+ if(   location.state.typeId  === "create_program" ) {
+
  
+  axios({ 
+
+   url : "http://localhost:8000/admin/p_course"  ,   
+
+   method : "POST"  , 
+   data : {
+     
+      "search_key" : "" , 
+     "page_no" :  pageNo ,
+      "limit" : 3  
+
+   }
+
+  }).then( ( res) => {   
+
+   
+    console.log(  res.data ) ; 
+    setCourseList( res.data.data); 
+     
+   //  console.log(   res.data.data[1].name )  ;
+
+  } ).catch(( err) => {  
+      console.log( "error") ;
+
+   }  ) ; 
+ 
+
+  } 
+
+} , [   pageNo])  ; 
+
+
+
+
+
+
+
+
 
  console.log ( "createcontent" ) ; 
  console.log ( location.state.typeId   ) ; 
@@ -274,7 +330,35 @@ function CreateContent() {
 
         }  
 
+         
+       const handlePageNo = (  ) => {
 
+       /*  if( btn ===  "prev"){
+                     
+          setPageNo( pageNo -1 ) ; 
+        }else{
+          console.log( "next") ;  
+
+          setPageNo( pageNo +1 ) ; 
+        } */
+           
+       } ; 
+
+
+
+
+
+
+
+
+
+        const handleCheckboxChange = (  option  ) => {
+            
+          console.log( "kjhk") ; 
+             console.log( option)
+             setSelectedCourse( option ) ; 
+
+        }
 
         
    
@@ -370,53 +454,30 @@ function CreateContent() {
 
                       <div  style={{  width : "87.46%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"}}>
 
+        
 
+                  
 
-                                <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
+                  {
+
+                      courseList.map( (  el  , index )  => ( 
+
+                                <div   key={index} style={ {  width : "27%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
       
-                                <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                       <p >Content Admin</p>   
+                                <div style = {{  backgroundColor : "#FCC046" ,  width : "85%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                                       <p   style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}}   >  { el.course_name } </p>   
                                  </div>
 
 
-                                <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                     <input   type="checkbox"  name="vall" />   
+                                <div style={{  backgroundColor : "#FCC046" , width : "15%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+                                     <input   type="checkbox"  checked = {  selectedCourse === el.course_name  }    onChange={  () => handleCheckboxChange( el.course_name) }    />   
                                 </div>
 
-                                  </div>    
+                                  </div>     
 
+                      ) )
 
-                                  <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
-      
-                          <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                           <p >Content Admin</p>   
-                           </div>
-
-
-                          <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                           <input   type="checkbox"  name="vall" />   
-                              </div>
-
-                          </div>   
-    
-
-
-
-
-              
-                             <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
-      
-                             <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                             <p >Content Admin</p>   
-                             </div>
-
-
-                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                            <input   type="checkbox"  name="vall" />   
-                          </div>
-   
-                    </div>   
-
+                  } 
 
     
                     </div>  
@@ -425,8 +486,17 @@ function CreateContent() {
 
 
                     <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"  , backgroundColor : "red"}}  >
+                    
+
+
+                    <button  onClick={ handlePageNo } >
                   
-                         <p> prev and next btn</p>
+                    </button> 
+
+                    <button   onClick= {handlePageNo}  >
+                      next
+                    </button>
+                  
 
                        </div>
                
