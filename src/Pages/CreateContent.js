@@ -3,6 +3,7 @@ import { useState , useEffect } from "react";
 import Sidebar  from "../Sidebar" ;  
 import "../Style/CreateContent.css"  ;  
 import axios from "axios"  ;   
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 
@@ -489,8 +490,8 @@ function CreateContent() {
                     
 
 
-                    <button  onClick={ handlePageNo } >
-                  
+                    <button  onClick={ handlePageNo }   style ={{ backgroundColor : "pink"  , display : "flex"  , alignItems :"center"}}>
+                   <LogoutIcon  sx={{ color: "#FFF" , backgroundColor : "blue" }}/>
                     </button> 
 
                     <button   onClick= {handlePageNo}  >
