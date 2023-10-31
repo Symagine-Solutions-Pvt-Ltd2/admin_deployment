@@ -3,7 +3,7 @@ import {Link } from "react-router-dom"  ;
 import "./Style/Sidebar.css"  ;   
 import Badge from '@mui/material/Badge';  
 
-
+import logo1 from "./Images/logo1.png"  ; 
 
 // import this component to  render  the sidebar in every page 
 function SideBar( props ) {
@@ -12,20 +12,14 @@ function SideBar( props ) {
 
 
    return(
-    <div  className= "Sidebar" >
-      <div  className="Sidebar-description">    
+    <div  className= "Sidebar"  style={{ borderTopRightRadius: 25  , borderBottomRightRadius : 25}} >
+      <div  className="Sidebar-description"   style={{ borderRadius: 25}} >    
            
-         <div   className="Sidebar-Program-Name-div" >   
+         <div   className="Sidebar-Program-Name-div"   style={{ borderRadius: 25}} >   
            
-                    <div className="Sidebar-Program-Name-inner-div">
-      
-                            <div   style={{  backgroundColor : "white"}}> 
-                               <p>logo</p> 
-                            </div> 
-                            <div style={{ color : "white"}}>
-                                 <p>Future Founders</p> 
-                            </div>  
-      
+                    <div className="Sidebar-Program-Name-inner-div"   style={ { justifyContent : "center"}}>
+             
+             <img src={ logo1}  alt= { "ccv"}  height={"100%"}  /> 
                      </div>   
          </div>
 
@@ -52,7 +46,7 @@ function SideBar( props ) {
 
          <div   className="Sidebar-Program-Home-Button-div" >  
 
-               <div style={{ backgroundColor : "#B7B7D0" ,  width : "51.70%" , height : "45.88%"}}>
+               <div style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%" ,  borderRadius : 25}}>
                <p>Home</p>
                </div>
                  

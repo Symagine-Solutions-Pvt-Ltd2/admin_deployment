@@ -3,7 +3,8 @@ import Button from "../Components/Button.js";
 import {Link , useNavigate } from "react-router-dom" ; 
 
 
-import   getStarted from "../Images/getStarted.jpg"  ; 
+import   getStarted from "../Images/getStarted.jpg"  ;  
+import logo from "../Images/logo.png"  ; 
   
 
 // frame 24 
@@ -33,16 +34,9 @@ function   GettingStarted() {
             <div className="logo-box" >  
                  <div  className="logo-picture-text" > 
  
+                 <img src={ logo }  alt= { "ccv"}  height={"100%"}  />  
 
-                  <div  style={{ height: "100%"    ,  marginRight : "4px" , overflow: "hidden"  }}>
-                 <p >jahj</p>
-                  </div> 
-   
-
-                  
-                   <div style={{ height: "100%"   , overflow: "hidden" ,   backgroundColor: "#FFF8EE" , display : "flex" ,  alignItems : "center" , justifyContent : "center"}}>
-                  <p  className="logo-text">Future Founders</p> 
-                  </div>
+      <p style= {{ width: "75%" , height: "80%"  , fontWeight : "700" }}>Learn Up</p>
 
                  </div>  
               

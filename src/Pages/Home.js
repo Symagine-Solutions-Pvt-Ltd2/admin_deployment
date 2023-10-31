@@ -34,7 +34,7 @@ function  Home() {    // frame 3
    case "system_admin" :     
      return(
         <div className="home">  
-            <div className="home-sidebar" >
+            <div className="home-sidebar"  style={{ borderRadius : 25}}>
                    <Sidebar   type= { typeId} /> 
             </div> 
             <div className="home-body">
