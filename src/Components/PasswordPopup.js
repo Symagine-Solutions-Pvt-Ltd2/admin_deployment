@@ -2,6 +2,7 @@
 import React from 'react'; 
 import "../Components/PasswordPopup.css" ; 
 import { useState  , useEffect} from "react";
+import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import axios from "axios"  ;
 
  
@@ -9,18 +10,22 @@ import axios from "axios"  ;
 
 
 const PasswordPopup= (  props ) => {
-   
+    
+
+  const  navigate = useNavigate() ;   
 
   const [otp, setOtp] = useState("");
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(10);
+  const [minutes, setMinutes] = useState(2);
+  const [seconds, setSeconds] = useState( 59);
 
-
+ 
   const userDetails  =  props.data ; 
 
-  console.log( props.data) ; 
+  console.log( props.userId) ; 
 
+  
 
+   
     
 
   useEffect(() => {
@@ -50,8 +55,95 @@ const PasswordPopup= (  props ) => {
 
   const resendOTP = () => {
     setMinutes(2);
-    setSeconds(59);
-  };
+    setSeconds(59); 
+
+   // console.log(  props.email) ;  
+   // console.log(  props.token ) ;
+     
+
+   axios({ 
+
+     url : "http://localhost:8000/admin/resendotp" , 
+     method : "POST"  ,   
+
+     headers: {   
+
+      "token" :  props.token 
+  
+  }  ,
+     data : {
+       
+      "email_id" : props.email 
+     }
+
+    }).then( ( res) => {   
+
+      
+     console.log( res ) ;
+     alert(  res.data.message)   ;  
+     
+  
+
+    } ).catch(( err) => { 
+        console.log( "error") ;
+
+     }  ) ;  
+
+  };  
+
+
+   
+
+
+
+  const  validateOtp = (  ) => {      
+          
+    console.log(  otp) ;  
+    console.log(  props.userId) ;  
+    console.log(  props.email) ;  
+    
+
+   axios({ 
+
+     url : "http://localhost:8000/admin/otpvalidate"  ,  
+     method : "POST"  ,  
+
+     data : {
+       
+      "otp" : otp  , 
+      "_id" : props.userId 
+
+     }
+
+    }).then( ( res) => {   
+
+      
+     console.log( res) ;  
+      
+
+      if(  res.data.message === "OTP validation successful"){
+         
+        navigate(  "/password"  ,    { state: { userId : props.userId  , token : res.data.data.token }} ,  { replace : false}  )  ;
+        
+      }else{
+        alert(  res.data.message) ; 
+      }
+
+
+    } ).catch(( err) => { 
+        console.log( "error") ;
+
+     }  ) ;  
+
+
+  
+
+}   
+
+ 
+
+
+
 
 
     return( props.trigger) ?( 
@@ -71,7 +163,7 @@ const PasswordPopup= (  props ) => {
                  <div style= {{ height : "25%" , width : "100%" ,  display : "flex"  , alignItems :"center"   , justifyContent : "center"}}  > 
 
 
-                 <input   style= {{ height : "70%"   , width : "80%"   , borderRadius : 15 }}   type="text" value = "Enter OTP"  />
+     <input   style= {{ height : "70%"   , width : "80%"   , borderRadius : 15 }}   type="text"  placeholder='Enter OTP'  defaultValue = { otp }  onChange={  (  e)  => { setOtp(  e.target.value )}}   />
                 
                  </div>  
  
@@ -104,7 +196,7 @@ const PasswordPopup= (  props ) => {
            <div style= {{ height : "25%" ,  width : "100%" , display : "flex"  , alignItems :"center"   , justifyContent : "center"}}  > 
 
 
-<input   style= {{ height : "70%"   , width : "40%"  , borderRadius : 15 }}   type="button" value = "Submit OTP"  />
+<input   style= {{ height : "70%"   , width : "40%"  , borderRadius : 15 }}   type="button" value = "Submit OTP"     onClick={ () => {  validateOtp() }} />
 
 </div>  
 

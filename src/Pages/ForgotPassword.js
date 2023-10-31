@@ -12,14 +12,53 @@ import PasswordPopup  from "../Components/PasswordPopup";
 
 function ForgotPassword() {      
   
-
-    const[ popup  , setPopup ] = useState( false) ; 
     
+    const[ popup  , setPopup ] = useState( false) ; 
+    const[ email   , setEmail ] = useState(  "") ;   
 
-    const  handleOtp = ( cs  ) => {     
+    const[ userId  , setUserId ] = useState(  "") ; 
+    const[ token   , setToken ] = useState(  "") ; 
+
+    const  handleOtp = (   ) => {      
+          
+
           setPopup( true)  ;
-        
-   } 
+           
+          axios({ 
+
+            url : "http://localhost:8000/admin/emailotpsend"  ,  
+            method : "POST"  , 
+            data : {
+              
+              "email_id": email ,  
+      
+            }
+      
+           }).then( ( res) => {   
+      
+             
+            console.log( res.data.data ) ; 
+            setUserId( res.data.data.user_id ) ; 
+            setToken( res.data.data.token) ;
+      
+           } ).catch(( err) => { 
+               console.log( "error") ;
+      
+            }  ) ;  
+      
+      
+         
+
+   }   
+
+
+
+
+
+
+
+
+
 
 
 
@@ -37,19 +76,24 @@ function ForgotPassword() {
 <div className="InnerBox-2"  style={{  display : "flex"  , alignItems :"center"  , justifyContent : "center"}}>   
 
 
-    <div  style={{ width : "100%"   ,height : "35%"  , display : "flex" ,  flexDirection : "column"  , justifyContent : "space-around"}}> 
+    <div  style={{ width : "100%"   ,height : "35%"  , display : "flex" ,  flexDirection : "column"  , justifyContent : "space-around"}}>  
+
+
    
-    <PasswordPopup   trigger= { popup  } setTrigger={ setPopup }  >
+    <PasswordPopup   trigger= { popup  } setTrigger={ setPopup }      userId = { userId }  token ={ token  }    email = {email  }>
         
         </PasswordPopup>
 
 
-    <input type="text"   style={{ width : "50%"  ,height : "20%"  , borderRadius : 25  ,   border : "1px solid #5E81F4"  , padding : "2%" }}     name="name"  placeholder="Enter your Email ID "  /> 
+    <input type="text"   style={{ width : "50%"  ,height : "20%"  , borderRadius : 25  ,   border : "1px solid #5E81F4"  , padding : "2%" }}   name="email"    placeholder="Enter your email id"    defaultValue={ email }  onChange={ (e )  => {  setEmail(  e.target.value )}}/> 
 
-    <div   style={{ width : "50%"  ,height : "20%"  , display : "flex"  , justifyContent : "center"}} >
-    <input     style={{ width : "50%"  ,height : "100%" , borderRadius : 25   , backgroundColor : "#5E81F4"  , color : "#FFF"  ,  border : "0px solid red" }}      type="button" value = "Send OTP"   
+    <div   style={{ width : "50%"  ,height : "20%"  , display : "flex"  , justifyContent : "center"}} > 
+
+    <input     style={{ width : "50%"  ,height : "100%" , borderRadius : 25   , backgroundColor : "#5E81F4"  , color : "#FFF"  ,  border : "0px solid red" }}      type="button" value = "Send OTP"    
+
        onClick={ () => {   handleOtp( )   } } 
-    /> 
+    />  
+
     </div> 
 
    {/*  <div>  
