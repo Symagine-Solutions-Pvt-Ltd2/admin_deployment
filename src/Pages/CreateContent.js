@@ -3,7 +3,7 @@ import { useState , useEffect } from "react";
 import Sidebar  from "../Sidebar" ;  
 import "../Style/CreateContent.css"  ;  
 import axios from "axios"  ;   
-import LogoutIcon from '@mui/icons-material/Logout';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 
 
@@ -490,8 +490,8 @@ function CreateContent() {
                     
 
 
-                    <button  onClick={ handlePageNo }   style ={{ backgroundColor : "pink"  , display : "flex"  , alignItems :"center"}}>
-                   <LogoutIcon  sx={{ color: "#FFF" , backgroundColor : "blue" }}/>
+                    <button  onClick={ handlePageNo }   style ={{ backgroundColor : "pink"  , display : "flex"  , alignItems :"center"    , border : "0px solid red" }}>
+                   <ChevronRightIcon  sx={{ color: "#F06B6D"  }}/>
                     </button> 
 
                     <button   onClick= {handlePageNo}  >

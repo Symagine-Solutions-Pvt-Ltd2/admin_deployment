@@ -4,6 +4,12 @@ import "./Style/Sidebar.css"  ;
 import Badge from '@mui/material/Badge';  
 
 import logo1 from "./Images/logo1.png"  ; 
+import LogoutIcon from '@mui/icons-material/Logout';
+
+
+
+
+
 
 // import this component to  render  the sidebar in every page 
 function SideBar( props ) {
@@ -61,14 +67,19 @@ function SideBar( props ) {
 
  
                       <div className="Sidebar-logout-button">   
-                      <div style={{height : "100%" , width :"20%"}}>
 
-                         <p  style={{ color : "red"}}>hgjh</p>
-                      </div>
-                      <div style={{height : "100%" , width :"80%"}}>
 
-                         <p style={{ color : "red"}}>Log out</p>
+                       <div style={{height : "100%" , width :"30%"  , display : "flex"  , alignItems : "center"}}>
+                  
+                      <LogoutIcon  sx={{ color: "#F06B6D"  , fontSize : 22    }}/>
+                    
+                      </div> 
+
+                      <div style={{height : "100%" , width :"60%"   ,  display : "flex"  , alignItems : "center" }}>
+
+                         <p style={{ color : "#F06B6D"  , fontSize : 14  , textAlign : "end"  }}>Log out</p>
                       </div>
+                        
                         
       
                       </div>  
