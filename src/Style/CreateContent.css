@@ -124,7 +124,9 @@
      
     width : 10.96% ; 
     height : 45% ;  
-    border-radius:  20px; 
+    border-radius:  20px;  
+    background-color: #FCC046; 
+    border : 0px solid red;
 
 
 

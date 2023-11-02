@@ -4,7 +4,7 @@ import Sidebar  from "../Sidebar" ;
 import "../Style/CreateContent.css"  ;  
 import axios from "axios"  ;   
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"  ; 
 
 
 function CreateContent() {    
@@ -24,9 +24,11 @@ function CreateContent() {
  const [ type , setType ] =  useState( location.state.type ) ; 
  const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ;  
  const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( [] ) ; 
- const [ pageNo  , setPageNo ] =  useState( 1 ) ; 
+ const [ pageNo  , setPageNo ] =  useState( 3) ; 
  const [ courseList  , setCourseList  ] =  useState( []) ; 
+ const [ totalPages , setTotalPages  ] =  useState( null ) ;
  const [ selectedCourse  , setSelectedCourse  ] =  useState( "") ; 
+ const [ programName, setProgramName ] =  useState( "") ; 
 
 
 
@@ -61,8 +63,9 @@ function CreateContent() {
    
     console.log(  res.data ) ; 
     setCourseList( res.data.data); 
-     
-   //  console.log(   res.data.data[1].name )  ;
+    setTotalPages( res.data.totalPages )  ; 
+     console.log(    res.data.data.length  )  ; 
+
 
   } ).catch(( err) => {  
       console.log( "error") ;
@@ -91,14 +94,16 @@ function CreateContent() {
 
 
  
-  const createProgram  = (  e  ) => { 
+  const createProgram  = (   ) => { 
     
 
-    console.log(  e.target.program_name.value) ; 
+    console.log(  programName) ; 
+    console.log(  feedbackGivenBy) ;
+    console.log(   selectedCourse  ) ; 
 
 
 
-    axios({ 
+     axios({ 
 
       url : "http://localhost:8000/admin/program"  ,   
 
@@ -107,9 +112,9 @@ function CreateContent() {
       data : {
         
         
-            "program_name" : e.target.program_name.value   , 
-            "course_name" : "Future Founders_new"  , 
-             "feedback_by" :  feedbackGivenBy    
+            "program_name" : programName  , 
+            "course_name" :  selectedCourse  , 
+             "feedback_by" : feedbackGivenBy      
 
       }
 
@@ -122,7 +127,7 @@ function CreateContent() {
 
         if(   res.data.message ===  "Program added Successfully."    ){
          
-           alert( "added Successfully.")  ;  
+           alert( res.data.message)  ;  
        
            navigate(  "/home/dashboard"  ,    { state: {    typeId : type     }} ,  { replace : false}  )   ;
 
@@ -140,12 +145,9 @@ function CreateContent() {
       }  ) ;  
 
 
- 
 
-
-
-    e.preventDefault();
   }
+  
 
   
 
@@ -332,16 +334,19 @@ function CreateContent() {
         }  
 
          
-       const handlePageNo = (  ) => {
+       const handlePageNo = (   btn  ) => {
+  
 
-       /*  if( btn ===  "prev"){
-                     
-          setPageNo( pageNo -1 ) ; 
-        }else{
+         
+         if( btn ===  "prev"){ 
+
+          console.log( "prev") ;             
+          setPageNo( pageNo -1 ) ;  
+
+        }else   if( btn ===  "next" )  {
           console.log( "next") ;  
-
-          setPageNo( pageNo +1 ) ; 
-        } */
+         setPageNo( pageNo +1 ) ; 
+        }  
            
        } ; 
 
@@ -360,6 +365,10 @@ function CreateContent() {
              setSelectedCourse( option ) ; 
 
         }
+    
+
+         
+
 
         
    
@@ -391,7 +400,12 @@ function CreateContent() {
 
       };
 
+    
 
+
+
+
+        
     switch( typeId )  { 
 
 
@@ -416,7 +430,7 @@ function CreateContent() {
          
  
 
-         <form className="createcontent_admin_form" onSubmit={  createProgram }    >     
+         <div className="createcontent_admin_form"    >     
 
         
 
@@ -433,7 +447,8 @@ function CreateContent() {
                         <div className="createcontent_admin_Form-Input" >         
                         <input type="text"
                                 name="program_name"
-                                className="admin_input-box"
+                                className="admin_input-box" 
+                                onChange={ (  e ) => { setProgramName(  e.target.value)}}
                                 /> 
                         </div>  
               </div> 
@@ -486,16 +501,17 @@ function CreateContent() {
 
 
 
-                    <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"  , backgroundColor : "red"}}  >
+                    <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center" }}  >
                     
 
 
-                    <button  onClick={ handlePageNo }   style ={{ backgroundColor : "pink"  , display : "flex"  , alignItems :"center"    , border : "0px solid red" }}>
-                   <ChevronRightIcon  sx={{ color: "#F06B6D"  }}/>
+                    <button    disabled = {  pageNo <= 1 }
+                    onClick={ () => { handlePageNo( "prev") }  }   style ={{    display : "flex"  , alignItems :"center"    , border : "0px solid red" }}>
+                   <ChevronLeftIcon  sx={{ color: "#000"  }}/>
                     </button> 
 
-                    <button   onClick= {handlePageNo}  >
-                      next
+                    <button      disabled = {  pageNo  >=  totalPages }   onClick= { ( )  =>  {handlePageNo( "next")  }  }     style ={{    display : "flex"  , alignItems :"center"    , border : "0px solid red" }} >
+                    <ChevronRightIcon  sx={{ color: "#000"  }}/>
                     </button>
                   
 
@@ -558,6 +574,7 @@ function CreateContent() {
     
     
                             <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+     
      <input   type="checkbox"  value="School Head"  name="feedback"   onChange={ handleCheckboxChange1 } />   
                              </div>
     
@@ -602,9 +619,10 @@ function CreateContent() {
 
 
 
-                        <div  className="admin_form_row_btn_div"   style ={{ borderBottom : "0px solid black"}}> 
-                        <input className="admin_form_row_btn" type="submit" value="Submit" /> 
-                        </div>
+        <div  className="admin_form_row_btn_div"   style ={{ borderBottom : "0px solid black"}}> 
+
+            <input className="admin_form_row_btn" type="button"   value="Submit"  onClick={ () => { createProgram()}}    /> 
+          </div>
                         
 
 
@@ -613,7 +631,7 @@ function CreateContent() {
 
 
 
-                    </form>
+                    </div>
 
         
     

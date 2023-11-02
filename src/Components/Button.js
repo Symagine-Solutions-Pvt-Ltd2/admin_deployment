@@ -13,7 +13,7 @@ const Button = (  props ) => {
     
      display : "flex"  , alignItems : "center"  , justifyContent : "center"
     }}  >
-        <p style= {{ color : props.color1   }}>  {  props.name  } </p> 
+        <p style= {{ color : "#FFF"   , fontWeight : "600"   }}>  {  props.name  } </p> 
     </div> ) ; 
 }
 

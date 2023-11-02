@@ -40,7 +40,7 @@ function CourseDetails() {
        console.log( courseName) ; 
 
         navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : location.state.courseName   , courseId : location.state.courseId  }}   ,  { replace : false}  ) ; 
-        console.log("ASJghshGHS") ;  
+     
  
  
  

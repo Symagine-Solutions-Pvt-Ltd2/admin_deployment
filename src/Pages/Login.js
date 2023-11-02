@@ -114,7 +114,7 @@ function Login() {
       </div>
 
       <div className="button"  onClick={ () => { goToHome() }}>
-        <Button  name =  "Log In"  /> 
+        <Button   name =  "Log In"  /> 
      </div>  
 
      <div className="description2_login">

@@ -1,23 +1,69 @@
 import "../Style/BusinessPlan.css" ; 
 import { useState  } from "react"; 
 import Sidebar from "../Sidebar"  ; 
-import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
+import {Link , useNavigate  , useLocation} from "react-router-dom" ;  
+import axios from "axios"  ;  
 
  
 
 function BusinessPlan() {    
-     
+      
+  const location = useLocation();  
+
+
+  
+  console.log ( "business plan" ) ; 
+  console.log ( location.state.courseName   ) ;
+
     const [ businessPlan  , setBusinessPlan ] =  useState( "")  ;
-    const [ typeOfPlan  , setTypeOfPlan  ] =  useState( "bp" )  ;
-    const [ taskName   , setTaskName ] =  useState( "bp" )  ;
-    const [ noOfCharacter  , setNoOfCharacter] =  useState( "bp" )  ;
+    const [ typeOfPlan  , setTypeOfPlan  ] =  useState( "" )  ;
+    const [ taskName   , setTaskName ] =  useState( "" )  ;
+    const [ noOfCharacter  , setNoOfCharacter] =  useState( "" )  ;
 
     const  navigate = useNavigate() ;  
-    const goToNext = () => {
+
+
+
+    const submitBplan = () => {
   
+        
+      console.log ( businessPlan ) ;   
+      console.log ( typeOfPlan ) ;  
+      console.log ( taskName  ) ;   
+      console.log ( noOfCharacter  ) ; 
+    
+
+       axios({ 
       
-        console.log("ASJghshGHS") ;  
- 
+        url : "http://localhost:8000/admin/bp_registration"  ,   
+
+        method : "POST"  , 
+        data : {
+          
+          "task_name": taskName ,
+          "bp_name": businessPlan , 
+          "total_character": noOfCharacter, 
+          "course_name": location.state.courseName 
+        }
+  
+       }).then( ( res) => {   
+  
+            console.log( res) ; 
+            
+            
+            if(   res.data.message === "Registered Successfully."){
+               
+              navigate(  "/home/course/draftcourse/addcoursecontent"  ,    { state: {    courseName : location.state.courseName  ,  typeId : "addcoursecontent"   }}   ,      { replace : false} ) ;
+            } 
+
+
+
+
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ;  
+   
  
  
  
@@ -25,47 +71,7 @@ function BusinessPlan() {
   
 
 
-
-       const handleChange1 = ( event  ) => {
-            
-
-        console.log( event.target.value) ;
-        setBusinessPlan( event.target.value) ;
-     
-       }   ;
-
-        
-       const handleChange2 = ( event  ) => {
-         
-        
-        console.log( event.target.value) ;
-        setTypeOfPlan( event.target.value) ;
-
-       }   ;
-
-        
-       
-       const handleChange3 = ( event  ) => {
-          
-        
-        console.log( event.target.value) ;
-        setTaskName( event.target.value) ;
-
-       }   ;
-
-
-       
-       const handleChange4  = ( event  ) => {
-          
-        
-        console.log( event.target.value) ;
-        setNoOfCharacter( event.target.value) ;
-
-       }   ;
-
-
-        
-
+    
 
     return(
    <div className="BusinessPlan" > 
@@ -94,8 +100,8 @@ function BusinessPlan() {
 
       <input type="text" 
               placeholder="Enter Bussiness Plan Name"
-              value= {businessPlan }    onChange={ handleChange1 }   
-       style = {{  height : "60%"   , width  : "60%" , border : "1px solid red"  ,  borderRadius : 15}}
+              value= {businessPlan }    onChange={ (  e) => {  setBusinessPlan( e.target.value)} }   
+       style = {{  height : "60%"   , width  : "60%" , border : "1px solid #5E82F4"  ,  borderRadius : 15}}
               /> 
 
       </div>
@@ -130,16 +136,16 @@ function BusinessPlan() {
     </div> 
     <div style= {{   width: "20%" , height: "100%"   , borderRight : "1px solid black"  , display: "flex"  , alignItems: "center" , justifyContent : "center"   }}> 
 
-    <input   style ={{ height: "60%"  , borderRadius : 15  }}   type="text"  value= {  typeOfPlan }    onChange={ handleChange2 }  /> 
+    <input   style ={{ height: "60%"  , borderRadius : 15  }}   type="text"  value= {  typeOfPlan }    onChange={ (e) => {  setTypeOfPlan( e.target.value)} }  /> 
     </div> 
 
     <div style= {{   width: "20%" ,  height: "100%"  , borderRight : "1px solid black"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center"}  }>
-    <input style ={{ height: "60%"  , borderRadius : 15  }}  type="text"  value= { taskName }    onChange={ handleChange3 }     /> 
+    <input style ={{ height: "60%"  , borderRadius : 15  }}  type="text"  value= { taskName }    onChange={ (e) => {  setTaskName( e.target.value)} }     /> 
     </div>
 
 
     <div style= {{  width: "45%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  , alignItems: "center" , justifyContent : "center"}}>
-    <input  style ={{ height: "60%"  , borderRadius : 15  ,  width :"85%" }}  type="text"   value= { noOfCharacter }    onChange={ handleChange4 }    /> 
+    <input  style ={{ height: "60%"  , borderRadius : 15  ,  width :"85%" }}  type="text"   value= { noOfCharacter }    onChange = { (e) => {  setNoOfCharacter( e.target.value)} }   /> 
     </div> 
   
     
@@ -149,7 +155,7 @@ function BusinessPlan() {
    <div className="clientview_table_inner_div_column_name" style={{ justifyContent : "flex-end"  , backgroundColor : "#FFF" }}>    
 
 
-   <button onClick={ () => { goToNext() } }  className="add_new_program_button"  style ={{  height : "50%"  , border : "0px solid black"}} >
+   <button onClick={ () => {  submitBplan() } }  className="add_new_program_button"  style ={{  height : "50%"  , border : "0px solid black"}} >
    Submit
    </button>
    </div>

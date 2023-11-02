@@ -157,7 +157,7 @@ function FirstView() {
                              </div> 
 
 
-                     <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
+               <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,   data : el        } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
                          <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}  }> 

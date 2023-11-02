@@ -4,6 +4,9 @@ import {Link , useNavigate  , useLocation   } from "react-router-dom" ;
 import "../Style/AddAccount.css" ;
 import axios from "axios"  ;  
 import "../Style/EditAccount.css"  ; 
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft"  ; 
+
 
 
 
@@ -19,10 +22,94 @@ function  EditAccount(  {  props }) {
   const [  data  , setData ]   = useState( location.state.data   ) ;  
 
  
-    console.log( data ) ;   
-  
- // console.log( location.state.type) ;  
+   console.log( location.state.data._id ) ;   
+   console.log( location.state.typeId) ;  
     
+  
+ 
+
+    // edit program 
+    const [ programName, setProgramName ] =  useState(  location.state.data.program_name) ; 
+    const [ pageNo  , setPageNo ] =  useState( 3) ; 
+    const [ courseList  , setCourseList  ] =  useState( []) ; 
+    const [ totalPages , setTotalPages  ] =  useState( null ) ;
+    const [ selectedCourse  , setSelectedCourse  ] =  useState( location.state.data.course_name) ; 
+    const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( location.state.data.feedback_by ) ;  
+    const [ clientSupervisor  , setClientSupervisor ] =  useState( "" ) ; 
+    const [ schoolHead  , setSchoolHead  ] =  useState( "" ) ; 
+    const [  facilitator , setFacilitator ] =  useState( "" ) ;  
+
+
+  
+   console.log(  feedbackGivenBy) ; 
+
+
+    function checkFeedback1(  value ) {
+
+        return  value === "Client Supervisor" ; 
+    }
+   
+
+    
+    function checkFeedback2(  value ) {
+
+        return  value === "School Head" ; 
+    } 
+
+    
+    function checkFeedback3(  value ) {
+
+        return  value === "Facilitator" ; 
+    }
+     
+
+
+ useEffect(() => { 
+  
+
+        if(   location.state.typeId  === "program" ) {
+       
+        
+         axios({ 
+       
+          url : "http://localhost:8000/admin/p_course"  ,   
+       
+          method : "POST"  , 
+          data : {
+            
+             "search_key" : "" , 
+            "page_no" :  pageNo ,
+             "limit" : 3  
+       
+          }
+       
+         }).then( ( res) => {   
+       
+          
+          // console.log(  res.data ) ; 
+           setCourseList( res.data.data); 
+           setTotalPages( res.data.totalPages )  ; 
+           // console.log(    res.data.data.length  )  ; 
+       
+       
+         } ).catch(( err) => {  
+             console.log( "error") ;
+       
+          }  ) ; 
+           
+
+           
+           setClientSupervisor ( feedbackGivenBy.find( checkFeedback1 ) ) ;
+           setSchoolHead ( feedbackGivenBy.find( checkFeedback2 ) ) ;
+           setFacilitator( feedbackGivenBy.find( checkFeedback3 ) ) ; 
+
+          /*  console.log(  "editaccount") ; 
+           console.log(  feedbackGivenBy.find( checkFeedback1 )) ; 
+           console.log( feedbackGivenBy.find( checkFeedback2 )) ; 
+           console.log(  feedbackGivenBy.find( checkFeedback3 )) ;  */
+         } 
+       
+       } , [   pageNo])  ; 
 
   
  
@@ -144,6 +231,17 @@ axios({
     }
      
   
+ 
+
+
+
+
+
+
+
+
+
+
 
 
     const  editFacilitator  = (   event ) => {
@@ -196,6 +294,16 @@ axios({
      }
 
    
+ 
+
+
+
+
+
+
+
+
+
 
      const  editStudent  = (   event ) => {
  
@@ -242,18 +350,206 @@ axios({
         event.preventDefault();
 
      }
+  
 
 
 
 
 
 
-
-   const handleCheckboxChange1 =() => {
-
-        console.log("bvhjghhj")  ; 
-   }
+     const  editProgram  = (  ) => {
  
+         
+     
+        console.log(  programName) ;    
+        console.log(  feedbackGivenBy) ;     
+        console.log( selectedCourse ) ;    
+        console.log( location.state.data._id  ) ;
+        
+            
+           axios({ 
+      
+        url : "http://localhost:8000/admin/e_program"  ,   
+
+        method : "POST"  ,  
+
+        data : {
+          
+                "program_name" : programName  , 
+                "course_name" : selectedCourse , 
+               "feedback_by" : feedbackGivenBy   , 
+               "_id" :location.state.data._id 
+           
+            
+        }
+  
+       }).then( ( res) => {   
+    
+              
+            console.log( res) ;   
+
+            if(  res.data.message === "Data modified successfully"  ){ 
+
+            navigate(  "/home/dashboard/"    ,    { state: {    typeId : "system_admin"   }}  ,    { replace : false}  )   ; 
+
+            }
+         
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ;  
+
+
+
+     }
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+     const handleCheckboxChange = (  option  ) => {
+            
+        console.log( "kjhk") ; 
+           console.log( option)
+           setSelectedCourse( option ) ; 
+
+      }
+  
+
+       
+
+
+      
+ 
+      const handleCheckboxChange1 = ( e ) => {  
+    
+        const { value, checked } = e.target;
+           
+
+        console.log(`${value} is ${checked}`); 
+
+       
+        if(  value === "Client Supervisor") {
+
+             
+               // Case 1 : The user checks the box
+          if (checked) {
+                        
+                setFeedbackGivenBy( [...feedbackGivenBy , value]) ; 
+                setClientSupervisor( "Client Supervisor") ; 
+
+                     }
+    
+                // Case 2  .: The user unchecks the box
+                  else {
+                     
+                        setClientSupervisor("" ) ; 
+                     let newArray = feedbackGivenBy.filter((e) => e !== value) ;
+                    setFeedbackGivenBy(  newArray ) ; 
+                         }
+     
+    
+                         console.log( feedbackGivenBy) ; 
+                
+        } 
+
+        else if(  value === "School Head" ){
+                  
+                
+                 // Case 1 : The user checks the box
+          if (checked) {
+                        
+                setFeedbackGivenBy( [...feedbackGivenBy , value]) ; 
+                setSchoolHead( "School Head") ; 
+
+                     }
+    
+                // Case 2  .: The user unchecks the box
+                  else {
+                     
+                        setSchoolHead("" ) ; 
+                     let newArray = feedbackGivenBy.filter((e) => e !== value) ;
+                    setFeedbackGivenBy(  newArray ) ; 
+                         }
+     
+    
+                         console.log( feedbackGivenBy) ; 
+
+        }else if(   value === "Facilitator"  ){
+
+               // Case 1 : The user checks the box
+          if (checked) {
+                        
+                setFeedbackGivenBy( [...feedbackGivenBy , value]) ; 
+                setFacilitator( "Facilitator") ; 
+
+                     }
+    
+                // Case 2  .: The user unchecks the box
+                  else {
+                     
+                        setFacilitator("" ) ; 
+                     let newArray = feedbackGivenBy.filter((e) => e !== value) ;
+                    setFeedbackGivenBy(  newArray ) ; 
+                         }
+     
+    
+                         console.log( feedbackGivenBy) ; 
+        }
+
+
+
+        /*  // Case 1 : The user checks the box
+          if (checked) {
+                        
+            setFeedbackGivenBy( [...feedbackGivenBy , value]) ; 
+       
+                 }
+
+            // Case 2  .: The user unchecks the box
+              else {
+               
+                 let newArray = feedbackGivenBy.filter((e) => e !== value) ;
+                setFeedbackGivenBy(  newArray ) ; 
+                     }
+ 
+
+                     console.log( feedbackGivenBy) ; 
+ */
+
+    };
+
+  
+
+
+
+      
+    const handlePageNo = (   btn  ) => {
+  
+
+         
+        if( btn ===  "prev"){ 
+
+         console.log( "prev") ;             
+         setPageNo( pageNo -1 ) ;  
+
+       }else   if( btn ===  "next" )  {
+         console.log( "next") ;  
+        setPageNo( pageNo +1 ) ; 
+       }  
+          
+      } ; 
+
+
 
 
 
@@ -290,7 +586,7 @@ axios({
 
 
 
-         <form className="editprogram_admin_form"    >    
+         <div className="editprogram_admin_form"    >    
      
 
 
@@ -307,8 +603,9 @@ axios({
 
                         <div className="editprogram_admin_Form-Input" >         
                         <input type="text"
-                                name="myname"
-                             
+                                name="name" 
+                                defaultValue={ programName}
+                   onChange={ (  e ) => { setProgramName(  e.target.value)}}     
                                 className="admin_input-box"
                                 /> 
                         </div>  
@@ -325,66 +622,51 @@ axios({
                         <p> Select Course</p> 
                         </div>             
 
-    
+     
+
+
                         <div className="editprogram_admin_Form-Input"  >     
     
                       <div  style={{  width : "87.46%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"}}>
 
 
 
-                                <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
-      
-                                <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                       <p >Content Admin</p>   
-                                 </div>
+                      {
+
+           courseList.map( (  el  , index )  => ( 
+
+          <div   key={index} style={ {  width : "27%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
+
+          <div style = {{  backgroundColor : "#FCC046" ,  width : "85%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                 <p   style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}}   >  { el.course_name } </p>   
+           </div>
 
 
-                                <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                     <input   type="checkbox"  name="vall" />   
-                                </div>
+          <div style={{  backgroundColor : "#FCC046" , width : "15%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+               <input   type="checkbox"  checked = {  selectedCourse === el.course_name  }    onChange={  () => handleCheckboxChange( el.course_name) }    />   
+          </div>
 
-                                  </div>    
+            </div>     
 
+) )
 
-                                  <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
-      
-                          <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                           <p >Content Admin</p>   
-                           </div>
-
-
-                          <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                           <input   type="checkbox"  name="vall" />   
-                              </div>
-
-                          </div>   
-    
-
-
-
-
-              
-                             <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
-      
-                             <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                             <p >Content Admin</p>   
-                             </div>
-
-
-                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                            <input   type="checkbox"  name="vall" />   
-                          </div>
-   
-                    </div>   
+} 
 
 
     
                     </div> 
 
-                    <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"  , backgroundColor : "red"}}  >
-                  
-                         <p> prev and next btn</p>
+                    <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"  }}  >
+                   
 
+                    <button    disabled = {  pageNo <= 1 }
+                    onClick={ () => { handlePageNo( "prev") }  }   style ={{    display : "flex"  , alignItems :"center"    , border : "0px solid red" }}>
+                   <ChevronLeftIcon  sx={{ color: "#000"  }}/>
+                    </button> 
+
+                    <button      disabled = {  pageNo  >=  totalPages }   onClick= { ( )  =>  {handlePageNo( "next")  }  }     style ={{    display : "flex"  , alignItems :"center"    , border : "0px solid red" }} >
+                    <ChevronRightIcon  sx={{ color: "#000"  }}/>
+                    </button>
                       </div>
                
      </div>    
@@ -405,9 +687,6 @@ axios({
                 <div className="createcontent_admin_Form-Input"   style={ {  justifyContent : "space-around"}} >     
       
 
-
-
-    
       <div  style={{  width : "87.46%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"}}> 
 
 
@@ -418,16 +697,14 @@ axios({
 
 
 
-
-                        <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Client Supervisor</p>   
+ <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Client Supervisor</p>   
                               </div>
     
     
                       <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-        <input   type="checkbox"  value="Client Supervisor"  name="feedback"  onChange={ handleCheckboxChange1 } />   
+ <input   type="checkbox"  value="Client Supervisor"  checked= { clientSupervisor === "Client Supervisor" }   name="feedback"  onChange={ handleCheckboxChange1 } />   
                              </div> 
-
 
 
     
@@ -437,31 +714,33 @@ axios({
                          
          <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
                             
-                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >School Head</p>   
+         <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >School Head</p>   
                               </div>
     
     
-                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-     <input   type="checkbox"  value="School Head"  name="feedback"   onChange={ handleCheckboxChange1 } />   
-                             </div>
+  <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}> 
+
+ <input   type="checkbox"  checked={ schoolHead === "School Head" }   value="School Head"  name="feedback"   onChange={ handleCheckboxChange1 } />   
+         </div>
     
                           
     
                            </div> 
 
 
-                           <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+        <div style={ {  width : "25.87%"  , height : "35%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
                             
-                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                              <p >Facilitator</p>
+               <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}> 
+                            
+                              <p style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Facilitator</p>
                               </div>
     
     
-                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"   }}>  
+      <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"   }}>  
 
-                <input     type="checkbox"   value="Facilitator"   name="feedback"     onChange={handleCheckboxChange1 } /> 
-                             </div>
+ <input    type="checkbox"  checked={ facilitator === "Facilitator" }  value="Facilitator"   name="feedback"     onChange={handleCheckboxChange1 } /> 
+                </div>
     
                           
     
@@ -476,9 +755,6 @@ axios({
 
 
             <div style={{  width : "12.54%" , height: "100%"  ,  display : "flex" , flexDirection :  "row" , justifyContent : "space-around" , alignItems : "center"   }}  >
-
-
-
             </div>
     
             </div>  
@@ -491,15 +767,15 @@ axios({
 
         </div>
 
-                        <div  className="admin_form_row_btn_div"> 
-                        <input className="admin_form_row_btn" type="submit" value="Submit" /> 
+                        <div  className="admin_form_row_btn_div"    style= {{ borderBottom : "0px"  , borderLeft : "0px"  , borderRight : "0px"}} > 
+   <input className="admin_form_row_btn" type="button" value="Submit"  onClick={ () => { editProgram()}}   /> 
                         </div>
                        
 
 
 
                         
-                    </form>
+                    </div>
 
     
     

@@ -117,7 +117,10 @@ height : 8% ;
     top : 68.38% ;  
      position: absolute;  
      border-radius:  20px; 
-     overflow: hidden ;
+     overflow: hidden ; 
+     display : flex ;
+     align-items: center; 
+     justify-content: center;
 } 
 
 
