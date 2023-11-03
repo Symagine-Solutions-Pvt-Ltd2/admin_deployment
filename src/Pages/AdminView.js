@@ -115,10 +115,10 @@ function  AdminView() {
             
                </div>
               
-                <div className="clientview_table_outer_div_body2"   >   
+                <div className="clientview_table_outer_div_body2"     >   
       
   
-                 <div className="clientview_table_inner_div_column_name"   style= {{ backgroundColor : '#F1F2F7'}} >  
+                 <div className="clientview_table_inner_div_column_name"   style= {{ backgroundColor : '#F1F2F7'   , borderTop : "1px solid #5A6199"  ,  borderBottom : "1px solid #5A6199"}} >  
 
                  <div  className="clientview_table_row_box"   style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}> 
                  <p>Sl No</p>
@@ -152,13 +152,13 @@ function  AdminView() {
 
 
                 
-                <div  className="clientview_table_inner_div_table_row"   style= {{ backgroundColor : "#F8E5E9"}} >
+                <div  className="clientview_table_inner_div_table_row"   style= {{ backgroundColor : "#F8E5E9"   }} >
                    
        
                      {
          data.map( (  el   , index )  => (
            
-          <div  key = { index } style= {{ width : "100%" , height: "25%"   , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+          <div  key = { index } style= {{ width : "100%" , height: "25%"   , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"  ,    borderBottom : "1px solid #5A6199"    }} >
 
           <div  className="clientview_table_row_box" style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
            <p>  { index+1 } </p>
@@ -185,10 +185,10 @@ function  AdminView() {
            <div className="clientview_table_row_box"  style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>  
 
                      
-                 <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el.name) } }  /> 
+                 <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el.name) } }  /> 
                   
                      
-                <input    className="clientview_table_row_button"     style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/manageadmin/editadminaccount"    ,    {   state: {  typeId : "admin"   } }   ,  { replace : false}  )  }  } /> 
+                <input    className="clientview_table_row_button"     style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/manageadmin/editadminaccount"    ,    {   state: {  typeId : "admin"   } }   ,  { replace : false}  )  }  } /> 
                     
           </div>
         

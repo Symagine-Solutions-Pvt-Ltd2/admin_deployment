@@ -95,7 +95,7 @@ function  ModuleContentType() {
           <p style= {{  fontWeight : 600 }} >Upload picture</p>
           </div>
 
-          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "quiz"   ,  sub_type : "quiz"   ,  course_name :  courseName  ,  type_name :   name    }}   ,  { replace : false}  )   } }    style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "quiz"   ,  course_name :  courseName  ,  type_name :   name     ,    type :   location.state.type   }}   ,  { replace : false}  )   } }    style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
           <p style= {{  fontWeight : 600 }}>Upload quiz</p>
           </div>
 

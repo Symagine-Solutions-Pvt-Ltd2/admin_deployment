@@ -34,9 +34,9 @@ function  Module() {
       console.log("ASJghshGHS") ;  
 
 
-
-
      } 
+ 
+
 
      useEffect(() => { 
 
@@ -193,7 +193,7 @@ function  Module() {
   
   
        
-            <input style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {   }  } /> 
+            <input style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {    }  } /> 
                          
   
   
