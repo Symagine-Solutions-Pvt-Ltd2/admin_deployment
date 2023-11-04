@@ -927,7 +927,7 @@ function AddAccount() {
                           <div  className="addaccount_form_row_btn_div"  style={{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"}}>  
 
 
-                          <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
+                          <input className="addaccount_form_row_btn" type="submit" value="Submit"  style= {{ backgroundColor : "#FCC046"  , border : '0px'}} /> 
                           </div>
                         
                       </form>
