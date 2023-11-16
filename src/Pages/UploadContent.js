@@ -415,7 +415,7 @@ setSelectedOption( null) ;
       <div  className="upload"> 
 
       <div  className="upload-sidebar"> 
-     <Sidebar /> 
+     <Sidebar     info = {  location.state.userInfo}/> 
      </div> 
 
 
@@ -667,7 +667,7 @@ setSelectedOption( null) ;
       <div  className="upload"> 
 
       <div  className="upload-sidebar"> 
-     <Sidebar /> 
+     <Sidebar    info = {  location.state.userInfo} /> 
      </div> 
 
 
@@ -730,7 +730,7 @@ setSelectedOption( null) ;
      <div  className="upload"  > 
 
      <div  className="upload-sidebar"> 
-    <Sidebar /> 
+    <Sidebar    info = {  location.state.userInfo} /> 
     </div> 
 
 
@@ -782,7 +782,7 @@ setSelectedOption( null) ;
      <div  className="upload"  > 
 
      <div  className="upload-sidebar"> 
-    <Sidebar /> 
+    <Sidebar    info = {  location.state.userInfo} /> 
     </div> 
 
 
@@ -845,7 +845,7 @@ setSelectedOption( null) ;
      <div  className="upload"  > 
 
      <div  className="upload-sidebar"> 
-    <Sidebar /> 
+    <Sidebar     info = {  location.state.userInfo}/> 
     </div> 
 
 

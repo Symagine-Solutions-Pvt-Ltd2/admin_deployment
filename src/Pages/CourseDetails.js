@@ -39,7 +39,7 @@ function CourseDetails() {
 
        console.log( courseName) ; 
 
-        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : location.state.courseName   , courseId : location.state.courseId  }}   ,  { replace : false}  ) ; 
+        navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : location.state.courseName   , courseId : location.state.courseId  ,  userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
      
  
  
@@ -107,7 +107,7 @@ function CourseDetails() {
         <div className="clientview">  
 
         <div className="clientview_sidebar" >
-               <Sidebar /> 
+               <Sidebar    info = {  location.state.userInfo} /> 
         </div>  
 
         <div className="clientview_body">   
@@ -173,7 +173,7 @@ function CourseDetails() {
 
 
                        
-              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "16%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name      }}   ,  { replace : false}  )  }  } /> 
+              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "16%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  )  }  } /> 
                       
 
 
@@ -227,7 +227,7 @@ function CourseDetails() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar      info = {  location.state.userInfo}/> 
     </div>  
 
     <div className="clientview_body">   

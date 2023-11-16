@@ -79,12 +79,12 @@ function  Home() {    // frame 3
                 </div> 
 
 
-                <div    onClick={() => { navigate(  "/home/course"  ,    { state: {    typeId : "course"     }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#5A6199"}}>
+                <div    onClick={() => { navigate(  "/home/course"  ,    { state: {    typeId : "course"    , userInfo :  location.state.userInfo   }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#5A6199"}}>
                 <p style={{ color : "white"}}>Create Course</p>
                 </div>  
 
                
-                <div   onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+                <div   onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  , userInfo :  location.state.userInfo   }} ,  { replace : false}  ) } }   className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>
                
@@ -93,7 +93,7 @@ function  Home() {    // frame 3
              </div>
               
               <div className="home-body3">
-              <div  onClick={() => { navigate(  "/home/manageadmin"   ,  { replace : false}  ) } }     className="home-body2-button2"   style={{ backgroundColor : "#F06B6E" }}  > 
+              <div  onClick={() => { navigate(  "/home/manageadmin"   , {  state: { userInfo :  location.state.userInfo}}    ,       { replace : false}  ) } }     className="home-body2-button2"   style={{ backgroundColor : "#F06B6E" }}  > 
                 <p style={{ color : "white"}}>Manage Admin Accounts</p>
                 </div>
 
@@ -118,7 +118,7 @@ function  Home() {    // frame 3
 
         <div className="home">  
             <div className="home-sidebar" >
-                   <Sidebar   type= "hkv" /> 
+                   <Sidebar      info = {  location.state.userInfo} /> 
             </div> 
             <div className="home-body">
 
@@ -151,7 +151,7 @@ function  Home() {    // frame 3
 
                 
                 
-                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  }} ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"  , width : "45%" }} > 
+                <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"   , userInfo :  location.state.userInfo    }} ,  { replace : false}  ) } }      className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"  , width : "45%" }} > 
                 <p style={{ color : "white"}}>View Course</p>
                 </div>  
 
@@ -183,7 +183,7 @@ function  Home() {    // frame 3
     
       <div className="home">  
       <div className="home-sidebar" >
-             <Sidebar    type= { typeId } /> 
+             <Sidebar    info = {  location.state.userInfo}/> 
       </div> 
       <div className="home-body">
 
@@ -212,12 +212,12 @@ function  Home() {    // frame 3
           </div>  
 
 
-          <div    onClick={() => { navigate(  "/home/course"  ,    { state: {    typeId : "course"  }} ,  { replace : false}  ) } }    className="home-body2-button1"  style={{ backgroundColor : "#5A6199"}}>
+          <div    onClick={() => { navigate(  "/home/course"  ,    { state: {    typeId : "course"  , userInfo :  location.state.userInfo  }} ,  { replace : false}  ) } }    className="home-body2-button1"  style={{ backgroundColor : "#5A6199"}}>
           <p style={{ color : "white"}}>Create Course</p>
           </div>  
 
 
-          <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"  }} ,  { replace : false}  ) } }       className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
+          <div  onClick={() => { navigate(  "/home/viewcourse"  ,    { state: {    typeId : "permanent_course"   , userInfo :  location.state.userInfo }} ,  { replace : false}  ) } }       className="home-body2-button1"  style={{ backgroundColor : "#B7B7D0"}} > 
           <p style={{ color : "white"}}>View Course</p>
           </div>
         

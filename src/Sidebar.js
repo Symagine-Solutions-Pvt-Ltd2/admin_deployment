@@ -33,6 +33,16 @@ function SideBar( props ) {
          }
          setUserInfo( newUser ) ;
        }
+
+       else  if(   props.info.type === "content_admin"){
+           
+          
+         let  newUser = {
+            name : props.info.name , 
+            type : "Content Admin"
+         }
+         setUserInfo( newUser ) ;
+       }
          
 
   } , [ props.info.type])  ; 

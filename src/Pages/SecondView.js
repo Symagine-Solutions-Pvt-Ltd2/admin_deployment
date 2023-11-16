@@ -26,8 +26,8 @@ function SecondView() {
   
 
     
-    navigate(  "/home/course/savecourse"   ,   { state: {       typeId : "save_course"  }} , { replace : false}  ) ; 
-    console.log("ASJghshGHS") ;  
+    navigate(  "/home/course/savecourse"   ,   { state: {       typeId : "save_course"  ,  userInfo :  location.state.userInfo  }} , { replace : false}  ) ; 
+    console.log("ASJghshGHS"  ) ;  
 
 
 
@@ -38,7 +38,7 @@ function SecondView() {
 
    const goToDraftCourse = () => {
   
-    navigate(  "/home/course/draftcourse"   ,     { state: {    typeId : "draft_course"   ,     endpoint : "draftcourse" }}   ,    { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse"   ,     { state: {    typeId : "draft_course"   ,     endpoint : "draftcourse"  ,  userInfo :  location.state.userInfo }}   ,    { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
    }    
@@ -48,7 +48,7 @@ function SecondView() {
    const createModule = () => {
     
     console.log( courseName) ;
-    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  , courseName : location.state.courseName   , courseId  : location.state.courseId   }} ,        { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewmodule"   ,  { state: {    typeId : "create_module"  , courseName : location.state.courseName   , courseId  : location.state.courseId  , userInfo :  location.state.userInfo   }} ,        { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -60,7 +60,7 @@ function SecondView() {
 
    const  createWorkshop = () => {
   
-    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  , courseName : location.state.courseName   ,  courseId  : location.state.courseId  }} ,   { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createnewworkshop"   ,    { state: {    typeId : "create_workshop"  , courseName : location.state.courseName   ,  courseId  : location.state.courseId   ,  userInfo :  location.state.userInfo }} ,   { replace : false}  ) ; 
     console.log("ASJghshGHS") ;  
 
 
@@ -70,7 +70,7 @@ function SecondView() {
      
    const  createBplan = ()  => {
 
-    navigate(  "/home/course/draftcourse/createbussinessplan"   ,    { state: {   courseName : courseName   }} ,   { replace : false}  ) ; 
+    navigate(  "/home/course/draftcourse/createbussinessplan"   ,    { state: {   courseName : courseName     ,  userInfo :  location.state.userInfo}} ,   { replace : false}  ) ; 
 
    }
 
@@ -87,7 +87,7 @@ function SecondView() {
     return (
       <div className="secondview" >  
          <div  className="secondview_sidebar" >
-           <Sidebar /> 
+           <Sidebar  info = {  location.state.userInfo} /> 
         </div>
 
         <div   className="secondview_body"> 
@@ -114,7 +114,7 @@ function SecondView() {
     return(
       <div className="secondview" >  
       <div  className="secondview_sidebar" >
-        <Sidebar /> 
+        <Sidebar     info = {  location.state.userInfo} /> 
      </div>
 
      <div   className="secondview_body"> 

@@ -30,7 +30,7 @@ function  Module() {
 
   const goToNext = () => {
 
-      navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   ,   courseName :  location.state.courseName  ,  type_name :  location.state.type_name   }}   ,  { replace : false}  ) ; 
+      navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   ,   courseName :  location.state.courseName  ,  type_name :  location.state.type_name     , userInfo :  location.state.userInfo  }}   ,  { replace : false}  ) ; 
       console.log("ASJghshGHS") ;  
 
 
@@ -137,7 +137,7 @@ function  Module() {
       <div className="clientview">  
 
       <div className="clientview_sidebar" >
-             <Sidebar /> 
+             <Sidebar   info = {  location.state.userInfo} /> 
       </div>  
   
       <div className="clientview_body">   

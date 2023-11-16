@@ -23,7 +23,7 @@ function  AdminView() {
      const[ popupInfo  , setPopupInfo ] = useState("") ;
      const[ popup  , setPopup ] = useState( false) ; 
     
-
+     const location = useLocation(); 
 
 
 
@@ -71,7 +71,7 @@ function  AdminView() {
     
     const goToNext = () => {
   
-       navigate(  "/home/manageadmin/addadminaccount"  ,     { state: {    typeId : "system_admin_admin" }}    ,  { replace : false}  ) ; 
+       navigate(  "/home/manageadmin/addadminaccount"  ,     { state: {    typeId : "system_admin_admin"  ,  userInfo :  location.state.userInfo }}    ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -95,7 +95,7 @@ function  AdminView() {
       <div className="clientview">  
   
               <div className="clientview_sidebar" >
-                     <Sidebar /> 
+                     <Sidebar      info = {  location.state.userInfo}/> 
               </div>  
 
   
@@ -167,20 +167,21 @@ function  AdminView() {
 
            <div   className="clientview_table_row_box"  style= {{   width: "18%" , height: "100%"    , borderRight : "1px solid black" }}>
            <p> { el.name }</p> 
-           <p> engahjgj</p>
            </div> 
 
 
 
            <div className="clientview_table_row_box"  style= {{   width: "18%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
-           <p> mike@gmail.com</p>
-          </div>
+           <p> { el.email_id}</p>
+          </div> 
+
+
            <div  className="clientview_table_row_box" style= {{  width: "18%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-            <p> content admin </p>
+            <p>{ ( el.type_id === "content_admin") ? "Content Admin" : "Program Admin" } </p>
            </div> 
 
           <div  className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-           <p> Active</p>
+           <p> { el.status } </p>
            </div> 
            <div className="clientview_table_row_box"  style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>  
 
@@ -188,7 +189,7 @@ function  AdminView() {
                  <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el.name) } }  /> 
                   
                      
-                <input    className="clientview_table_row_button"     style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/manageadmin/editadminaccount"    ,    {   state: {  typeId : "admin"   } }   ,  { replace : false}  )  }  } /> 
+                <input    className="clientview_table_row_button"     style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/manageadmin/editadminaccount"    ,    {   state: {  typeId : "admin"   ,  userInfo :  location.state.userInfo    ,    data : el  } }   ,  { replace : false}  )  }  } /> 
                     
           </div>
         

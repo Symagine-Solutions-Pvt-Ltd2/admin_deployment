@@ -53,7 +53,7 @@ function BusinessPlan() {
             
             if(   res.data.message === "Registered Successfully."){
                
-              navigate(  "/home/course/draftcourse/addcoursecontent"  ,    { state: {    courseName : location.state.courseName  ,  typeId : "addcoursecontent"   }}   ,      { replace : false} ) ;
+              navigate(  "/home/course/draftcourse/addcoursecontent"  ,    { state: {    courseName : location.state.courseName  ,  typeId : "addcoursecontent"  ,   }}   ,      { replace : false} ) ;
             } 
 
 
@@ -77,7 +77,7 @@ function BusinessPlan() {
    <div className="BusinessPlan" > 
 
     <div className="BusinessPlan_Sidebar" >
-       <Sidebar />
+       <Sidebar  info = {  location.state.userInfo} />
     </div> 
     <div className="BusinessPlan_Body" >   
 

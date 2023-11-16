@@ -21,8 +21,10 @@ function  EditAccount(  {  props }) {
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;   
   const [  data  , setData ]   = useState( location.state.data   ) ;  
 
- 
-   console.log( location.state.data._id ) ;   
+   
+
+  console.log( "edit account" ) ;
+   console.log( location.state.data ) ;   
    console.log( location.state.typeId) ;  
     
   
@@ -832,7 +834,7 @@ axios({
         
     
 
-        <div className="form_outer_div_sidebar" >
+        <div className="form_outer_div_sidebar"   style={{ borderRadius : 25}}>
             <Sidebar  info = {  location.state.userInfo} /> 
           </div>   
   
@@ -852,7 +854,7 @@ axios({
                           <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="name"
-                               
+                                  defaultValue={   location.state.data.name}   
                                   className="admin_input-box"
                                   /> 
                           </div>  
@@ -866,37 +868,16 @@ axios({
                           <div className="admin_Form-Input" >         
                           <input type="text"
                                   name="email"
-                               
+                                  defaultValue={   location.state.data.email_id}  
                                   className="admin_input-box"
                                   /> 
                           </div>  
                 </div> 
                  
 
-                <div className="editaccount_form_row" style = {{ height : "16.66%"}} >
-                           <div className="admin_Form-Description" >   
-                          <p>Password</p> 
-                          </div>        
-                          <div className="admin_Form-Input" >         
-                          <input type="text"
-                                  name="password"
-                               
-                                  className="admin_input-box"
-                                  /> 
-                          </div>  
-                </div> 
+              
              
-                <div className="editaccount_form_row"  style = {{ height : "16.66%"}} >
-                           <div className="admin_Form-Description" >   
-                          <p>Repeat Password</p> 
-                          </div>        
-                          <div className="admin_Form-Input" >         
-                          <input type="text"
-                                  name="repeat_password"
-                                  className="admin_input-box"
-                                  /> 
-                          </div>  
-                </div> 
+            
                 
                 
 
@@ -907,40 +888,42 @@ axios({
 
                 <div className="admin_Form-Input" >         
                         
-                    <div  style={{  width : "80%" , height: "100%"  ,  display : "flex" , flexDirection :  "column" , justifyContent : "space-around" ,  backgroundColor : "yellow"}}>
+                    <div  style={{  width : "80%" , height: "100%"  ,  display : "flex" , flexDirection :  "column" , justifyContent : "space-around" }}>
 
 
-                              <div style={ {  width : "25.87%"  , height : "32%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
+                    <div style={ {  width : "35%"  , height : "32%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  , flexDirection : "row" ,  overflow : "hidden"}}>
   
-                                        <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                        <p >Content Admin</p>   
-                                        </div>
+             <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+             <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}}>Content Admin</p>   
+                </div>
 
 
-                                         <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                         <input   type="checkbox"  checked = { true }
-                                           name="vall" />   
-                                          </div>
+                <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+               <input   type="checkbox"   checked = {  location.state.data.type_id === "content_admin" }     readOnly/>   
+                  </div>
 
-                                </div>   
-
-
-
-                                <div style={ {  width : "25.87%"  , height : "32%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
-  
-                                            <div style = {{  backgroundColor : "red" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
-                                            <p >Content Admin</p>   
-                                            </div>
-
-
-                                            <div style={{ backgroundColor : "beige" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
-                                            <input   type="checkbox"
-                                            name="vall" />   
-                                            </div>
+</div>   
 
 
 
-                                </div> 
+<div style={ {  width : "35%"  , height : "32%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+
+                  <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                  <p style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Program Admin</p>   
+                  </div>
+
+
+                  <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+                    <input   type="checkbox"  checked = {  location.state.data.type_id === "program_admin" }     readOnly/>   
+                    </div>
+
+
+
+</div> 
+
+
+
+
 
 
                           
@@ -1005,7 +988,7 @@ axios({
       
       <div className="form_outer_div">
      
-      <div className="form_outer_div_sidebar" >
+      <div className="form_outer_div_sidebar"  style={{ borderRadius : 25}}>
         <Sidebar info = {  location.state.userInfo} /> 
       </div>   
 
@@ -1185,7 +1168,7 @@ axios({
             <div className="form_outer_div"> 
 
 
-              <div className="form_outer_div_sidebar" >
+              <div className="form_outer_div_sidebar"  style={{ borderRadius : 25}} >
             <Sidebar  info = {  location.state.userInfo} /> 
           </div>   
   
@@ -1259,7 +1242,7 @@ axios({
              return(
           
               <div className="form_outer_div">
-               <div className="form_outer_div_sidebar" >
+               <div className="form_outer_div_sidebar"   style={{ borderRadius : 25}} >
             <Sidebar     info = {  location.state.userInfo} /> 
           </div>   
   
@@ -1359,7 +1342,7 @@ axios({
                return(
             
                 <div className="form_outer_div">
-                 <div className="form_outer_div_sidebar" >
+                 <div className="form_outer_div_sidebar"    style={{ borderRadius : 25}}>
           <Sidebar    info = {  location.state.userInfo} /> 
         </div>   
 

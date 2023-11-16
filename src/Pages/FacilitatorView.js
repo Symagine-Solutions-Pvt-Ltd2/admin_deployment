@@ -110,7 +110,7 @@ function  FacilitatorView() {
   return (
     <div className="clientview">  
 
-            <div className="clientview_sidebar" >
+            <div className="clientview_sidebar"  style={{ borderRadius : 25}} >
                    <Sidebar    info = {  location.state.userInfo}   /> 
             </div>  
 
@@ -234,7 +234,7 @@ function  FacilitatorView() {
          
       <div className="clientview">  
 
-      <div className="clientview_sidebar" >
+      <div className="clientview_sidebar"  style={{ borderRadius : 25}} >
              <Sidebar    info = {  location.state.userInfo}/> 
       </div> 
       <div className="clientview_body">  
