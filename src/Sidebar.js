@@ -42,7 +42,19 @@ function SideBar( props ) {
             type : "Content Admin"
          }
          setUserInfo( newUser ) ;
-       }
+       } 
+     
+       else  if(   props.info.type === "program_admin"){
+           
+          
+         let  newUser = {
+            name : props.info.name , 
+            type : "Program Admin"
+         }
+         setUserInfo( newUser ) ;
+       } 
+
+
          
 
   } , [ props.info.type])  ; 

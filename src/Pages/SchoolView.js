@@ -156,29 +156,29 @@ function SchoolView() {
 
 
                <div    className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+               <p className="header_text">Sl No</p>
                </div> 
                <div    className="clientview_table_row_box"   style= {{   width: "14%" , height: "100%"  , borderRight : "1px solid black" }}>
-                 <p>Name of school</p>
+                 <p className="header_text">Name of school</p>
                </div>
                <div    className="clientview_table_row_box"  style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-                 <p>Contact Person</p>
+                 <p className="header_text">Contact Person</p>
                </div>
                <div    className="clientview_table_row_box"  style= {{  width: "13%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-                 <p>Contact Email Id</p>
+                 <p className="header_text">Contact Email Id</p>
                </div> 
                <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
-                <p>Facilitators</p>
+                <p className="header_text">Facilitators</p>
                </div> 
 
                <div   className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-                <p>Students</p>
+                <p className="header_text">Students</p>
                </div> 
                <div className="clientview_table_row_box"  style= {{   width: "7%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-                <p>Account status</p>
+                <p className="header_text">Account status</p>
                </div> 
                <div   className="clientview_table_row_box" style= {{   width: "18%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-                <p>Account status</p>
+                <p className="header_text">Account status</p>
                </div>
               
 
@@ -292,7 +292,7 @@ function SchoolView() {
           <div className="clientview">  
     
           <div className="clientview_sidebar"   style={{ borderRadius : 25}}>
-                 <Sidebar    /> 
+                 <Sidebar  info = {  location.state.userInfo}   /> 
           </div> 
           <div className="clientview_body">   
 
@@ -319,26 +319,26 @@ function SchoolView() {
 
 
          <div    className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-         <p>Sl No</p>
+         <p className="header_text" >Sl No</p>
          </div> 
          <div    className="clientview_table_row_box"   style= {{   width: "14%" , height: "100%"  , borderRight : "1px solid black" }}>
-           <p>Name of school</p>
+           <p className="header_text" >Name of school</p>
          </div>
          <div    className="clientview_table_row_box"  style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-           <p>Contact Person</p>
+           <p className="header_text" >Contact Person</p>
          </div>
          <div    className="clientview_table_row_box"  style= {{  width: "20%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-           <p>Contact Email Id</p>
+           <p className="header_text" >Contact Email Id</p>
          </div> 
          <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
-          <p>Facilitators</p>
+          <p className="header_text" >Facilitators</p>
          </div> 
 
          <div   className="clientview_table_row_box"  style= {{  width: "15%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-          <p>Students</p>
+          <p className="header_text" >Students</p>
          </div> 
          <div className="clientview_table_row_box"  style= {{   width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-          <p>Account status</p>
+          <p className="header_text" >Account status</p>
          </div> 
         
 

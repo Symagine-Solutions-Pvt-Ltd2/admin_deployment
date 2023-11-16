@@ -123,13 +123,13 @@ function CourseDetails() {
            <div className="clientview_table_inner_div_column_name"    style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid #B6B7D0"}}  >   
 
            <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-           <p>Sl No</p>
+           <p className="header_text">Sl No</p>
            </div> 
            <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"  , borderRight : "1px solid black" }}>
-             <p>Type</p>
+             <p className="header_text">Type</p>
            </div>
            <div  className="clientview_table_row_box"   style= {{   width: "50%" ,  height: "100%", borderRight : "1px solid black"}  }>
-             <p>Name</p>
+             <p className="header_text">Name</p>
            </div>
           
 
@@ -246,15 +246,15 @@ function CourseDetails() {
        <div className="clientview_table_inner_div_column_name"  style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid red"}}   >   
 
        <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-       <p>Sl No</p>
+       <p className="header_text">Sl No</p>
        </div>  
 
        <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
-         <p>Type</p>
+         <p className="header_text">Type</p>
        </div> 
 
        <div className="clientview_table_row_box"   style= {{   width: "50%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
-         <p>Name</p>
+         <p className="header_text">Name</p>
        </div>
       
 

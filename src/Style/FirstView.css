@@ -170,4 +170,15 @@
     justify-content: center;
 
 
+} 
+
+
+
+.header_text{
+
+
+ font-weight:  700;
+ font-size:  16px;
+ 
+ font-style: normal;
 }

@@ -126,9 +126,10 @@ function  Home() {    // frame 3
                
             <div className="home-body-inner-description1" > 
 
-<p>facilitator </p> 
+            <p style={ { fontSize : 24 , fontWeight : 600  }}> {`Hi, ${location.state.userInfo.name}` } </p> 
 
-  <p>Ready to start your day with Future Founders?</p>
+<p  style={ { fontSize : 14 , fontWeight : 400  }}>Ready to start your day with Future Founders?</p> 
+
        </div>  
    <div   className="home-body-illustration">
 
@@ -191,9 +192,10 @@ function  Home() {    // frame 3
          
       <div className="home-body-inner-description1" > 
 
-<p>facilitator </p> 
+      <p style={ { fontSize : 24 , fontWeight : 600  }}> {`Hi, ${location.state.userInfo.name}` } </p> 
 
-  <p>Ready to start your day with Future Founders?</p>
+<p  style={ { fontSize : 14 , fontWeight : 400  }}>Ready to start your day with Future Founders?</p> 
+
        </div>  
    <div   className="home-body-illustration">
 

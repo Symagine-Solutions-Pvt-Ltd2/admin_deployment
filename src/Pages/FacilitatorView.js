@@ -137,19 +137,19 @@ function  FacilitatorView() {
 
                <div className="clientview_table_inner_div_column_name">  
                <div    className="clientview_table_row_box"    style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+               <p className="header_text">Sl No</p>
                </div> 
                <div    className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid black" }}>
-                 <p>Name of facilitator</p>
+                 <p className="header_text">Name of facilitator</p>
                </div>
                <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-                 <p>Email ID</p>
+                 <p className="header_text">Email ID</p>
                </div>
                <div  className="clientview_table_row_box"   style= {{  width: "15%"  ,  height: "100%"    , borderRight : "1px solid black"}}>
-                 <p>Account Status</p>
+                 <p className="header_text">Account Status</p>
                </div> 
                <div   className="clientview_table_row_box"  style= {{   width: "25%"  ,  height: "100%"  , borderRight : "1px solid black"}}> 
-                <p>Account status</p>
+                <p className="header_text">Account status</p>
                </div> 
 
 
@@ -249,16 +249,16 @@ function  FacilitatorView() {
 
          <div className="clientview_table_inner_div_column_name">  
          <div    className="clientview_table_row_box"    style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-         <p>Sl No</p>
+         <p className="header_text">Sl No</p>
          </div> 
          <div    className="clientview_table_row_box"  style= {{   width: "30%" , height: "100%"   , borderRight : "1px solid black" }}>
-           <p>Name of facilitator</p>
+           <p className="header_text">Name of facilitator</p>
          </div>
          <div   className="clientview_table_row_box"  style= {{   width: "40%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-           <p>Email ID</p>
+           <p className="header_text">Email ID</p>
          </div>
          <div  className="clientview_table_row_box"   style= {{  width: "20%"  ,  height: "100%"    , borderRight : "1px solid black"}}>
-           <p>Account Status</p>
+           <p className="header_text">Account Status</p>
          </div>  
 
        

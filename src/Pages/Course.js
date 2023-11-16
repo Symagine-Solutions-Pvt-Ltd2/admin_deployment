@@ -296,10 +296,10 @@ function Course() {
 
 
     <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
-    <p>Sl No</p>
+    <p className="header_text">Sl No</p>
     </div> 
     <div className="clientview_table_row_box" style= {{   width: "50%" , height: "100%"  }}>
-      <p>Name of Draft Course</p>
+      <p className="header_text">Name of Draft Course</p>
     </div>
     <div className="clientview_table_row_box"  style= {{   width: "35%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
    
@@ -394,10 +394,10 @@ function Course() {
 
 
     <div   className="clientview_table_row_box"     style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
-    <p>Sl No</p>
+    <p className="header_text">Sl No</p>
     </div> 
     <div className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"     }}>
-      <p>Name of course</p>
+      <p className="header_text">Name of course</p>
     </div>
     <div style= {{   width: "45%" ,  height: "100%"  }  }>
    

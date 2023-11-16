@@ -615,7 +615,7 @@ axios({
 
 
                          <div className="admin_Form-Description" >   
-                        <p>Name of Program</p> 
+                        <p className="header_text" >Name of Program</p> 
                         </div>    
 
                         <div className="editprogram_admin_Form-Input" >         
@@ -636,7 +636,7 @@ axios({
 
     
                          <div className="admin_Form-Description" >   
-                        <p> Select Course</p> 
+                        <p  className="header_text"> Select Course</p> 
                         </div>             
 
      
@@ -696,7 +696,7 @@ axios({
           <div className="editprogram_admin_form_row"> 
     
           <div className="admin_Form-Description" >   
-                 <p>Feedback to be given by</p> 
+                 <p  className="header_text">Feedback to be given by</p> 
                 </div>           
     
     
@@ -849,7 +849,7 @@ axios({
       
                <div className="editaccount_form_row"  style = {{ height : "16.66%"}}  >
                            <div className="admin_Form-Description" >   
-                          <p>Name</p> 
+                          <p className="header_text">Name</p> 
                           </div>        
                           <div className="admin_Form-Input" >         
                           <input type="text"
@@ -863,7 +863,7 @@ axios({
                 
                 <div className="editaccount_form_row" style = {{ height : "16.66%"}} >
                            <div className="admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="admin_Form-Input" >         
                           <input type="text"
@@ -883,7 +883,7 @@ axios({
 
                 <div className="editaccount_form_row"  style = {{ height : "16.66%"}} >
                 <div className="admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p  className="header_text">Select Admin Type</p> 
                 </div>     
 
                 <div className="admin_Form-Input" >         
@@ -1009,7 +1009,7 @@ axios({
   
            <div className="editaccount_form_row">
                        <div className="admin_Form-Description" >   
-                      <p>Name of client</p> 
+                      <p className="header_text">Name of client</p> 
                       </div>        
                       <div className="admin_Form-Input" >         
                       <input type="text"
@@ -1025,7 +1025,7 @@ axios({
 
 
                        <div className="admin_Form-Description" >   
-                      <p>Email id</p> 
+                      <p className="header_text">Email id</p> 
                       </div>  
 
                       <div className="admin_Form-Input" >         
@@ -1041,40 +1041,12 @@ axios({
 
 
 
-           {/*  <div className="editaccount_form_row">
-                       <div className="admin_Form-Description" >   
-                      <p>Password</p> 
-                      </div>        
-                      <div className="admin_Form-Input" >         
-                      <input type="text"
-                              name="password"
-                              className="admin_input-box"
-                              /> 
-                      </div>  
-            </div> 
-         
-            <div className="editaccount_form_row">
-                       <div className="admin_Form-Description" >   
-                      <p>Repeat Password</p> 
-                      </div>        
-                      <div className="admin_Form-Input" >         
-                      <input type="text"
-                              name="repeat_password"
-                           
-                              className="admin_input-box"
-                              /> 
-                      </div>  
-            </div>  
-   
 
- 
-   
-    */}
 
             
             <div className="editaccount_form_row">
                        <div className="admin_Form-Description" >   
-                      <p>Name of contact person</p> 
+                      <p className="header_text">Name of contact person</p> 
                       </div>        
                       <div className="admin_Form-Input" >   
 
@@ -1091,7 +1063,7 @@ axios({
             <div className="editaccount_form_row"> 
 
             <div className="admin_Form-Description" >   
-                      <p>Program Assigned</p> 
+                      <p className="header_text">Program Assigned</p> 
             </div>     
 
             <div className="admin_Form-Input" >         
@@ -1104,7 +1076,7 @@ axios({
 
             <div className="editaccount_form_row">
                        <div className="admin_Form-Description" >   
-                      <p>No of students assigend</p> 
+                      <p className="header_text">No of students assigend</p> 
                       </div>        
                       <div className="admin_Form-Input" >         
                       <input type="text"
@@ -1183,7 +1155,7 @@ axios({
       
                <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="admin_Form-Description" >   
-                          <p>Name of facilitator</p> 
+                          <p className="header_text">Name of facilitator</p> 
                           </div>        
                           <div className="admin_Form-Input" >   
 
@@ -1200,7 +1172,7 @@ axios({
                 
                 <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="admin_Form-Input" >  
 
@@ -1258,7 +1230,7 @@ axios({
                <div className="editaccount_form_row"> 
 
                            <div className="admin_Form-Description" >   
-                          <p>Name of school</p> 
+                          <p className="header_text">Name of school</p> 
                           </div>       
 
 
@@ -1275,7 +1247,7 @@ axios({
                 
                 <div className="editaccount_form_row">
                            <div className="admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="admin_Form-Input" >         
                           <input type="text" 
@@ -1291,7 +1263,7 @@ axios({
                 
                 <div className="editaccount_form_row">
                            <div className="admin_Form-Description" >   
-                          <p>Name of contact person</p> 
+                          <p className="header_text">Name of contact person</p> 
                           </div>        
                           <div className="admin_Form-Input" >         
                           <input type="text" 
@@ -1305,7 +1277,7 @@ axios({
 
                 <div className="editaccount_form_row">
                 <div className="admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p className="header_text">Program Assigned</p> 
                 </div>     
 
                 <div className="admin_Form-Input" >         
@@ -1357,7 +1329,7 @@ axios({
     
              <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="admin_Form-Description" >   
-                        <p>Name of student</p> 
+                        <p className="header_text">Name of student</p> 
                         </div>        
                         <div className="admin_Form-Input" >         
                         <input type="text"
@@ -1372,7 +1344,7 @@ axios({
               
               <div className="editaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="admin_Form-Description" >   
-                        <p>Email id</p> 
+                        <p className="header_text">Email id</p> 
                         </div>        
                         <div className="admin_Form-Input" >         
                         <input type="text"

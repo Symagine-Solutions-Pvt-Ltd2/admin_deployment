@@ -121,31 +121,31 @@ function  AdminView() {
                  <div className="clientview_table_inner_div_column_name"   style= {{ backgroundColor : '#F1F2F7'   , borderTop : "1px solid #5A6199"  ,  borderBottom : "1px solid #5A6199"}} >  
 
                  <div  className="clientview_table_row_box"   style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}> 
-                 <p>Sl No</p>
+                 <p className="header_text">Sl No</p>
                  </div>   
 
 
                  <div  className="clientview_table_row_box" style= {{   width: "18%" , height: "100%"   , borderRight : "1px solid black" }}>
-                   <p>Name</p>
+                   <p className="header_text">Name</p>
                  </div>  
 
 
                  <div className="clientview_table_row_box"  style= {{   width: "18%" ,  height: "100%" , borderRight : "1px solid black"}  }>
-                   <p>Email id</p>
+                   <p className="header_text">Email id</p>
                  </div>  
 
 
                  <div className="clientview_table_row_box"  style= {{  width: "18%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-                   <p>Type</p>
+                   <p className="header_text">Type</p>
                  </div> 
   
                  <div  className="clientview_table_row_box" style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-                  <p>Account Status</p>
+                  <p className="header_text">Account Status</p>
                  </div>  
 
 
                  <div  className="clientview_table_row_box" style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"}}> 
-                  <p>Account status</p>
+                  <p className="header_text">Account status</p>
                  </div>
   
                 </div>  

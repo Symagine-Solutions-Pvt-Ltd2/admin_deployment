@@ -148,27 +148,27 @@ function ClientView(   ) {
 
 
                <div  className="clientview_table_row_box"  style= {{   width: "8.69%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+               <p className="header_text">Sl No</p>
                </div> 
                <div   className="clientview_table_row_box"  style= {{   width: "15.76%" , height: "100%"  , borderRight : "1px solid black" }}>
-                 <p> Name of Client</p>
+                 <p className="header_text"> Name of Client</p>
                </div> 
 
                <div  className="clientview_table_row_box"     style= {{   width: "15.76%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-                 <p>Contact Person</p>
+                 <p className="header_text">Contact Person</p>
                </div>
                <div    className="clientview_table_row_box"   style= {{  width: "15.76%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-                 <p>Contact Email Id</p>
+                 <p className="header_text">Contact Email Id</p>
                </div> 
                <div    className="clientview_table_row_box"   style= {{   width: "15.76%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
-                <p>No of schools</p>
+                <p className="header_text">No of schools</p>
                </div> 
 
                <div   className="clientview_table_row_box"   style= {{  width: "8.69%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-                <p  style = {{  textAlign : "center"}}>Account Status</p>
+                <p className="header_text"  style = {{  textAlign : "center"}}>Account Status</p>
                </div> 
                <div    className="clientview_table_row_box"   style= {{   width: "20.19%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
-                <p>Account status</p>
+                <p className="header_text">Account status</p>
                </div>
 
               </div>  
@@ -221,7 +221,7 @@ function ClientView(   ) {
                <input  className="inner_table_btn"  style={{ height: "40%"  , width : "36%"}} type="button" value = "Status"    onClick= { () => {handleStatusChange( el ) } }  /> 
                              
                                 
-             <input   className="inner_table_btn" style={{ height: "40%"  , width : "36%"}}  type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data : el   ,   programName : location.state.programName    , type : "system_admin"  } }  , { replace : false}  )  }  } /> 
+             <input   className="inner_table_btn" style={{ height: "40%"  , width : "36%"}}  type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data : el   ,   programName : location.state.programName    , type : "system_admin"  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }  } /> 
                                  
                </div>
 
@@ -275,7 +275,7 @@ function ClientView(   ) {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar  info = {  location.state.userInfo} /> 
     </div>  
 
     <div className="clientview_body">   
@@ -303,24 +303,24 @@ function ClientView(   ) {
 
 
        <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
-       <p>Sl No</p>
+       <p className="header_text" >Sl No</p>
        </div> 
        <div   className="clientview_table_row_box"  style= {{   width: "22%" , height: "100%"  , borderRight : "1px solid black" }}>
-         <p> Name of Client</p>
+         <p className="header_text" > Name of Client</p>
        </div> 
 
        <div  className="clientview_table_row_box"     style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-         <p>Contact Person</p>
+         <p className="header_text" >Contact Person</p>
        </div>
        <div    className="clientview_table_row_box"   style= {{  width: "22%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
-         <p>Contact Email Id</p>
+         <p className="header_text" >Contact Email Id</p>
        </div> 
        <div    className="clientview_table_row_box"   style= {{   width: "17%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
-        <p>No of schools</p>
+        <p className="header_text" >No of schools</p>
        </div> 
 
        <div   className="clientview_table_row_box"   style= {{  width: "12%"  ,    height: "100%"   , borderRight : "1px solid black"}}> 
-        <p  style = {{  textAlign : "center"}}>Account Status</p>
+        <p className="header_text"   style = {{  textAlign : "center"}}>Account Status</p>
        </div> 
        
 
@@ -359,7 +359,7 @@ function ClientView(   ) {
 
 
                         
-        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id   , programId: programId  , programName : location.state.programName     }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id   , programId: programId  , programName : location.state.programName   ,   userInfo :  location.state.userInfo     }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
                        
        </div>  
 

@@ -14,6 +14,12 @@ function FirstView() {
 
 
   const [ data , setData ] = useState( []); 
+  const [ totalCount , setTotalCount ] = useState({
+   total_program : 0 , 
+   total_client : 0 , 
+   total_school : 0  , 
+   total_student : 0 
+  }); 
   const  navigate = useNavigate() ;  
   const location = useLocation();  
   const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
@@ -78,10 +84,7 @@ function FirstView() {
  
  
        console.log(  res.data.data ) ; 
-      //  setData(  res.data.data ) ;  
-        
-        
-      //  console.log(   res.data.data[1].name )  ;
+      setTotalCount(  res.data.data ) ;
  
      } ).catch(( err) => {  
          console.log( "error") ;
@@ -150,19 +153,19 @@ function FirstView() {
               <div className="table_inner_div_column_name"   >  
 
               <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+               <p  className="header_text" >Sl No</p>
                </div> 
                <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid black" }}>
-                 <p> Name of program</p>
+                 <p className="header_text"> Name of program</p>
                </div>
                <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
-                 <p> No of clients assigned</p>
+                 <p className="header_text"> No of clients assigned</p>
                </div>
                <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}>
-                 <p> No of schools assigned</p>
+                 <p className="header_text"> No of schools assigned</p>
                </div> 
                <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}> 
-                <p> No of students assinged</p>
+                <p className="header_text"> No of students assinged</p>
                </div>
 
               </div>  
@@ -229,23 +232,24 @@ function FirstView() {
 
 
              
-              <div className="table_inner_div_column_name">    
+              <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"}}  >    
               
-              <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+              <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid black" }}>
+               <p>Total</p>
                </div> 
-               <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-                 <p> Name of program</p>
+               <div className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black" }}>
+                 <p> { totalCount.total_program} </p>
                </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-                 <p> No of clients assigned</p>
+               <div className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
+                 <p> { totalCount.total_client}</p>
                </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-                 <p> No of schools assigned</p>
+               <div  className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"    , borderRight : "1px solid black"}}>
+                 <p> { totalCount.total_school}</p>
                </div> 
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                <p> No of students assinged</p>
+               <div className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}}> 
+                <p> { totalCount.total_student}</p>
                </div>
+
 
               </div>
     
@@ -309,19 +313,19 @@ function FirstView() {
               <div className="table_inner_div_column_name"   >  
 
               <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+               <p className="header_text" >Sl No</p>
                </div> 
                <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid black" }}>
-                 <p> Name of program</p>
+                 <p className="header_text" > Name of program</p>
                </div>
                <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
-                 <p> No of clients assigned</p>
+                 <p className="header_text" > No of clients assigned</p>
                </div>
                <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}>
-                 <p> No of schools assigned</p>
+                 <p className="header_text" > No of schools assigned</p>
                </div> 
                <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}> 
-                <p> No of students assinged</p>
+                <p className="header_text" > No of students assinged</p>
                </div>
 
               </div>  
@@ -388,25 +392,25 @@ function FirstView() {
 
 
              
-              <div className="table_inner_div_column_name">    
+               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"}}>    
               
-              <div  style= {{ width : "10%" , height: "100%"  , backgroundColor : "pink"  ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+              <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid black" }}>
+               <p>Total</p>
                </div> 
-               <div style= {{ width : "30%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black" }}>
-                 <p> Name of program</p>
+               <div className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black" }}>
+                 <p> { totalCount.total_program} </p>
                </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}  }>
-                 <p> No of clients assigned</p>
+               <div className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
+                 <p> { totalCount.total_client}</p>
                </div>
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink"  , borderRight : "1px solid black"}}>
-                 <p> No of schools assigned</p>
+               <div  className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"    , borderRight : "1px solid black"}}>
+                 <p> { totalCount.total_school}</p>
                </div> 
-               <div style= {{ width : "20%" , height: "100%"  , backgroundColor : "pink" , borderRight : "1px solid black"}}> 
-                <p> No of students assinged</p>
+               <div className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}}> 
+                <p> { totalCount.total_student}</p>
                </div>
 
-              </div>
+              </div> 
     
               </div> 
 

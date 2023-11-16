@@ -446,7 +446,7 @@ function AddAccount() {
       
                <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of client</p> 
+                          <p className="header_text" >Name of client</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -459,7 +459,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                            <input type="text"
@@ -472,7 +472,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Password</p> 
+                          <p className="header_text">Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -484,7 +484,7 @@ function AddAccount() {
              
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Repeat Password</p> 
+                          <p className="header_text">Repeat Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input  type="text"
@@ -496,7 +496,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of contact person</p> 
+                          <p className="header_text">Name of contact person</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -509,7 +509,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                 <div className="addaccount_admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p className="header_text">Program Assigned</p> 
                 </div>     
 
                 <div className="addaccount_admin_Form-Input" >         
@@ -524,7 +524,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>No of students assigend</p> 
+                          <p className="header_text">No of students assigend</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -585,7 +585,7 @@ function AddAccount() {
 
 
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of facilitator</p> 
+                          <p className="header_text">Name of facilitator</p> 
                           </div>       
 
 
@@ -603,7 +603,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >  
 
@@ -618,7 +618,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Password</p> 
+                          <p className="header_text">Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -633,7 +633,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row"  style= {{  height : "20%"  }}>
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Repeat Password</p> 
+                          <p className="header_text">Repeat Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -689,7 +689,7 @@ function AddAccount() {
       
                <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of school</p> 
+                          <p className="header_text">Name of school</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -702,7 +702,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -715,7 +715,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Password</p> 
+                          <p className="header_text">Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -727,7 +727,7 @@ function AddAccount() {
              
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Repeat Password</p> 
+                          <p className="header_text">Repeat Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -739,7 +739,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row">
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name of contact person</p> 
+                          <p className="header_text">Name of contact person</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -752,7 +752,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row">
                 <div className="addaccount_admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p className="header_text">Program Assigned</p> 
                 </div>     
 
                 <div className="addaccount_admin_Form-Input" >         
@@ -808,7 +808,7 @@ function AddAccount() {
       
                <div className="addaccount_form_row"  style = {{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"  }}  >
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Name</p> 
+                          <p className="header_text">Name</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -822,7 +822,7 @@ function AddAccount() {
                 
                 <div className="addaccount_form_row" style = {{ height : "16.66%"  , backgroundColor : "#F8E5E9"}} >
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Email id</p> 
+                          <p className="header_text">Email id</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -836,7 +836,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row" style = {{ height : "16.66%"  , backgroundColor : "#F8E5E9"}} >
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Password</p> 
+                          <p className="header_text">Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -853,7 +853,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row"  style = {{ height : "16.66%"  , backgroundColor : "#F8E5E9"}} >
                            <div className="addaccount_admin_Form-Description" >   
-                          <p>Repeat Password</p> 
+                          <p className="header_text" >Repeat Password</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
@@ -870,7 +870,7 @@ function AddAccount() {
 
                 <div className="addaccount_form_row"  style = {{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"}} >
                 <div className="addaccount_admin_Form-Description" >   
-                          <p>Program Assigned</p> 
+                          <p className="header_text">Select Admin Type</p> 
                 </div>     
 
                 <div className="addaccount_admin_Form-Input" >         
@@ -971,7 +971,7 @@ function AddAccount() {
 
              <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Name of student</p> 
+                        <p className="header_text">Name of student</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
@@ -985,7 +985,7 @@ function AddAccount() {
               
               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Email id</p> 
+                        <p className="header_text">Email id</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
@@ -999,7 +999,7 @@ function AddAccount() {
 
               <div className="addaccount_form_row"  style= {{  height : "20%" }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Password</p> 
+                        <p className="header_text" >Password</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
@@ -1014,7 +1014,7 @@ function AddAccount() {
 
               <div className="addaccount_form_row"  style= {{  height : "20%"  }}>
                          <div className="addaccount_admin_Form-Description" >   
-                        <p>Repeat Password</p> 
+                        <p className="header_text">Repeat Password</p> 
                         </div>        
                         <div className="addaccount_admin_Form-Input" >         
                         <input type="text"
