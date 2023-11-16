@@ -49,7 +49,7 @@ function ClientView(   ) {
     const goToNext = () => {
      
         
-       navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    programId : programId  ,   programName : location.state.programName }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    programId : programId  ,   programName : location.state.programName  ,   userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -119,8 +119,8 @@ function ClientView(   ) {
   
     <div className="clientview">  
 
-            <div className="clientview_sidebar" >
-                   <Sidebar /> 
+            <div className="clientview_sidebar"   style={{ borderRadius : 25}}  >
+                   <Sidebar   info = {  location.state.userInfo}  /> 
             </div>  
         
             <div className="clientview_body">   
@@ -207,7 +207,7 @@ function ClientView(   ) {
 
 
                                 
-                <input className="inner_table_btn"   style={{ height: "40%"  , width : "50%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id   , programId: programId  , programName : location.state.programName     }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
+                <input className="inner_table_btn"   style={{ height: "40%"  , width : "50%"}}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,   { state: {  typeId : typeId ,  clientId : data[index]._id   , programId: programId  , programName : location.state.programName   ,   userInfo :  location.state.userInfo    }}    ,      { state: {    typeId :  typeId  }} ,  { replace : false}  )  }  } /> 
                                
                </div>  
 

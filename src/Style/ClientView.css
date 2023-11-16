@@ -15,7 +15,7 @@
     height: 100vh ;
     width : 100vw ; 
    display:  flex ;
-    background-color: pink;
+    background-color:"#FFF" ;
    
    
    }   
@@ -27,7 +27,8 @@
     
     width : 19% ; 
     height : 100% ; 
-     background-color: #353B55 ; 
+     background-color: #353B55 ;  
+     border-radius : 25;
   
 
 

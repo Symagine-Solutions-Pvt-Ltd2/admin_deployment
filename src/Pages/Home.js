@@ -4,6 +4,10 @@ import {Link, useNavigate , useLocation } from "react-router-dom"  ;
 import { useState  } from "react"; 
 import home_logo from "../Images/home_logo.png" ;
 
+
+
+
+
 function  Home() {    // frame 3  
     
    const location = useLocation();  // to share data between one page to another while navigating 
@@ -12,12 +16,19 @@ function  Home() {    // frame 3
    // to determine its a  system/ program / content  admin 
  const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;   
 
- //console.log(   location.state.typeId  ) ;
+
+
+
+
+ console.log(   location.state.userInfo ) ;
+ console.log(   location.state.typeId  ) ;  
+
+
      
  const goToNext = () => {  
 
 
-   navigate(  "/home/dashboard"  ,    { state: {    typeId :  typeId  }} ,  { replace : false}  )  ;
+   navigate(  "/home/dashboard"  ,    { state: {    typeId :  typeId   ,   userInfo :  location.state.userInfo  }} ,  { replace : false}  )  ;
 
 
    console.log( typeId) ; 
@@ -36,7 +47,7 @@ function  Home() {    // frame 3
      return(
         <div className="home">  
             <div className="home-sidebar"  style={{ borderRadius : 25}}>
-                   <Sidebar   type= { typeId} /> 
+                   <Sidebar       info = {  location.state.userInfo} /> 
             </div> 
             <div className="home-body">
 
@@ -44,10 +55,13 @@ function  Home() {    // frame 3
                
             <div className="home-body-inner-description1" > 
 
-                <p>facilitator </p> 
+                <p style={ { fontSize : 24 , fontWeight : 600  }}> {`Hi, ${location.state.userInfo.name}` } </p> 
 
-                  <p>Ready to start your day with Future Founders?</p>
+                  <p  style={ { fontSize : 14 , fontWeight : 400  }}>Ready to start your day with Future Founders?</p> 
+
+
                        </div>  
+
                    <div   className="home-body-illustration">
 
                    <img src={ home_logo }  alt= { "ccv"}  height={"100%"}  />   

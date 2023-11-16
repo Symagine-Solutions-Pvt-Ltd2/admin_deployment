@@ -268,7 +268,7 @@ function Course() {
         <div className="course" >
      
         <div className="course_sidebar" >
-          <Sidebar /> 
+          <Sidebar  info = {  location.state.userInfo} /> 
         </div>   
 
 
@@ -374,7 +374,7 @@ function Course() {
         <div className="course" >
      
         <div className="course_sidebar" >
-          <Sidebar /> 
+          <Sidebar  info = {  location.state.userInfo} /> 
         </div>   
 
 

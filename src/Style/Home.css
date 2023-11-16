@@ -113,10 +113,14 @@ display:  flex ;
     width : 60% ; 
     height: 43.2% ; 
     background-color: #D9D9D9; 
-  
+    
     padding: 1%; 
     border-bottom-left-radius: 25px; 
-    border-top-left-radius: 25px;
+    border-top-left-radius: 25px; 
+    display:  flex; 
+    flex-direction:  column; 
+    justify-content:  space-around;
+
 } 
 
 

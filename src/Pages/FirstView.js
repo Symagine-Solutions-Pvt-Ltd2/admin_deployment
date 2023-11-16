@@ -27,7 +27,7 @@ function FirstView() {
    
 
 
-    navigate(  "/home/dashboard/addprogram"  ,    { state: {    typeId : "create_program"   , type : typeId   }} ,  { replace : false}  ) ; 
+    navigate(  "/home/dashboard/addprogram"  ,    { state: {    typeId : "create_program"   , type : typeId   ,     userInfo :  location.state.userInfo   }} ,  { replace : false}  ) ; 
 
   }
 
@@ -60,11 +60,43 @@ function FirstView() {
     } ).catch(( err) => {  
         console.log( "error") ;
 
-     }  ) ; 
+     }  ) ;   
+ 
+
+
+
+
+     axios({ 
+
+      url : "http://127.0.0.1:8000/admin/all_count"  ,  
+      method : "POST"  , 
+      data : { 
+ 
+      }
+ 
+     }).then( ( res) => {   
+ 
+ 
+       console.log(  res.data.data ) ; 
+      //  setData(  res.data.data ) ;  
+        
+        
+      //  console.log(   res.data.data[1].name )  ;
+ 
+     } ).catch(( err) => {  
+         console.log( "error") ;
+ 
+      }  ) ;   
+ 
+ 
+ 
+
+
+
 
 } , [])  ; 
 
-  
+   
 
 
 
@@ -89,7 +121,7 @@ function FirstView() {
     <div className="firstview">  
 
             <div className="firstview_sidebar" >
-                   <Sidebar /> 
+                   <Sidebar   info = {  location.state.userInfo}  /> 
             </div> 
             <div className="firstview_body"> 
 
@@ -157,7 +189,7 @@ function FirstView() {
                              </div> 
 
 
-               <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,   data : el        } } ,   { replace : false}  )  }  } /> 
+               <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,   data : el    ,    userInfo :  location.state.userInfo      } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
                          <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}  }> 
@@ -167,7 +199,7 @@ function FirstView() {
                                        <p>{ el.total_clients}</p>
                                 </div>
                                
-                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "38%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "38%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name   ,    userInfo :  location.state.userInfo   }}      ,    { replace : false}  )  }  } /> 
                              
                         </div> 
 
@@ -248,7 +280,7 @@ function FirstView() {
     <div className="firstview">  
 
             <div className="firstview_sidebar" >
-                   <Sidebar /> 
+                   <Sidebar   info = {  location.state.userInfo} /> 
             </div> 
             <div className="firstview_body"> 
 
@@ -316,7 +348,7 @@ function FirstView() {
                              </div> 
 
 
-           <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program" } } ,   { replace : false}  )  }  } /> 
+           <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,     userInfo :  location.state.userInfo } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
                          <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
@@ -326,7 +358,7 @@ function FirstView() {
                                        <p>{ el.total_clients}</p>
                                 </div>
                                
-                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "38%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name  }}      ,    { replace : false}  )  }  } /> 
+                       <input  className="inner_table_btn"   style={{ height: "40%"  , width : "38%"  }}  type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client"   ,      { state: {    typeId : typeId  ,  programId: data[index]._id    ,   programName : data[index].program_name     ,    userInfo :  location.state.userInfo   }}      ,    { replace : false}  )  }  } /> 
                              
                         </div> 
 

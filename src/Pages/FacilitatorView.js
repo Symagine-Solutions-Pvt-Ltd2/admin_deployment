@@ -42,7 +42,7 @@ function  FacilitatorView() {
      
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/addfacilitator"   ,   { state: {    typeId : "system_admin_facilitator"    ,   type : "facilitator_with_add_account"   ,   schoolId : location.state.schoolId       ,   programId : location.state.programId }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addfacilitator"   ,   { state: {    typeId : "system_admin_facilitator"    ,   type : "facilitator_with_add_account"   ,   schoolId : location.state.schoolId       ,   programId : location.state.programId   , userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
       }  
@@ -111,7 +111,7 @@ function  FacilitatorView() {
     <div className="clientview">  
 
             <div className="clientview_sidebar" >
-                   <Sidebar /> 
+                   <Sidebar    info = {  location.state.userInfo}   /> 
             </div>  
 
 
@@ -192,7 +192,7 @@ function  FacilitatorView() {
                   
     <input    className="inner_table_btn"   style={{  width :"36%"  , height:"40%" }}type="button" value = "Status"  onClick= { () => {handleStatusChange( el) } }  /> 
 
-    <input     className="inner_table_btn"    style={{  width :"36%"  , height:"40%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el      } }  , { replace : false}  )  }  } /> 
+    <input     className="inner_table_btn"    style={{  width :"36%"  , height:"40%" }}type="button" value = "Edit"  onClick={()  => {     navigate(  "/home/dashboard/client/editfacilitator"   , {   state: {  typeId : "facilitator"   ,  type : "facilitator_with_add_account"   ,  data : el    , userInfo :  location.state.userInfo   } }  , { replace : false}  )  }  } /> 
                 
                </div> 
 
@@ -235,7 +235,7 @@ function  FacilitatorView() {
       <div className="clientview">  
 
       <div className="clientview_sidebar" >
-             <Sidebar /> 
+             <Sidebar    info = {  location.state.userInfo}/> 
       </div> 
       <div className="clientview_body">  
        <div  className="clientview_body1"> 

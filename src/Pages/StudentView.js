@@ -43,7 +43,7 @@ function StudentView() {
     
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/student/addstudent"   ,  { state: {    typeId : "system_admin_student"     , type : location.state.typeId      ,    schoolId :  location.state.schoolId   , programId : location.state.programId  }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/student/addstudent"   ,  { state: {    typeId : "system_admin_student"     , type : location.state.typeId      ,    schoolId :  location.state.schoolId   , programId : location.state.programId   ,   userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
       }    
 
@@ -110,7 +110,7 @@ function StudentView() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar    info = {  location.state.userInfo}/> 
     </div>  
 
     <div className="clientview_body">   
@@ -247,7 +247,7 @@ function StudentView() {
          <input   className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick= { () => {handleStatusChange( el) } }/> 
                     
                    
-        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"     ,  data : el }}   , { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"     ,  data : el   ,     userInfo :  location.state.userInfo }}   , { replace : false}  )  }  } /> 
                          
        </div>
 
@@ -287,7 +287,7 @@ function StudentView() {
     <div className="clientview">  
 
     <div className="clientview_sidebar" >
-           <Sidebar /> 
+           <Sidebar    info = {  location.state.userInfo}/> 
     </div>  
 
     <div className="clientview_body">   

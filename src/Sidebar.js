@@ -5,7 +5,7 @@ import Badge from '@mui/material/Badge';
 
 import logo1 from "./Images/logo1.png"  ; 
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import { useState  , useEffect  } from "react"; 
 
 
 
@@ -13,8 +13,39 @@ import LogoutIcon from '@mui/icons-material/Logout';
 
 // import this component to  render  the sidebar in every page 
 function SideBar( props ) {
- 
-   console.log( props.type) ;  
+   
+  
+
+
+   console.log( props.info) ;  
+  
+   const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
+  
+    
+   useEffect(() => { 
+
+       if(   props.info.type === "system_admin"){
+           
+          
+         let  newUser = {
+            name : props.info.name , 
+            type : "System Admin"
+         }
+         setUserInfo( newUser ) ;
+       }
+         
+
+  } , [ props.info.type])  ; 
+
+
+
+
+
+
+
+
+
+
 
 
    return(
@@ -40,11 +71,11 @@ function SideBar( props ) {
 
          < div  className="Sidebar-Admin-info-div" > 
                 <div  style={{  height: "55%"  , backgroundColor : "#353B55"}}>
-                 <p  style={{ color : "white"}}>Mike Hannigan</p>
+                 <p  style={{   fontSize : 20  ,    color : "white"  , fontWeight : 700 }}>{  userInfo.name } </p>
                  </div> 
 
-                 <div  style={{  height: "35%"  , backgroundColor : "#353B55"}}>
-                <p style={{ color : "white"}}>{  props.type } </p>
+                 <div  style={{  height: "35%"  , backgroundColor : "#353B55"  , fontWeight : 300}}>
+                <p style={{  fontSize : 16  ,  color : "#B7B7D0"  ,  fontWeight : 400  }}>{  userInfo.type } </p>
                   </div>
          </div>  
 

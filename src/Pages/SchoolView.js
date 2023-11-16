@@ -51,7 +51,7 @@ function SchoolView() {
     
     const goToNext = () => {
   
-       navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   clientId : location.state.clientId ,   programId :  location.state.programId  ,  programName : location.state.programName   }}   ,  { replace : false}  ) ; 
+       navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   clientId : location.state.clientId ,   programId :  location.state.programId  ,  programName : location.state.programName  ,   userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
        console.log("ASJghshGHS") ;  
 
 
@@ -107,7 +107,7 @@ function SchoolView() {
       
  } 
 
-
+ 
 
 
 
@@ -128,8 +128,8 @@ function SchoolView() {
   
         <div className="clientview">  
     
-                <div className="clientview_sidebar" >
-                       <Sidebar /> 
+                <div className="clientview_sidebar"    >
+                       <Sidebar  info = {  location.state.userInfo} /> 
                 </div> 
                 <div className="clientview_body">   
 
@@ -222,7 +222,7 @@ function SchoolView() {
                            <p>{ el.total_facilitators }</p>
                                 </div>
                                
-              <input  className="inner_table_btn" style={{ height: "40%"  , width : "55%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator_with_add_account"   ,     schoolId : data[index]._id  ,      programId : location.state.programId   }}           ,     { replace : false}  )  }  } /> 
+              <input  className="inner_table_btn" style={{ height: "40%"  , width : "55%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator_with_add_account"   ,     schoolId : data[index]._id  ,      programId : location.state.programId  ,  userInfo :  location.state.userInfo  }}           ,     { replace : false}  )  }  } /> 
                              
                    </div>   
 
@@ -232,8 +232,8 @@ function SchoolView() {
                      <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "25%"}}> 
                                <p> { el.total_students}</p>
                      </div>
-                           
-                    <input   className="inner_table_btn" style={{ height: "40%"  , width : "55%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_edit",   schoolId : data[index]._id  ,      programId : location.state.programId        }}        ,  { replace : false}  )  }  } /> 
+                            
+                    <input   className="inner_table_btn" style={{ height: "40%"  , width : "55%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student_with_edit",   schoolId : data[index]._id  ,      programId : location.state.programId    , userInfo :  location.state.userInfo      }}        ,  { replace : false}  )  }  } /> 
                         
                    </div>  
 
@@ -248,7 +248,7 @@ function SchoolView() {
             <input className="inner_table_btn"   style={{ height: "40%"  , width : "36%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el) } }   /> 
                             
                              
-           <input   className="inner_table_btn" style={{ height: "40%"  , width : "36%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school"   ,    data : el   ,  type : "system_admin"  , programName : location.state.programName      }}   , { replace : false}  )  }  } />   
+           <input   className="inner_table_btn" style={{ height: "40%"  , width : "36%"}}   type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/dashboard/client/editschool"   ,  { state: {    typeId : "school"   ,    data : el   ,  type : "system_admin"  , programName : location.state.programName  , userInfo :  location.state.userInfo     }}   , { replace : false}  )  }  } />   
 
 
 
@@ -292,7 +292,7 @@ function SchoolView() {
           <div className="clientview">  
     
           <div className="clientview_sidebar" >
-                 <Sidebar /> 
+                 <Sidebar    /> 
           </div> 
           <div className="clientview_body">   
 
@@ -384,7 +384,7 @@ function SchoolView() {
                      <p>{ el.total_facilitators }</p>
                           </div>
                          
-        <input    className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator"   ,     schoolId : data[index]._id  ,      programId : location.state.programId   }}           ,     { replace : false}  )  }  } /> 
+        <input    className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/facilitator"   ,     { state: {    typeId : "facilitator"   ,     schoolId : data[index]._id  ,      programId : location.state.programId   ,   userInfo :  location.state.userInfo   }}           ,     { replace : false}  )  }  } /> 
                        
              </div>   
 
@@ -395,7 +395,7 @@ function SchoolView() {
                          <p> { el.total_students}</p>
                </div>
                      
-              <input    className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student",   schoolId : data[index]._id  ,      programId : location.state.programId        }}        ,  { replace : false}  )  }  } /> 
+              <input    className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}}   type="button" value = "view"  onClick={()  => {        navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : "student",   schoolId : data[index]._id  ,      programId : location.state.programId   ,  userInfo :  location.state.userInfo        }}        ,  { replace : false}  )  }  } /> 
                   
              </div>  
 

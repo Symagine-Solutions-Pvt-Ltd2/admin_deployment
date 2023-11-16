@@ -556,6 +556,21 @@ axios({
   switch( typeId )  { 
 
  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -573,7 +588,7 @@ axios({
 
 
          <div className="editprogram_form_outer_div_sidebar" > 
-          <Sidebar /> 
+          <Sidebar  info = {  location.state.userInfo} /> 
             </div>   
 
  
@@ -793,6 +808,21 @@ axios({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    case "admin" :   
 
      return(
@@ -803,7 +833,7 @@ axios({
     
 
         <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar  info = {  location.state.userInfo} /> 
           </div>   
   
   
@@ -948,6 +978,24 @@ axios({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
 
 
@@ -958,7 +1006,7 @@ axios({
       <div className="form_outer_div">
      
       <div className="form_outer_div_sidebar" >
-        <Sidebar /> 
+        <Sidebar info = {  location.state.userInfo} /> 
       </div>   
 
 
@@ -1117,6 +1165,19 @@ axios({
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     case "facilitator" :   
 
            return(
@@ -1125,7 +1186,7 @@ axios({
 
 
               <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar  info = {  location.state.userInfo} /> 
           </div>   
   
   
@@ -1199,7 +1260,7 @@ axios({
           
               <div className="form_outer_div">
                <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar     info = {  location.state.userInfo} /> 
           </div>   
   
   
@@ -1299,7 +1360,7 @@ axios({
             
                 <div className="form_outer_div">
                  <div className="form_outer_div_sidebar" >
-          <Sidebar /> 
+          <Sidebar    info = {  location.state.userInfo} /> 
         </div>   
 
 

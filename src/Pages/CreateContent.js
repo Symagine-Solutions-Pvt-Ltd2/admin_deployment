@@ -129,7 +129,7 @@ function CreateContent() {
          
            alert( res.data.message)  ;  
        
-           navigate(  "/home/dashboard"  ,    { state: {    typeId : type     }} ,  { replace : false}  )   ;
+           navigate(  "/home/dashboard"  ,    { state: {    typeId : type    ,    userInfo :  location.state.userInfo    }} ,  { replace : false}  )   ;
 
         } 
         else {
@@ -417,7 +417,7 @@ function CreateContent() {
         <div className="form_outer_div">
    
         <div className="form_outer_div_sidebar" >
-          <Sidebar /> 
+          <Sidebar   info = {  location.state.userInfo} /> 
         </div>   
 
         
@@ -645,6 +645,17 @@ function CreateContent() {
     )   ; 
 
  
+ 
+
+
+
+
+
+
+
+
+
+
 
 
       case "create_module" :    
@@ -656,7 +667,7 @@ function CreateContent() {
           <div className="form_outer_div">
      
           <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar    info = {  location.state.userInfo} /> 
           </div>   
   
   
@@ -709,7 +720,7 @@ function CreateContent() {
           <div className="form_outer_div">
      
           <div className="form_outer_div_sidebar" >
-            <Sidebar /> 
+            <Sidebar     info = {  location.state.userInfo}  /> 
           </div>   
   
   
@@ -745,6 +756,17 @@ function CreateContent() {
       )   ; 
     
 
+ 
+
+
+
+
+
+
+
+
+
+
 
       case   "save_course" :  
       return( 
@@ -754,7 +776,7 @@ function CreateContent() {
         <div className="course" >
      
         <div className="course_sidebar" >
-          <Sidebar /> 
+          <Sidebar    info = {  location.state.userInfo} /> 
         </div>   
 
 
