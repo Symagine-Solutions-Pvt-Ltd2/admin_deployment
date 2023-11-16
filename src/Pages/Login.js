@@ -45,7 +45,7 @@ function Login() {
     axios({ 
 
       url : "http://localhost:8000/admin/login"  ,  
-      method : "POST"  , 
+      method : "POST"  ,  
       data : {
         
         "email_id": email , 
@@ -57,13 +57,13 @@ function Login() {
 
         if(   res.data.message ===  "Login successful"    ){
          
-          alert( "login successful")  ; 
+          alert( "Login Successful!")  ; 
           navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  }} ,  { replace : false}  )  ;
 
         } 
         else {
 
-          alert( "incorrect login!")  ;
+          alert( res.data.message)  ;
         }
        
 

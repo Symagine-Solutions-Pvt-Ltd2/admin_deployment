@@ -25,13 +25,13 @@ function  UploadContent() {
   const [  optionArray  , setOptionArray  ]   = useState( [""  , ""  , ""] ) ;
 
 
-/* 
+
   console.log(  "uploadcontent"  ) ;
   console.log(  location.state.typeId  ) ; 
   console.log(  location.state.course_name  ) ; 
   console.log(  location.state.type_name  ) ; 
   console.log(  location.state.type  ) ; 
- */
+  console.log(  location.state.sub_type  ) ;
 
 
 
@@ -85,10 +85,14 @@ function  UploadContent() {
       .then((res) => {  
           
 
-       console.log(  res) ;  
+       console.log(  res) ;   
+       alert( res.data.message) ;
 
       }) // Handle the response from backend here
-      .catch((err) => { }); // Catch errors if any
+      .catch((err) => {  
+
+        console.log( err) ; 
+      }); // Catch errors if any
   
 
 
@@ -129,7 +133,7 @@ function  UploadContent() {
     })
       .then((res) => {  
           
-
+        alert( res.data.message) ;
        console.log(  res) ;  
 
       }) // Handle the response from backend here
@@ -142,7 +146,9 @@ function  UploadContent() {
 
   }
 
-   
+    
+
+
   
 
   const  uploadQuiz  = (  event  ) => {  
@@ -366,6 +372,22 @@ setSelectedOption( null) ;
     e.preventDefault() ; 
 
   }
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -751,6 +773,124 @@ setSelectedOption( null) ;
 
     </div>
     )  
+   
+
+    case "upload_picture" :
+
+    return (     
+
+     <div  className="upload"  > 
+
+     <div  className="upload-sidebar"> 
+    <Sidebar /> 
+    </div> 
+
+
+    <form className ="upload-body"    onSubmit={ uploadText }   >  
+
+
+
+       <div   className ="upload-body-div1"  >  
+        
+
+
+
+
+       <input type="text"
+                        name="name"
+              
+                        className="upload-body-div1-input-box"
+                        />  
+
+
+
+       </div> 
+       <div className ="upload-body-div2"  >  
+            
+       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "100%" }} /> 
+        </div> 
+
+
+
+       <div className ="upload-body-div3" >   
+
+       <input  type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       </div> 
+
+
+
+
+
+    </form> 
+
+    </div>
+    )   
+
+
+
+
+
+
+
+
+
+
+
+
+
+    case "task_text" :
+
+    return (     
+
+     <div  className="upload"  > 
+
+     <div  className="upload-sidebar"> 
+    <Sidebar /> 
+    </div> 
+
+
+    <form className ="upload-body"    onSubmit={ uploadText }   >  
+
+
+
+       <div   className ="upload-body-div1"  >  
+        
+
+
+
+
+       <input type="text"
+                        name="name"
+              
+                        className="upload-body-div1-input-box"
+                        />  
+
+
+
+       </div> 
+       <div className ="upload-body-div2"  >  
+            
+       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "70%" }} />  
+
+       <input   name="text"   placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "10%" }} /> 
+        </div> 
+
+
+
+       <div className ="upload-body-div3" >   
+
+       <input  type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       </div> 
+
+
+
+
+
+    </form> 
+
+    </div>
+    )  
+
 
 
 

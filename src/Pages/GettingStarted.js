@@ -15,7 +15,7 @@ function   GettingStarted() {
   const goToApp  = () => {
     
    navigate(  "/login"  ,   { replace : false}  )  ; 
-   alert( "hi")  ;
+ 
    }   
 
 

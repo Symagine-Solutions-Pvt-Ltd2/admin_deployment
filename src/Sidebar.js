@@ -52,9 +52,8 @@ function SideBar( props ) {
 
          <div   className="Sidebar-Program-Home-Button-div" >  
 
-               <div style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%" ,  borderRadius : 25}}>
-               <p>Home</p>
-               </div>
+         <input style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25   , border : "0px"}}  type= "button"   value = "Home"  /> 
+
                  
             </div>    
 
