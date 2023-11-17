@@ -106,7 +106,7 @@ function AddAccount() {
                           alert( "Registered Successfully.")  ;   
                            
                           console.log( type) ; 
-                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  type    ,  programName : assignedProgram  , programId :  location.state.programId  } }     ,   { replace : false}  )   ; 
+                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  type    ,  programName : assignedProgram  , programId :  location.state.programId  , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
 
                         } 
                         else {
@@ -170,7 +170,7 @@ function AddAccount() {
                     alert( "Registered Successfully.")  ;  
 
 
-                    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   schoolId : location.state.schoolId    ,  programId : location.state.programId  }}    , { replace : false}  )   ;
+                    navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :    "facilitator_with_add_account"    ,   schoolId : location.state.schoolId    ,  programId : location.state.programId   , userInfo :  location.state.userInfo }}    , { replace : false}  )   ;
                   } 
                   else {
           
@@ -243,7 +243,7 @@ function AddAccount() {
                   alert( "Registered Successfully.")  ;  
 
 
-                   navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId :    "system_admin"   ,  clientId : location.state.clientId   ,  programId : location.state.programId   , programName : location.state.programName     }}     ,      { replace : false}  )   ;
+                   navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId :    "system_admin"   ,  clientId : location.state.clientId   ,  programId : location.state.programId   , programName : location.state.programName   , userInfo :  location.state.userInfo    }}     ,      { replace : false}  )   ;
     
                 } 
                 else {
@@ -313,7 +313,7 @@ function AddAccount() {
                  
                   alert( "Registered Successfully.")  ; 
                
-                  navigate(  "/home/manageadmin"   ,  { replace : false}  )   ;
+                  navigate(  "/home/manageadmin"   , { state : { userInfo :  location.state.userInfo }} ,  { replace : false }  )   ;
     
                 } 
                 else {
@@ -385,7 +385,7 @@ function AddAccount() {
                   console.log(  res.data.data) ;  
 
 
-                 navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : location.state.type ,   schoolId : location.state.schoolId  ,        programId : location.state.programId  }}        ,  { replace : false}  )  
+                 navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : location.state.type ,   schoolId : location.state.schoolId  ,        programId : location.state.programId   , userInfo :  location.state.userInfo }}        ,  { replace : false}  )  
     
                 } 
                 else {

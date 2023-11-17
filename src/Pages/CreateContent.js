@@ -184,7 +184,7 @@ function CreateContent() {
              
                alert( "added Successfully.")  ;  
            
-              navigate(  "/home/course"   ,    { state: {    typeId : "course"  }}  ,    { replace : false}  )   ;
+              navigate(  "/home/course"   ,    { state: {    typeId : "course"   , userInfo :  location.state.userInfo }}  ,    { replace : false}  )   ;
 
             } 
             else {
@@ -246,7 +246,7 @@ function CreateContent() {
                
                  alert( "added Successfully.")  ;  
              
-                navigate(  "/home/course/draftcourse/draftcoursedetails"   ,    { state: {    typeId :  "draft_course_content"    ,  courseName : location.state.courseName   , courseId :  location.state.courseId   }}  ,    { replace : false}  )   ;
+                navigate(  "/home/course/draftcourse/draftcoursedetails"   ,    { state: {    typeId :  "draft_course_content"    ,  courseName : location.state.courseName   , courseId :  location.state.courseId  , userInfo :  location.state.userInfo   }}  ,    { replace : false}  )   ;
   
               } 
               else {
@@ -313,7 +313,7 @@ function CreateContent() {
                
             alert( "added Successfully.")  ;  
         
-           navigate(  "/home/course/draftcourse/draftcoursedetails"   ,    { state: {    typeId :  "draft_course_content"    ,  courseName : location.state.courseName   , courseId :  location.state.courseId   }}  ,    { replace : false}  )   ;
+           navigate(  "/home/course/draftcourse/draftcoursedetails"   ,    { state: {    typeId :  "draft_course_content"    ,  courseName : location.state.courseName   , courseId :  location.state.courseId   , userInfo :  location.state.userInfo  }}  ,    { replace : false}  )   ;
 
          } 
          else {

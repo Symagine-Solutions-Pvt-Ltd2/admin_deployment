@@ -157,7 +157,7 @@ axios({
                             
                           console.log( res) ; 
 
-                          navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientId : data.client_id    , programId : data.program_id  , programName : location.state.programName    }}     ,      { replace : false}  )   ;
+                          navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientId : data.client_id    , programId : data.program_id  , programName : location.state.programName    , userInfo :  location.state.userInfo  }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
                          console.log( "error") ;
                 
@@ -212,7 +212,7 @@ axios({
                             */
                           console.log( data) ;   
                           console.log( res) ; 
-                          navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName } }     ,   { replace : false}  )   ; 
+                        //  navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
 /* 
                         } 
                         else {
@@ -280,7 +280,7 @@ axios({
                   
                             
                           console.log( res) ; 
-                          navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id     , programId : data.program_id  }}    , { replace : false}  )   ;
+                          navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id     , programId : data.program_id  , userInfo :  location.state.userInfo  }}    , { replace : false}  )   ;
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -338,7 +338,7 @@ axios({
     
               
             console.log( res) ; 
-            navigate(  "/home/dashboard/client/student"   ,    { state: {     schoolId : data.school_id    , programId : data.program_id  }}    , { replace : false}  )   ;
+            navigate(  "/home/dashboard/client/student"   ,    { state: {     schoolId : data.school_id    , programId : data.program_id  , userInfo :  location.state.userInfo  }}    , { replace : false}  )   ;
 
          
        } ).catch(( err) => { 
@@ -392,7 +392,7 @@ axios({
 
             if(  res.data.message === "Data modified successfully"  ){ 
 
-            navigate(  "/home/dashboard/"    ,    { state: {    typeId : "system_admin"   }}  ,    { replace : false}  )   ; 
+            navigate(  "/home/dashboard/"    ,    { state: {    typeId : "system_admin"  ,  userInfo :  location.state.userInfo   }}  ,    { replace : false}  )   ; 
 
             }
          
@@ -1031,7 +1031,7 @@ axios({
                       <div className="admin_Form-Input" >         
                        <input type="text"
                               name="email" 
-                              defaultValue={ data.email_id }                              
+                              defaultValue={data.email_id}                              
                               className="admin_input-box"  
                               
                               /> 
