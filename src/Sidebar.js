@@ -17,7 +17,7 @@ function SideBar( props ) {
   
 
 
-   console.log( props.info) ;  
+ //     console.log( props.info) ;  
   
    const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
   

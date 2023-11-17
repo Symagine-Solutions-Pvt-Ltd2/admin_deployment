@@ -1,0 +1,85 @@
+.popup{
+  
+    position : fixed ; 
+    right : 0 ;
+    top : 0 ; 
+    width: 81%; 
+    height : 100vh ; 
+    display: flex;
+    align-items:  center; 
+    justify-content: center;   
+    background-color: rgba(128, 128, 128, 0.6);
+ 
+
+ 
+} 
+
+
+
+.popup-inner{
+
+position: relative;
+width : 40% ; 
+height : 30% ;
+
+background-color: #353B55;   
+border-radius: 2%;
+
+
+
+}  
+
+
+
+ .close-btn {
+    
+    height : 60% ;
+    width : 20% ;  
+  
+
+}  
+
+.popup-inner-body1{
+
+    height: 25%; 
+    display : flex ; 
+    align-items:  center ; 
+    justify-content: flex-end ;  
+    padding-right:  2%;
+}
+
+
+.popup-inner-body2{
+
+  
+      height: 35%; 
+      background-color: #FFF;
+
+} 
+  
+
+
+
+.popup-inner-body3{
+
+  
+    height: 40%; 
+    display : flex ; 
+    align-items:  center ; 
+    justify-content: space-around;
+
+}  
+
+
+
+
+
+.popup-inner-body2-button{
+
+   height : 45% ;
+   width : 25% ; 
+   background-color: #B7B7D1;
+
+
+}
+

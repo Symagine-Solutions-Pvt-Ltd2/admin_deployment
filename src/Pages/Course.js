@@ -2,19 +2,19 @@ import { useState  , useEffect} from "react";
 import Sidebar  from "../Sidebar" ;   
 import {Link , useNavigate  , useLocation } from "react-router-dom" ; 
 import  "../Style/Course.css" ;  
-import axios from "axios"  ;  
+import axios from "axios"  ;    
 
 
 
 // popup 
-import "../Components/Popup" ; 
-import Popup from "../Components/Popup";
+import CoursePopup from "../Components/CoursePopup";
 
 function Course() {    
     
     
    // for popup 
-   const[ popupInfo  , setPopupInfo ] = useState("") ;
+   const[ popupInfo  , setPopupInfo ] = useState("") ; 
+   const[ popupScreenType  , setPopupScreenType  ] = useState("") ; 
    const[ popup  , setPopup ] = useState( false) ; 
   
 
@@ -181,13 +181,19 @@ function Course() {
 
                      // to handle delete , active , inactive  
 
-                     const  handleStatusChange = ( cs  ) => {    
-    
+                     const  handleStatusChange = ( cs  ,  screenType   ) => {    
+                 
+                      
+                         
                           setPopupInfo( cs) ;
-                          console.log( cs) ;
+                          setPopupScreenType( screenType ) ; 
                            setPopup( true)  ;
                        
+                           
+                      /*      console.log( cs) ; 
+                           console.log( screenType) ;  */ 
 
+                           
                      } 
 
 
@@ -202,58 +208,6 @@ function Course() {
 
     switch( typeId )  { 
 
-
-    /* case "save_course" :   
-  
-        return( 
-    
-            <div className="course" >
-     
-            <div className="course_sidebar" >
-              <Sidebar /> 
-            </div>   
-    
-    
-            
-            <div className="course_body"  >   
-
-            <form className="course_body_inner_div" onSubmit={ saveCourse }    >    
-      
-                 
-                   
-                 <input type="text"
-                         name = "course_name"
-                         placeholder="Enter course name"
-                         className="course_input-box"
-                         /> 
-                  
-            
-                 
-                 <input type="text" 
-                         name = "course_description"
-                         placeholder="Enter short description"
-                         className="course_input-box"  style={{ marginBottom : "4.5%"}}
-                         /> 
-             
-            
-                 
-                 <input   className="course_form_row_btn" type="submit" value="Submit" /> 
-                 
-               
-            </form>
-
-      
-    
-            </div> 
-
-            </div> 
-
-
-
-
-           )  ;  */
- 
- 
 
 
 
@@ -278,9 +232,8 @@ function Course() {
 
           
 
-      <Popup  trigger= { popup  } setTrigger={ setPopup }   >
-        <h3> {popupInfo } </h3>
-      </Popup>
+      <CoursePopup  trigger= { popup  } setTrigger={ setPopup }   screenType = { popupScreenType }    data = { popupInfo} > 
+      </CoursePopup>
 
         <div  className="clientview_body1"   style= {{ backgroundColor : '#F1F2F7'}} > 
          
@@ -333,14 +286,14 @@ function Course() {
       
 
                               
-       <input  className="inner_table_btn"     style={{ height: "40%"  , width : "25%"}}  type="button" value = "submit"  onClick={()  => {  }  } /> 
+       <input  className="inner_table_btn"     style={{ height: "40%"  , width : "25%"}}  type="button" value = "submit"  onClick={() => {handleStatusChange( el   , "submit")  }}  /> 
                               
                             
               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "25%"}}  type="button" value = "edit"  onClick={()  => {   navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     courseId :   el._id    ,   courseName : el.course_name     , userInfo :  location.state.userInfo  }}     ,  { replace : false}  )  }  } /> 
                                 
 
                               
-              <input   className="inner_table_btn"   style={{ height: "40%"  , width : "25%"}}  type="button" value = "delete"  onClick= { () => { } }  /> 
+              <input   className="inner_table_btn"   style={{ height: "40%"  , width : "25%"}}  type="button" value = "delete"  onClick= { () => {handleStatusChange( el   ,  "delete")}   }  /> 
                                
         </div> 
 
