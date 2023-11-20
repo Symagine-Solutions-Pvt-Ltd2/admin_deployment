@@ -57,7 +57,11 @@ const Popup = (  props ) => {
 
      // alert( value) ; 
 
-    } 
+    }  
+
+
+
+    
    else if(  userDetails.type_id === "school" ){
  
        

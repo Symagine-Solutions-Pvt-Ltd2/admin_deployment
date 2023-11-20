@@ -171,7 +171,7 @@ function Course() {
 
 
 
-                   } , [])  ; 
+                   } , [ popup])  ; 
 
   
                 
@@ -375,7 +375,7 @@ function Course() {
     <p> { index+1} </p>
     </div> 
     <div className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    }}>
-      <p> Future Founders - fr - 2023 </p>
+      <p>  { el.course_name } </p>
     </div>
     <div  className="clientview_table_row_box" style= {{   width: "45%" ,  height: "100%"   ,  display : "flex" , flexDirection : "row"}  }>
       

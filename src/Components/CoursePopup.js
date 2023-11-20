@@ -14,7 +14,83 @@ const CoursePopup = (  props ) => {
    console.log( props.data) ; 
    console.log( props.screenType) ; 
 
+    
+   
+   const statusChange = ( )  => { 
+   
  
+
+
+    if(  props.screenType === "submit"  ){
+
+               console.log( props.data._id)   ; 
+                 
+      axios({ 
+      
+        url : "http://127.0.0.1:8000/admin/course_cc"  ,   
+
+        method : "POST"  ,  
+
+        data : {
+            
+          "_id" : props.data._id  , 
+          "condition" : "permanent" 
+       
+        }
+  
+       }).then( ( res) => {   
+  
+        console.log( res) ; 
+        alert( res.data.message) ;  
+        props.setTrigger( false ) ;
+         
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ; 
+
+      } else if(  props.screenType === "delete"   ){
+
+
+      axios({ 
+      
+        url : "http://127.0.0.1:8000/admin/course_cc"  ,   
+
+        method : "POST"  ,  
+
+        data : {
+            
+          "_id" : props.data._id  , 
+          "condition" : "delete" 
+       
+        }
+  
+       }).then( ( res) => {   
+  
+        console.log( res) ; 
+        alert( res.data.message) ;  
+        props.setTrigger( false ) ;
+         
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ; 
+
+
+
+      } 
+
+
+
+      }
+
+
+
+
+      
+
+
+
 
 
   switch( props.screenType){
@@ -26,18 +102,18 @@ const CoursePopup = (  props ) => {
 
           <div className="popup" > 
           
-            <div className="popup-inner"   style = {{ borderRadius : 15  }}  >  
+            <div className="course_popup-inner"   style = {{ borderRadius : 15  }}  >  
 
-                  <div className="popup-inner-body1"> 
+                  <div className="course_popup-inner-body1"> 
 
                    <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
                   
                   </div> 
 
-                   <div  className="popup-inner-body2"   >
+                   <div  className="course_popup-inner-body2"   >
                     
 
-                    <p>Delete this item? </p> 
+                    <p className="course_popup_text" >Delete this item? </p> 
 
           
                    </div>
@@ -46,17 +122,18 @@ const CoursePopup = (  props ) => {
 
 
                    
-                   <div className="popup-inner-body3" > 
+                   <div className="course_popup-inner-body3" > 
 
 
 
-                  <input className="popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#32CD32"  , color : "#FFF" }}   
+                  <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"  , color : "#FFF" }}  
+                     onClick={ () => {  props.setTrigger( false ) }  }
                   type="button" value = "Cancel"   />  
 
 
 
-                  <input  className="popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#FCC046" ,  color : "#FFF" }} 
-                  type="button" value = "Delete"   />   
+                  <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" ,  color : "#FFF" }} 
+                  type="button" value = "Delete"    onClick={()  => {  statusChange( ) }  }     />   
 
 
 
@@ -78,18 +155,18 @@ const CoursePopup = (  props ) => {
 
     <div className="popup" > 
     
-      <div className="popup-inner"   style = {{ borderRadius : 15  }}  >  
+      <div className="course_popup-inner"   style = {{ borderRadius : 15  }}  >  
 
-            <div className="popup-inner-body1"> 
+            <div className="course_popup-inner-body1"> 
 
              <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
             
             </div> 
 
-             <div  className="popup-inner-body2"   >
+             <div  className="course_popup-inner-body2"   >
               
 
-              <p>Do you really want to submit?</p> 
+              <p className="course_popup_text">Do you really want to submit?</p> 
 
     
              </div>
@@ -98,17 +175,17 @@ const CoursePopup = (  props ) => {
 
 
              
-             <div className="popup-inner-body3" > 
+             <div className="course_popup-inner-body3" > 
 
 
 
-            <input className="popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#32CD32"  , color : "#FFF" }}   
-            type="button" value = "Cancel"   />  
+            <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"  , color : "#FFF" }}   
+            type="button" value = "Cancel"  onClick={ () => {  props.setTrigger( false ) }  }  />  
 
 
 
-            <input  className="popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#FCC046" ,  color : "#FFF" }} 
-            type="button" value = "Submit"   />   
+            <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" ,  color : "#FFF" }} 
+            type="button" value = "Submit"   onClick={()  => {  statusChange( ) }  }  />   
 
 
 
