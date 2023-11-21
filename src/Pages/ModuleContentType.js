@@ -47,7 +47,7 @@ function  ModuleContentType() {
     //frame12
     return (
       <div className="moduleContentType"> 
-      <div className="moduleContentType-sidebar">
+      <div className="moduleContentType-sidebar"  style={{ borderRadius : 25}}>
       <Sidebar    info = {  location.state.userInfo} /> 
       </div> 
       <div className="moduleContentType-body">   

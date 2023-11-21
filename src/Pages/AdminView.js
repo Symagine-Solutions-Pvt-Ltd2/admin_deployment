@@ -92,9 +92,9 @@ function  AdminView() {
 
     return(  
   
-      <div className="clientview">  
+      <div className="clientview"   style = {{ backgroundColor : "#F8E5E9" }}  >  
   
-              <div className="clientview_sidebar" >
+              <div className="clientview_sidebar"    style={{ borderRadius : 25   }} >
                      <Sidebar      info = {  location.state.userInfo}/> 
               </div>  
 

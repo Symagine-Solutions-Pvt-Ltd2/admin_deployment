@@ -225,7 +225,7 @@ function  UploadContent() {
        if(  res.data.message === "quiz added Successfully."){
 
          alert(  res.data.message ) ; 
-          navigate(  "/home/course/draftcourse/module"   ,  { state: { type : location.state.type   ,      courseName :   location.state.course_name   ,  type_name :   location.state.type_name     }}   ,  { replace : false}  ) ; 
+          navigate(  "/home/course/draftcourse/module"   ,  { state: { type : location.state.type   ,      courseName :   location.state.course_name   ,  type_name :   location.state.type_name    ,     userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
        }else{
 
         alert(  res.data.message ) ;  
@@ -414,7 +414,7 @@ setSelectedOption( null) ;
       
       <div  className="upload"> 
 
-      <div  className="upload-sidebar"> 
+      <div  className="upload-sidebar" style={{ borderRadius : 25}}> 
      <Sidebar     info = {  location.state.userInfo}/> 
      </div> 
 
@@ -664,9 +664,9 @@ setSelectedOption( null) ;
 
      return (  
 
-      <div  className="upload"> 
+      <div  className="upload"  > 
 
-      <div  className="upload-sidebar"> 
+      <div  className="upload-sidebar" style={{ borderRadius : 25}}> 
      <Sidebar    info = {  location.state.userInfo} /> 
      </div> 
 
@@ -729,7 +729,7 @@ setSelectedOption( null) ;
 
      <div  className="upload"  > 
 
-     <div  className="upload-sidebar"> 
+     <div  className="upload-sidebar" style={{ borderRadius : 25}}> 
     <Sidebar    info = {  location.state.userInfo} /> 
     </div> 
 
@@ -781,7 +781,7 @@ setSelectedOption( null) ;
 
      <div  className="upload"  > 
 
-     <div  className="upload-sidebar"> 
+     <div  className="upload-sidebar" style={{ borderRadius : 25}}> 
     <Sidebar    info = {  location.state.userInfo} /> 
     </div> 
 
@@ -844,7 +844,7 @@ setSelectedOption( null) ;
 
      <div  className="upload"  > 
 
-     <div  className="upload-sidebar"> 
+     <div  className="upload-sidebar" style={{ borderRadius : 25}} > 
     <Sidebar     info = {  location.state.userInfo}/> 
     </div> 
 

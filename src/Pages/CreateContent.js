@@ -416,7 +416,7 @@ function CreateContent() {
 
         <div className="form_outer_div">
    
-        <div className="form_outer_div_sidebar" >
+        <div className="form_outer_div_sidebar"    style={{ borderRadius : 25}}>
           <Sidebar   info = {  location.state.userInfo} /> 
         </div>   
 
@@ -666,7 +666,7 @@ function CreateContent() {
   
           <div className="form_outer_div">
      
-          <div className="form_outer_div_sidebar" >
+          <div className="form_outer_div_sidebar"  style={{ borderRadius : 25}} >
             <Sidebar    info = {  location.state.userInfo} /> 
           </div>   
   
@@ -719,7 +719,7 @@ function CreateContent() {
   
           <div className="form_outer_div">
      
-          <div className="form_outer_div_sidebar" >
+          <div className="form_outer_div_sidebar"   style={{ borderRadius : 25}} >
             <Sidebar     info = {  location.state.userInfo}  /> 
           </div>   
   

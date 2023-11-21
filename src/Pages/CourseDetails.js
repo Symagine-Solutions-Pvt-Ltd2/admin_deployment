@@ -106,7 +106,7 @@ function CourseDetails() {
 
         <div className="clientview">  
 
-        <div className="clientview_sidebar" >
+        <div className="clientview_sidebar"   style={{ borderRadius : 25}} >
                <Sidebar    info = {  location.state.userInfo} /> 
         </div>  
 
@@ -159,27 +159,26 @@ function CourseDetails() {
 
       
                           
-                             <div className="clientview_table_row_box"   style={{ height: "100%"  , width : "30%"}} >  
+                             <div className="clientview_table_row_box"   style={{ height: "100%"  , width : "60%"}} >  
                                
                              <p>  { el.name }  </p>
                             </div> 
-
                          
 
-                          
-              <input className="inner_table_btn"  style={{ height: "40%"  , width : "16%"}}   type="button" value = "submit"  onClick={()  => { }  } /> 
-                         
-
+               <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "40%"  , justifyContent : "space-around"}}>  
 
 
                        
-              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "16%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  )  }  } /> 
+              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "40%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  )  }  } /> 
                       
 
 
 
-               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "16%"}} type="button" value = "delete"  onClick={()  => {     }  } /> 
-                       
+               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}} type="button" value = "delete"  onClick={()  => {     }  } /> 
+ 
+
+
+                  </div>       
 
            </div> 
 
@@ -226,7 +225,7 @@ function CourseDetails() {
 
     <div className="clientview">  
 
-    <div className="clientview_sidebar" >
+    <div className="clientview_sidebar"   style={{ borderRadius : 25}} >
            <Sidebar      info = {  location.state.userInfo}/> 
     </div>  
 

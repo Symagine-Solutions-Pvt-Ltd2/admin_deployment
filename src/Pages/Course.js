@@ -221,7 +221,7 @@ function Course() {
        
         <div className="course" >
      
-        <div className="course_sidebar"    >
+        <div className="course_sidebar"   style={{ borderRadius : 25}}   >
           <Sidebar  info = {  location.state.userInfo} /> 
         </div>   
 
@@ -326,7 +326,7 @@ function Course() {
        
         <div className="course" >
      
-        <div className="course_sidebar" >
+        <div className="course_sidebar"    style={{ borderRadius : 25}}>
           <Sidebar  info = {  location.state.userInfo} /> 
         </div>   
 

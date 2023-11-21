@@ -217,7 +217,7 @@ function  Module() {
   
         </div> 
   
-        <div className="body3"   style= {{ backgroundColor : '#F1F2F7'}} > 
+        <div className="body3"   style= {{ backgroundColor : '#FFFFFF'}} > 
   
         <div onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"}} >
           <p>Add</p>
