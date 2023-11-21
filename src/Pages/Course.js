@@ -221,7 +221,7 @@ function Course() {
        
         <div className="course" >
      
-        <div className="course_sidebar" >
+        <div className="course_sidebar"    >
           <Sidebar  info = {  location.state.userInfo} /> 
         </div>   
 

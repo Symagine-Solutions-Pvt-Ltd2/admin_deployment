@@ -138,7 +138,7 @@ root.render(
    <Route path= "course"   >  
       <Route index  element ={  <SecondView/>  }  />   
       <Route  path= "savecourse"  element ={  <CreateContent /> }  />    
-      <Route  path= "draftcourse"   >  
+      <Route  path= "draftcourse" >   
          <Route index  element ={   <Course /> } />  
          <Route  path= "draftcoursedetails"  element ={  <CourseDetails /> }  />  
          <Route  path= "addcoursecontent"  element ={  <SecondView/> }  />      

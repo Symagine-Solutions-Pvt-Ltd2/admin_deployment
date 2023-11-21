@@ -24,7 +24,7 @@ function CreateContent() {
  const [ type , setType ] =  useState( location.state.type ) ; 
  const [ courseName  , setCourseName ] =  useState( location.state.courseName  ) ;  
  const [ feedbackGivenBy  , setFeedbackGivenBy ] =  useState( [] ) ; 
- const [ pageNo  , setPageNo ] =  useState( 3) ; 
+ const [ pageNo  , setPageNo ] =  useState( 1) ; 
  const [ courseList  , setCourseList  ] =  useState( []) ; 
  const [ totalPages , setTotalPages  ] =  useState( null ) ;
  const [ selectedCourse  , setSelectedCourse  ] =  useState( "") ; 
@@ -775,7 +775,7 @@ function CreateContent() {
 
         <div className="course" >
      
-        <div className="course_sidebar" >
+        <div className="course_sidebar"   style={{ borderRadius : 25}} >
           <Sidebar    info = {  location.state.userInfo} /> 
         </div>   
 

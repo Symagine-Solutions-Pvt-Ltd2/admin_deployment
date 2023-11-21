@@ -85,8 +85,8 @@ function SecondView() {
     case "course" :  
 
     return (
-      <div className="secondview" >  
-         <div  className="secondview_sidebar" >
+      <div className="secondview"    >  
+         <div  className="secondview_sidebar"   style={{ borderRadius : 25}} >
            <Sidebar  info = {  location.state.userInfo} /> 
         </div>
 
@@ -112,8 +112,8 @@ function SecondView() {
 
     case "addcoursecontent" :  
     return(
-      <div className="secondview" >  
-      <div  className="secondview_sidebar" >
+      <div className="secondview"    >  
+      <div  className="secondview_sidebar"   style={{ borderRadius : 25}} >
         <Sidebar     info = {  location.state.userInfo} /> 
      </div>
 
