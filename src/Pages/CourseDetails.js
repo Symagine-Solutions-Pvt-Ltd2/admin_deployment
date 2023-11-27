@@ -113,7 +113,7 @@ function CourseDetails() {
         <div className="clientview_body">   
 
         
-         <div  className="clientview_body1"   style= {{ backgroundColor : '#F1F2F7'}}  > 
+         <div  className="clientview_body1"   style= {{ backgroundColor : '#FFFFF'}}  > 
           
          </div>
         
@@ -145,7 +145,7 @@ function CourseDetails() {
          data.map( (  el  , index )  => (  
 
 
-          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "#F1F2F7" ,   borderBottom : "1px solid #B6B7D0"  , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "#FFFFFF" ,   borderBottom : "1px solid #B6B7D0"  , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
           <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
            <p>  { index+1}  </p>
            </div> 
@@ -198,7 +198,7 @@ function CourseDetails() {
 
           </div> 
 
-          <div className="body3" style= {{ backgroundColor : '#F1F2F7'  }}> 
+          <div className="body3" style= {{ backgroundColor : '#FFFFFF'  }}> 
 
           <div onClick={ () => { goToNext() } } className="add_new_program_button" style= { {  backgroundColor : "#FCC046"}}>
             <p>Add</p>

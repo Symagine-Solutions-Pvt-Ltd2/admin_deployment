@@ -212,7 +212,7 @@ axios({
                             */
                           console.log( data) ;   
                           console.log( res) ; 
-                        //  navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
+                           navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
 /* 
                         } 
                         else {

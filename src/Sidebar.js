@@ -85,8 +85,9 @@ function SideBar( props ) {
 
          <div   className="Sidebar-profile-Name-div" > 
     
-                     <div style= {{ height : "60%"  , width:"40%"  , backgroundColor : "white"  ,  borderRadius : "50%" }}>
-                         <p> RM</p>
+                     <div style= {{ height : "80%" , width: "37%"  , backgroundColor : "white"  ,  borderRadius : "50%"   , display : "flex"  , justifyContent : "center"  , alignItems : "center"}}> 
+
+             <p style= {{ fontSize : "24px"  , color: "#5A6199" }} > RM</p>
                        </div>
          </div>  
           
@@ -105,7 +106,8 @@ function SideBar( props ) {
 
          <div   className="Sidebar-Program-Home-Button-div" >  
 
-         <input style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25   , border : "0px"}}  type= "button"   value = "Home"  /> 
+         <input style={{ backgroundColor : "#B7B7D0" ,  width : "56.70%" , height : "45.88%"  , borderRadius : 25   , border : "0px"}}  type= "button"   value = "Home" 
+         onClick={ () => { }}  /> 
 
                  
             </div>    

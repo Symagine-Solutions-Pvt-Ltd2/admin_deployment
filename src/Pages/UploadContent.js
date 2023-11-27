@@ -44,6 +44,11 @@ function  UploadContent() {
 /*     console.log( event.target.name.value) ;   
     console.log( event.target.file.value) ;   */
 
+    console.log( type ) ; 
+
+
+    if( type === "module"  ) {
+
     
     let formData = new FormData();
   
@@ -56,14 +61,7 @@ function  UploadContent() {
     formData.append("type_id",  type  );  
 
 
-
-
-    console.log( formData.name) ;   
- 
-    
-  
-
-
+    console.log( formData ) ;    
 
 
     axios({
@@ -93,7 +91,95 @@ function  UploadContent() {
 
         console.log( err) ; 
       }); // Catch errors if any
+ 
+    } 
+    else if(  type === "workshop"   ){
+      
+      
+
+      let formData = new FormData();
   
+      //Adding files to the formdata  
+      formData.append("name",  event.target.name.value );
+      formData.append("course_name",  courseName  );
+      formData.append("thumb_image",   event.target.file.value);
+      formData.append("workshop_name",  name );
+      formData.append("sub_type",  subType );
+      formData.append("type_id",  type  );  
+
+      axios({
+        // Endpoint to send files
+        url: "http://127.0.0.1:8000/admin/a_w_material", 
+  
+        method: "POST", 
+  
+        headers: { 
+  
+         "Content-Type" : "multipart/form-data"  
+        
+        }, 
+  
+  
+        // Attaching the form data
+        data: formData,
+      })
+        .then((res) => {  
+            
+  
+         console.log(  res) ;   
+         alert( res.data.message) ;
+  
+        }) // Handle the response from backend here
+        .catch((err) => {  
+  
+          console.log( err) ; 
+        }); // Catch errors if any
+
+
+    
+
+    }
+
+    /* 
+    axios({
+      // Endpoint to send files
+      url: "http://127.0.0.1:8000/admin/a_m_material", 
+
+      method: "POST", 
+
+      headers: { 
+
+       "Content-Type" : "multipart/form-data"  
+      
+      }, 
+
+
+      // Attaching the form data
+      data: formData,
+    })
+      .then((res) => {  
+          
+
+       console.log(  res) ;   
+       alert( res.data.message) ;
+
+      }) // Handle the response from backend here
+      .catch((err) => {  
+
+        console.log( err) ; 
+      }); // Catch errors if any
+  
+ */
+  
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -110,9 +196,13 @@ function  UploadContent() {
 
   const  uploadText  = (  event  ) => { 
    
+     
 
+    
+    if(   type ===  "module"){
 
-    axios({
+      console.log(   type  )  ; 
+   /*  axios({
       // Endpoint to send files
       url: "http://127.0.0.1:8000/admin/a_m_text", 
 
@@ -127,7 +217,7 @@ function  UploadContent() {
         "enter_text" : event.target.text.value , 
         "module_name" : name   , 
         "course_name" : courseName  , 
-       "type_id" : typeId  , 
+       "type_id" : type  , 
         "sub_type" : subType
       },
     })
@@ -138,9 +228,40 @@ function  UploadContent() {
 
       }) // Handle the response from backend here
       .catch((err) => { }); // Catch errors if any
+   */  
+    } 
+    else  if(  type ===  "workshop"  ){
+       
+      console.log(   "vhgs"  )  ;   
+
+      axios({
+        // Endpoint to send files
+        url: "http://127.0.0.1:8000/admin/a_w_text", 
   
+        method: "POST", 
+  
+      
+        data: {
+  
+  
+  
+          "text_name" : event.target.name.value , 
+          "enter_text" : event.target.text.value , 
+          "workshop_name" : name   , 
+          "course_name" : courseName  , 
+         "type_id" : type  , 
+          "sub_type" : subType
+        },
+      })
+        .then((res) => {  
+            
+          alert( res.data.message) ;
+         console.log(  res) ;  
+  
+        }) // Handle the response from backend here
+        .catch((err) => { }); // Catch errors if any
 
-
+    }
 
     event.preventDefault() ; 
 
@@ -861,18 +982,18 @@ setSelectedOption( null) ;
 
        <input type="text"
                         name="name"
-              
+                        placeholder="Enter name"
                         className="upload-body-div1-input-box"
                         />  
 
 
 
        </div> 
-       <div className ="upload-body-div2"  >  
+       <div className ="upload-body-div2" style={{backgroundColor : "green"}}  >  
             
-       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "70%" }} />  
+       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "70%"  , textAlign : "center"  , borderRadius : "30px"   , border : "0px"}} />  
 
-       <input   name="text"   placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "10%" }} /> 
+       <input   name="text"   placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "18%"  , textAlign : "center" ,  borderRadius : "30px"}} /> 
         </div> 
 
 

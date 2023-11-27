@@ -346,10 +346,20 @@ function AddAccount() {
       console.log( event.target.name.value) ;   
       console.log( event.target.email.value) ;    
       console.log( event.target.password.value) ;    
-      console.log( event.target.repeat_password.value) ;     
+      console.log( event.target.repeat_password.value) ; 
+      console.log( event.target.sbtn.disabled) ; 
+          
+      
+      event.target.sbtn.disabled = true ; 
 
 
-    
+      
+      setTimeout(() => {
+        console.log("After two second") ;
+        console.log( event.target.sbtn.disabled) ;
+        event.target.sbtn.disabled =  false;
+      }, 3000) 
+
 
      if(  event.target.password.value !== event.target.repeat_password.value  ) {
          
@@ -401,8 +411,7 @@ function AddAccount() {
          
 
         }
-
-     
+  
       event.preventDefault() ; 
          
      }
@@ -1032,7 +1041,7 @@ function AddAccount() {
          
 
                         <div  className="addaccount_form_row_btn_div"  style= {{  height : "20%" }}> 
-                        <input className="addaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
+                        <input name="sbtn" className="addaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
                         </div>
                       
                     </form>

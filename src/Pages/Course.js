@@ -271,7 +271,7 @@ function Course() {
          
          data.map( (  el  , index )  => (  
 
-     <div key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor :'#F1F2F7' , borderBottom : "1px solid #B6B7D0" ,  borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} > 
+     <div key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor :'#FFFFFF' , borderBottom : "1px solid #B6B7D0" ,  borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} > 
 
 
    <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"   }}>
@@ -368,7 +368,7 @@ function Course() {
       {     
           data.map( (  el   , index )  => (
        
-     <div   key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor : "#F1F2F7"   , display : "flex" , flexDirection : "row" ,  borderBottom : "1px solid #B6B7D0"}} > 
+     <div   key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor : "#FFFFFF"   , display : "flex" , flexDirection : "row" ,  borderBottom : "1px solid #B6B7D0"}} > 
 
 
    <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"   }}>

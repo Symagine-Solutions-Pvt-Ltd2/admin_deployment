@@ -90,6 +90,8 @@ function  Module() {
 
 
               axios({ 
+   
+
 
                 url : "http://127.0.0.1:8000/admin/workshop_am"  ,  
                 method : "POST"  , 
@@ -109,9 +111,16 @@ function  Module() {
                    console.log(  res ) ; 
                   // setData(  res.data.data ) ;  
            
+                  console.log(  res.data.message ) ;
     
-    
-    
+                   if(    res.data.message === "Information retrieve successfully" ){
+                    setData(  res.data.data ) ;
+                        
+                   }
+                   else{
+
+                      alert( res.data.message )  ; 
+                   }
     
     
     
@@ -187,7 +196,7 @@ function  Module() {
   
   
                           <div className="clientview_table_row_box"  style={{ height: "100%"  , width : "40%"}} >
-                           <p>Do you know?</p>
+                           <p>{( el.text_name !== "" ) ?  el.text_name :  el.name }</p>
                           </div>
   
   

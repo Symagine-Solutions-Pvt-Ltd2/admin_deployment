@@ -150,7 +150,7 @@ function FirstView() {
               <div className="table_outer_div_body2"> 
 
 
-              <div className="table_inner_div_column_name"   >  
+              <div className="table_inner_div_column_name"  style={ {  borderTop : "1px solid black"  }} >  
 
               <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                <p  className="header_text" >Sl No</p>
@@ -178,7 +178,7 @@ function FirstView() {
            {   
 
     data.map( (  el  , index )  => ( 
-                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderBottom : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderTop : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
                
                           <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                               <p> {  index+1 }</p>
@@ -232,7 +232,7 @@ function FirstView() {
 
 
              
-              <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"}}  >    
+              <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"  ,     borderTop : "1px solid black"  }}  >    
               
               <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid black" }}>
                <p>Total</p>
@@ -310,7 +310,7 @@ function FirstView() {
               <div className="table_outer_div_body2"> 
 
 
-              <div className="table_inner_div_column_name"   >  
+              <div className="table_inner_div_column_name"     >  
 
               <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                <p className="header_text" >Sl No</p>

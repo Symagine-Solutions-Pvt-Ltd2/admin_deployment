@@ -45,7 +45,7 @@ function  AdminView() {
          
                 "search_key" : "" , 
               "page_no" :  1 ,
-               "limit" : 5   
+               "limit" : 10000  
 
        }
 

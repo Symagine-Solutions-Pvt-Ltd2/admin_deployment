@@ -53,8 +53,11 @@ function BusinessPlan() {
             
             if(   res.data.message === "Registered Successfully."){
                
-              navigate(  "/home/course/draftcourse/addcoursecontent"  ,    { state: {    courseName : location.state.courseName  ,  typeId : "addcoursecontent"  ,   }}   ,      { replace : false} ) ;
-            } 
+              navigate(  "/home/course/draftcourse/addcoursecontent"  ,    { state: {    courseName : location.state.courseName  ,  typeId : "addcoursecontent"  ,        userInfo :  location.state.userInfo }}   ,      { replace : false} ) ;
+            } else{
+
+              alert(  res.data.message) ;  
+            }
 
 
 

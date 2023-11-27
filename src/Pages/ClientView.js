@@ -29,7 +29,7 @@ function ClientView(   ) {
    
 
    
-
+  console.log( popup) ; 
 
 
   const [ data , setData ] = useState( []);
@@ -70,15 +70,13 @@ function ClientView(   ) {
         }).then( ( res) => {   
     
   
-      
-            
          if(   res.data.message === "Data not found"){
  
-          console.log(  res ) ;  
-
+        //  console.log(  res ) ;  
+        setData([]) ;   
          }else if(  res.data.message === "Details retrieve successfully"  ) {
 
-          console.log(  res ) ;  
+         console.log(  res ) ;  
           setData( res.data.data) ; 
 
          }
@@ -90,7 +88,7 @@ function ClientView(   ) {
   
          }  ) ; 
   
-    } , [  popup])  ; 
+    } , [ popup])  ; 
  
      
 
