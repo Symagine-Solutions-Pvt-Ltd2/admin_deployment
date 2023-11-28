@@ -232,7 +232,8 @@ function AddAccount() {
                  "type_id" : "school"  ,
                  "contact_person" :   event.target.contact_person.value  ,
                  "program_id" : location.state.programId   , 
-                 "client_id" :  location.state.clientId ,    
+                 "client_id" :  location.state.clientId , 
+                     
                
               }
         

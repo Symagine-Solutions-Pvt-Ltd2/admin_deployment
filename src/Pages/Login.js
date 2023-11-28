@@ -68,7 +68,7 @@ function Login() {
         if(   res.data.message ===  "Login successful"    ){
          
           alert( "Login Successful!")  ; 
-          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  ,  userInfo : {  name : res.data.data.name   ,   type : res.data.data.type_id }   }} ,  { replace : false}  )  ;
+          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  ,  userInfo : {  name : res.data.data.name   ,   type : res.data.data.type_id   }   }} ,  { replace : false}  )  ;
 
         } 
         else {

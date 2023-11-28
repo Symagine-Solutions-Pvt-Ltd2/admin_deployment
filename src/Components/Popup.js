@@ -79,7 +79,8 @@ const Popup = (  props ) => {
         
            "_id" : userDetails._id , 
            "client_id" :  userDetails.client_id ,
-                 "status" : value   
+                 "status" : value  ,
+                  "program_id" :  userDetails.program_id 
 
       }
 
@@ -142,7 +143,8 @@ const Popup = (  props ) => {
         
         
            "_id" : userDetails._id , 
-           "school_id" :  userDetails.school_id ,
+           "school_id" :  userDetails.school_id , 
+           "program_id" :  userDetails.program_id , 
             "status" : value   
 
       }
