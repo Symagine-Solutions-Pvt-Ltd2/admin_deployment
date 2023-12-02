@@ -247,7 +247,7 @@ function StudentView() {
          <input   className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick= { () => {handleStatusChange( el) } }/> 
                     
                    
-        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"     ,  data : el   ,     userInfo :  location.state.userInfo }}   , { replace : false}  )  }  } /> 
+        <input   className="inner_table_btn"  style={{ height: "40%"  , width : "40%"}}  type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/client/student/editstudent"     ,    {  state: {    typeId : "student"      ,  type : location.state.typeId ,  data : el   ,     userInfo :  location.state.userInfo }}   , { replace : false}  )  }  } /> 
                          
        </div>
 

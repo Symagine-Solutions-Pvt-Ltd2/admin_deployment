@@ -26,7 +26,7 @@ function  EditAccount(  {  props }) {
   console.log( "edit account" ) ;
    console.log( location.state.data ) ;   
    console.log( location.state.typeId) ;  
-    
+   console.log( location.state.type) ;   
   
  
 
@@ -206,19 +206,19 @@ axios({
                 
                      }).then( ( res) => {   
                 
-                      /*   if(   res.data.message ===  "Registered Successfully."    ){
+                        if(   res.data.message ===  "Data updated Successfully"    ){
                          
-                          alert( "Registered Successfully.")  ;   
-                            */
+                          alert( "Data updated Successfully")  ;   
+                            
                           console.log( data) ;   
                           console.log( res) ; 
                            navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
-/* 
+
                         } 
                         else {
                 
                           alert(   res.data.message  )  ;
-                        } */ 
+                        }  
 
 
 
@@ -278,9 +278,26 @@ axios({
                 
                      }).then( ( res) => {   
                   
-                            
-                          console.log( res) ; 
-                          navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id     , programId : data.program_id  , userInfo :  location.state.userInfo  }}    , { replace : false}  )   ;
+                        
+                        if(   res.data.message ===  "Details updated successfully"    ){
+                         
+                                alert( "Details updated Successfully")  ;   
+                                  
+
+                                console.log( res) ; 
+                                navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id     , programId : data.program_id  , userInfo :  location.state.userInfo  }}    , { replace : false}  )   ; 
+      
+                              } 
+                              else {
+                                
+                                console.log( res) ;
+                                alert(   res.data.message  )  ;
+                              }  
+      
+
+
+
+
                        
                      } ).catch(( err) => { 
                          console.log( "error") ;
@@ -335,11 +352,24 @@ axios({
         }
   
        }).then( ( res) => {   
-    
-              
-            console.log( res) ; 
-            navigate(  "/home/dashboard/client/student"   ,    { state: {     schoolId : data.school_id    , programId : data.program_id  , userInfo :  location.state.userInfo  }}    , { replace : false}  )   ;
+         
 
+           
+        if(   res.data.message ===  "Details updated successfully"    ){
+                         
+                alert( "Details updated Successfully")  ;   
+                  
+                console.log( res) ; 
+
+                navigate(  "/home/dashboard/client/student"   ,    { state: {   typeId : location.state.type ,    schoolId : data.school_id    , programId : data.program_id  , userInfo :  location.state.userInfo   ,       }}    , { replace : false}  )   ;
+    
+              } 
+              else {
+                
+                console.log( res) ;
+                alert(   res.data.message  )  ;
+              }   
+          
          
        } ).catch(( err) => { 
            console.log( "error") ;
@@ -1079,8 +1109,9 @@ axios({
                       <p className="header_text">No of students assigend</p> 
                       </div>        
                       <div className="admin_Form-Input" >         
-                      <input type="text"
-                              name="student" 
+                      <input 
+                              name="student"  
+                              type="number" 
                               defaultValue = { data.students_assign } 
                               className="admin_input-box"
                               /> 

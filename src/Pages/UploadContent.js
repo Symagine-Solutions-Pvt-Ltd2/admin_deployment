@@ -4,7 +4,8 @@ import "../Style/Upload.css" ;
 import { useState   } from "react";  
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import { upload } from "@testing-library/user-event/dist/upload";   
-import axios from "axios"  ;  
+import axios from "axios"  ;   
+import file_logo from "../Images/file_logo.png"  ; 
 
 
 
@@ -32,6 +33,7 @@ function  UploadContent() {
   console.log(  location.state.type_name  ) ; 
   console.log(  location.state.type  ) ; 
   console.log(  location.state.sub_type  ) ;
+  console.log(location.state.courseId) ; 
 
 
 
@@ -85,6 +87,19 @@ function  UploadContent() {
 
        console.log(  res) ;   
        alert( res.data.message) ;
+       
+
+       if( res.data.message === "File added Successfully."  ){
+          
+        alert( res.data.message) ;
+        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+       }else{
+        alert( res.data.message) ;
+
+       }
+
+
+
 
       }) // Handle the response from backend here
       .catch((err) => {  
@@ -140,48 +155,7 @@ function  UploadContent() {
 
     }
 
-    /* 
-    axios({
-      // Endpoint to send files
-      url: "http://127.0.0.1:8000/admin/a_m_material", 
-
-      method: "POST", 
-
-      headers: { 
-
-       "Content-Type" : "multipart/form-data"  
-      
-      }, 
-
-
-      // Attaching the form data
-      data: formData,
-    })
-      .then((res) => {  
-          
-
-       console.log(  res) ;   
-       alert( res.data.message) ;
-
-      }) // Handle the response from backend here
-      .catch((err) => {  
-
-        console.log( err) ; 
-      }); // Catch errors if any
-  
- */
-  
-  
-
-
-
-
-
-
-
-
-
-
+    
 
     event.preventDefault() ; 
 
@@ -189,6 +163,21 @@ function  UploadContent() {
 
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,8 +190,9 @@ function  UploadContent() {
     
     if(   type ===  "module"){
 
-      console.log(   type  )  ; 
-   /*  axios({
+      console.log(   type  )  ;  
+
+    axios({
       // Endpoint to send files
       url: "http://127.0.0.1:8000/admin/a_m_text", 
 
@@ -218,17 +208,26 @@ function  UploadContent() {
         "module_name" : name   , 
         "course_name" : courseName  , 
        "type_id" : type  , 
-        "sub_type" : subType
+        "sub_type" : subType , 
+        "max_char" : "0" , 
+
       },
     })
       .then((res) => {  
           
-        alert( res.data.message) ;
-       console.log(  res) ;  
+   
 
+
+       if( res.data.message ===  "Text added Successfully."){ 
+        alert( res.data.message) ;
+        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+       }else {
+        alert( res.data.message) ;
+       }
+    
       }) // Handle the response from backend here
       .catch((err) => { }); // Catch errors if any
-   */  
+   
     } 
     else  if(  type ===  "workshop"  ){
        
@@ -271,6 +270,8 @@ function  UploadContent() {
 
 
   
+
+
 
   const  uploadQuiz  = (  event  ) => {  
   
@@ -370,7 +371,100 @@ function  UploadContent() {
 
   
 
+     
+
+ 
+
+
+
+  
+  // upload text   
+
+  const  uploadTask  = (  event  ) => { 
+   
+     
+
     
+    if(   type ===  "module"){ 
+
+
+      console.log(   type  )  ;  
+
+    axios({
+      // Endpoint to send files
+      url: "http://127.0.0.1:8000/admin/a_m_text", 
+
+      method: "POST", 
+
+    
+      data: {
+
+
+
+        "text_name" : event.target.name.value , 
+        "enter_text" : event.target.instruction.value , 
+        "module_name" : name   , 
+        "course_name" : courseName  , 
+       "type_id" : type  , 
+        "sub_type" : subType , 
+        "max_char" :event.target.limit.value  , 
+
+      },
+    })
+      .then((res) => {  
+          
+   
+
+
+       if( res.data.message ===  "Text added Successfully."){ 
+        alert( res.data.message) ;
+        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+       }else {
+        alert( res.data.message) ;
+       }
+    
+      }) // Handle the response from backend here
+      .catch((err) => { }); // Catch errors if any
+   
+    } 
+    else  if(  type ===  "workshop"  ){
+       
+      console.log(   "vhgs"  )  ;   
+
+      axios({
+        // Endpoint to send files
+        url: "http://127.0.0.1:8000/admin/a_w_text", 
+  
+        method: "POST", 
+  
+      
+        data: {
+  
+  
+  
+          "text_name" : event.target.name.value , 
+          "enter_text" : event.target.text.value , 
+          "workshop_name" : name   , 
+          "course_name" : courseName  , 
+         "type_id" : type  , 
+          "sub_type" : subType
+        },
+      })
+        .then((res) => {  
+            
+          alert( res.data.message) ;
+         console.log(  res) ;  
+  
+        }) // Handle the response from backend here
+        .catch((err) => { }); // Catch errors if any
+
+    }
+
+    event.preventDefault() ; 
+  }
+
+
+
 
 
   const handleCheckboxChange1 = ( e ) => {  
@@ -801,7 +895,8 @@ setSelectedOption( null) ;
         
         <input type="text"
                          name="name"
-                         className="upload-body-div1-input-box"
+                         className="upload-body-div1-input-box" 
+                         placeholder="Enter name"
                          /> 
         </div>   
 
@@ -810,14 +905,21 @@ setSelectedOption( null) ;
         <div className ="upload-body-div2"    style= {{ height: "53.13%" , display :"flex"   ,  alignItems : "center"  , justifyContent :"center"}}    >  
                
 
-            <div   style= {{ width :"63.61%"  , backgroundColor : "#5A6198"  , height: "100%"}}>
+            <div   style= {{ width :"63.61%"  , backgroundColor : "#5A6198"  , height: "100%"  , borderRadius : 30   }}>
  
           
 
-          
-              <label  htmlFor="upload" >Add new file</label>
-              <input type="file"  name="file"   id="upload"  /> 
-
+           
+              <label  htmlFor="upload"  className="upload_file">
+                
+              <div  style= {{ width : "6%"  , height : "12%" , display : "flex"  , justifyContent : "center"   , padding : 5}}>
+              <img src={ file_logo }  alt= { "ccv"}  height={"100%"}   />  
+                </div>
+               
+           {/*    <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />  */}
+              <input  style={{ width : "30%" , backgroundColor : "grey" }} type="file"  name="file"   id="upload"  /> 
+                
+              </label> 
              </div> 
 
 
@@ -826,7 +928,7 @@ setSelectedOption( null) ;
 
         <div   style= {{ width :"63.61%" ,  backgroundColor : "#FFF8EE", height: "15.61%" , display :"flex" , alignItems : "center" , justifyContent : "flex-end"}}>   
             
-        <input  type="submit" value="Submit"   style= {{ width :"17.98%" ,  backgroundColor : "#FCC046", height: "33%"  , border : "0px solid black"}}  /> 
+        <input   className="inner_table_btn"  type="submit" value="Submit"   style= {{ width :"15.98%" ,  backgroundColor : "#FCC046", height: "34%"  , border : "0px solid black"}}  /> 
         </div>  
 
    
@@ -867,7 +969,7 @@ setSelectedOption( null) ;
 
        <input type="text"
                         name="name"
-              
+                        placeholder="Enter name"
                         className="upload-body-div1-input-box"
                         />  
 
@@ -876,14 +978,14 @@ setSelectedOption( null) ;
        </div> 
        <div className ="upload-body-div2"  >  
             
-       <input   name="text"   placeholder="enter text" style={{ width :"63.61%" , height: "100%" }} /> 
+       <input   name="text"   placeholder="enter text" style={{ width :"63.61%" , height: "100%"  , textAlign : "center"  , borderRadius : 30 }} /> 
         </div> 
 
 
 
        <div className ="upload-body-div3" >   
 
-       <input  type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       <input   className="inner_table_btn"  type="submit" value="Submit" style={{  width : "15%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
        </div> 
 
 
@@ -919,7 +1021,7 @@ setSelectedOption( null) ;
 
        <input type="text"
                         name="name"
-              
+                        placeholder="Enter name"
                         className="upload-body-div1-input-box"
                         />  
 
@@ -928,14 +1030,14 @@ setSelectedOption( null) ;
        </div> 
        <div className ="upload-body-div2"  >  
             
-       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "100%" }} /> 
+       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "100%"  , textAlign :"center"  , borderRadius : 30 }} /> 
         </div> 
 
 
 
        <div className ="upload-body-div3" >   
 
-       <input  type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       <input   className="inner_table_btn"   type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
        </div> 
 
 
@@ -946,6 +1048,7 @@ setSelectedOption( null) ;
 
     </div>
     )   
+
 
 
 
@@ -970,7 +1073,7 @@ setSelectedOption( null) ;
     </div> 
 
 
-    <form className ="upload-body"    onSubmit={ uploadText }   >  
+    <form className ="upload-body"    onSubmit={ uploadTask}   >  
 
 
 
@@ -989,18 +1092,18 @@ setSelectedOption( null) ;
 
 
        </div> 
-       <div className ="upload-body-div2" style={{backgroundColor : "green"}}  >  
+       <div className ="upload-body-div2"  >  
             
-       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "70%"  , textAlign : "center"  , borderRadius : "30px"   , border : "0px"}} />  
+       <input    name="instruction"   placeholder="Insert Instructions" style={{ width :"100%" , height: "70%"  , textAlign : "center"  , borderRadius : 30   }} />  
 
-       <input   name="text"   placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "18%"  , textAlign : "center" ,  borderRadius : "30px"}} /> 
+       <input   name="limit"   placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "18%"  , textAlign : "center" ,  borderRadius : 30 , backgroundColor : "#B7B7D1"  , textColor : "#000000"}} /> 
         </div> 
 
 
 
        <div className ="upload-body-div3" >   
 
-       <input  type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       <input   className="inner_table_btn"     type="submit" value="Submit" style={{  width : "15%" , height : "52%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
        </div> 
 
 

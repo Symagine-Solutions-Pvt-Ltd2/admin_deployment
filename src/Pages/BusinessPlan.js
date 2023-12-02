@@ -53,6 +53,7 @@ function BusinessPlan() {
             
             if(   res.data.message === "Registered Successfully."){
                
+              alert(  "Registered Successfully" );
               navigate(  "/home/course/draftcourse/addcoursecontent"  ,    { state: {    courseName : location.state.courseName  ,  typeId : "addcoursecontent"  ,        userInfo :  location.state.userInfo }}   ,      { replace : false} ) ;
             } else{
 
@@ -148,7 +149,7 @@ function BusinessPlan() {
 
 
     <div style= {{  width: "45%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  , alignItems: "center" , justifyContent : "center"}}>
-    <input  style ={{ height: "60%"  , borderRadius : 15  ,  width :"85%" }}  type="text"   value= { noOfCharacter }    onChange = { (e) => {  setNoOfCharacter( e.target.value)} }   /> 
+    <input  style ={{ height: "60%"  , borderRadius : 15  ,  width :"85%" }}  type="number"   value= { noOfCharacter }    onChange = { (e) => {  setNoOfCharacter( e.target.value)} }   /> 
     </div> 
   
     

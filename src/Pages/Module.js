@@ -25,12 +25,12 @@ function  Module() {
   console.log( location.state.courseName )  ; 
   console.log( location.state.type_name)  ; 
   console.log( location.state.type )  ; 
- 
+  console.log( location.state.courseId) ; 
 
 
   const goToNext = () => {
 
-      navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   ,   courseName :  location.state.courseName  ,  type_name :  location.state.type_name     , userInfo :  location.state.userInfo  }}   ,  { replace : false}  ) ; 
+      navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   , courseId: location.state.courseId ,     courseName :  location.state.courseName  ,  type_name :  location.state.type_name     , userInfo :  location.state.userInfo  }}   ,  { replace : false}  ) ; 
       console.log("ASJghshGHS") ;  
 
 
@@ -202,12 +202,12 @@ function  Module() {
   
   
        
-            <input style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {    }  } /> 
+            <input className="inner_table_btn"  style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {    }  } /> 
                          
   
   
 
-               <input style={{ height: "40%"  , width : "20%"}}  type="button" value = "delete"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+               <input  className="inner_table_btn"  style={{ height: "40%"  , width : "20%"}}  type="button" value = "delete"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
                        
   
          </div> 

@@ -70,6 +70,18 @@ function AddAccount() {
         console.log( assignedProgram ) ;   
         console.log(  location.state.type    )   ; 
 */
+  
+
+       event.target.sbtn.disabled = true ; 
+
+
+      
+            setTimeout(() => {
+  console.log("After two second") ;
+  console.log( event.target.sbtn.disabled) ;
+  event.target.sbtn.disabled =  false;
+}, 3000) 
+
 
        
         if(  event.target.password.value !== event.target.repeat_password.value  ) {
@@ -537,7 +549,7 @@ function AddAccount() {
                           <p className="header_text">No of students assigend</p> 
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
-                          <input type="text"
+                          <input type="number"
                                   name="student"
                                   className="addaccount_admin_input-box"
                                   /> 
@@ -550,7 +562,7 @@ function AddAccount() {
                 <div  className="addaccount_form_row_btn_div">   
 
 
-                <input className="addaccount_form_row_btn" type="submit" value="Submit" /> 
+                <input  name="sbtn"  className="addaccount_form_row_btn" type="submit" value="Submit" /> 
                 </div>
                         
            </form>

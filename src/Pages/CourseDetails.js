@@ -169,7 +169,7 @@ function CourseDetails() {
 
 
                        
-              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "40%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,   courseName :  courseName  ,  type_name :   el.name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  )  }  } /> 
+              <input className="inner_table_btn"    type="button"   style={{ height: "40%"  , width : "40%"}}  value = "edit"  onClick={()  => {     navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  el.type_id   ,           courseId :  location.state.courseId ,   courseName :  courseName  ,  type_name :   el.name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  )  }  } /> 
                       
 
 
