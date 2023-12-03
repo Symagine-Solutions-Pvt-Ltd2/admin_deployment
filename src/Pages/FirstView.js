@@ -310,7 +310,7 @@ function FirstView() {
               <div className="table_outer_div_body2"> 
 
 
-              <div className="table_inner_div_column_name"     >  
+              <div className="table_inner_div_column_name"    style={ {  borderTop : "1.5px solid black"   , borderBottom : "1px solid black" }}  >  
 
               <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
                <p className="header_text" >Sl No</p>
@@ -352,7 +352,7 @@ function FirstView() {
                              </div> 
 
 
-           <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,     userInfo :  location.state.userInfo } } ,   { replace : false}  )  }  } /> 
+           <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,      data : el   ,          userInfo :  location.state.userInfo } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
                          <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
@@ -392,7 +392,7 @@ function FirstView() {
 
 
              
-               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"}}>    
+               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"   , borderTop : "0.5px solid black" }}>    
               
               <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid black" }}>
                <p>Total</p>

@@ -644,7 +644,7 @@ setSelectedOption( null) ;
         </div>  
 
 
-        <div className ="upload-body-div2"  >   
+        <div className ="upload-body-div2"  style= {{ width : "100%"}}  >   
 
 
              <div className="upload-body-div2-inner-div1"   style={{ borderTop : "1px solid blue"  , borderBottom : "1px solid blue"}}> 

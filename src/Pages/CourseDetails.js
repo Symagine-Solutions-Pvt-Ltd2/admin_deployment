@@ -5,22 +5,27 @@ import Sidebar from "../Sidebar"  ;
 import axios from "axios"  ;  
 
 
+// popup 
+import CoursePopup from "../Components/CoursePopup"; 
+
+
 
 function CourseDetails() {    
      
 
-   // const location = useLocation(); 
-    //const [ typeId , setTypeId ] =  useState( location.state.typeId   ) ;   
-    const  navigate = useNavigate() ;  
+    // for popup 
+      const[ popupInfo  , setPopupInfo ] = useState("") ; 
+      const[ popupScreenType  , setPopupScreenType  ] = useState("") ; 
+      const[ popup  , setPopup ] = useState( false) ; 
+     
+      
+   const  navigate = useNavigate() ;  
     const location = useLocation();            
 
  
-  const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;  
-
+  const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ; 
   const [  courseId , setCourseId ]   = useState( location.state.courseId  ) ;  
   const [ data , setData ] = useState( []); 
- 
-   
   const [  courseName , setCourseName  ]   = useState( location.state.courseName   ) ;
    
 
@@ -42,19 +47,20 @@ function CourseDetails() {
         navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : location.state.courseName   , courseId : location.state.courseId  ,  userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
      
  
- 
- 
- 
        }  
-  
+   
+
+
+
+
+
+
+
+
 
    
        useEffect(() => { 
-     
-
-        
-
-        
+    
         axios({ 
 
               url : "http://127.0.0.1:8000/admin/course_wmb"  ,  
@@ -91,6 +97,70 @@ function CourseDetails() {
                    } , [])  ; 
 
   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+   const   deleteContent = ( el)  => { 
+    
+    console.log(  el)  ; 
+
+     if( el.type_id === "business plan"){
+    
+      axios({ 
+
+        url : "http://localhost:8000/admin/all_bp_material_delete"  ,   
+
+        method : "POST"  ,  
+
+        data : {
+           
+          "course_name" : el.course_name , 
+          "bp_name" : el.name
+         
+        }
+  
+       }).then( ( res) => {   
+  
+         
+            alert(   res.data.message  )  ;
+      
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ;  
+
+
+     
+     }else{
+
+
+
+     } 
+
+ } 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
@@ -111,8 +181,14 @@ function CourseDetails() {
         </div>  
 
         <div className="clientview_body">   
+ 
+          
+      <CoursePopup  trigger= { popup  } setTrigger={ setPopup }   screenType = { popupScreenType }    data = { popupInfo} > 
+      </CoursePopup>
 
-        
+
+
+
          <div  className="clientview_body1"   style= {{ backgroundColor : '#FFFFF'}}  > 
           
          </div>
@@ -174,7 +250,7 @@ function CourseDetails() {
 
 
 
-               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}} type="button" value = "delete"  onClick={()  => {     }  } /> 
+               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "40%"}} type="button" value = "delete"  onClick={()  => { deleteContent( el  ,  "course_details_delete" )    }  } /> 
  
 
 

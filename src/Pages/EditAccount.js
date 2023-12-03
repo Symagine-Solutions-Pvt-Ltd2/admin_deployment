@@ -32,7 +32,7 @@ function  EditAccount(  {  props }) {
 
     // edit program 
     const [ programName, setProgramName ] =  useState(  location.state.data.program_name) ; 
-    const [ pageNo  , setPageNo ] =  useState( 3) ; 
+    const [ pageNo  , setPageNo ] =  useState(1) ; 
     const [ courseList  , setCourseList  ] =  useState( []) ; 
     const [ totalPages , setTotalPages  ] =  useState( null ) ;
     const [ selectedCourse  , setSelectedCourse  ] =  useState( location.state.data.course_name) ; 
@@ -64,6 +64,11 @@ function  EditAccount(  {  props }) {
         return  value === "Facilitator" ; 
     }
      
+ 
+
+
+
+
 
 
  useEffect(() => { 
@@ -105,10 +110,10 @@ function  EditAccount(  {  props }) {
            setSchoolHead ( feedbackGivenBy.find( checkFeedback2 ) ) ;
            setFacilitator( feedbackGivenBy.find( checkFeedback3 ) ) ; 
 
-          /*  console.log(  "editaccount") ; 
+          console.log(  "editaccount") ; 
            console.log(  feedbackGivenBy.find( checkFeedback1 )) ; 
            console.log( feedbackGivenBy.find( checkFeedback2 )) ; 
-           console.log(  feedbackGivenBy.find( checkFeedback3 )) ;  */
+           console.log(  feedbackGivenBy.find( checkFeedback3 )) ; 
          } 
        
        } , [   pageNo])  ; 
@@ -381,8 +386,108 @@ axios({
 
         event.preventDefault();
 
-     }
+     } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     const  editAdmin  = (   event ) => {
+ 
+         
+     
+      console.log( event.target.name.value) ;    
+      console.log( event.target.email.value) ;     
+       
+      
+
+      
+
+         
+         axios({ 
+    
+      url : "http://localhost:8000/admin/eadmin"  ,   
+
+      method : "POST"  ,  
+
+      data : {
+        
+              "name" : event.target.name.value  , 
+              "email_id" : event.target.email.value , 
+              "_id" : data._id ,  
+          
+      }
+
+     }).then( ( res) => {   
+       
+
+      alert(   res.data.message  )  ; 
+      navigate(  "/home/manageadmin"   ,    { state: {   userInfo :  location.state.userInfo     }}    , { replace : false}  )   ;
   
+
+     /*  if(   res.data.message ===  "Details updated successfully"    ){
+                       
+              alert( "Details updated Successfully")  ;   
+                
+              console.log( res) ; 
+
+              navigate(  "/home/manageadmin"   ,    { state: {   userInfo :  location.state.userInfo     }}    , { replace : false}  )   ;
+  
+            } 
+            else {
+              
+              console.log( res) ;
+              alert(   res.data.message  )  ;
+            }   */ 
+        
+       
+     } ).catch(( err) => { 
+         console.log( "error") ;
+
+      }  ) ;  
+    
+
+
+      event.preventDefault();
+
+   }
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -421,8 +526,15 @@ axios({
             console.log( res) ;   
 
             if(  res.data.message === "Data modified successfully"  ){ 
+           
 
+                  
+            alert( res.data.message) ;    
             navigate(  "/home/dashboard/"    ,    { state: {    typeId : "system_admin"  ,  userInfo :  location.state.userInfo   }}  ,    { replace : false}  )   ; 
+
+            }else{
+                   
+              alert( res.data.message) ; 
 
             }
          
@@ -875,7 +987,9 @@ axios({
 
 
            
-           <form className="addaccount_form"  style = {{ height : "78.58%"}}  >    
+           <form className="addaccount_form"  style = {{ height : "78.58%"}} 
+                onSubmit={  editAdmin   }
+           >    
       
                <div className="editaccount_form_row"  style = {{ height : "16.66%"}}  >
                            <div className="admin_Form-Description" >   
