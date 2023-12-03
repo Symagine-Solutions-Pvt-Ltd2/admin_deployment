@@ -295,6 +295,17 @@ function AddAccount() {
       console.log( event.target.password.value) ;    
       console.log( event.target.repeat_password.value) ;     
 
+      
+      event.target.sbtn.disabled = true ;  
+
+     console.log(   event.target.sbtn.disabled ) ; 
+     
+     setTimeout(() => {
+        console.log("After two second") ;
+        console.log( event.target.sbtn.disabled) ;
+        event.target.sbtn.disabled =  false;
+      }, 3000) 
+
 
     
 
@@ -949,7 +960,7 @@ function AddAccount() {
                           <div  className="addaccount_form_row_btn_div"  style={{ height : "16.66%"  ,   backgroundColor : "#F8E5E9"}}>  
 
 
-                          <input className="addaccount_form_row_btn" type="submit" value="Submit"  style= {{ backgroundColor : "#FCC046"  , border : '0px'}} /> 
+                          <input  name= "sbtn" className="addaccount_form_row_btn" type="submit" value="Submit"  style= {{ backgroundColor : "#FCC046"  , border : '0px'}} /> 
                           </div>
                         
                       </form>

@@ -29,13 +29,13 @@ function CourseDetails() {
   const [  courseName , setCourseName  ]   = useState( location.state.courseName   ) ;
    
 
-
+/* 
 
    console.log( "coursedetails") ;  
    console.log( location.state.typeId  ) ;
    console.log( location.state.courseName  ) ;
    console.log( location.state.courseId ) ; 
-
+ */
 
 
 
@@ -94,7 +94,7 @@ function CourseDetails() {
 
               
 
-                   } , [])  ; 
+                   } , [ popup])  ; 
 
   
    
@@ -111,42 +111,20 @@ function CourseDetails() {
 
 
 
-   const   deleteContent = ( el)  => { 
+   const   deleteContent = (cs , screenType)  => { 
     
-    console.log(  el)  ; 
+   
 
-     if( el.type_id === "business plan"){
-    
-      axios({ 
-
-        url : "http://localhost:8000/admin/all_bp_material_delete"  ,   
-
-        method : "POST"  ,  
-
-        data : {
-           
-          "course_name" : el.course_name , 
-          "bp_name" : el.name
-         
-        }
-  
-       }).then( ( res) => {   
-  
-         
-            alert(   res.data.message  )  ;
-      
-       } ).catch(( err) => { 
-           console.log( "error") ;
-  
-        }  ) ;  
-
-
+   
+    setPopupInfo( cs) ;
+    setPopupScreenType( screenType ) ; 
+     setPopup( true)  ;
+ 
      
-     }else{
+/*      console.log( cs) ; 
+     console.log( screenType) ;  */ 
 
-
-
-     } 
+    
 
  } 
 

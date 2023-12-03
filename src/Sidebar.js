@@ -16,8 +16,7 @@ function SideBar( props ) {
   
    const  navigate = useNavigate() ; 
 
-     console.log( props.info) ;  
-  
+    // console.log( props.info) ;  
    const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
   
     

@@ -8,10 +8,10 @@ import axios from "axios"  ;
 
 const CoursePopup = (  props ) => {
   
-    const [  screenType , setScreenType ] =  useState( props.screenType ) ;  
+  //  const [  screenType , setScreenType ] =  useState( props.screenType ) ;  
    
 
-   console.log( props.data) ; 
+  // console.log( props.data) ; 
    console.log( props.screenType) ; 
 
     
@@ -78,7 +78,55 @@ const CoursePopup = (  props ) => {
 
 
 
-      } 
+      }else if(  props.screenType === "course_details_delete"   ){ 
+
+
+
+    
+   console.log( props.data) ; 
+   
+   if(  props.data.type_id === "business plan"){
+
+   
+/* 
+
+          axios({ 
+          
+            url : "http://127.0.0.1:8000/admin/course_cc"  ,   
+    
+            method : "POST"  ,  
+    
+            data : {
+                
+              "_id" : props.data._id  , 
+              "condition" : "delete" 
+           
+            }
+      
+           }).then( ( res) => {   
+      
+            console.log( res) ; 
+            alert( res.data.message) ;  
+            props.setTrigger( false ) ;
+             
+           } ).catch(( err) => { 
+               console.log( "error") ;
+      
+            }  ) ; 
+          */
+         }else if(  props.data.type_id === "module"){
+
+
+
+         }else if(  props.data.type_id === "workshop" ){
+
+
+         }
+    
+    
+          
+      }
+
 
 
 
@@ -200,7 +248,57 @@ const CoursePopup = (  props ) => {
     </div> ): <div> </div> ;  
 
 
+   
+  case "course_details_delete" : 
+  return( props.trigger) ?( 
 
+          <div className="popup" > 
+          
+            <div className="course_popup-inner"   style = {{ borderRadius : 15  }}  >  
+
+                  <div className="course_popup-inner-body1"> 
+
+                   <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
+                  
+                  </div> 
+
+                   <div  className="course_popup-inner-body2"   >
+                    
+
+                    <p className="course_popup_text" >Delete this item? </p> 
+
+          
+                   </div>
+               
+
+
+
+                   
+                   <div className="course_popup-inner-body3" > 
+
+
+
+                  <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"  , color : "#FFF" }}  
+                     onClick={ () => {  props.setTrigger( false ) }  }
+                  type="button" value = "Cancel"   />  
+
+
+
+                  <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" ,  color : "#FFF" }} 
+                  type="button" value = "Delete"    onClick={()  => {  statusChange( ) }  }     />   
+
+
+
+
+
+
+                  </div> 
+
+
+            </div>
+    
+          </div> ): <div> </div> ;  
+ 
 
 
       
@@ -211,9 +309,9 @@ const CoursePopup = (  props ) => {
 
   } 
 
-
-
-
 }
+
+
+
 
 export default CoursePopup  ;
