@@ -917,7 +917,7 @@ setSelectedOption( null) ;
                 </div>
                
            {/*    <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />  */}
-              <input  style={{ width : "30%" , backgroundColor : "grey" }} type="file"  name="file"   id="upload"  /> 
+              <input  style={{ width : "45%" , backgroundColor : "grey" }} type="file"  name="file"   id="upload"  /> 
                 
               </label> 
              </div> 

@@ -22,6 +22,7 @@ function  AdminView() {
      // for popup 
      const[ popupInfo  , setPopupInfo ] = useState("") ;
      const[ popup  , setPopup ] = useState( false) ; 
+     const[ userNameForPopup  , setUserNameForPopup ] = useState( "") ; 
     
      const location = useLocation(); 
 
@@ -63,7 +64,7 @@ function  AdminView() {
 
        }  ) ; 
 
-  } , [])  
+  } , [  popup])  
 
 
 
@@ -81,9 +82,10 @@ function  AdminView() {
 
 
       const  handleStatusChange = ( cs  ) => {    
-    
+        
         setPopupInfo( cs) ;
-        console.log( cs) ;
+      //  console.log( cs) ; 
+        setUserNameForPopup( cs.name) ;
          setPopup( true)  ;
         
    } 
@@ -105,8 +107,8 @@ function  AdminView() {
 
                 
 
-              <Popup  trigger= { popup  } setTrigger={ setPopup }   >
-            <h3> {popupInfo } </h3>
+              <Popup  trigger= { popup  } setTrigger={ setPopup }     data={ popupInfo}  >
+              <h3>{userNameForPopup}</h3>
           </Popup>
 
 
@@ -186,7 +188,7 @@ function  AdminView() {
            <div className="clientview_table_row_box"  style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>  
 
                      
-                 <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el.name) } }  /> 
+                 <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el) } }  /> 
                   
                      
                 <input    className="clientview_table_row_button"     style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Edit"  onClick={()  => {        navigate(  "/home/manageadmin/editadminaccount"    ,    {   state: {  typeId : "admin"   ,  userInfo :  location.state.userInfo    ,    data : el  } }   ,  { replace : false}  )  }  } /> 

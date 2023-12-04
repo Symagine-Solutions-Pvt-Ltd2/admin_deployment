@@ -87,20 +87,18 @@ const CoursePopup = (  props ) => {
    
    if(  props.data.type_id === "business plan"){
 
-   
-/* 
-
+         // alert( "in bplan") ; 
           axios({ 
           
-            url : "http://127.0.0.1:8000/admin/course_cc"  ,   
+            url : "http://127.0.0.1:8000/admin/all_bp_material_delete"  ,   
     
             method : "POST"  ,  
     
             data : {
                 
-              "_id" : props.data._id  , 
-              "condition" : "delete" 
-           
+            
+               "course_name" : props.data.course_name  , 
+               "bp_name" :  props.data.name
             }
       
            }).then( ( res) => {   
@@ -113,17 +111,40 @@ const CoursePopup = (  props ) => {
                console.log( "error") ;
       
             }  ) ; 
-          */
-         }else if(  props.data.type_id === "module"){
+        
+         }else if(  props.data.type_id === "module"   ||   props.data.type_id === "workshop"   ){
+            
+          
+         // alert( "dele") ; 
 
 
+          axios({ 
+          
+            url : "http://127.0.0.1:8000/admin/mwchng"  ,   
+    
+            method : "POST"  ,  
+    
+            data : {
+                
+              "_id":  props.data._id ,
+              "status": "delete"
+            }
+      
+           }).then( ( res) => {   
+      
+            console.log( res) ; 
+            alert( res.data.message) ;  
+            props.setTrigger( false ) ;
+             
+           } ).catch(( err) => { 
+               console.log( "error") ;
+      
+            }  ) ; 
 
-         }else if(  props.data.type_id === "workshop" ){
+
 
 
          }
-    
-    
           
       }
 

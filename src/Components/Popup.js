@@ -12,7 +12,7 @@ const Popup = (  props ) => {
   
   const userDetails  =  props.data ; 
 
-  // console.log( props.data) ; 
+   console.log( props.data) ; 
 
    
    //console.log( props.data.type_id) ; 
@@ -163,6 +163,38 @@ const Popup = (  props ) => {
    //  alert( value) ; 
 
   
+
+  }if(   userDetails.type_id === "content_admin"  ||  userDetails.type_id === "program_admin"  ){
+    
+   // alert(value) ; 
+     
+
+    axios({ 
+    
+      url : "http://localhost:8000/admin/scadmin"  ,   
+
+      method : "POST"  ,  
+
+      data : {
+        
+        
+           "_id" : userDetails._id ,
+            "status" : value   
+
+      }
+
+     }).then( ( res) => {   
+
+      console.log( res) ; 
+      alert( res.data.message) ;  
+     props.setTrigger( false ) ;
+       
+     } ).catch(( err) => { 
+         console.log( "error") ;
+
+      }  ) ;   
+
+
 
   }
 
