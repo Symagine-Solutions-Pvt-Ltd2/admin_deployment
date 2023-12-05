@@ -196,7 +196,7 @@ function  Module() {
   
   
                           <div className="clientview_table_row_box"  style={{ height: "100%"  , width : "40%"}} >
-                           <p>{( el.text_name !== "" ) ?  el.text_name :  el.name }</p>
+                           <p>{  el.name || el.text_name || el.quiz_name }</p>
                           </div>
   
   

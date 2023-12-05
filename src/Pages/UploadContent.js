@@ -111,7 +111,7 @@ function  UploadContent() {
     else if(  type === "workshop"   ){
       
       
-
+     alert(  type) ; 
       let formData = new FormData();
   
       //Adding files to the formdata  
@@ -142,7 +142,8 @@ function  UploadContent() {
             
   
          console.log(  res) ;   
-         alert( res.data.message) ;
+         alert( res.data.message) ; 
+        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
   
         }) // Handle the response from backend here
         .catch((err) => {  
@@ -256,7 +257,7 @@ function  UploadContent() {
             
           alert( res.data.message) ;
          console.log(  res) ;  
-  
+         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
         }) // Handle the response from backend here
         .catch((err) => { }); // Catch errors if any
 
@@ -303,8 +304,12 @@ function  UploadContent() {
    
    // console.log( "quiz") ;    
   
-
    
+
+   if(   type ===  "module"){
+     
+
+    alert( "work") ; 
     axios({
       // Endpoint to send files
       url: "http://127.0.0.1:8000/admin/a_quiz_m", 
@@ -357,7 +362,63 @@ function  UploadContent() {
       .catch((err) => { }); // Catch errors if any
   
 
+    }else if(   type ===  "workshop"  ){
+   
+  
 
+      axios({
+        // Endpoint to send files
+        url: "http://127.0.0.1:8000/admin/a_quiz_w", 
+  
+        method: "POST", 
+  
+      
+        data: {
+  
+  
+  
+          
+          "type_id" : location.state.type   ,
+          "quiz_name" :  event.target.name.value  , 
+          "workshop_name" :location.state.type_name , 
+          "course_name" : location.state.course_name  , 
+    
+        "question": event.target.question.value,
+    
+        "option1":event.target.option1.value,
+    
+        "option2": event.target.option2.value , 
+    
+        "option3":  event.target.option3.value,
+    
+        "answer1": `${answer1}`,
+    
+        "answer2":`${answer2}`,
+    
+        "answer3":`${answer3}`
+  
+  
+        },
+      })
+        .then((res) => {  
+            
+  
+         console.log(  res) ;   
+  
+         if(  res.data.message === "quiz added Successfully."){
+  
+           alert(  res.data.message ) ; 
+            navigate(  "/home/course/draftcourse/module"   ,  { state: { type : location.state.type   ,      courseName :   location.state.course_name   ,  type_name :   location.state.type_name    ,     userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
+         }else{
+  
+          alert(  res.data.message ) ;  
+         }
+  
+        }) // Handle the response from backend here
+        .catch((err) => { }); // Catch errors if any
+    
+
+    }
 
 
 
@@ -441,19 +502,20 @@ function  UploadContent() {
         data: {
   
   
-  
           "text_name" : event.target.name.value , 
-          "enter_text" : event.target.text.value , 
+          "enter_text" : event.target.instruction.value , 
           "workshop_name" : name   , 
           "course_name" : courseName  , 
          "type_id" : type  , 
-          "sub_type" : subType
+          "sub_type" : subType , 
+          "max_char" :event.target.limit.value  , 
         },
       })
         .then((res) => {  
             
           alert( res.data.message) ;
-         console.log(  res) ;  
+         console.log(  res) ;   
+         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
   
         }) // Handle the response from backend here
         .catch((err) => { }); // Catch errors if any
@@ -1062,6 +1124,30 @@ setSelectedOption( null) ;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     case "task_text" :
 
     return (     
@@ -1094,9 +1180,9 @@ setSelectedOption( null) ;
        </div> 
        <div className ="upload-body-div2"  >  
             
-       <input    name="instruction"   placeholder="Insert Instructions" style={{ width :"100%" , height: "70%"  , textAlign : "center"  , borderRadius : 30   }} />  
+       <input    name="instruction"   type= "text" placeholder="Insert Instructions" style={{ width :"100%" , height: "70%"  , textAlign : "center"  , borderRadius : 30   }} />  
 
-       <input   name="limit"   placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "18%"  , textAlign : "center" ,  borderRadius : 30 , backgroundColor : "#B7B7D1"  , textColor : "#000000"}} /> 
+       <input   name="limit"   type="number"  placeholder="Mention maximum number of words" style={{ width :"63.61%" , height: "18%"  , textAlign : "center" ,  borderRadius : 30 , backgroundColor : "#B7B7D1"  , textColor : "#000000"}} /> 
         </div> 
 
 
