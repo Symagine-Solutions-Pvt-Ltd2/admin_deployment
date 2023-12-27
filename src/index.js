@@ -45,7 +45,8 @@ import StudentView from './Pages/StudentView';
 import UploadContent from './Pages/UploadContent'; 
 import EditAccount from "./Pages/EditAccount"  ; 
 import ForgotPassword from "./Pages/ForgotPassword" ; 
-import Password from "./Pages/Password" ; 
+import Password from "./Pages/Password" ;  
+import  RequireAuth from "./Pages/RequireAuth.js"  ;  
 
 
 
@@ -100,7 +101,10 @@ root.render(
  <Route path= "login"  element ={  <Login/>  } /> 
  <Route path= "forgotpassword"  element ={  <ForgotPassword/>  } />   
  <Route path= "password"  element ={  <Password/>  } />    
- 
+   
+
+
+ <Route  element = {<RequireAuth /> }> 
  <Route path= "home"  >
    <Route index element ={  <Home/> } />  
 
@@ -173,7 +177,8 @@ root.render(
 
 
    </Route>
- </Route>   
+ </Route>     
+ </Route>
 
   </Route>
   </Routes>     
