@@ -2,7 +2,10 @@ import  "../Style/ClientView.css" ;
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import { useState   , useEffect   } from "react"; 
 import Sidebar from "../Sidebar"  ;
-import axios from "axios"  ;
+import axios from "axios"  ;  
+
+
+import   MaterialsPopup  from "../Components/MaterialsPopup"  ;  
 
 
 
@@ -11,7 +14,13 @@ import axios from "axios"  ;
 function  Module() {    
   
   const  navigate = useNavigate() ;    
-  const location = useLocation(); 
+  const location = useLocation();  
+
+
+    // for popup 
+    const[ popupInfo  , setPopupInfo ] = useState("") ; 
+    const[ popup  , setPopup ] = useState( false) ; 
+   
 
   
   const [ data , setData ] = useState( []); 
@@ -20,13 +29,13 @@ function  Module() {
   const [  type  , setType ]   = useState( location.state.type  ) ; 
 
     
-
+/* 
   console.log("module" ) ; 
   console.log( location.state.courseName )  ; 
   console.log( location.state.type_name)  ; 
   console.log( location.state.type )  ; 
   console.log( location.state.courseId) ; 
-
+ */
 
   const goToNext = () => {
 
@@ -133,10 +142,29 @@ function  Module() {
              }
 
 
-                 } , [])  ; 
+                 } , [ popup])  ; 
 
     
               
+       // to handle delete , active , inactive  
+
+       const  handleStatusChange = ( cs  ) => {    
+                 
+                      
+         console.log( cs  )  ;           
+        setPopupInfo( cs) ; 
+         setPopup( true)  ;
+     
+         
+    /*      console.log( cs) ; 
+         console.log( screenType) ;  */ 
+
+         
+   } 
+      
+
+
+
 
 
 
@@ -149,7 +177,10 @@ function  Module() {
              <Sidebar   info = {  location.state.userInfo} /> 
       </div>  
   
-      <div className="clientview_body">   
+      <div className="clientview_body">      
+
+      <MaterialsPopup  trigger= { popup  } setTrigger={ setPopup }   data = { popupInfo} > 
+      </MaterialsPopup>
   
       
        <div  className="clientview_body1"   style= {{ backgroundColor : '#F1F2F7'}}  > 
@@ -202,12 +233,12 @@ function  Module() {
   
   
        
-            <input className="inner_table_btn"  style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {    }  } /> 
+     {/*        <input className="inner_table_btn"  style={{ height: "40%"  , width : "20%"}}  type="button" value = "edit"  onClick={()  => {    }  } /> */} 
                          
   
   
 
-               <input  className="inner_table_btn"  style={{ height: "40%"  , width : "20%"}}  type="button" value = "delete"  onClick={()  => {        navigate(  "/home/dashboard/client/school"   ,  { replace : false}  )  }  } /> 
+               <input  className="inner_table_btn"  style={{ height: "40%"  , width : "20%"}}  type="button" value = "delete"  onClick={ ()  => {handleStatusChange( el  ) }  } /> 
                        
   
          </div> 

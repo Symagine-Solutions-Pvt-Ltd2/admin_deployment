@@ -1038,7 +1038,7 @@ setSelectedOption( null) ;
 
 
        </div> 
-       <div className ="upload-body-div2"  >  
+       <div className ="upload-body-div2"   style= {{   display :"flex"   ,  alignItems : "center"  , justifyContent :"center"}}   >  
             
        <input   name="text"   placeholder="enter text" style={{ width :"63.61%" , height: "100%"  , textAlign : "center"  , borderRadius : 30 }} /> 
         </div> 

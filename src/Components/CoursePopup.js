@@ -270,7 +270,8 @@ const CoursePopup = (  props ) => {
 
 
    
-  case "course_details_delete" : 
+  case "course_details_delete" :  
+  
   return( props.trigger) ?( 
 
           <div className="popup" > 
