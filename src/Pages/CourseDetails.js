@@ -63,7 +63,7 @@ function CourseDetails() {
     
         axios({ 
 
-              url : "http://127.0.0.1:8000/admin/course_wmb"  ,  
+              url : "http://3.123.39.199:5000/admin/course_wmb"  ,  
               method : "POST"  , 
              data : {
        

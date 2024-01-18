@@ -74,7 +74,7 @@ function FirstView() {
 
      axios({ 
 
-      url : "http://127.0.0.1:8000/admin/all_count"  ,  
+      url : "http://3.123.39.199:5000/admin/all_count"  ,  
       method : "POST"  , 
       data : { 
  

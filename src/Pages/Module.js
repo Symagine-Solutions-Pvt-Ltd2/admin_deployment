@@ -58,7 +58,7 @@ function  Module() {
       
       axios({ 
 
-            url : "http://127.0.0.1:8000/admin/module_am"  ,  
+            url : "http://3.123.39.199:5000/admin/module_am"  ,  
             method : "POST"  , 
            data : {
      
@@ -102,7 +102,7 @@ function  Module() {
    
 
 
-                url : "http://127.0.0.1:8000/admin/workshop_am"  ,  
+                url : "http://3.123.39.199:5000/admin/workshop_am"  ,  
                 method : "POST"  , 
                data : {
          

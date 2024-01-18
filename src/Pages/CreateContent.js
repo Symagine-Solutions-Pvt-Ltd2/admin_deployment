@@ -289,7 +289,7 @@ function CreateContent() {
     
         axios({
           // Endpoint to send files
-          url: "http://127.0.0.1:8000/admin/wona", 
+          url: "http://3.123.39.199:5000/admin/wona", 
     
           method: "POST", 
     

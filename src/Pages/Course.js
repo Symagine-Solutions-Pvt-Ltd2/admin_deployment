@@ -104,7 +104,7 @@ function Course() {
         
         axios({ 
 
-              url : "http://127.0.0.1:8000/admin/draftcourse"  ,  
+              url : "http://3.123.39.199:5000/admin/draftcourse"  ,  
               method : "POST"  , 
              data : {
        
@@ -135,7 +135,7 @@ function Course() {
 
                 axios({ 
 
-                  url : "http://127.0.0.1:8000/admin/p_course"  ,   
+                  url : "http://3.123.39.199:5000/admin/p_course"  ,   
 
                   method : "POST"  ,  
                   
