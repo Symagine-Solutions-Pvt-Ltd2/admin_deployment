@@ -47,7 +47,7 @@ function CreateContent() {
  
   axios({ 
 
-   url : "http://localhost:8000/admin/p_course"  ,   
+   url : "http://3.123.39.199:5000/admin/p_course"  ,   
 
    method : "POST"  , 
    data : {
@@ -105,7 +105,7 @@ function CreateContent() {
 
      axios({ 
 
-      url : "http://localhost:8000/admin/program"  ,   
+      url : "http://3.123.39.199:5000/admin/program"  ,   
 
       method : "POST"  ,  
 
@@ -160,7 +160,7 @@ function CreateContent() {
 
     axios({ 
 
-          url : "http://localhost:8000/admin/course"  ,   
+          url : "http://3.123.39.199:5000/admin/course"  ,   
 
           method : "POST"  ,  
 
@@ -222,7 +222,7 @@ function CreateContent() {
   
       axios({ 
   
-            url : "http://localhost:8000/admin/mona"  ,   
+            url : "http://3.123.39.199:5000/admin/mona"  ,   
   
             method : "POST"  ,  
   

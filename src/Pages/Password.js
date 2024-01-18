@@ -38,7 +38,7 @@ function Password() {
         
        axios({ 
     
-         url : "http://localhost:8000/admin/confirmpassword"  ,  
+         url : "http://3.123.39.199:5000/admin/confirmpassword"  ,  
          method : "POST"  ,  
          headers: {   
 

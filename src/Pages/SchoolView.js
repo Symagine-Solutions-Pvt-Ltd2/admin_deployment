@@ -64,7 +64,7 @@ function SchoolView() {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/ca_school"  ,  
+         url : "http://3.123.39.199:5000/admin/ca_school"  ,  
          method : "POST"  , 
          data : {
            

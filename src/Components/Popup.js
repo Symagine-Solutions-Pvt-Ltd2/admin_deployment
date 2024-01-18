@@ -32,7 +32,7 @@ const Popup = (  props ) => {
                  
       axios({ 
       
-        url : "http://localhost:8000/admin/scclient"  ,   
+        url : "http://3.123.39.199:5000/admin/scclient"  ,   
 
         method : "POST"  ,  
 
@@ -70,7 +70,7 @@ const Popup = (  props ) => {
                  
      axios({ 
     
-      url : "http://localhost:8000/admin/school_sc"  ,   
+      url : "http://3.123.39.199:5000/admin/school_sc"  ,   
 
       method : "POST"  ,  
 
@@ -104,7 +104,7 @@ const Popup = (  props ) => {
                     
       axios({ 
     
-      url : "http://localhost:8000/admin/facilitator_sc"  ,   
+      url : "http://3.123.39.199:5000/admin/facilitator_sc"  ,   
 
       method : "POST"  ,  
 
@@ -135,7 +135,7 @@ const Popup = (  props ) => {
    
      axios({ 
     
-      url : "http://localhost:8000/admin/student_sc"  ,   
+      url : "http://3.123.39.199:5000/admin/student_sc"  ,   
 
       method : "POST"  ,  
 
@@ -171,7 +171,7 @@ const Popup = (  props ) => {
 
     axios({ 
     
-      url : "http://localhost:8000/admin/scadmin"  ,   
+      url : "http://3.123.39.199:5000/admin/scadmin"  ,   
 
       method : "POST"  ,  
 

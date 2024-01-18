@@ -35,7 +35,7 @@ function BusinessPlan() {
 
        axios({ 
       
-        url : "http://localhost:8000/admin/bp_registration"  ,   
+        url : "http://3.123.39.199:5000/admin/bp_registration"  ,   
 
         method : "POST"  , 
         data : {

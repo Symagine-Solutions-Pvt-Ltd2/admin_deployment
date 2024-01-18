@@ -79,7 +79,7 @@ function  EditAccount(  {  props }) {
         
          axios({ 
        
-          url : "http://localhost:8000/admin/p_course"  ,   
+          url : "http://3.123.39.199:5000/admin/p_course"  ,   
        
           method : "POST"  , 
           data : {
@@ -144,7 +144,7 @@ function  EditAccount(  {  props }) {
       
 axios({ 
       
-                      url : "http://localhost:8000/admin/e_school"  ,   
+                      url : "http://3.123.39.199:5000/admin/e_school"  ,   
       
                       method : "POST"  ,  
 
@@ -195,7 +195,7 @@ axios({
       
               axios({ 
       
-                      url : "http://localhost:8000/admin/client_e"  ,   
+                      url : "http://3.123.39.199:5000/admin/client_e"  ,   
       
                       method : "POST"  ,  
 
@@ -269,7 +269,7 @@ axios({
       
 axios({ 
       
-                      url : "http://localhost:8000/facilitator/e_facilitator"  ,   
+                      url : "http://3.123.39.199:5000/facilitator/e_facilitator"  ,   
       
                       method : "POST"  ,  
 
@@ -344,7 +344,7 @@ axios({
             
            axios({ 
       
-        url : "http://localhost:8000/admin/student_e"  ,   
+        url : "http://3.123.39.199:5000/admin/student_e"  ,   
 
         method : "POST"  ,  
 
@@ -434,7 +434,7 @@ axios({
          
          axios({ 
     
-      url : "http://localhost:8000/admin/eadmin"  ,   
+      url : "http://3.123.39.199:5000/admin/eadmin"  ,   
 
       method : "POST"  ,  
 
@@ -506,7 +506,7 @@ axios({
             
            axios({ 
       
-        url : "http://localhost:8000/admin/e_program"  ,   
+        url : "http://3.123.39.199:5000/admin/e_program"  ,   
 
         method : "POST"  ,  
 

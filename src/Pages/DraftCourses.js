@@ -12,7 +12,7 @@ function  DraftCourses() {
 
         axios({ 
 
-         url : "http://localhost:8000/admin/draftcourse"  ,  
+         url : "http://3.123.39.199:5000/admin/draftcourse"  ,  
          method : "POST"  , 
          data : {
            

@@ -59,7 +59,7 @@ function ClientView(   ) {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/c_program"  ,  
+         url : "http://3.123.39.199:5000/admin/c_program"  ,  
          method : "POST"  , 
          data : {
            

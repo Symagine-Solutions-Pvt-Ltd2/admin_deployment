@@ -44,7 +44,7 @@ function FirstView() {
 
     axios({ 
 
-     url : "http://localhost:8000/admin/a_program"  ,  
+     url : "http://3.123.39.199:5000/admin/a_program"  ,  
      method : "POST"  , 
      data : {
        

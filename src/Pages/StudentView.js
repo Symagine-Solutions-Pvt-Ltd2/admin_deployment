@@ -55,7 +55,7 @@ function StudentView() {
 
         axios({ 
   
-         url : "http://localhost:8000/admin/a_student"  ,  
+         url : "http://3.123.39.199:5000/admin/a_student"  ,  
          method : "POST"  , 
          data : {
            
