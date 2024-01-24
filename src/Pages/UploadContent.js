@@ -963,8 +963,11 @@ setSelectedOption( null) ;
                          name="name"
                          className="upload-body-div1-input-box" 
                          placeholder="Enter name"
-                         /> 
+                         />  
+
         </div>   
+
+  
 
 
 
@@ -985,11 +988,18 @@ setSelectedOption( null) ;
            {/*    <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />  */}
               <input  style={{ width : "45%" , backgroundColor : "grey" }} type="file"  name="file"   id="upload"  /> 
                 
-              </label> 
+              </label>   
+
+              
              </div> 
 
 
          </div> 
+   
+
+
+
+
 
 
         <div   style= {{ width :"63.61%" ,  backgroundColor : "#FFF8EE", height: "15.61%" , display :"flex" , alignItems : "center" , justifyContent : "flex-end"}}>   
@@ -1061,7 +1071,20 @@ setSelectedOption( null) ;
     </form> 
 
     </div>
-    )  
+    )    
+
+
+
+
+
+
+
+
+
+
+
+
+    
    
 
     case "upload_picture" :

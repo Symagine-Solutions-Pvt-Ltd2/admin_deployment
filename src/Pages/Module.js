@@ -59,7 +59,7 @@ function  Module() {
       axios({ 
 
             url : "http://3.123.39.199:5000/admin/module_am"  ,  
-            method : "POST"  , 
+            method : "POST"  ,  
            data : {
      
                 

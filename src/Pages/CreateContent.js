@@ -275,14 +275,20 @@ function CreateContent() {
 
       const  createWorkshop  =   (  event  ) => { 
     
-       
+        const selectedFile = document.getElementById("upload").files[0];
+        console.log( "file upload"  )   ; 
+        console.log(selectedFile) ; 
+
+
+
         let formData = new FormData();
   
         //Adding files to the formdata 
         formData.append("course_name", location.state.courseName  );
-        formData.append("thumb_image",   event.target.file.value);
+        formData.append("file", selectedFile );
         formData.append("workshop_name",  event.target.workshop_name.value);
          
+
     
         console.log( formData) ;  
     
@@ -309,7 +315,7 @@ function CreateContent() {
            console.log(  res) ;  
             
 
-           if(   res.data.message ===  "Workshop added Successfully."    ){
+         /*   if(   res.data.message ===  "Workshop added Successfully."    ){
                
             alert( "added Successfully.")  ;  
         
@@ -319,7 +325,7 @@ function CreateContent() {
          else {
  
            alert(   res.data.message  )  ;
-         }    
+         }     */
         
     
           }) // Handle the response from backend here
@@ -738,7 +744,23 @@ function CreateContent() {
               /> 
        
  
-      <input type="file"  className="course_input-box"  name="file"   id="upload"  /> 
+   {/*    <input type="file"  className="course_input-box"  name="file"   id="upload"  />  */}  
+
+
+    <div   className="course_input-box" >  
+
+        
+    <label  htmlFor="upload"  style = {{      width : "100%"  , height : "100%"     , overflow : "hidden"    ,   display : "flex"  , justifyContent : "center"   , alignItems : "center"   , flexDirection : "column" }}  >
+                
+                
+                 
+             {/*    <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />  */}
+                <input    style= {{ width : "35%"  , height : "50%"  }}   type="file"  name="file"   id="upload"  /> 
+                  
+                </label>   
+
+
+    </div>
  
         
 
@@ -820,7 +842,7 @@ function CreateContent() {
 
 
 
-    case "program_admin" :  
+   /*  case "program_admin" :  
     return(
    <div>
     <p>CreateContent</p>  
@@ -837,8 +859,12 @@ function CreateContent() {
     
     
    </div>
-    ) 
+    )  */
+   
 
+
+
+    
     }
 } 
 
