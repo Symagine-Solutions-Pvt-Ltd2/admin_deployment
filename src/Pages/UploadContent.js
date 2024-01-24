@@ -43,9 +43,9 @@ function  UploadContent() {
 
   const  uploadContent  = (  event  ) => { 
  
-/*     console.log( event.target.name.value) ;   
-    console.log( event.target.file.value) ;   */
-
+    const selectedFile = document.getElementById("upload").files[0];
+    console.log( "file upload"  )   ; 
+    console.log(selectedFile) ;
     console.log( type ) ; 
 
 
@@ -57,7 +57,7 @@ function  UploadContent() {
     //Adding files to the formdata  
     formData.append("name",  event.target.name.value );
     formData.append("course_name",  courseName  );
-    formData.append("thumb_image",   event.target.file.value);
+    formData.append("file", selectedFile );
     formData.append("module_name",  name );
     formData.append("sub_type",  subType );
     formData.append("type_id",  type  );  
@@ -68,7 +68,7 @@ function  UploadContent() {
 
     axios({
       // Endpoint to send files
-      url: "http://3.123.39.199:5000/admin/a_m_material", 
+      url: "http://3.123.39.199:5000/admin/upload_file_m", 
 
       method: "POST", 
 
@@ -89,14 +89,14 @@ function  UploadContent() {
        alert( res.data.message) ;
        
 
-       if( res.data.message === "File added Successfully."  ){
+       /* if( res.data.message === "File added Successfully."  ){
           
         alert( res.data.message) ;
         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
        }else{
         alert( res.data.message) ;
 
-       }
+       } */
 
 
 
@@ -175,6 +175,10 @@ function  UploadContent() {
 
 
 
+
+
+
+  
 
 
 
