@@ -315,7 +315,7 @@ function CreateContent() {
            console.log(  res) ;  
             
 
-         /*   if(   res.data.message ===  "Workshop added Successfully."    ){
+           if(   res.data.message ===  "Workshop added Successfully."    ){
                
             alert( "added Successfully.")  ;  
         
@@ -325,7 +325,7 @@ function CreateContent() {
          else {
  
            alert(   res.data.message  )  ;
-         }     */
+         }   
         
     
           }) // Handle the response from backend here

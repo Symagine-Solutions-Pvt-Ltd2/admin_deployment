@@ -122,9 +122,9 @@ function Login() {
       <div className="password-text">  
 
 
-      <input style = {{ height : "100%"  , width : "55%"   , display : "flex"  , textAlign : "end"  , color : "#5A6198"  , border : "0px solid red"}}  type="text"  value="Forgot password? "  disabled /> 
+       <input style = {{ height : "100%"   , width : "48%"  , display : "flex"  , color : "#5A6198"  , border : "0px solid red"}}  type="text"  value="Forgot password (System Admin)?"  disabled />  
       <input  style = {{ height : "100%"  , color : "#F06B6D" , backgroundColor : "#F7E5E9"  , border : "0px solid red"  , textAlignLast : "center" }}  type="button" value= "Click here"   onClick={ () => {    navigate(  "/forgotpassword"  ,   { replace : false}  )  ; }}/> 
-
+      
       </div>
 
       <div className="button"  onClick={ () => { goToHome() }}>
@@ -133,7 +133,7 @@ function Login() {
 
      <div className="description2_login">
 
-      <p>For any login related problem contact system admin!</p>
+      <p   style={{  color : "#c23815" }}>Others contact System Admin  for login related problem</p>
      </div>
     </div>
   

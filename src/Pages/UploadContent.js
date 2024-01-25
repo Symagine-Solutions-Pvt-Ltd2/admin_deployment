@@ -89,7 +89,7 @@ function  UploadContent() {
        alert( res.data.message) ;
        
 
-       /* if( res.data.message === "File added Successfully."  ){
+       /* if( res.data.message === "File Added Successfully."  ){
           
         alert( res.data.message) ;
         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
@@ -990,7 +990,7 @@ setSelectedOption( null) ;
                 
               </label>   
 
-              
+
              </div> 
 
 
