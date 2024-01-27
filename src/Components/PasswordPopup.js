@@ -20,16 +20,24 @@ const PasswordPopup= (  props ) => {
 
  
   const userDetails  =  props.data ; 
+  
 
+
+/*   console.log(  "nvgff"  ) ;  */
   console.log( props.userId) ; 
-
+  console.log( props.trigger) ; 
   
 
    
     
 
-  useEffect(() => {
-    const interval = setInterval(() => {
+  useEffect(() => {    
+
+
+     
+    if(  props.trigger  === true  ) { 
+      
+     const interval = setInterval(() => {
       if (seconds > 0) {
         setSeconds(seconds - 1);
       }
@@ -46,7 +54,11 @@ const PasswordPopup= (  props ) => {
 
     return () => {
       clearInterval(interval);
-    };
+    };   
+ 
+  } 
+
+
   });
 
 

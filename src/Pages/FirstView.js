@@ -15,7 +15,8 @@ function FirstView() {
 
   const [ data , setData ] = useState( []); 
   const [ totalCount , setTotalCount ] = useState({
-   total_program : 0 , 
+   total_program : 0 ,  
+   total_course : 0 , 
    total_client : 0 , 
    total_school : 0  , 
    total_student : 0 
@@ -133,10 +134,18 @@ function FirstView() {
 
 
 
-            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"  , borderRadius : 15}}>
-           <p>
-            bjhjhjg
-           </p>
+            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "#FFF"  , borderRadius : 15  , display : "flex"   , flexDirection : "row"  , justifyContent : "space-between" ,  margin : "2px"   , backgroundColor: "#B6B7D0" }}>  
+
+             
+            <div  style= {{ width:"50%"  , height : "99%"  , justifyContent : "center"   , display : "flex"    , borderTopLeftRadius : 15  , borderBottomLeftRadius : 15  , border : "2px solid #D9D9D9"  }}  >
+             <p> {totalCount.total_course} Courses</p>
+            </div>  
+
+            <div  style= {{ width:"50%"  , height : "99%"      , justifyContent : "center"   , display : "flex"  ,  borderTopRightRadius : 15  , borderBottomRightRadius : 15   ,  border : "2px solid #D9D9D9"  }}  >
+             <p>{totalCount.total_program} Programs </p>
+            </div> 
+
+
             </div>
 
 
@@ -208,12 +217,12 @@ function FirstView() {
 
 
                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}>
-                             <p> No of schools assigned</p>
+                             <p> { el.total_schools} </p>
                          </div>  
 
 
                          <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}> 
-                                   <p> No of students assinged</p>
+                                   <p>  {el.total_students }  </p>
                         </div>
                
 
@@ -293,7 +302,9 @@ function FirstView() {
 
 
 
-            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"  , borderRadius : 15}}>
+            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"  , borderRadius : 15}}>  
+
+
            <p>
             bjhjhjg
            </p>

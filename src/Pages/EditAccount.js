@@ -43,7 +43,7 @@ function  EditAccount(  {  props }) {
 
 
   
-   console.log(  feedbackGivenBy) ; 
+   //console.log(  feedbackGivenBy) ; 
 
 
     function checkFeedback1(  value ) {
@@ -1085,7 +1085,9 @@ axios({
            
            
   
-                          <div  className="editaccount_form_row_btn_div"  style={{ height : "16.66%"}}> 
+                          <div  className="editaccount_form_row_btn_div"  style={{ height : "16.66%"}}>  
+
+                          <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId :   location.state.typeId   ,   data : location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   ,  screentype : "resetpassword"   } }  , { replace : false}  )  }  }  /> 
                           <input className="editaccount_form_row_btn" type="submit" value="Submit" /> 
                           </div>
                         
@@ -1237,7 +1239,7 @@ axios({
 
             <div  className="editaccount_form_row_btn_div">  
 
-
+            <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId : "client"   ,   data : location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   ,  screentype : "resetpassword"   } }  , { replace : false}  )  }  }    /> 
             <input className="editaccount_form_row_btn" type="submit" value="Submit" /> 
             </div> 
  
@@ -1332,7 +1334,9 @@ axios({
                  
        
 
-                <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}> 
+                <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}>   
+
+                <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId : "facilitator"   ,  type : location.state.type    ,  data : location.state.data     , userInfo :  location.state.userInfo   , screentype : "resetpassword"     } }  , { replace : false}  )  }  }  /> 
                         <input className="editaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
                 </div>
                         
@@ -1435,7 +1439,9 @@ axios({
            
            
   
-        <div  className="editaccount_form_row_btn_div"> 
+        <div  className="editaccount_form_row_btn_div">  
+
+        <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   ,  { state: {    typeId : "school"   ,    data : location.state.data   ,  type : "system_admin"  , programName : location.state.programName  , userInfo :  location.state.userInfo   ,  screentype : "resetpassword"     }}   , { replace : false}  )  }  }   />
                           <input className="editaccount_form_row_btn" type="submit" value="Submit" /> 
         </div>
                         
@@ -1504,7 +1510,9 @@ axios({
 
         
 
-                        <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}> 
+                        <div  className="editaccount_form_row_btn_div"  style= {{  height : "20%" }}>  
+
+                        <input className="editaccount_form_row_btn" type="button"   value= "Reset Password"   onClick={()  => {     navigate(  "/home/resetpassword"   , {   state: {  typeId : location.state.typeId   ,   data : location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   ,  screentype : "resetpassword"   } }  , { replace : false}  )      }  }  /> 
                         <input className="editaccount_form_row_btn"   style= {{  height : "60%" }}  type="submit" value="Submit" /> 
                         </div>
                       

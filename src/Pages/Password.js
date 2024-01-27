@@ -17,12 +17,20 @@ function Password() {
     const location = useLocation(); 
     const  navigate = useNavigate() ;  
 
-    console.log( location.state.userId )  ;
+   // console.log( location.state.userId )  ;
+
+  
+   console.log(  location.state.typeId   )  ; 
+   console.log(  location.state.programName   )  ;    
+   console.log(  location.state.type   )  ; 
+   console.log(  location.state.data  )  ; 
+   console.log(  location.state.userInfo   )  ; 
+   console.log(  location.state.screentype   )  ; 
 
 
     const [ password1 , setPassword1 ] = useState(""); 
     const [ password2 , setPassword2 ] = useState(""); 
-    
+     
 
 
 
@@ -32,8 +40,11 @@ function Password() {
         console.log(  password2) ;  
         console.log(  location.state.userId  ) ;  
         console.log(  location.state.token  ) ;  
-     
-        if( password1 === password2) {
+       
+
+
+
+        if(password1 === password2  &&     location.state.screentype ===  "forgotpassword"   ) {
 
         
        axios({ 
@@ -76,7 +87,89 @@ function Password() {
          }  ) ;   
 
     
+        }   
+        else if( password1 === password2  &&     location.state.screentype ===  "resetpassword"   &&  location.state.typeId !== "student"   ){
+            
+
+            axios({ 
+    
+                url : "http://3.123.39.199:5000/admin/reset_password"  ,  
+                method : "POST"  ,   
+                data : {
+                  
+                    "_id" : location.state.data._id  , 
+                    "new_password" :  password2
+           
+                }
+           
+               }).then( ( res) => {   
+           
+                 
+                console.log( res.data) ;  
+                 
+                 if(  res.data.status === "success"){
+                  
+                   alert(  res.data.message) ;  
+              //   navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data :   location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }    
+                 } 
+              else {
+       
+               alert(  res.data.message) ; 
+              } 
+       
+       
+           
+               } ).catch(( err) => { 
+                   console.log( "error") ;
+           
+                }  ) ;   
+
+
+          
+
         } 
+        else if( password1 === password2  &&     location.state.screentype ===  "resetpassword"   &&    location.state.typeId === "student"    ){
+            
+          
+             console.log("hmghjghj")  ; 
+
+               axios({ 
+    
+                url : "http://3.123.39.199:5000/admin/s_reset_password"  ,  
+                method : "POST"  ,   
+                data : {
+                  
+                    "_id" : location.state.data._id  , 
+                    "new_password" :  password2
+           
+                }
+           
+               }).then( ( res) => {   
+           
+                 
+                console.log( res.data) ;  
+                 
+                 if(  res.data.status === "success"){
+                  
+                   alert(  res.data.message) ;  
+              //   navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data :   location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }    
+                 } 
+              else {
+       
+               alert(  res.data.message) ; 
+              } 
+       
+       
+           
+               } ).catch(( err) => { 
+                   console.log( "error") ;
+           
+                }  ) ;   
+
+
+          
+
+        }
         else{
              
             alert( "password not matched!");

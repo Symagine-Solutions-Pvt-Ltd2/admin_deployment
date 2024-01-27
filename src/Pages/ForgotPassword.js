@@ -22,7 +22,7 @@ function ForgotPassword() {
     const  handleOtp = (   ) => {      
           
 
-          setPopup( true)  ;
+          
            
           axios({ 
 
@@ -37,9 +37,18 @@ function ForgotPassword() {
            }).then( ( res) => {   
       
              
-            console.log( res.data.data ) ; 
-            setUserId( res.data.data.user_id ) ; 
-            setToken( res.data.data.token) ;
+            console.log( res.data ) ;   
+   
+             if( res.data.status ===  "success"  ){
+                
+                setPopup( true)  ;
+                setUserId( res.data.data.user_id ) ; 
+                setToken( res.data.data.token) ;
+
+             } else {
+
+                alert( res.data.message ) ;  
+             }
       
            } ).catch(( err) => { 
                console.log( "error") ;
@@ -50,14 +59,6 @@ function ForgotPassword() {
          
 
    }   
-
-
-
-
-
-
-
-
 
 
 
@@ -80,7 +81,7 @@ function ForgotPassword() {
 
 
    
-    <PasswordPopup   trigger= { popup  } setTrigger={ setPopup }      userId = { userId }  token ={ token  }    email = {email  }>
+    <PasswordPopup   trigger= { popup   } setTrigger={ setPopup }      userId = { userId }  token ={ token  }    email = {email  }>
         
         </PasswordPopup>
 
@@ -99,7 +100,9 @@ function ForgotPassword() {
    {/*  <div>  
         <p>For any login related problem contact system admin!</p> 
     </div>  */}
-    </div>
+    </div>  
+
+
 </div> 
 
 

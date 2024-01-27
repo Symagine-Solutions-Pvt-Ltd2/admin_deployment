@@ -105,9 +105,9 @@ root.render(
 
 
  <Route  element = {<RequireAuth /> }> 
- <Route path= "home"  >
+ <Route path= "home"  > 
    <Route index element ={  <Home/> } />  
-
+   <Route path= "resetpassword"  element ={  <Password/>  } />   
    <Route path= "dashboard" >
    <Route index  element ={  <FirstView />  } />   
    <Route path= "addprogram"   element ={  <CreateContent/>  }  />   
