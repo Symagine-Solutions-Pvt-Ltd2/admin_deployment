@@ -2,21 +2,124 @@ import { useState  , useEffect } from "react";
 import Sidebar from "../Sidebar"  ;
 import "../Style/ClientView.css" ; 
 import {Link , useNavigate  , useLocation} from "react-router-dom" ;
-
+import axios from "axios"  ;  
 
 
 function Feedback() {    
-     
-    const location = useLocation();   
-    const [ data , setData ] = useState( location.state.data.bp_answer);  
+
+  const [ data , setData ] = useState( []); 
+
+    const location = useLocation();    
+    
+
+  
     const [ feedbackArray , setFeedbackArray ] = useState( []); 
+    console.log(  location.state.data )  ; 
+    console.log(  location.state.userInfo )  ; 
+  
+
+
+
+    
+    useEffect(() => {   
+      
+      
+     if(    location.state.data.bp_name !== ""  ){ 
+
+      axios({ 
+  
+        url : "http://3.123.39.199:5000/admin/all_bp"  ,  
+        method : "POST"  , 
+        data : {
+          
+          "search_key" :    location.state.data.bp_name  
+ 
+        }
+ 
+       }).then( ( res) => {   
+ 
+ 
+        // console.log(  res.data ) ;  
+
+         if( res.data.message === "Information retrieve successfully"){
+        
+  
+          const  tempData = res.data.data ;  
+          const tempData3 = [] ;
+
+          tempData.map((  el , index ) => {
+            
+            console.log( location.state.data.bp_answer[index] ) ; 
+            console.log(  el) ;
+            console.log(  index ) ;   
+
+            let data1 = { 
+             "id"  :  index , 
+              "task" :  el.task_name ,
+              "ans" : location.state.data.bp_answer[index]
+            }  
+            
+          tempData3.push( data1) ; 
+          
+
+          } );
+
+
+              setData( tempData3) ; 
+
+         }
+      
+ 
+       } ).catch(( err) => {  
+           console.log( "error") ;
+ 
+        }  ) ; 
+
+  } 
+
+} , [])  ; 
+
 
    
     
+   const  updateAnswer = (  e ,  index  ) => {
+     
+  
+    console.log ( index )  ;   
+    console.log ( e.target.value )  ;   
+    
+    const demoFeedback  =  feedbackArray  ;
+    demoFeedback[index]   =  e.target.value; 
+    setFeedbackArray( demoFeedback)  ;   
 
 
-    console.log(  location.state.data )  ; 
-    console.log(  location.state.userInfo )  ; 
+    e.preventDefault() ; 
+    
+}
+
+
+
+
+
+
+
+     // submit feedback    
+    const  submitFeedback = (  ) => {    
+    
+     console.log( "dhjzga") ;   
+      
+     console.log( feedbackArray ) ;   
+
+
+
+
+     
+
+
+ } 
+ 
+
+
 
 
      
@@ -78,23 +181,23 @@ function Feedback() {
 
 
                <div   className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%", borderRight : "1px solid black" }}>
-                 <p> hjhk </p>
+                 <p> {  el.task} </p>
                </div>
                <div  className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%" , borderRight : "1px solid black"}  }>
-                 <p> { data[index]  }</p>
+                 <p> {  el.ans } </p>
                </div> 
 
 
                <div    className="clientview_table_row_box"  style= {{  width: "30%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
                 
-               <input type="text"   style={{ width : "80%"  ,height : "60%"  , borderRadius : 15  ,   border : "1px solid #5E81F4" }}    name="feedback"  onChange={ ( e) => { }} /> 
+               <input type="text"   style={{ width : "80%"  ,height : "60%"  , borderRadius : 15  ,   border : "1px solid #5E81F4" }}   value = {  feedbackArray[index] }    name="feedback"  onChange={  ( e ) => { updateAnswer( e ,   index  ) }}     /> 
 
                </div>  
 
 
                <div  className="clientview_table_row_box"   style= {{   width: "20%"  ,  height: "100%"  , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-               <button  style = {{  height : "40%"  , width : "36%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => {}}>Share</button>   
+               <button  style = {{  height : "40%"  , width : "36%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => { submitFeedback()   }}>Share</button>   
                </div> 
 
 
@@ -109,7 +212,7 @@ function Feedback() {
 
               <div className="body3"> 
 
-              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2"}}   onClick={ () => {  } }  className="add_new_program_button">
+              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2"}}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
                 <p  style={ { textAlign : "center"}}>Approve Business Plan (to allow download of certificate)</p>
               </div>
             
