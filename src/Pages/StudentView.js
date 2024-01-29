@@ -221,7 +221,7 @@ function StudentView() {
        <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
 
           
-        <input   className="inner_table_btn" style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {    navigate(  "/home/dashboard/client/student/viewplan"      ,   { state: {    userInfo :  location.state.userInfo     ,    data :  el   }}        ,  { replace : false}  )     }  } /> 
+        <input   className="inner_table_btn" style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {    navigate(  "/home/dashboard/client/student/viewplan"      ,   { state: { typeId :   location.state.typeId ,  schoolId : location.state.schoolId      ,   programId:  location.state.programId  ,   userInfo :  location.state.userInfo     ,    data :  el   }}        ,  { replace : false}  )     }  } /> 
             
 
        </div> 

@@ -10,7 +10,7 @@ function Feedback() {
   const [ data , setData ] = useState( []); 
 
     const location = useLocation();    
-    
+    const  navigate = useNavigate() ; 
 
   
     const [ feedbackArray , setFeedbackArray ] = useState( []); 
@@ -64,7 +64,7 @@ function Feedback() {
 
           } );
 
-
+              setFeedbackArray( location.state.data.bp_feedback )  ;
               setData( tempData3) ; 
 
          }
@@ -106,8 +106,42 @@ function Feedback() {
      console.log( "dhjzga") ;   
       
      console.log( feedbackArray ) ;   
+    
+
+     axios({ 
+      
+      url : "http://3.123.39.199:5000/admin/bp_feedback"  ,   
+
+      method : "POST"  , 
+      data : {
+        
+        "_id" :   location.state.data._id , 
+        "bp_feedback" : feedbackArray  ,
+        "certificate" : "Yes" 
+      }
+
+     }).then( ( res) => {   
+
+          console.log( res) ; 
+          
+          
+           if(   res.data.message === "Feedback added successfully"){
+             
+            alert( res.data.message  );
+          navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId :  location.state.typeId   ,   schoolId :   location.state.schoolId  ,      programId : location.state.programId    , userInfo :  location.state.userInfo      }}        ,  { replace : false}  ) 
+          } else{
+
+            alert(  res.data.message) ;  
+          }
+ 
 
 
+
+     } ).catch(( err) => { 
+         console.log( "error") ;
+
+      }  ) ;  
+ 
 
 
 
@@ -187,7 +221,7 @@ function Feedback() {
 
                <div    className="clientview_table_row_box"  style= {{  width: "30%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
                 
-               <input type="text"   style={{ width : "80%"  ,height : "60%"  , borderRadius : 15  ,   border : "1px solid #5E81F4" }}   value = {  feedbackArray[index] }    name="feedback"  onChange={  ( e ) => { updateAnswer( e ,   index  ) }}     /> 
+               <input type="text"   style={{ width : "80%"  ,height : "60%"  , borderRadius : 15  ,   border : "1px solid #5E81F4" }}   defaultValue = {  feedbackArray[index] }    name="feedback"  onChange={  ( e ) => { updateAnswer( e ,   index  ) }}     /> 
 
                </div>  
 
