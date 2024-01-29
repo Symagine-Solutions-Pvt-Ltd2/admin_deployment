@@ -100,9 +100,6 @@ function Feedback() {
 
 
 
-
-
-
      // submit feedback    
     const  submitFeedback = (  ) => {    
     
@@ -113,7 +110,7 @@ function Feedback() {
 
 
 
-     
+
 
 
  } 
