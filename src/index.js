@@ -2,21 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter  , Route , Routes }  from "react-router-dom"  ; 
 import './index.css';
-import App from './App';  
-import Error from './Error' ; 
-import AdminDashboard from './AdminDashboard';
-
-import PrivateRoutes  from './Utils/PrivateRoutes';
-import Form from './Form.js' ; 
-import About from './About';
 import reportWebVitals from './reportWebVitals'; 
-
-import DraftCourses from './Pages/DraftCourses'; 
-import Movablelist from './Movablelist';
-
-import Test from './Test'  ;  
-import Parent from  "./Pages/Parent" ; 
-import AddNewAdmin  from './Pages/AddNewAdmin'; 
 
   
 
@@ -46,7 +32,9 @@ import UploadContent from './Pages/UploadContent';
 import EditAccount from "./Pages/EditAccount"  ; 
 import ForgotPassword from "./Pages/ForgotPassword" ; 
 import Password from "./Pages/Password" ;  
-import  RequireAuth from "./Pages/RequireAuth.js"  ;  
+import  RequireAuth from "./Pages/RequireAuth.js"  ;   
+import Feedback  from './Pages/Feedback.js';
+import AddNewAdmin  from './Pages/AddNewAdmin'; 
 
 
 
@@ -133,7 +121,7 @@ root.render(
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />  
            <Route  path= "editstudent"  element ={  <EditAccount/> }  />    
-           <Route  path= "viewplan"  element ={  <BusinessPlan /> }  />    
+           <Route  path= "viewplan"  element ={  <Feedback /> }  />    
       </Route>  
    </Route>
    </Route>   

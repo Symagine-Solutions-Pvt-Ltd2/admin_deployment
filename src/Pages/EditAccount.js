@@ -1479,7 +1479,7 @@ axios({
          <form className="addaccount_form"   style= {{  height : "65.99%" }}    onSubmit={ editStudent}      >    
     
              <div className="editaccount_form_row"  style= {{  height : "20%" }}>
-                         <div className="admin_Form-Description" >   
+                         <div className="admin_Form-Description"   >   
                         <p className="header_text">Name of student</p> 
                         </div>        
                         <div className="admin_Form-Input" >         
@@ -1493,7 +1493,8 @@ axios({
               </div> 
      
               
-              <div className="editaccount_form_row"  style= {{  height : "20%" }}>
+              <div className="editaccount_form_row"  style= {{  height : "20%" }}> 
+
                          <div className="admin_Form-Description" >   
                         <p className="header_text">Email id</p> 
                         </div>        

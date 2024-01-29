@@ -313,7 +313,7 @@ function  UploadContent() {
    if(   type ===  "module"){
      
 
-    alert( "work") ; 
+    // alert( "work") ; 
     axios({
       // Endpoint to send files
       url: "http://3.123.39.199:5000/admin/a_quiz_m", 
