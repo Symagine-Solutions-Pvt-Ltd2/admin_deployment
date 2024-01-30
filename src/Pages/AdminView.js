@@ -122,31 +122,31 @@ function  AdminView() {
   
                  <div className="clientview_table_inner_div_column_name"   style= {{ backgroundColor : '#F1F2F7'   , borderTop : "1px solid #5A6199"  ,  borderBottom : "1px solid #5A6199"}} >  
 
-                 <div  className="clientview_table_row_box"   style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}> 
+                 <div  className="clientview_table_row_box"   style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid #5A6199" }}> 
                  <p className="header_text">Sl No</p>
                  </div>   
 
 
-                 <div  className="clientview_table_row_box" style= {{   width: "18%" , height: "100%"   , borderRight : "1px solid black" }}>
+                 <div  className="clientview_table_row_box" style= {{   width: "18%" , height: "100%"   , borderRight : "1px solid #5A6199" }}>
                    <p className="header_text">Name</p>
                  </div>  
 
 
-                 <div className="clientview_table_row_box"  style= {{   width: "18%" ,  height: "100%" , borderRight : "1px solid black"}  }>
+                 <div className="clientview_table_row_box"  style= {{   width: "18%" ,  height: "100%" , borderRight : "1px solid #5A6199"}  }>
                    <p className="header_text">Email id</p>
                  </div>  
 
 
-                 <div className="clientview_table_row_box"  style= {{  width: "18%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+                 <div className="clientview_table_row_box"  style= {{  width: "18%"  ,  height: "100%"   , borderRight : "1px solid #5A6199"}}>
                    <p className="header_text">Type</p>
                  </div> 
   
-                 <div  className="clientview_table_row_box" style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+                 <div  className="clientview_table_row_box" style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid #5A6199"}}> 
                   <p className="header_text">Account Status</p>
                  </div>  
 
 
-                 <div  className="clientview_table_row_box" style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"}}> 
+                 <div  className="clientview_table_row_box" style= {{   width: "25%"  ,    height: "100%"}}> 
                   <p className="header_text">Account status</p>
                  </div>
   
@@ -160,32 +160,32 @@ function  AdminView() {
                      {
          data.map( (  el   , index )  => (
            
-          <div  key = { index } style= {{ width : "100%" , height: "25%"   , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"  ,    borderBottom : "1px solid #5A6199"    }} >
+          <div  key = { index } style= {{ width : "100%" , height: "25%"    , display : "flex" , flexDirection : "row"  ,    borderBottom : "1px solid #5A6199"    }} >
 
-          <div  className="clientview_table_row_box" style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+          <div  className="clientview_table_row_box" style= {{   width: "9%"  ,  height: "100%"   ,  borderRight : "1px solid #5A6199" }}>
            <p>  { index+1 } </p>
            </div>  
 
 
-           <div   className="clientview_table_row_box"  style= {{   width: "18%" , height: "100%"    , borderRight : "1px solid black" }}>
+           <div   className="clientview_table_row_box"  style= {{   width: "18%" , height: "100%"    , borderRight : "1px solid #5A6199" }}>
            <p> { el.name }</p> 
            </div> 
 
 
 
-           <div className="clientview_table_row_box"  style= {{   width: "18%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+           <div className="clientview_table_row_box"  style= {{   width: "18%" ,  height: "100%"   , borderRight : "1px solid #5A6199"  , overflow : "hidden"}  }>
            <p> { el.email_id}</p>
           </div> 
 
 
-           <div  className="clientview_table_row_box" style= {{  width: "18%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+           <div  className="clientview_table_row_box" style= {{  width: "18%"  ,  height: "100%"   , borderRight : "1px solid #5A6199"}}>
             <p>{ ( el.type_id === "content_admin") ? "Content Admin" : "Program Admin" } </p>
            </div> 
 
-          <div  className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid black"}}> 
+          <div  className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid #5A6199"}}> 
            <p> { el.status } </p>
            </div> 
-           <div className="clientview_table_row_box"  style= {{   width: "25%"  ,    height: "100%" , borderRight : "1px solid black"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>  
+           <div className="clientview_table_row_box"  style= {{   width: "25%"  ,    height: "100%"  ,  display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>  
 
                      
                  <input  className="clientview_table_row_button"   style={{ height: "40%"  , width : "35%"  ,  border: "0px solid red"  , borderRadius : 25}}  type="button" value = "Status"   onClick= { () => {handleStatusChange( el) } }  /> 

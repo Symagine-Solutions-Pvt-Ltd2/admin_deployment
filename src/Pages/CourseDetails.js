@@ -177,13 +177,13 @@ function CourseDetails() {
 
            <div className="clientview_table_inner_div_column_name"    style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid #B6B7D0"}}  >   
 
-           <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+           <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
            <p className="header_text">Sl No</p>
            </div> 
-           <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"  , borderRight : "1px solid black" }}>
+           <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"  , borderRight : "1px solid #B6B7D0" }}>
              <p className="header_text">Type</p>
            </div>
-           <div  className="clientview_table_row_box"   style= {{   width: "50%" ,  height: "100%", borderRight : "1px solid black"}  }>
+           <div  className="clientview_table_row_box"   style= {{   width: "50%" ,  height: "100%", borderRight : "1px solid #B6B7D0"}  }>
              <p className="header_text">Name</p>
            </div>
           
@@ -200,17 +200,17 @@ function CourseDetails() {
          data.map( (  el  , index )  => (  
 
 
-          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "#FFFFFF" ,   borderBottom : "1px solid #B6B7D0"  , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
-          <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
+          <div  key={ index} style= {{ width : "100%" , height: "25%"  , backgroundColor : "#FFFFFF" ,   borderBottom : "1px solid #B6B7D0"  , borderRight : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"}} >
+          <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
            <p>  { index+1}  </p>
            </div> 
-           <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    , borderRight : "1px solid black" }}>
+           <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
              <p>  { el.type_id }  </p>
            </div>
          
 
 
-           <div   className="clientview_table_row_box"   style= {{   width: "50%"  ,  height: "100%"  , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>   
+           <div   className="clientview_table_row_box"   style= {{   width: "50%"  ,  height: "100%"   , display: "flex"  ,   flexDirection : "row"  , justifyContent : "space-around"}}>   
 
       
                           
@@ -301,17 +301,17 @@ function CourseDetails() {
       <div className="clientview_table_outer_div_body2">   
 
 
-       <div className="clientview_table_inner_div_column_name"  style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid red"}}   >   
+       <div className="clientview_table_inner_div_column_name"  style= {{  backgroundColor : "#D9D9D9"  , borderBottom : "1px solid #B6B7D0 "}}   >   
 
-       <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+       <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
        <p className="header_text">Sl No</p>
        </div>  
 
-       <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
+       <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
          <p className="header_text">Type</p>
        </div> 
 
-       <div className="clientview_table_row_box"   style= {{   width: "50%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+       <div className="clientview_table_row_box"   style= {{   width: "50%" ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}  }>
          <p className="header_text">Name</p>
        </div>
       
@@ -326,19 +326,19 @@ function CourseDetails() {
   
   data.map( (  el  , index )  => (  
      
-      <div key={index} style= {{ width : "100%" , height: "25%"  ,borderRight : "1px solid black"  , borderBottom : "1px solid red"  , display : "flex" , flexDirection : "row"}} > 
+      <div key={index} style= {{ width : "100%" , height: "25%"  ,borderRight : "1px solid #B6B7D0"  , borderBottom : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"}} > 
 
 
-      <div  className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid black" }}>
+      <div  className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
        <p>{ index +1 }</p>
        </div> 
-       <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
+       <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
        <p>  { el.type_id }  </p>
        </div>
      
 
  
-       <div className="clientview_table_row_box"  style= {{   width: "50%"  ,  height: "100%"  , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row"}}>   
+       <div className="clientview_table_row_box"  style= {{   width: "50%"  ,  height: "100%"  , display: "flex"  ,   flexDirection : "row"}}>   
 
 
                  

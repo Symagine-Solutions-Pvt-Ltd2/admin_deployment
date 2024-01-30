@@ -125,7 +125,7 @@ function CreateContent() {
         console.log(  res ) ;  
 
 
-       /*  if(   res.data.message ===  "Program added Successfully."    ){
+         if(   res.data.message ===  "Program added Successfully."    ){
          
            alert( res.data.message)  ;  
        
@@ -136,7 +136,7 @@ function CreateContent() {
 
           alert(   res.data.message  )  ;
         }    
- */
+ 
 
        
      } ).catch(( err) => { 

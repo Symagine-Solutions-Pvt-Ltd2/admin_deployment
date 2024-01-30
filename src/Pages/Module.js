@@ -190,15 +190,15 @@ function  Module() {
         <div className="clientview_table_outer_div_body2">   
     
   
-         <div className="clientview_table_inner_div_column_name"   style ={{ backgroundColor : "#D9D9D9"   , borderBottom : "1px solid red"}}>   
+         <div className="clientview_table_inner_div_column_name"   style ={{ backgroundColor : "#D9D9D9"   , borderBottom : "1px solid #B7B7D0"}}>   
 
-         <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
+         <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
          <p>Sl No</p>
          </div> 
-         <div className="clientview_table_row_box" style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid black" }}>
+         <div className="clientview_table_row_box" style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
            <p>Content type</p>
          </div>
-         <div className="clientview_table_row_box"  style= {{   width: "50%" ,  height: "100%"   , borderRight : "1px solid black"}  }>
+         <div className="clientview_table_row_box"  style= {{   width: "50%" ,  height: "100%"  }  }>
            <p>Content Name</p>
          </div>
         
@@ -211,19 +211,19 @@ function  Module() {
       {
         data.map( (  el  , index )  => (  
           
-        <div     key={ index}  style= {{ width : "100%" , height: "25%"  , backgroundColor : '#F1F2F7' ,  borderBottom : "1px solid red" , borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+        <div     key={ index}  style= {{ width : "100%" , height: "25%"  , backgroundColor : '#F1F2F7' ,  borderBottom : "1px solid  #B7B7D0" , borderRight : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"}} >
         
         
-         <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
+         <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
          <p> { index+1 } </p>
          </div> 
-         <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    , borderRight : "1px solid black" }}>
+         <div  className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
            <p>  { el.sub_type }  </p>
          </div>
        
   
   
-         <div  className="clientview_table_row_box" style= {{   width: "50%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  ,   flexDirection : "row" , justifyContent : "space-around"}}>   
+         <div  className="clientview_table_row_box" style= {{   width: "50%"  ,  height: "100%"  , display: "flex"  ,   flexDirection : "row" , justifyContent : "space-around"}}>   
   
   
                           <div className="clientview_table_row_box"  style={{ height: "100%"  , width : "40%"}} >

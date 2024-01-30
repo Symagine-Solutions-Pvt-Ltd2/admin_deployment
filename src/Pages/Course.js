@@ -248,13 +248,13 @@ function Course() {
 
 
 
-    <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"  ,  borderRight : "1px solid black" }}>
+    <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
     <p className="header_text">Sl No</p>
     </div> 
     <div className="clientview_table_row_box" style= {{   width: "50%" , height: "100%"  }}>
       <p className="header_text">Name of Draft Course</p>
     </div>
-    <div className="clientview_table_row_box"  style= {{   width: "35%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+    <div className="clientview_table_row_box"  style= {{   width: "35%" ,  height: "100%"  }  }>
    
     </div>
    
@@ -271,10 +271,10 @@ function Course() {
          
          data.map( (  el  , index )  => (  
 
-     <div key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor :'#FFFFFF' , borderBottom : "1px solid #B6B7D0" ,  borderRight : "1px solid black"  , display : "flex" , flexDirection : "row"}} > 
+     <div key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor :'#FFFFFF' , borderBottom : "1px solid #B6B7D0"   , display : "flex" , flexDirection : "row"}} > 
 
 
-   <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"   }}>
+   <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0"   }}>
     <p>  { index+1}  </p>
     </div>  
 
@@ -286,7 +286,7 @@ function Course() {
       
 
                               
-       <input  className="inner_table_btn"     style={{ height: "40%"  , width : "25%"}}  type="button" value = "submit"  onClick={() => {handleStatusChange( el   , "submit")  }}  /> 
+          <input  className="inner_table_btn"     style={{ height: "40%"  , width : "25%"}}  type="button" value = "submit"  onClick={() => {handleStatusChange( el   , "submit")  }}  /> 
                               
                             
               <input  className="inner_table_btn"   style={{ height: "40%"  , width : "25%"}}  type="button" value = "edit"  onClick={()  => {   navigate(  "/home/course/draftcourse/draftcoursedetails"   ,      { state: {    typeId :  "draft_course_content"    ,     courseId :   el._id    ,   courseName : el.course_name     , userInfo :  location.state.userInfo  }}     ,  { replace : false}  )  }  } /> 
@@ -346,7 +346,7 @@ function Course() {
     <div className="clientview_table_inner_div_column_name"  style={{ height :"17.96%"   , backgroundColor : "#D9D9D9"  ,  borderBottom : "1px solid #B6B7D0"}}  >   
 
 
-    <div   className="clientview_table_row_box"     style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
+    <div   className="clientview_table_row_box"     style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
     <p className="header_text">Sl No</p>
     </div> 
     <div className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"     }}>
@@ -371,7 +371,7 @@ function Course() {
      <div   key={ index}   style= {{ width : "100%" , height: "20%"  , backgroundColor : "#FFFFFF"   , display : "flex" , flexDirection : "row" ,  borderBottom : "1px solid #B6B7D0"}} > 
 
 
-   <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"   }}>
+   <div className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0"   }}>
     <p> { index+1} </p>
     </div> 
     <div className="clientview_table_row_box"  style= {{   width: "40%" , height: "100%"    }}>

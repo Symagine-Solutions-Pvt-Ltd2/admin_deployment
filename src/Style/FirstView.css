@@ -89,7 +89,7 @@
 .table_inner_div_column_name::-webkit-scrollbar{
 
     width:  8px; 
-    background-color: blue ;
+    background-color: #B6B7D0 ;
 
 }
 
@@ -112,7 +112,7 @@
 .table_inner_div_table_row::-webkit-scrollbar{
 
     width:  8px; 
-    background-color: blue ;
+    background-color: #B6B7D0 ;
 
 }
 

@@ -159,21 +159,21 @@ function FirstView() {
               <div className="table_outer_div_body2"> 
 
 
-              <div className="table_inner_div_column_name"  style={ {  borderTop : "1.5px solid black"   , borderBottom : "1px solid black" }} >  
+              <div className="table_inner_div_column_name"  style={ {  borderTop : "1.5px  solid #B6B7D0"   , borderBottom : "1px solid #B6B7D0" }} >  
 
-              <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
+              <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
                <p  className="header_text" >Sl No</p>
                </div> 
-               <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid black" }}>
+               <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text"> Name of program</p>
                </div>
-               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
+               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
                  <p className="header_text"> No of clients assigned</p>
                </div>
-               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}>
+               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
                  <p className="header_text"> No of schools assigned</p>
                </div> 
-               <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}> 
+               <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
                 <p className="header_text"> No of students assinged</p>
                </div>
 
@@ -187,13 +187,13 @@ function FirstView() {
            {   
 
     data.map( (  el  , index )  => ( 
-                  <div  key={ index}    style= {  { width : "100%" , height: "33.33%"   , borderBottom : "1px solid black"  , borderTop : "1px solid black" , display : "flex" , flexDirection : "row"}} >
+                  <div  key={ index}    style= {  { width : "100%" , height: "33.33%"   , borderBottom : "1px solid #B6B7D0"  , borderTop : "1px solid #B6B7D0" , display : "flex" , flexDirection : "row"}} >
                
-                          <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
+                          <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
                               <p> {  index+1 }</p>
                           </div>  
 
-                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}}> 
+                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid #B6B7D0"  , display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}}> 
 
 
                              <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "60%"}}> 
@@ -204,7 +204,7 @@ function FirstView() {
                <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,   data : el    ,    userInfo :  location.state.userInfo      } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
-                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}  }> 
+                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"  ,  display : "flex"  , flexDirection : "row"  , justifyContent : "space-around"}  }> 
 
 
                                 <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "45%"}}> 
@@ -216,12 +216,12 @@ function FirstView() {
                         </div> 
 
 
-                        <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}>
+                        <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
                              <p> { el.total_schools} </p>
                          </div>  
 
 
-                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}> 
+                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
                                    <p>  {el.total_students }  </p>
                         </div>
                
@@ -241,22 +241,22 @@ function FirstView() {
 
 
              
-              <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1.5px solid black"  ,     borderTop : "0.5px solid black"  }}  >    
+              <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1.5px solid #B6B7D0"  ,     borderTop : "0.5px solid #B6B7D0"  }}  >    
               
-              <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid black" }}>
-               <p>Total</p>
+              <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
+               <p  style={{ fontWeight :  500}} >Total</p>
                </div> 
-               <div className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black" }}>
-                 <p> { totalCount.total_program} </p>
+               <div className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
+                 <p  style={{ fontWeight :  500}} > { totalCount.total_program} </p>
                </div>
-               <div className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
-                 <p> { totalCount.total_client}</p>
+               <div className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
+                 <p  style={{ fontWeight :  500}} > { totalCount.total_client}</p>
                </div>
-               <div  className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"    , borderRight : "1px solid black"}}>
-                 <p> { totalCount.total_school}</p>
+               <div  className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
+                 <p   style={{ fontWeight :  500}} > { totalCount.total_school}</p>
                </div> 
-               <div className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}}> 
-                <p> { totalCount.total_student}</p>
+               <div className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+                <p  style={{ fontWeight :  500}} > { totalCount.total_student}</p>
                </div>
 
 
@@ -321,21 +321,21 @@ function FirstView() {
               <div className="table_outer_div_body2"> 
 
 
-              <div className="table_inner_div_column_name"    style={ {  borderTop : "1.5px solid black"   , borderBottom : "1px solid black" }}  >  
+              <div className="table_inner_div_column_name"    style={ {  borderTop : "1.5px solid black"   , borderBottom : "1px solid #B6B7D0" }}  >  
 
-              <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
+              <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
                <p className="header_text" >Sl No</p>
                </div> 
-               <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid black" }}>
+               <div   className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"  , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text" > Name of program</p>
                </div>
-               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
+               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
                  <p className="header_text" > No of clients assigned</p>
                </div>
-               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}>
+               <div   className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
                  <p className="header_text" > No of schools assigned</p>
                </div> 
-               <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}> 
+               <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
                 <p className="header_text" > No of students assinged</p>
                </div>
 
@@ -349,13 +349,13 @@ function FirstView() {
            {   
 
     data.map( (  el  , index )  => ( 
-                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderBottom : "1px solid black"  , display : "flex" , flexDirection : "row"}} >
+                  <div  key={ index} style= {{ width : "100%" , height: "33.33%"   , borderBottom : "1px solid #B6B7D0"  , display : "flex" , flexDirection : "row"}} >
                
-                          <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid black" }}>
+                          <div    className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
                               <p> {  index+1 }</p>
                           </div>  
 
-                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black"  , display : "flex"  , flexDirection : "row"}}> 
+                         <div   className="inner_div_table_row_box"   style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid #B6B7D0"  , display : "flex"  , flexDirection : "row"}}> 
 
 
                              <div  className="inner_div_table_row_box"  style={{ height: "100%"  , width : "60%"}}> 
@@ -366,7 +366,7 @@ function FirstView() {
            <input className="inner_table_btn"  style={{ height: "40%"  , width : "25%"}}   type="button" value = "edit"  onClick={()  => {        navigate(  "/home/dashboard/editprogram"   ,      { state: {    typeId : "program"   ,      data : el   ,          userInfo :  location.state.userInfo } } ,   { replace : false}  )  }  } /> 
                           
                         </div>
-                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"  ,  display : "flex"  , flexDirection : "row"}  }> 
+                         <div  className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"  ,  display : "flex"  , flexDirection : "row"}  }> 
 
 
                                 <div    className="inner_div_table_row_box" style={{ height: "100%"  , width : "45%"}}> 
@@ -378,12 +378,12 @@ function FirstView() {
                         </div> 
 
 
-                        <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid black"}}>
+                        <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
                              <p> No of schools assigned</p>
                          </div>  
 
 
-                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid black"}}> 
+                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
                                    <p> No of students assinged</p>
                         </div>
                
@@ -403,21 +403,21 @@ function FirstView() {
 
 
              
-               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid black"   , borderTop : "0.5px solid black" }}>    
+               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid #B6B7D0"   , borderTop : "0.5px solid black" }}>    
               
-              <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid black" }}>
+              <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
                <p>Total</p>
                </div> 
-               <div className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid black" }}>
+               <div className="inner_div_table_row_box" style= {{ width : "30%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
                  <p> { totalCount.total_program} </p>
                </div>
-               <div className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}  }>
+               <div className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
                  <p> { totalCount.total_client}</p>
                </div>
-               <div  className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"    , borderRight : "1px solid black"}}>
+               <div  className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
                  <p> { totalCount.total_school}</p>
                </div> 
-               <div className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid black"}}> 
+               <div className="inner_div_table_row_box"  style= {{ width : "20%" , height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
                 <p> { totalCount.total_student}</p>
                </div>
 

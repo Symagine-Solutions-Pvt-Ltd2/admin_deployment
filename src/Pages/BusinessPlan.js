@@ -138,7 +138,7 @@ function BusinessPlan() {
     <div  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center" }}>
      <p>1</p>
     </div> 
-    <div style= {{   width: "20%" , height: "100%"   , borderRight : "1px solid black"  , display: "flex"  , alignItems: "center" , justifyContent : "center"   }}> 
+    <div style= {{   width: "20%" , height: "100%"   , borderRight : ""  , display: "flex"  , alignItems: "center" , justifyContent : "center"   }}> 
 
     <input   style ={{ height: "60%"  , borderRadius : 15  }}   type="text"  value= {  typeOfPlan }    onChange={ (e) => {  setTypeOfPlan( e.target.value)} }  /> 
     </div> 
