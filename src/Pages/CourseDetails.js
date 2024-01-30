@@ -60,7 +60,7 @@ function CourseDetails() {
 
    
        useEffect(() => { 
-    
+      
         axios({ 
 
               url : "http://3.123.39.199:5000/admin/course_wmb"  ,  
@@ -74,11 +74,12 @@ function CourseDetails() {
                  }).then( ( res) => {   
 
 
-                console.log(  res) ; 
+                console.log(  res) ;   
+                if(  res.data.message === "Information retrieve successfully") {  
                 setData(  res.data.data ) ;  
+                }
        
-       
-                    //  console.log(   res.data.data[1].name )  ;
+          
 
                   } ).catch(( err) => {  
                   console.log( "error") ;
@@ -267,6 +268,10 @@ function CourseDetails() {
 </div>
 ) ;      
 
+  
+
+
+
 
 
 
@@ -337,7 +342,7 @@ function CourseDetails() {
 
 
                  
-                         <p> Module 1</p>
+                         <p>  { el.name } </p>
                    
 
                      

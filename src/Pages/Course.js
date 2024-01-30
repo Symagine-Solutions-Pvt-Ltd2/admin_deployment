@@ -382,7 +382,7 @@ function Course() {
 
                                 
                          
-    <input    className="inner_table_btn"   style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red"}}  type="button" value = "View"  onClick={()  => {        navigate(  "/home/viewcourse/permanentcoursedetails"   ,   { state: {    typeId :  "permanent_course_content"   ,  userInfo :  location.state.userInfo }}     , { replace : false}  )  }  } /> 
+    <input    className="inner_table_btn"   style={{ height: "40%"  , width : "25%"  ,  border: "0px solid red"}}  type="button" value = "View"  onClick={()  => {        navigate(  "/home/viewcourse/permanentcoursedetails"   ,   { state: {    typeId :  "permanent_course_content"   ,    courseId :   el._id    ,   courseName : el.course_name  ,   userInfo :  location.state.userInfo }}     , { replace : false}  )  }  } /> 
                              
                                 
     </div> 
