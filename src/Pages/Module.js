@@ -79,7 +79,8 @@ function  Module() {
      
                if(  res.data.message === "data not found"){
                       
-                alert(   res.data.message)  ; 
+                //alert(   res.data.message)  ;  
+                setData(  [] ) ;
                }else{
                    
                 setData(  res.data.data ) ;  
@@ -90,7 +91,7 @@ function  Module() {
                 } ).catch(( err) => {  
                 console.log( "error") ;
 
-              }  ) ; 
+              } , [ popup]  ) ; 
   
 
 
@@ -127,7 +128,8 @@ function  Module() {
                         
                    }
                    else{
-
+                       
+                    setData( []) ;
                       alert( res.data.message )  ; 
                    }
     

@@ -333,17 +333,17 @@ function StudentView() {
        </div> 
 
        <div   className="clientview_table_row_box" style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-         <p className="header_text">Status (submitted Business Plan)</p>
+         <p className="header_text"   style={{  textAlign : "center"}} >Status (submitted Business Plan)</p>
        </div> 
        <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
-        <p className="header_text">Certificate issued</p>
+        <p className="header_text" style={{  textAlign : "center"}} >Certificate issued</p>
        </div> 
 
        <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
-        <p className="header_text">View Business Plan</p>
+        <p className="header_text" style={{  textAlign : "center"}} >View Business Plan</p>
        </div> 
        <div className="clientview_table_row_box"  style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
-        <p className="header_text">Download</p>
+        <p className="header_text"  >Download</p>
        </div>
         
        <div    className="clientview_table_row_box" style= {{   width: "12%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
@@ -367,7 +367,7 @@ function StudentView() {
 
            data.map( (  el   , index )  => (  
 
-      <div  key ={index} style= {{ width : "100%" , height: "25%"  , borderBottom : "1px solid blue" , display : "flex" , flexDirection : "row"}} >  
+      <div  key ={index} style= {{ width : "100%" , height: "25%"  , borderBottom : "1px solid #B6B7D0" , display : "flex" , flexDirection : "row"}} >  
 
 
       <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>

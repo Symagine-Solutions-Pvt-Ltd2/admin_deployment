@@ -1054,7 +1054,7 @@ setSelectedOption( null) ;
        </div> 
        <div className ="upload-body-div2"   style= {{   display :"flex"   ,  alignItems : "center"  , justifyContent :"center"}}   >  
             
-       <input   name="text"   placeholder="enter text" style={{ width :"63.61%" , height: "100%"  , textAlign : "center"  , borderRadius : 30 }} /> 
+       <input   name="text"   placeholder="enter text" style={{ width :"100%" , height: "100%"  , textAlign : "center"  , borderRadius : 30 }} /> 
         </div> 
 
 
@@ -1119,7 +1119,7 @@ setSelectedOption( null) ;
        </div> 
        <div className ="upload-body-div2"  >  
             
-       <input   name="text"   placeholder="Insert Instructions" style={{ width :"63.61%" , height: "100%"  , textAlign :"center"  , borderRadius : 30 }} /> 
+       <input   name="text"   placeholder="Insert Instructions" style={{ width :"100%" , height: "100%"  , textAlign :"center"  , borderRadius : 30 }} /> 
         </div> 
 
 

@@ -302,15 +302,19 @@ function FirstView() {
 
 
 
-            <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "grey"  , borderRadius : 15}}>  
+             <div style= {{ width:"97%"  , height : "60%"  , backgroundColor: "#FFF"  , borderRadius : 15  , display : "flex"   , flexDirection : "row"  , justifyContent : "space-between" ,  margin : "2px"   , backgroundColor: "#B6B7D0" }}>  
+
+             
+<div  style= {{ width:"50%"  , height : "99%"  , justifyContent : "center"   , display : "flex"    , borderTopLeftRadius : 15  , borderBottomLeftRadius : 15  , border : "2px solid #D9D9D9"  }}  >
+ <p> {totalCount.total_course} Courses</p>
+</div>  
+
+<div  style= {{ width:"50%"  , height : "99%"      , justifyContent : "center"   , display : "flex"  ,  borderTopRightRadius : 15  , borderBottomRightRadius : 15   ,  border : "2px solid #D9D9D9"  }}  >
+ <p>{totalCount.total_program} Programs </p>
+</div> 
 
 
-           <p>
-            bjhjhjg
-           </p>
-            </div>
-
-
+</div>
 
 
       
@@ -321,7 +325,7 @@ function FirstView() {
               <div className="table_outer_div_body2"> 
 
 
-              <div className="table_inner_div_column_name"    style={ {  borderTop : "1.5px solid black"   , borderBottom : "1px solid #B6B7D0" }}  >  
+              <div className="table_inner_div_column_name"    style={ {  borderTop : "1.5px solid #B6B7D0"   , borderBottom : "1px solid #B6B7D0" }}  >  
 
               <div   className="inner_div_table_row_box"  style= {{ width : "10%" , height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
                <p className="header_text" >Sl No</p>
@@ -379,12 +383,12 @@ function FirstView() {
 
 
                         <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-                             <p> No of schools assigned</p>
+                             <p> { el.total_schools}</p>
                          </div>  
 
 
                          <div     className="inner_div_table_row_box" style= {{ width : "20%" , height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
-                                   <p> No of students assinged</p>
+                                   <p> { el.total_students}</p>
                         </div>
                
 
@@ -403,7 +407,7 @@ function FirstView() {
 
 
              
-               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid #B6B7D0"   , borderTop : "0.5px solid black" }}>    
+               <div className="table_inner_div_column_name"  style = {{ backgroundColor : "#FFF"  , borderBottom : "1px solid #B6B7D0"   , borderTop : "0.5px solid #B6B7D0" }}>    
               
               <div  className="inner_div_table_row_box" style= {{ width : "10%" , height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
                <p>Total</p>
