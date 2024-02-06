@@ -73,7 +73,7 @@ function  UploadContent() {
 
     axios({
       // Endpoint to send files
-      url: "http://3.123.39.199:5000/admin/upload_file_m", 
+      url: "http://3.123.37.47:5000/admin/upload_file_m", 
 
       method: "POST", 
 
@@ -129,7 +129,7 @@ function  UploadContent() {
 
       axios({
         // Endpoint to send files
-        url: "http://3.123.39.199:5000/admin/a_w_material", 
+        url: "http://3.123.37.47:5000/admin/a_w_material", 
   
         method: "POST", 
   
@@ -217,7 +217,7 @@ function  UploadContent() {
 
     axios({
       // Endpoint to send files
-      url: "http://3.123.39.199:5000/admin/upload_file_m", 
+      url: "http://3.123.37.47:5000/admin/upload_file_m", 
 
       method: "POST", 
 
@@ -273,7 +273,7 @@ function  UploadContent() {
 
       axios({
         // Endpoint to send files
-        url: "http://3.123.39.199:5000/admin/a_w_material", 
+        url: "http://3.123.37.47:5000/admin/a_w_material", 
   
         method: "POST", 
   
@@ -359,7 +359,7 @@ function  UploadContent() {
 
     axios({
       // Endpoint to send files
-      url: "http://3.123.39.199:5000/admin/a_m_text", 
+      url: "http://3.123.37.47:5000/admin/a_m_text", 
 
       method: "POST", 
 
@@ -400,7 +400,7 @@ function  UploadContent() {
 
       axios({
         // Endpoint to send files
-        url: "http://3.123.39.199:5000/admin/a_w_text", 
+        url: "http://3.123.37.47:5000/admin/a_w_text", 
   
         method: "POST", 
   
@@ -476,7 +476,7 @@ function  UploadContent() {
     // alert( "work") ; 
     axios({
       // Endpoint to send files
-      url: "http://3.123.39.199:5000/admin/a_quiz_m", 
+      url: "http://3.123.37.47:5000/admin/a_quiz_m", 
 
       method: "POST", 
 
@@ -532,7 +532,7 @@ function  UploadContent() {
 
       axios({
         // Endpoint to send files
-        url: "http://3.123.39.199:5000/admin/a_quiz_w", 
+        url: "http://3.123.37.47:5000/admin/a_quiz_w", 
   
         method: "POST", 
   
@@ -617,7 +617,7 @@ function  UploadContent() {
 
     axios({
       // Endpoint to send files
-      url: "http://3.123.39.199:5000/admin/a_m_text", 
+      url: "http://3.123.37.47:5000/admin/a_m_text", 
 
       method: "POST", 
 
@@ -658,7 +658,7 @@ function  UploadContent() {
 
       axios({
         // Endpoint to send files
-        url: "http://3.123.39.199:5000/admin/a_w_text", 
+        url: "http://3.123.37.47:5000/admin/a_w_text", 
   
         method: "POST", 
   

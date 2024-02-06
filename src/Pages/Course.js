@@ -45,7 +45,7 @@ function Course() {
 
       axios({ 
 
-            url : "http://3.123.39.199:5000/admin/course"  ,   
+            url : "http://3.123.37.47:5000/admin/course"  ,   
 
             method : "POST"  ,  
 
@@ -104,7 +104,7 @@ function Course() {
         
         axios({ 
 
-              url : "http://3.123.39.199:5000/admin/draftcourse"  ,  
+              url : "http://3.123.37.47:5000/admin/draftcourse"  ,  
               method : "POST"  , 
              data : {
        
@@ -135,7 +135,7 @@ function Course() {
 
                 axios({ 
 
-                  url : "http://3.123.39.199:5000/admin/p_course"  ,   
+                  url : "http://3.123.37.47:5000/admin/p_course"  ,   
 
                   method : "POST"  ,  
                   

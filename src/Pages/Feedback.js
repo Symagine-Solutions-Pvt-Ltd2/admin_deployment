@@ -28,7 +28,7 @@ function Feedback() {
 
       axios({ 
   
-        url : "http://3.123.39.199:5000/admin/all_bp"  ,  
+        url : "http://3.123.37.47:5000/admin/all_bp"  ,  
         method : "POST"  , 
         data : {
           
@@ -110,7 +110,7 @@ function Feedback() {
 
      axios({ 
       
-      url : "http://3.123.39.199:5000/admin/bp_feedback"  ,   
+      url : "http://3.123.37.47:5000/admin/bp_feedback"  ,   
 
       method : "POST"  , 
       data : {

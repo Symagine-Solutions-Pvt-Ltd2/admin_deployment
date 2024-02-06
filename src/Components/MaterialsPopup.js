@@ -24,7 +24,7 @@ const MaterialsPopup = (  props ) =>{
 
          axios({ 
           
-            url : "http://3.123.39.199:5000/admin/mschng"  ,   
+            url : "http://3.123.37.47:5000/admin/mschng"  ,   
     
             method : "POST"  ,  
     

@@ -26,7 +26,7 @@ function ForgotPassword() {
            
           axios({ 
 
-            url : "http://3.123.39.199:5000/admin/emailotpsend"  ,  
+            url : "http://3.123.37.47:5000/admin/emailotpsend"  ,  
             method : "POST"  , 
             data : {
               
