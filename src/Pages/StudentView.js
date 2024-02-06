@@ -325,11 +325,11 @@ function StudentView() {
        </div>
 
        <div  className="clientview_table_row_box"  style= {{   width: "15%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
-         <p className="header_text">Name of school</p>
+         <p className="header_text"   style ={{  textAlign : "center" }}>Name of school</p>
        </div> 
 
        <div   className="clientview_table_row_box" style= {{   width: "15%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
-         <p className="header_text">Name of student</p>
+         <p className="header_text"  style ={{  textAlign : "center" }} >Name of student</p>
        </div> 
 
        <div   className="clientview_table_row_box" style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>

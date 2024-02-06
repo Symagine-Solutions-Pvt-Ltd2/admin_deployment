@@ -74,7 +74,7 @@ function  ModuleContentType() {
           <div  style = {{ height : "49.72%"  ,  width : "100%"  , backgroundColor : "#F1F2F7"   , display : "flex"  ,   justifyContent : "space-between"  , flexDirection : "column"}}> 
 
 
-          <div  className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_content"    ,    sub_type : "video"    ,     course_name :  courseName  ,  type_name :   name     ,    type :   location.state.type  ,   userInfo :  location.state.userInfo  , courseId: location.state.courseId}}    ,     { replace : false}  )   } } style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  , borderRadius : 30 }}>
+          <div  className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_video"    ,    sub_type : "video"    ,     course_name :  courseName  ,  type_name :   name     ,    type :   location.state.type  ,   userInfo :  location.state.userInfo  , courseId: location.state.courseId}}    ,     { replace : false}  )   } } style={{ height: "19.85%" , width : "45%" ,  backgroundColor : "#B7B7D1"  , borderRadius : 30 }}>
           <p  style= {{  fontWeight : 600 }}>Upload video</p>
           </div> 
 
@@ -83,7 +83,7 @@ function  ModuleContentType() {
           </div> 
 
 
-          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_content"  ,  sub_type : "picture"    ,     course_name :  courseName  ,  type_name :   name     ,    type :   location.state.type , userInfo :  location.state.userInfo  , courseId: location.state.courseId  }}  ,  { replace : false}  )   } }   style={{ height: "19.85%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,   { state: {  typeId : "upload_picture"  ,  sub_type : "picture"    ,     course_name :  courseName  ,  type_name :   name     ,    type :   location.state.type , userInfo :  location.state.userInfo  , courseId: location.state.courseId  }}  ,  { replace : false}  )   } }   style={{ height: "19.85%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30 }}>
           <p style= {{  fontWeight : 600 }} >Upload picture</p>
           </div>
 

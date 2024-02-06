@@ -38,15 +38,20 @@ function  UploadContent() {
 
 
 
+   
 
-
-
-  const  uploadContent  = (  event  ) => { 
+   // to upload picture 
+  const  uploadPicture  = (  event  ) => { 
  
     const selectedFile = document.getElementById("upload").files[0];
     console.log( "file upload"  )   ; 
     console.log(selectedFile) ;
     console.log( type ) ; 
+
+     
+
+
+
 
 
     if( type === "module"  ) {
@@ -86,17 +91,17 @@ function  UploadContent() {
           
 
        console.log(  res) ;   
-       alert( res.data.message) ;
+     //  alert( res.data.message) ;
        
 
-       /* if( res.data.message === "File Added Successfully."  ){
+       if( res.data.message === "File Added Successfully."  ){
           
         alert( res.data.message) ;
         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
        }else{
         alert( res.data.message) ;
 
-       } */
+       } 
 
 
 
@@ -161,6 +166,161 @@ function  UploadContent() {
     event.preventDefault() ; 
 
   }
+
+   
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // to upload video 
+  const  uploadVideo  = (  event  ) => { 
+ 
+    const selectedFile = document.getElementById("upload").files[0];
+    console.log( "file upload"  )   ; 
+    console.log(selectedFile) ;
+    console.log( typeId ) ; 
+
+     
+
+
+
+
+
+    if( type === "module"  ) {
+
+    
+    let formData = new FormData();
+  
+    //Adding files to the formdata  
+    formData.append("name",  event.target.name.value );
+    formData.append("course_name",  courseName  );
+    formData.append("file", selectedFile );
+    formData.append("module_name",  name );
+    formData.append("sub_type",  subType );
+    formData.append("type_id",  type  );  
+
+
+    console.log( formData ) ;    
+
+
+    axios({
+      // Endpoint to send files
+      url: "http://3.123.39.199:5000/admin/upload_file_m", 
+
+      method: "POST", 
+
+      headers: { 
+
+       "Content-Type" : "multipart/form-data"  
+      
+      }, 
+
+
+      // Attaching the form data
+      data: formData,
+    })
+      .then((res) => {  
+          
+
+       console.log(  res) ;   
+      //  alert( res.data.message) ;
+       
+
+       if( res.data.message === "File Added Successfully."  ){
+          
+        alert( res.data.message) ;
+        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+       }else{
+        alert( res.data.message) ;
+
+       } 
+
+
+
+
+      }) // Handle the response from backend here
+      .catch((err) => {  
+
+        console.log( err) ; 
+      }); // Catch errors if any
+ 
+    } 
+    else if(  type === "workshop"   ){
+      
+      
+     alert(  type) ; 
+      let formData = new FormData();
+  
+      //Adding files to the formdata  
+      formData.append("name",  event.target.name.value );
+      formData.append("course_name",  courseName  );
+      formData.append("thumb_image",   event.target.file.value);
+      formData.append("workshop_name",  name );
+      formData.append("sub_type",  subType );
+      formData.append("type_id",  type  );  
+
+      axios({
+        // Endpoint to send files
+        url: "http://3.123.39.199:5000/admin/a_w_material", 
+  
+        method: "POST", 
+  
+        headers: { 
+  
+         "Content-Type" : "multipart/form-data"  
+        
+        }, 
+  
+  
+        // Attaching the form data
+        data: formData,
+      })
+        .then((res) => {  
+            
+  
+         console.log(  res) ;   
+         alert( res.data.message) ; 
+        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+  
+        }) // Handle the response from backend here
+        .catch((err) => {  
+  
+          console.log( err) ; 
+        }); // Catch errors if any
+
+
+    
+
+    }
+
+    
+
+    event.preventDefault() ; 
+
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
   
@@ -938,7 +1098,7 @@ setSelectedOption( null) ;
 
 
 
-    case "upload_content" :  
+    case "upload_picture" :  
 
 
 
@@ -952,7 +1112,7 @@ setSelectedOption( null) ;
      </div> 
 
 
-     <form className ="upload-body"  onSubmit={ uploadContent } >  
+     <form className ="upload-body"  onSubmit={ uploadPicture } >  
 
 
 
@@ -1018,7 +1178,222 @@ setSelectedOption( null) ;
      )  
  
 
+   
 
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+     
+
+    case "upload_video" :  
+
+
+
+
+    return (  
+
+     <div  className="upload"  > 
+
+     <div  className="upload-sidebar" style={{ borderRadius : 25}}> 
+    <Sidebar    info = {  location.state.userInfo} /> 
+    </div> 
+
+
+    <form className ="upload-body"  onSubmit={ uploadVideo } >  
+
+
+
+    
+       <div   className ="upload-body-div1"  >  
+       
+       <input type="text"
+                        name="name"
+                        className="upload-body-div1-input-box" 
+                        placeholder="Enter name"
+                        />  
+
+       </div>   
+
+ 
+
+
+
+       <div className ="upload-body-div2"    style= {{ height: "53.13%" , display :"flex"   ,  alignItems : "center"  , justifyContent :"center"}}    >  
+              
+
+           <div   style= {{ width :"63.61%"  , backgroundColor : "#5A6198"  , height: "100%"  , borderRadius : 30   }}>
+
+         
+
+          
+             <label  htmlFor="upload"  className="upload_file">
+               
+             <div  style= {{ width : "6%"  , height : "12%" , display : "flex"  , justifyContent : "center"   , padding : 5}}>
+             <img src={ file_logo }  alt= { "ccv"}  height={"100%"}   />  
+               </div>
+              
+          {/*    <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />  */}
+             <input  style={{ width : "45%" , backgroundColor : "grey" }} type="file"  name="file"   id="upload"  /> 
+               
+             </label>   
+
+
+            </div> 
+
+
+        </div> 
+  
+
+
+
+
+
+
+       <div   style= {{ width :"63.61%" ,  backgroundColor : "#FFF8EE", height: "15.61%" , display :"flex" , alignItems : "center" , justifyContent : "flex-end"}}>   
+           
+       <input   className="inner_table_btn"  type="submit" value="Submit"   style= {{ width :"15.98%" ,  backgroundColor : "#FCC046", height: "34%"  , border : "0px solid black"}}  /> 
+       </div>  
+
+  
+
+ 
+
+
+    </form> 
+
+    </div>
+    )  
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
     
       
