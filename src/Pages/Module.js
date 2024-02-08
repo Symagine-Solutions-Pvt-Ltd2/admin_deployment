@@ -175,7 +175,7 @@ function  Module() {
     return (
       <div className="clientview">  
 
-      <div className="clientview_sidebar" >
+      <div className="clientview_sidebar"   style={{ borderRadius : 25}}>
              <Sidebar   info = {  location.state.userInfo} /> 
       </div>  
   
@@ -185,7 +185,7 @@ function  Module() {
       </MaterialsPopup>
   
       
-       <div  className="clientview_body1"   style= {{ backgroundColor : '#F1F2F7'}}  > 
+       <div  className="clientview_body1"    > 
     
        </div>
       
@@ -195,13 +195,13 @@ function  Module() {
          <div className="clientview_table_inner_div_column_name"   style ={{ backgroundColor : "#D9D9D9"   , borderBottom : "1px solid #B7B7D0"}}>   
 
          <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}>
-         <p>Sl No</p>
+         <p className="header_text">Sl No</p>
          </div> 
          <div className="clientview_table_row_box" style= {{   width: "40%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
-           <p>Content type</p>
+           <p className="header_text" >Content type</p>
          </div>
          <div className="clientview_table_row_box"  style= {{   width: "50%" ,  height: "100%"  }  }>
-           <p>Content Name</p>
+           <p className="header_text">Content Name</p>
          </div>
         
   

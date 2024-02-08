@@ -442,11 +442,11 @@ function  UploadContent() {
   
    
     const answer1 = (  selectedOption === optionArray[0]);
-    console.log(  answer1) ;
+ //   console.log(  answer1) ;
     const answer2 = (  selectedOption === optionArray[1]);
-    console.log(  answer2) ;
+  //  console.log(  answer2) ;
     const answer3 = (  selectedOption === optionArray[2]);
-    console.log(  answer3) ;
+  //  console.log(  answer3) ;
    
     /* console.log(  location.state.typeId  ) ; 
     console.log( event.target.name.value) ; 
@@ -467,10 +467,10 @@ function  UploadContent() {
 
    
    // console.log( "quiz") ;    
-  
-   
+   if(  answer1||answer2||answer3  === "true" ){
+    
 
-   if(   type ===  "module"){
+   if(   type ===  "module"     ){
      
 
     // alert( "work") ; 
@@ -515,8 +515,13 @@ function  UploadContent() {
 
        if(  res.data.message === "quiz added Successfully."){
 
-         alert(  res.data.message ) ; 
-          navigate(  "/home/course/draftcourse/module"   ,  { state: { type : location.state.type   ,      courseName :   location.state.course_name   ,  type_name :   location.state.type_name    ,     userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
+         alert(  res.data.message ) ;   
+         event.target.question.value = ""  ; 
+         event.target.option1.value = "" ;  
+         event.target.option2.value = "" ; 
+         event.target.option3.value = "" ;  
+         setSelectedOption( null) ; 
+      //  navigate(  "/home/course/draftcourse/module"   ,  { state: { type : location.state.type   ,      courseName :   location.state.course_name   ,  type_name :   location.state.type_name    ,     userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
        }else{
 
         alert(  res.data.message ) ;  
@@ -583,7 +588,10 @@ function  UploadContent() {
     
 
     }
+  }else{
 
+    alert( "Please select right answer!") ; 
+  }
 
 
 
@@ -860,7 +868,7 @@ setSelectedOption( null) ;
      </div> 
 
 
-     <form  className ="upload-body"    onSubmit={ uploadQuiz  }   >   
+     <form  className ="upload-body"     onSubmit={ uploadQuiz  }   >   
 
         <div   className ="upload-body-div1"  >  
         
