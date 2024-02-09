@@ -43,18 +43,30 @@ function  UploadContent() {
    // to upload picture 
   const  uploadPicture  = (  event  ) => { 
  
-    const selectedFile = document.getElementById("upload").files[0];
+    const selectedFile = document.getElementById("upload").files[0]; 
     console.log( "file upload"  )   ; 
-    console.log(selectedFile) ;
-    console.log( type ) ; 
+    console.log(selectedFile) ;  
+    console.log( typeId ) ;   
+ 
 
+
+
+    if(  selectedFile !== undefined  ){
+
+    
+     console.log(selectedFile.name) ;
+      
+     let aa = selectedFile.name ;
+     let file_extension = aa.split('.').pop();  
+     file_extension =  file_extension.toLowerCase() ; 
+     console.log(  file_extension ) ;  
      
 
 
 
 
 
-    if( type === "module"  ) {
+     if( type === "module"    &&  ( file_extension === "jpg"  ||    file_extension === "jpeg"  ||  file_extension === "png"  )     ) {
 
     
     let formData = new FormData();
@@ -113,7 +125,7 @@ function  UploadContent() {
       }); // Catch errors if any
  
     } 
-    else if(  type === "workshop"   ){
+    else if(  type === "workshop"        &&  ( file_extension === "jpg"  ||    file_extension === "jpeg"  ||  file_extension === "png"  )    ){
       
       
      alert(  type) ; 
@@ -160,8 +172,12 @@ function  UploadContent() {
     
 
     }
+    else{
 
-    
+      alert( "File format not supported!") ;  
+    }
+
+  }
 
     event.preventDefault() ; 
 
@@ -186,25 +202,36 @@ function  UploadContent() {
 
   // to upload video 
   const  uploadVideo  = (  event  ) => { 
- 
+    
+    event.preventDefault() ; 
     const selectedFile = document.getElementById("upload").files[0];
     console.log( "file upload"  )   ; 
     console.log(selectedFile) ;
     console.log( typeId ) ; 
+   // console.log(selectedFile.name) ;  
+   
+ 
 
+
+    if(  selectedFile !== undefined  ){
      
+      let aa = selectedFile.name ;
+      let file_extension = aa.split('.').pop();  
+      file_extension =  file_extension.toLowerCase() ; 
+      console.log(  file_extension ) ; 
+
+  
+  
+  // console.log( file_extension === "mp4"   || "mkv") ;  
 
 
-
-
-
-    if( type === "module"  ) {
+    if( type === "module"   &&  ( file_extension === "mp4"  ||  file_extension ===  "mkv"  ) ) {
 
     
     let formData = new FormData();
   
     //Adding files to the formdata  
-    formData.append("name",  event.target.name.value );
+    formData.append("name",  event.target.videoname.value );
     formData.append("course_name",  courseName  );
     formData.append("file", selectedFile );
     formData.append("module_name",  name );
@@ -257,7 +284,7 @@ function  UploadContent() {
       }); // Catch errors if any
  
     } 
-    else if(  type === "workshop"   ){
+    else if(  type === "workshop"    &&    ( file_extension === "mp4"  ||   file_extension === "mkv" )   ){
       
       
      alert(  type) ; 
@@ -304,10 +331,14 @@ function  UploadContent() {
     
 
     }
+    else{
+
+      alert( "File format not supported!") ; 
+    }
+
+  }
 
     
-
-    event.preventDefault() ; 
 
   }
 
@@ -340,6 +371,12 @@ function  UploadContent() {
 
   
 
+
+
+
+
+
+ 
 
 
 
@@ -1260,7 +1297,7 @@ setSelectedOption( null) ;
        <div   className ="upload-body-div1"  >  
        
        <input type="text"
-                        name="name"
+                        name="videoname"
                         className="upload-body-div1-input-box" 
                         placeholder="Enter name"
                         />  
