@@ -506,7 +506,7 @@ function  UploadContent() {
     const answer2 = (  selectedOption === optionArray[1]);
   //  console.log(  answer2) ;
     const answer3 = (  selectedOption === optionArray[2]);
-  //  console.log(  answer3) ;
+    console.log(answer1||answer2||answer3) ;
    
     /* console.log(  location.state.typeId  ) ; 
     console.log( event.target.name.value) ; 
@@ -527,7 +527,7 @@ function  UploadContent() {
 
    
    // console.log( "quiz") ;    
-   if(  answer1||answer2||answer3  === "true" ){
+   if(  (answer1||answer2||answer3)   ===  true  ){
     
 
    if(   type ===  "module"     ){
