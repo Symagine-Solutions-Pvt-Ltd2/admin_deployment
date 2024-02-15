@@ -18,16 +18,56 @@ const MaterialsPopup = (  props ) =>{
 
        
     
-          console.log( props.data)   ; 
-                      
+        //  console.log(  props.data.sub_type )   ; 
+                        
+   
+     
+          if(    props.data.sub_type === "quiz"){
+             
+       
+
+            axios({ 
+          
+              url : "http://3.123.37.47:5000/admin/all_qd"  ,   
+      
+              method : "POST"  ,  
+              headers: { 
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+              } , 
+              data : {
+                  
+               "course_name"  :   props.data.course_name ,
+               "workshop_name" : "" , 
+               "module_name" : props.data.module_name , 
+               "quiz_name": props.data.quiz_name  
+             
+              }
+        
+             }).then( ( res) => {   
+        
+              console.log( res) ; 
+              alert( res.data.message) ;  
+              props.setTrigger( false ) ;
+               
+             } ).catch(( err) => { 
+                 console.log( "error") ;
+        
+              }  ) ; 
 
 
-         axios({ 
+          }else {
+
+          
+          axios({ 
           
             url : "http://3.123.37.47:5000/admin/mschng"  ,   
     
             method : "POST"  ,  
-    
+            headers: { 
+              'Access-Control-Allow-Origin' : '*',
+              'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            } , 
             data : {
                 
               "_id" : props.data._id  , 
@@ -45,8 +85,13 @@ const MaterialsPopup = (  props ) =>{
                console.log( "error") ;
       
             }  ) ; 
-     
-              
+      
+                   
+          }
+
+
+
+
           }
     
 

@@ -105,11 +105,12 @@ function  UploadContent() {
        console.log(  res) ;   
      //  alert( res.data.message) ;
        
-
-       if( res.data.message === "File Added Successfully."  ){
+        
+       if( res.data.status === "success"  ){
           
-        alert( res.data.message) ;
-        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+        alert( res.data.message) ; 
+          
+       // navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;  
        }else{
         alert( res.data.message) ;
 
@@ -159,7 +160,8 @@ function  UploadContent() {
             
   
          console.log(  res) ;   
-         alert( res.data.message) ; 
+         alert( res.data.message) ;  
+
         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
   
         }) // Handle the response from backend here
@@ -174,11 +176,12 @@ function  UploadContent() {
     }
     else{
 
-      alert( "File format not supported!") ;  
+      alert( "File format not supported!") ;   
+
     }
 
   }
-
+    
     event.preventDefault() ; 
 
   }
@@ -209,7 +212,8 @@ function  UploadContent() {
     console.log(selectedFile) ;
     console.log( typeId ) ; 
    // console.log(selectedFile.name) ;  
-   
+     
+    
  
 
 
@@ -219,10 +223,10 @@ function  UploadContent() {
       let file_extension = aa.split('.').pop();  
       file_extension =  file_extension.toLowerCase() ; 
       console.log(  file_extension ) ; 
-
+      event.target.sbtn.disabled = true ;
   
   
-  // console.log( file_extension === "mp4"   || "mkv") ;  
+   
 
 
     if( type === "module"   &&  ( file_extension === "mp4"  ||  file_extension ===  "mkv"  ) ) {
@@ -265,13 +269,14 @@ function  UploadContent() {
       //  alert( res.data.message) ;
        
 
-       if( res.data.message === "File Added Successfully."  ){
+       if( res.data.status === "success"  ){
           
         alert( res.data.message) ;
-        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+        event.target.sbtn.disabled = false; 
+       // navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
        }else{
         alert( res.data.message) ;
-
+        event.target.sbtn.disabled = false ; 
        } 
 
 
@@ -279,8 +284,11 @@ function  UploadContent() {
 
       }) // Handle the response from backend here
       .catch((err) => {  
+        
 
-        console.log( err) ; 
+        console.log( err) ;  
+        alert( err) ;
+        event.target.sbtn.disabled = false ; 
       }); // Catch errors if any
  
     } 
@@ -319,11 +327,12 @@ function  UploadContent() {
   
          console.log(  res) ;   
          alert( res.data.message) ; 
-        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
-  
+      //  navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+        event.target.sbtn.disabled = false ; 
         }) // Handle the response from backend here
         .catch((err) => {  
-  
+         
+          event.target.sbtn.disabled = false ; 
           console.log( err) ; 
         }); // Catch errors if any
 
@@ -332,10 +341,13 @@ function  UploadContent() {
 
     }
     else{
-
+      event.target.sbtn.disabled = false ; 
       alert( "File format not supported!") ; 
     }
 
+  }else{
+
+    alert( "Please fill all details!") ; 
   }
 
     
@@ -388,7 +400,7 @@ function  UploadContent() {
   const  uploadText  = (  event  ) => { 
    
      
-
+    event.target.sbtn.disabled = true ; 
     
     if(   type ===  "module"){
 
@@ -421,14 +433,20 @@ function  UploadContent() {
 
 
        if( res.data.message ===  "Text added Successfully."){ 
-        alert( res.data.message) ;
-        navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+        alert( res.data.message) ; 
+        event.target.sbtn.disabled = false ; 
+      //  navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
        }else {
-        alert( res.data.message) ;
+        alert( res.data.message) ; 
+        event.target.sbtn.disabled = false ; 
        }
     
       }) // Handle the response from backend here
-      .catch((err) => { }); // Catch errors if any
+      .catch((err) => { 
+        
+        alert( err) ; 
+        event.target.sbtn.disabled = false ; 
+      }); // Catch errors if any
    
     } 
     else  if(  type ===  "workshop"  ){
@@ -457,10 +475,15 @@ function  UploadContent() {
         .then((res) => {  
             
           alert( res.data.message) ;
-         console.log(  res) ;  
-         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
+         console.log(  res) ;   
+         event.target.sbtn.disabled = false ; 
+      //   navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
         }) // Handle the response from backend here
-        .catch((err) => { }); // Catch errors if any
+        .catch((err) => {  
+
+           alert( err) ; 
+          event.target.sbtn.disabled = false ; 
+        }); // Catch errors if any
 
     }
 
@@ -1027,7 +1050,7 @@ setSelectedOption( null) ;
  
 
 
-             <input type="submit" value="Submit" style={{ height : "56%"  , width : "15%" , borderRadius : 15  , backgroundColor : "#FCC046"   , border : "0px"}}   />   
+             <input name="sbtn" type="submit" value="Submit" style={{ height : "56%"  , width : "15%" , borderRadius : 15  , backgroundColor : "#FCC046"   , border : "0px"}}   />   
 
              </div>
          </div>
@@ -1209,7 +1232,7 @@ setSelectedOption( null) ;
 
         <div   style= {{ width :"63.61%" ,  backgroundColor : "#FFF8EE", height: "15.61%" , display :"flex" , alignItems : "center" , justifyContent : "flex-end"}}>   
             
-        <input   className="inner_table_btn"  type="submit" value="Submit"   style= {{ width :"15.98%" ,  backgroundColor : "#FCC046", height: "34%"  , border : "0px solid black"}}  /> 
+        <input   name="sbtn" className="inner_table_btn"  type="submit" value="Submit"   style= {{ width :"15.98%" ,  backgroundColor : "#FCC046", height: "34%"  , border : "0px solid black"}}  /> 
         </div>  
 
    
@@ -1341,7 +1364,7 @@ setSelectedOption( null) ;
 
        <div   style= {{ width :"63.61%" ,  backgroundColor : "#FFF8EE", height: "15.61%" , display :"flex" , alignItems : "center" , justifyContent : "flex-end"}}>   
            
-       <input   className="inner_table_btn"  type="submit" value="Submit"   style= {{ width :"15.98%" ,  backgroundColor : "#FCC046", height: "34%"  , border : "0px solid black"}}  /> 
+       <input name="sbtn"  className="inner_table_btn"  type="submit" value="Submit"   style= {{ width :"15.98%" ,  backgroundColor : "#FCC046", height: "34%"  , border : "0px solid black"}}  /> 
        </div>  
 
   
@@ -1481,7 +1504,7 @@ setSelectedOption( null) ;
 
        <div className ="upload-body-div3" >   
 
-       <input   className="inner_table_btn"  type="submit" value="Submit" style={{  width : "15%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       <input  name="sbtn"   className="inner_table_btn"  type="submit" value="Submit" style={{  width : "15%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
        </div> 
 
 
@@ -1507,7 +1530,7 @@ setSelectedOption( null) ;
     
    
 
-    case "upload_picture" :
+    case "upload_picture_task" :
 
     return (     
 
@@ -1546,7 +1569,7 @@ setSelectedOption( null) ;
 
        <div className ="upload-body-div3" >   
 
-       <input   className="inner_table_btn"   type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       <input name="sbtn"   className="inner_table_btn"   type="submit" value="Submit" style={{  width : "17%" , height : "50%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
        </div> 
 
 
@@ -1636,7 +1659,7 @@ setSelectedOption( null) ;
 
        <div className ="upload-body-div3" >   
 
-       <input   className="inner_table_btn"     type="submit" value="Submit" style={{  width : "15%" , height : "52%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
+       <input name="sbtn"   className="inner_table_btn"     type="submit" value="Submit" style={{  width : "15%" , height : "52%"  , backgroundColor : "white"  , border : "0px"  , backgroundColor : "#FCC046"}}   /> 
        </div> 
 
 

@@ -102,7 +102,7 @@ function  ModuleContentType() {
           <div  style = {{ height : "36.96%"   , backgroundColor : "#F1F2F7"  , display : "flex"  ,   justifyContent : "space-between"  , flexDirection : "column"  ,  alignItems : "flex-end"}}>  
 
 
-          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_picture"   ,   sub_type : "upload_picture"    , type_name :   name     ,    type :   location.state.type   , course_name :  courseName  , userInfo :  location.state.userInfo  , courseId: location.state.courseId  }}  ,  { replace : false}  )   } }         style={{ height: "26.5%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30}}>
+          <div   className="moduleContentType-btn"  onClick={ () => {     navigate(  "/home/course/draftcourse/module/uploadcontent"   ,    { state: {  typeId : "upload_picture_task"   ,   sub_type : "upload_picture"    , type_name :   name     ,    type :   location.state.type   , course_name :  courseName  , userInfo :  location.state.userInfo  , courseId: location.state.courseId  }}  ,  { replace : false}  )   } }         style={{ height: "26.5%" , width : "45%",  backgroundColor : "#B7B7D1"  ,  borderRadius : 30}}>
           <p style= {{  fontWeight : 600 }}>Create task: picture upload</p>
           </div>
 
