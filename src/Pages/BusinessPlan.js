@@ -19,8 +19,30 @@ function BusinessPlan() {
     const [ typeOfPlan  , setTypeOfPlan  ] =  useState( "" )  ;
     const [ taskName   , setTaskName ] =  useState( "" )  ;
     const [ noOfCharacter  , setNoOfCharacter] =  useState( "" )  ;
-
+    const [ selectedTaskType  , setSelectedTaskType  ] =  useState( "") ; 
     const  navigate = useNavigate() ;  
+  
+
+
+
+
+
+
+
+
+    const handleCheckboxChange = (  option  ) => {
+            
+      console.log( "kjhk") ; 
+         console.log( option) ; 
+         setSelectedTaskType( option)  ;
+
+    }
+ 
+    
+
+
+     
+
 
 
 
@@ -32,7 +54,9 @@ function BusinessPlan() {
       console.log ( taskName  ) ;   
       console.log ( noOfCharacter  ) ; 
     
+        
 
+      if( selectedTaskType !== ""){
        axios({ 
       
         url : "http://3.123.37.47:5000/admin/bp_registration"  ,   
@@ -43,7 +67,8 @@ function BusinessPlan() {
           "task_name": taskName ,
           "bp_name": businessPlan , 
           "total_character": noOfCharacter, 
-          "course_name": location.state.courseName 
+          "course_name": location.state.courseName  , 
+          "sub_type" : selectedTaskType
         }
   
        }).then( ( res) => {   
@@ -68,7 +93,10 @@ function BusinessPlan() {
   
         }  ) ;  
    
- 
+      }else{
+
+        alert( "Please select the type of business plan !")
+      }
  
  
        }  
@@ -97,7 +125,7 @@ function BusinessPlan() {
 
 
 
-      <div  className="clientview_table_inner_div_column_name"  style= {{    alignItems : "center"  , justifyContent : "center" ,  borderBottom : "1px solid black" }}>
+      <div  className="clientview_table_inner_div_column_name"  style= {{    alignItems : "center"  , justifyContent : "center" ,  borderBottom : "1px solid #B6B7D0"  ,  borderTop  : "1px solid #B6B7D0"    }}>
        
 
 
@@ -116,17 +144,17 @@ function BusinessPlan() {
 
     <div className="clientview_table_inner_div_column_name"   style={{backgroundColor : "#FFF"}}   > 
 
-    <div  className="BusinessPlan_inner_box"  style= {{   width: "15%"  ,  height: "100%"    ,  borderRight : "1px solid black" }}>
+    <div  className="BusinessPlan_inner_box"  style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
     <p>Sl No</p>
     </div> 
-    <div   className="BusinessPlan_inner_box"  style= {{   width: "20%" , height: "100%"  , borderRight : "1px solid black" }}>
+    <div   className="BusinessPlan_inner_box"  style= {{   width: "47%" , height: "100%"  , borderRight : "1px solid #B6B7D0" }}>
       <p>Type</p>
     </div>
-    <div  className="BusinessPlan_inner_box"   style= {{   width: "20%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
+    <div  className="BusinessPlan_inner_box"   style= {{   width: "30%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
       <p>Name of task</p>
     </div>
-    <div  className="BusinessPlan_inner_box"   style= {{  width: "45%"  ,  height: "100%"  , borderRight : "1px solid black"}}>
-      <p>Number of Characters</p>
+    <div  className="BusinessPlan_inner_box"   style= {{  width: "15%"  ,  height: "100%" }}>
+      <p  style={{ textAlign : "center"}} >Number of Characters</p>
     </div> 
   
       
@@ -134,22 +162,73 @@ function BusinessPlan() {
    </div>  
     
 
-   <div className="clientview_table_inner_div_column_name"   style={{backgroundColor : "#FFF"  , borderBottom : "1px solid black"  , borderTop : "1px solid black"}}   >  
-    <div  style= {{   width: "15%"  ,  height: "100%"   ,  borderRight : "1px solid black"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center" }}>
+   <div className="clientview_table_inner_div_column_name"   style={{   height : "30%"   , backgroundColor : "#FFF"  , borderBottom : "1px solid #B6B7D0"  , borderTop : "1px solid #B6B7D0"}}   >  
+
+
+    <div  style= {{   width: "8%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center" }}>
      <p>1</p>
     </div> 
-    <div style= {{   width: "20%" , height: "100%"   , borderRight : ""  , display: "flex"  , alignItems: "center" , justifyContent : "center"   }}> 
+    <div style= {{   width: "47%" , height: "100%"   , borderRight : "1px solid #B6B7D0"  , display: "flex"  , alignItems: "center" , justifyContent : "space-around"        }}> 
 
-    <input   style ={{ height: "60%"  , borderRadius : 15  }}   type="text"  value= {  typeOfPlan }    onChange={ (e) => {  setTypeOfPlan( e.target.value)} }  /> 
-    </div> 
+  {/*   <input   style ={{ height: "60%"  , borderRadius : 15  }}   type="text"  value= {  typeOfPlan }    onChange={ (e) => {  setTypeOfPlan( e.target.value)} }  />   
 
-    <div style= {{   width: "20%" ,  height: "100%"  , borderRight : "1px solid black"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center"}  }>
-    <input style ={{ height: "60%"  , borderRadius : 15  }}  type="text"  value= { taskName }    onChange={ (e) => {  setTaskName( e.target.value)} }     /> 
+ */}  
+  
+  <div  style= {{  width : "30%"   ,  height : "35%"  , backgroundColor : "#FCC046"   ,  display : "flex"   , alignItems : "center"  , justifyContent : "center"  , borderRadius : "20px"}}>  
+
+  <div  style={{  height : "50%"  ,  width : "50%"   ,  display : "flex"   , alignItems : "flex-end"  , justifyContent : "center" }}  >
+ <p style = {{ fontSize : 16   , textAlign : "center"  , fontWeight : "500"}} >Text</p>   
+  </div> 
+ 
+
+ <div  style={{  height : "50%"  ,   width : "50%"  , display : "flex"   , alignItems :  "flex-end"  , justifyContent : "center"  , paddingBottom : "2px"}}>
+   <input  type="checkbox"  checked = { selectedTaskType === "text"  }    onChange={  () => handleCheckboxChange("text" ) }     />  
+  </div> 
+
+  </div>  
+   
+
+  <div  style= {{  width : "30%"   ,  height : "35%"  , backgroundColor : "#FCC046"   ,  display : "flex"   , alignItems : "center"  , justifyContent : "center"  ,  borderRadius : "20px"}}>  
+
+<div  style={{ height : "50%"  , width : "50%"   ,  display : "flex"   , alignItems : "flex-end"  , justifyContent : "center" }}  >
+<p style = {{ fontSize : 16   , textAlign : "center"  , fontWeight : "500"}} >Image</p>   
+</div> 
+
+
+<div  style={{ height : "50%"   , width : "50%"  , display : "flex"   , alignItems :  "flex-end"  , justifyContent : "center"  , paddingBottom : "2px"}}>
+ <input  style={{ alignItems : "center"}}   type="checkbox"  checked = {  selectedTaskType === "image"  }    onChange={  () => handleCheckboxChange( "image") }     />  
+</div> 
+
+</div>   
+
+
+<div  style= {{  width : "30%"   ,  height : "35%"  , backgroundColor : "#FCC046"   ,  display : "flex"   , alignItems : "center"  , justifyContent : "center"  ,  borderRadius : "20px"}}>  
+
+  <div  style={{ height : "50%"  , width : "50%"   ,  display : "flex"   , alignItems : "flex-end"  , justifyContent : "center" }}  >
+ <p style = {{ fontSize : 16   , textAlign : "center"  , fontWeight : "500"}} >Both</p>   
+  </div> 
+ 
+
+ <div  style={{ height : "50%"   , width : "50%"  , display : "flex"   , alignItems :  "flex-end"  , justifyContent : "center"  , paddingBottom : "2px"}}>
+   <input  style={{ alignItems : "center"}}   type="checkbox" checked = {  selectedTaskType ===  "both" }    onChange={  () => handleCheckboxChange( "both") }    />  
+  </div> 
+
+  </div>  
+
+
+
+
+
+
+    </div > 
+
+    <div style= {{   width: "30%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  ,   display: "flex"  , alignItems: "center" , justifyContent : "center"}  }>
+    <input style ={{ height: "40%"  , borderRadius : 15  }}  type="text"  value= { taskName }    onChange={ (e) => {  setTaskName( e.target.value)} }     /> 
     </div>
 
 
-    <div style= {{  width: "45%"  ,  height: "100%"   , borderRight : "1px solid black" , display: "flex"  , alignItems: "center" , justifyContent : "center"}}>
-    <input  style ={{ height: "60%"  , borderRadius : 15  ,  width :"85%" }}  type="number"   value= { noOfCharacter }    onChange = { (e) => {  setNoOfCharacter( e.target.value)} }   /> 
+    <div style= {{  width: "15%"  ,  height: "100%"   , display: "flex"  , alignItems: "center" , justifyContent : "center"}}>
+    <input  style ={{ height: "40%"  , borderRadius : 15  ,  width :"85%" }}  type="number"   value= { noOfCharacter }    onChange = { (e) => {  setNoOfCharacter( e.target.value)} }   /> 
     </div> 
   
     

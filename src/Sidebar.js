@@ -17,17 +17,36 @@ function SideBar( props ) {
    const  navigate = useNavigate() ; 
 
     // console.log( props.info) ;  
+
    const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
   
     
    useEffect(() => { 
+       
+       
+   let  logo_name =  props.info.name  ; 
+   var names = logo_name.split(' ') ; 
+   console.log( names) ; 
+   let initials = names[0].substring(0, 1).toUpperCase();
+
+   if (names.length > 1) {
+   initials += names[names.length - 1].substring(0, 1).toUpperCase();
+     }
+   
+
+   console.log( initials) ; 
+
+
+
+
 
        if(   props.info.type === "system_admin"){
            
-          
+           
          let  newUser = {
             name : props.info.name , 
-            type : "System Admin"
+            type : "System Admin" , 
+            nameInitial : initials  ,
          }
          setUserInfo( newUser ) ;
        }
@@ -37,7 +56,8 @@ function SideBar( props ) {
           
          let  newUser = {
             name : props.info.name , 
-            type : "Content Admin"
+            type : "Content Admin"  , 
+            nameInitial : initials   , 
          }
          setUserInfo( newUser ) ;
        } 
@@ -47,7 +67,8 @@ function SideBar( props ) {
           
          let  newUser = {
             name : props.info.name , 
-            type : "Program Admin"
+            type : "Program Admin" , 
+            nameInitial : initials 
          }
          setUserInfo( newUser ) ;
        } 
@@ -91,7 +112,7 @@ function SideBar( props ) {
     
                      <div style= {{ height : "80%" , width: "37%"  , backgroundColor : "white"  ,  borderRadius : "50%"   , display : "flex"  , justifyContent : "center"  , alignItems : "center"}}> 
 
-             <p style= {{ fontSize : "24px"  , color: "#5A6199" }} > RM</p>
+             <p style= {{ fontSize : "24px"  , color: "#5A6199" }} >{ userInfo.nameInitial }</p>
                        </div>
          </div>  
           

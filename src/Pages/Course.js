@@ -228,14 +228,12 @@ function Course() {
 
         
         <div className="course_body"  >      
-          
-
-          
+        
 
       <CoursePopup  trigger= { popup  } setTrigger={ setPopup }   screenType = { popupScreenType }    data = { popupInfo} > 
       </CoursePopup>
 
-        <div  className="clientview_body1"   style= {{ backgroundColor : '#F1F2F7'}} > 
+        <div  className="clientview_body1"  > 
          
              </div>
 
@@ -334,7 +332,7 @@ function Course() {
         
         <div className="course_body"   >    
 
-        <div  className="clientview_body1"  style= {{ backgroundColor : '#F1F2F7'}}  > 
+        <div  className="clientview_body1"  > 
            
              </div>
 

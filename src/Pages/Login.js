@@ -71,8 +71,9 @@ function Login() {
 
 
           alert( "Login Successful!")  ;   
-          localStorage.setItem('items', JSON.stringify( res.data.data.name));
-          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  ,  userInfo : {  name : res.data.data.name   ,   type : res.data.data.type_id   }   }} ,  { replace : false}  )  ;
+          localStorage.setItem('items', JSON.stringify( res.data.data.name));   
+ 
+         navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  ,  userInfo : {  name : res.data.data.name   ,   type : res.data.data.type_id   }   }} ,  { replace : false}  )  ;
 
         } 
         else {

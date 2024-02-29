@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState   , useEffect } from "react"; 
 import Sidebar  from "../Sidebar" ;   
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import "../Style/AddAccount.css" ;
@@ -14,11 +14,10 @@ function AddAccount() {
     const location = useLocation();
    // const [ typeId , setTypeId ] =  useState(  ) ;   
    const [  typeId  , setTypeId ]   = useState( location.state.typeId   ) ;    
-  
-   const [  type  , setType ]   = useState( location.state.type   ) ;   
-   
+   const [  type  , setType ]   = useState( location.state.type   ) ;  
+   const [  moduleDetail  , setModuleDetail ]   = useState( null  ) ;  
      // to select the admin type
-     const [  admin ,   setAdmin  ]   = useState( "" ) ; 
+const [  admin ,   setAdmin  ]   = useState( "" ) ; 
 
  
    console.log( location.state.typeId  ) ; 
@@ -36,8 +35,41 @@ function AddAccount() {
   console.log("add account ") ;  
  // console.log(  admin   )   ;
 
+ useEffect(() => { 
+    
 
+        if(   location.state.typeId  === "system_admin_student" ){
+          
+                console.log("hjgj") ; 
+        
+        axios({ 
+  
+         url : "http://3.123.37.47:5000/admin/motc"  ,   
+         
+         method : "POST"  , 
+         data : {
+           
+                "program_id" : location.state.programId , 
+                "student_id" : location.state.schoolId
+         }
+  
+        }).then( ( res) => {   
+  
+  
+          console.log(  res.data.data ) ;  
+          setModuleDetail(   res.data.data  ) ; 
+           
+         //  console.log(   res.data.data[1].name )  ;
+  
+        } ).catch(( err) => {  
+            console.log( "error") ;
+  
+         }  ) ;  
 
+        }  
+    } , [])   ; 
+    
+  
 
 
    
@@ -46,9 +78,6 @@ function AddAccount() {
     
      // to keep track of the program 
      const [ assignedProgram ,   setAssignedProgram  ]   = useState( location.state.programName) ;     
-
-
-
      // to keep track of the client name 
      const [ client ,   setClient   ]   = useState( location.state.client_name ) ;   
      
@@ -363,7 +392,48 @@ function AddAccount() {
        
   
 
-        // to add new student in the database 
+        // to add new student in the database  and update answer 
+    
+       const  addStudentAnswerHolder = (   programId , studentId) => {
+             
+
+
+        axios({ 
+
+                url : "http://3.123.37.47:5000/admin/motc"  ,   
+  
+                method : "POST"  ,  
+  
+                data : {
+                  
+                        "program_id" : programId  , 
+                        "student_id" : studentId
+  
+                   
+                }
+          
+               }).then( ( res) => {   
+          
+             
+                  
+                    console.log(  res.data) ;  
+                  
+  
+  
+                  // navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : location.state.type ,   schoolId : location.state.schoolId  ,        programId : location.state.programId   , userInfo :  location.state.userInfo }}        ,  { replace : false}  )  
+      
+                 
+               } ).catch(( err) => { 
+                   console.log( "error") ;
+          
+                }  ) ;
+
+
+        } 
+
+
+
+
      const  addStudent = ( event) => {
 
              
@@ -405,7 +475,8 @@ function AddAccount() {
                 "password" :event.target.password.value  , 
                 "type_id" :  "student"   , 
                 "program_id" : location.state.programId,  
-                "school_id" : location.state.schoolId  ,
+                "school_id" : location.state.schoolId  , 
+
                  
               }
         
@@ -415,11 +486,15 @@ function AddAccount() {
                  
                   alert( "Registered Successfully.")  ; 
                  
-
+                
                   console.log(  res.data.data) ;  
+                  console.log(  res.data.data._id) ; 
+                  console.log(  location.state.programId) ; 
 
+                  addStudentAnswerHolder( location.state.programId , res.data.data._id) ; 
+                       
 
-                 navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : location.state.type ,   schoolId : location.state.schoolId  ,        programId : location.state.programId   , userInfo :  location.state.userInfo }}        ,  { replace : false}  )  
+                // navigate(  "/home/dashboard/client/student"      ,   { state: {    typeId : location.state.type ,   schoolId : location.state.schoolId  ,        programId : location.state.programId   , userInfo :  location.state.userInfo }}        ,  { replace : false}  )  
     
                 } 
                 else {
