@@ -171,11 +171,9 @@ const CoursePopup = (  props ) => {
 
           <div className="popup" > 
           
-            <div className="course_popup-inner"   style = {{ borderRadius : 15  }}  >  
+            <div className="course_popup-inner"   style = {{ borderRadius : 20 }}  >  
 
-                  <div className="course_popup-inner-body1"> 
-
-                   <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
+                  <div className="course_popup-inner-body1">   
                   
                   </div> 
 
@@ -195,13 +193,13 @@ const CoursePopup = (  props ) => {
 
 
 
-                  <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"  , color : "#FFF" }}  
+                  <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"   }}  
                      onClick={ () => {  props.setTrigger( false ) }  }
                   type="button" value = "Cancel"   />  
 
 
 
-                  <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" ,  color : "#FFF" }} 
+                  <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#de0a26" ,  color : "#FFF" }} 
                   type="button" value = "Delete"    onClick={()  => {  statusChange( ) }  }     />   
 
 
@@ -224,11 +222,11 @@ const CoursePopup = (  props ) => {
 
     <div className="popup" > 
     
-      <div className="course_popup-inner"   style = {{ borderRadius : 15  }}  >  
+      <div className="course_popup-inner"   style = {{ borderRadius : 20  }}  >  
 
             <div className="course_popup-inner-body1"> 
 
-             <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
+  
             
             </div> 
 
@@ -248,12 +246,12 @@ const CoursePopup = (  props ) => {
 
 
 
-            <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"  , color : "#FFF" }}   
+            <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" }}   
             type="button" value = "Cancel"  onClick={ () => {  props.setTrigger( false ) }  }  />  
 
 
 
-            <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" ,  color : "#FFF" }} 
+            <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#2db92d" ,  color : "#FFF" }} 
             type="button" value = "Submit"   onClick={()  => {  statusChange( ) }  }  />   
 
 
@@ -276,11 +274,11 @@ const CoursePopup = (  props ) => {
 
           <div className="popup" > 
           
-            <div className="course_popup-inner"   style = {{ borderRadius : 15  }}  >  
+            <div className="course_popup-inner"   style = {{ borderRadius : 20  }}  >  
 
                   <div className="course_popup-inner-body1"> 
 
-                   <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
+               
                   
                   </div> 
 
@@ -300,13 +298,13 @@ const CoursePopup = (  props ) => {
 
 
 
-                  <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"  , color : "#FFF" }}  
+                  <input className="course_popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1"   }}  
                      onClick={ () => {  props.setTrigger( false ) }  }
                   type="button" value = "Cancel"   />  
 
 
 
-                  <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" ,  color : "#FFF" }} 
+                  <input  className="course_popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#de0a26" ,  color : "#FFF" }} 
                   type="button" value = "Delete"    onClick={()  => {  statusChange( ) }  }     />   
 
 

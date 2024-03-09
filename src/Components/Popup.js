@@ -4,7 +4,8 @@
 import React from 'react'; 
 import "../Components/Popup.css" ; 
 import { useState  , useEffect} from "react";
-import axios from "axios"  ;   
+import axios from "axios"  ;  
+import CloseIcon from '@mui/icons-material/Close'; 
 
 
 
@@ -218,11 +219,13 @@ const Popup = (  props ) => {
 
           <div className="popup" > 
           
-            <div className="popup-inner"   style = {{ borderRadius : 15  }}  >  
+            <div className="popup-inner"   style = {{ borderRadius : 20  }}  >  
 
                   <div className="popup-inner-body1"> 
 
-                   <button className="close-btn" onClick={ () => {  props.setTrigger( false ) }  }>close</button>   
+                   <button className="close-btnn"   style={{ backgroundColor : "#353B55"}}  onClick={ () => {  props.setTrigger( false ) }  }>
+                   <CloseIcon  sx={{ color: "#FFFFFF"  , fontSize : 35   }}/>
+                    </button>   
                   
                   </div> 
 
@@ -231,7 +234,7 @@ const Popup = (  props ) => {
 
                     <p> Do you want to change the status of </p> 
 
-                     { props.children}
+                     <p>{ props.children}</p>
 
           
                    </div>
@@ -244,13 +247,13 @@ const Popup = (  props ) => {
 
 
 
-                  <input className="popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#32CD32"  , color : "#FFF" }}   
+                  <input className="popup-inner-body2-button"    style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" }}   
                    onClick={()  => {  statusChange( "active") }}
                   type="button" value = "Active"   />  
 
 
 
-                  <input  className="popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#FCC046" ,  color : "#FFF" }} 
+                  <input  className="popup-inner-body2-button"   style = {{ borderRadius : 15   , backgroundColor : "#B7B7D1" }} 
                      onClick={()  => {  statusChange( "inactive") }}
                   type="button" value = "Inactive"   />   
 

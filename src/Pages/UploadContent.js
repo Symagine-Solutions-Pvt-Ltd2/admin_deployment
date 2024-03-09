@@ -941,36 +941,36 @@ setSelectedOption( null) ;
         <div className ="upload-body-div2"  style= {{ width : "100%"}}  >   
 
 
-             <div className="upload-body-div2-inner-div1"   style={{ borderTop : "1px solid blue"  , borderBottom : "1px solid blue"}}> 
+             <div className="upload-body-div2-inner-div1"   style={{ borderTop : "1px solid #B6B7D0"  , borderBottom : "1px solid #B6B7D0"}}> 
 
 
-             <div   className=  "upload-body-box" style= {{   width: "10%"  ,  height: "100%" ,  borderRight : "1px solid black" }}>
-               <p>Sl No</p>
+             <div   className=  "upload-body-box" style= {{   width: "10%"  ,  height: "100%" ,  borderRight : "1px solid #B6B7D0" }}>
+               <p className="header_text" >Sl No</p>
                </div> 
-               <div className=  "upload-body-box"  style= {{   width: "22.5%" , height: "100%"   , borderRight : "1px solid black" }}>
-                 <p>Question</p>
+               <div className=  "upload-body-box"  style= {{   width: "22.5%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
+                 <p className="header_text" >Question</p>
                </div>
-               <div className=  "upload-body-box" style= {{   width: "22.5%" ,  height: "100%"  , borderRight : "1px solid black"}  }>
-                 <p>Answer 1</p>
+               <div className=  "upload-body-box" style= {{   width: "22.5%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+                 <p className="header_text" >Answer 1</p>
                </div>
-               <div className=  "upload-body-box" style= {{  width: "22.5%"  ,  height: "100%"    , borderRight : "1px solid black"}}>
-                 <p>Answer 2</p>
+               <div className=  "upload-body-box" style= {{  width: "22.5%"  ,  height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
+                 <p className="header_text" >Answer 2</p>
                </div> 
-               <div  className=  "upload-body-box" style= {{   width: "22.5%"  ,  height: "100%" , borderRight : "1px solid black"}}> 
-                <p>Answer 3</p>
+               <div  className=  "upload-body-box" style= {{   width: "22.5%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+                <p className="header_text">Answer 3</p>
                </div> 
 
              </div> 
 
-             <div className="upload-body-div2-inner-div2" style={{ borderBottom : "1px solid blue" }} >
+             <div className="upload-body-div2-inner-div2" style={{ borderBottom : "1px solid #B6B7D0" }} >
     
-             <div className=  "upload-body-box" style= {{   width: "10%"  ,  height: "100%" ,  borderRight : "1px solid black" }}>
+             <div className=  "upload-body-box" style= {{   width: "10%"  ,  height: "100%" ,  borderRight : "1px solid #B6B7D0" }}>
               <p>1</p>
                </div>  
 
 
 
-               <div className=  "upload-body-box" style= {{   width: "22.5%" ,  height: "100%" , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
+               <div className=  "upload-body-box" style= {{   width: "22.5%" ,  height: "100%" , borderRight : "1px solid #B6B7D0" ,  display : "flex"  , flexDirection : "row"}  }> 
 
 
                    <input type="text"
@@ -984,7 +984,7 @@ setSelectedOption( null) ;
 
 
 
-               <div style= {{   width: "22.5%" ,  height: "100%"  , borderRight : "1px solid black" ,  display : "flex"  , flexDirection : "row"}  }> 
+               <div style= {{   width: "22.5%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0" ,  display : "flex"  , flexDirection : "row"}  }> 
 
                     <div style={{ width: "80%" , height :"100%"  ,  display: "flex" , alignItems :"center" , justifyContent: "center"}} >
              

@@ -211,11 +211,11 @@ function StudentView() {
 
 
        <div  className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
-         <p>Yes</p>
+         <p> {  el.bp_submitted  }</p>
        </div>  
 
        <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-         <p>Yes</p>
+         <p>{el.certificate }</p>
        </div>  
 
        <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
@@ -386,11 +386,11 @@ function StudentView() {
 
 
        <div  className="clientview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
-         <p>Yes</p>
+         <p> {  el.bp_submitted  }</p>
        </div>  
 
        <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-         <p>Yes</p>
+         <p>{el.certificate }</p>
        </div>  
 
        <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
