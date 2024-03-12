@@ -33,7 +33,7 @@ const Popup = (  props ) => {
                  
       axios({ 
       
-        url : "http://3.123.37.47:5000/admin/scclient"  ,   
+        url : "https://learn-up.app/admin/scclient"  ,   
 
         method : "POST"  ,  
 
@@ -71,7 +71,7 @@ const Popup = (  props ) => {
                  
      axios({ 
     
-      url : "http://3.123.37.47:5000/admin/school_sc"  ,   
+      url : "https://learn-up.app/admin/school_sc"  ,   
 
       method : "POST"  ,  
 
@@ -105,7 +105,7 @@ const Popup = (  props ) => {
                     
       axios({ 
     
-      url : "http://3.123.37.47:5000/admin/facilitator_sc"  ,   
+      url : "https://learn-up.app/admin/facilitator_sc"  ,   
 
       method : "POST"  ,  
 
@@ -136,7 +136,7 @@ const Popup = (  props ) => {
    
      axios({ 
     
-      url : "http://3.123.37.47:5000/admin/student_sc"  ,   
+      url : "https://learn-up.app/admin/student_sc"  ,   
 
       method : "POST"  ,  
 
@@ -172,7 +172,7 @@ const Popup = (  props ) => {
 
     axios({ 
     
-      url : "http://3.123.37.47:5000/admin/scadmin"  ,   
+      url : "https://learn-up.app/admin/scadmin"  ,   
 
       method : "POST"  ,  
 

@@ -57,7 +57,7 @@ function  FacilitatorView() {
         
         axios({ 
   
-         url : "http://3.123.37.47:5000/facilitator/a_facilitator"  ,  
+         url : "https://learn-up.app/facilitator/a_facilitator"  ,  
          method : "POST"  , 
          data : {
            

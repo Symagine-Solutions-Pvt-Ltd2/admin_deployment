@@ -12,7 +12,7 @@ function  DraftCourses() {
 
         axios({ 
 
-         url : "http://3.123.37.47:5000/admin/draftcourse"  ,  
+         url : "https://learn-up.app/admin/draftcourse"  ,  
          method : "POST"  , 
          data : {
            

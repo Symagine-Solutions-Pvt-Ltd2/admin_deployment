@@ -45,7 +45,7 @@ function FirstView() {
 
     axios({ 
 
-     url : "http://3.123.37.47:5000/admin/a_program"  ,  
+     url : "https://learn-up.app/admin/a_program"  ,  
      method : "POST"  , 
      data : {
        
@@ -75,7 +75,7 @@ function FirstView() {
 
      axios({ 
 
-      url : "http://3.123.37.47:5000/admin/all_count"  ,  
+      url : "https://learn-up.app/admin/all_count"  ,  
       method : "POST"  , 
       data : { 
  

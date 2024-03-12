@@ -28,7 +28,7 @@ const MaterialsPopup = (  props ) =>{
 
             axios({ 
           
-              url : "http://3.123.37.47:5000/admin/all_qd"  ,   
+              url : "https://learn-up.app/admin/all_qd"  ,   
       
               method : "POST"  ,  
               headers: { 
@@ -61,7 +61,7 @@ const MaterialsPopup = (  props ) =>{
           
           axios({ 
           
-            url : "http://3.123.37.47:5000/admin/mschng"  ,   
+            url : "https://learn-up.app/admin/mschng"  ,   
     
             method : "POST"  ,  
             headers: { 

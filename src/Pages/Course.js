@@ -45,7 +45,7 @@ function Course() {
 
       axios({ 
 
-            url : "http://3.123.37.47:5000/admin/course"  ,   
+            url : "https://learn-up.app/admin/course"  ,   
 
             method : "POST"  ,  
 
@@ -104,7 +104,7 @@ function Course() {
         
         axios({ 
 
-              url : "http://3.123.37.47:5000/admin/draftcourse"  ,  
+              url : "https://learn-up.app/admin/draftcourse"  ,  
               method : "POST"  , 
              data : {
        
@@ -135,7 +135,7 @@ function Course() {
 
                 axios({ 
 
-                  url : "http://3.123.37.47:5000/admin/p_course"  ,   
+                  url : "https://learn-up.app/admin/p_course"  ,   
 
                   method : "POST"  ,  
                   

@@ -39,7 +39,7 @@ function  AdminView() {
 
       axios({ 
 
-       url : "http://3.123.37.47:5000/admin/aladmin"  ,   
+       url : "https://learn-up.app/admin/aladmin"  ,   
        
        method : "POST"  , 
        data : {

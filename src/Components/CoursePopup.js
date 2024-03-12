@@ -27,7 +27,7 @@ const CoursePopup = (  props ) => {
                  
       axios({ 
       
-        url : "http://3.123.37.47:5000/admin/course_cc"  ,   
+        url : "https://learn-up.app/admin/course_cc"  ,   
 
         method : "POST"  ,  
 
@@ -54,7 +54,7 @@ const CoursePopup = (  props ) => {
 
       axios({ 
       
-        url : "http://3.123.37.47:5000/admin/course_cc"  ,   
+        url : "https://learn-up.app/admin/course_cc"  ,   
 
         method : "POST"  ,  
 
@@ -90,7 +90,7 @@ const CoursePopup = (  props ) => {
          // alert( "in bplan") ; 
           axios({ 
           
-            url : "http://3.123.37.47:5000/admin/all_bp_material_delete"  ,   
+            url : "https://learn-up.app/admin/all_bp_material_delete"  ,   
     
             method : "POST"  ,  
     
@@ -120,7 +120,7 @@ const CoursePopup = (  props ) => {
 
           axios({ 
           
-            url : "http://3.123.37.47:5000/admin/mwchng"  ,   
+            url : "https://learn-up.app/admin/mwchng"  ,   
     
             method : "POST"  ,  
     

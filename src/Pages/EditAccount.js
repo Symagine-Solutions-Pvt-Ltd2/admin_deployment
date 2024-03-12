@@ -79,7 +79,7 @@ function  EditAccount(  {  props }) {
         
          axios({ 
        
-          url : "http://3.123.37.47:5000/admin/p_course"  ,   
+          url : "https://learn-up.app/admin/p_course"  ,   
        
           method : "POST"  , 
           data : {
@@ -144,7 +144,7 @@ function  EditAccount(  {  props }) {
       
 axios({ 
       
-                      url : "http://3.123.37.47:5000/admin/e_school"  ,   
+                      url : "https://learn-up.app/admin/e_school"  ,   
       
                       method : "POST"  ,  
 
@@ -195,7 +195,7 @@ axios({
       
               axios({ 
       
-                      url : "http://3.123.37.47:5000/admin/client_e"  ,   
+                      url : "https://learn-up.app/admin/client_e"  ,   
       
                       method : "POST"  ,  
 
@@ -269,7 +269,7 @@ axios({
       
 axios({ 
       
-                      url : "http://3.123.37.47:5000/facilitator/e_facilitator"  ,   
+                      url : "https://learn-up.app/facilitator/e_facilitator"  ,   
       
                       method : "POST"  ,  
 
@@ -344,7 +344,7 @@ axios({
             
            axios({ 
       
-        url : "http://3.123.37.47:5000/admin/student_e"  ,   
+        url : "https://learn-up.app/admin/student_e"  ,   
 
         method : "POST"  ,  
 
@@ -434,7 +434,7 @@ axios({
          
          axios({ 
     
-      url : "http://3.123.37.47:5000/admin/eadmin"  ,   
+      url : "https://learn-up.app/admin/eadmin"  ,   
 
       method : "POST"  ,  
 
@@ -506,7 +506,7 @@ axios({
             
            axios({ 
       
-        url : "http://3.123.37.47:5000/admin/e_program"  ,   
+        url : "https://learn-up.app/admin/e_program"  ,   
 
         method : "POST"  ,  
 

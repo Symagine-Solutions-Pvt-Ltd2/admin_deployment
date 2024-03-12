@@ -59,7 +59,7 @@ function BusinessPlan() {
       if( selectedTaskType !== ""){
        axios({ 
       
-        url : "http://3.123.37.47:5000/admin/bp_registration"  ,   
+        url : "https://learn-up.app/admin/bp_registration"  ,   
 
         method : "POST"  , 
         data : {

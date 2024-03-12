@@ -75,7 +75,7 @@ const PasswordPopup= (  props ) => {
 
    axios({ 
 
-     url : "http://3.123.37.47:5000/admin/resendotp" , 
+     url : "https://learn-up.app/admin/resendotp" , 
      method : "POST"  ,   
 
      headers: {   
@@ -117,7 +117,7 @@ const PasswordPopup= (  props ) => {
 
    axios({ 
 
-     url : "http://3.123.37.47:5000/admin/otpvalidate"  ,  
+     url : "https://learn-up.app/admin/otpvalidate"  ,  
      method : "POST"  ,  
 
      data : {

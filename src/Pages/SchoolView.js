@@ -64,7 +64,7 @@ function SchoolView() {
 
         axios({ 
   
-         url : "http://3.123.37.47:5000/admin/ca_school"  ,  
+         url : "https://learn-up.app/admin/ca_school"  ,  
          method : "POST"  , 
          data : {
            

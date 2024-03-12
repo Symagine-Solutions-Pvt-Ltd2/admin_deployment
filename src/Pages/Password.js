@@ -49,7 +49,7 @@ function Password() {
         
        axios({ 
     
-         url : "http://3.123.37.47:5000/admin/confirmpassword"  ,  
+         url : "https://learn-up.app/admin/confirmpassword"  ,  
          method : "POST"  ,  
          headers: {   
 
@@ -93,7 +93,7 @@ function Password() {
 
             axios({ 
     
-                url : "http://3.123.37.47:5000/admin/reset_password"  ,  
+                url : "https://learn-up.app/admin/reset_password"  ,  
                 method : "POST"  ,   
                 data : {
                   
@@ -135,7 +135,7 @@ function Password() {
 
                axios({ 
     
-                url : "http://3.123.37.47:5000/admin/s_reset_password"  ,  
+                url : "https://learn-up.app/admin/s_reset_password"  ,  
                 method : "POST"  ,   
                 data : {
                   

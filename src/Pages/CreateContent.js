@@ -47,7 +47,7 @@ function CreateContent() {
  
   axios({ 
 
-   url : "http://3.123.37.47:5000/admin/p_course"  ,   
+   url : "https://learn-up.app/admin/p_course"  ,   
 
    method : "POST"  , 
    data : {
@@ -105,7 +105,7 @@ function CreateContent() {
 
      axios({ 
 
-      url : "http://3.123.37.47:5000/admin/program"  ,   
+      url : "https://learn-up.app/admin/program"  ,   
 
       method : "POST"  ,  
 
@@ -160,7 +160,7 @@ function CreateContent() {
 
     axios({ 
 
-          url : "http://3.123.37.47:5000/admin/course"  ,   
+          url : "https://learn-up.app/admin/course"  ,   
 
           method : "POST"  ,  
 
@@ -222,7 +222,7 @@ function CreateContent() {
   
       axios({ 
   
-            url : "http://3.123.37.47:5000/admin/mona"  ,   
+            url : "https://learn-up.app/admin/mona"  ,   
   
             method : "POST"  ,  
   
@@ -295,7 +295,7 @@ function CreateContent() {
     
         axios({
           // Endpoint to send files
-          url: "http://3.123.37.47:5000/admin/wona", 
+          url: "https://learn-up.app/admin/wona", 
     
           method: "POST", 
     
