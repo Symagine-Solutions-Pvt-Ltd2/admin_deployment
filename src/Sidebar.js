@@ -26,7 +26,7 @@ function SideBar( props ) {
        
    let  logo_name =  props.info.name  ; 
    var names = logo_name.split(' ') ; 
-   console.log( names) ; 
+   // console.log( names) ; 
    let initials = names[0].substring(0, 1).toUpperCase();
 
    if (names.length > 1) {
@@ -34,7 +34,7 @@ function SideBar( props ) {
      }
    
 
-   console.log( initials) ; 
+  // console.log( initials) ; 
 
 
 

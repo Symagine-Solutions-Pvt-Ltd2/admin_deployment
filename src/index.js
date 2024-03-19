@@ -34,7 +34,7 @@ import ForgotPassword from "./Pages/ForgotPassword" ;
 import Password from "./Pages/Password" ;  
 import  RequireAuth from "./Pages/RequireAuth.js"  ;   
 import Feedback  from './Pages/Feedback.js';
-import AddNewAdmin  from './Pages/AddNewAdmin'; 
+import StudentAnswer from './Pages/StudentAnswer.js';
 
 
 
@@ -42,40 +42,6 @@ import AddNewAdmin  from './Pages/AddNewAdmin';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <BrowserRouter> 
-
-
-    {/* 
- ...............    experiment 
-
-
-
-      <Routes>
-       <Route path= "/"  element ={ <App />}>   
-        <Route index  element ={ <AdminDashboard /> } />  
-
-       <Route path= "dashboard"  element ={ <AdminDashboard /> }  />
-       <Route path= "list"  element ={ <Movablelist /> }  /> 
-       <Route path= "home"  element ={ <Home /> }  /> 
-       <Route path= "form"  element ={ <Form /> }  /> 
-       <Route path= "test"  element ={ <Test /> }  />  
-       <Route path= "modulecontenttype"  element ={ <ModuleContentType /> }  />  
-       <Route path= "manageadmin"  element ={ <ManageAdmin/> }  />  
-       <Route path= "addnewadmin"  element ={ <AddNewAdmin /> }  /> 
-       <Route path= "parent"  element ={ <Parent /> }  /> 
-      <Route path= "app"  element ={ <div>app</div>} />   
-         <Route path="draftcourse"   element= { <DraftCourses /> } /> 
-      <Route path= "getting"  element ={ <GettingStarted /> }  /> 
-       <Route path= "login"  element ={ <Login /> }  />
-       <Route path= "about"  element ={ <About /> }  /> 
-       <Route path="*"   element= { <Error /> } />    
-       <Route path="upload"   element= { <Upload /> } />   
-       <Route path="addprogram"   element= { <Add_Program  /> } />   
-       </Route>   
-         </Routes>  
- */}
-
-   
-
 
 
          
@@ -121,7 +87,8 @@ root.render(
            <Route index  element ={  <StudentView /> }  />  
            <Route  path= "addstudent"  element ={  <AddAccount/> }  />  
            <Route  path= "editstudent"  element ={  <EditAccount/> }  />    
-           <Route  path= "viewplan"  element ={  <Feedback /> }  />    
+           <Route  path= "viewplan"  element ={  <Feedback /> }  />   
+           <Route  path= "studentanswer"  element ={  <StudentAnswer /> }  />   
       </Route>  
    </Route>
    </Route>   

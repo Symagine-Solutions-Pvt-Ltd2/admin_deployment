@@ -8,15 +8,20 @@ import axios from "axios"  ;
 function Feedback() {    
 
   const [ data , setData ] = useState( []); 
+  const [ feedbackArray , setFeedbackArray ] = useState( []);  
 
     const location = useLocation();    
     const  navigate = useNavigate() ; 
 
-  
-    const [ feedbackArray , setFeedbackArray ] = useState( []); 
+
+
     console.log(  location.state.data )  ; 
     console.log(  location.state.userInfo )  ; 
-  
+    console.log(  location.state.typeId )  ; 
+    console.log(  location.state.schoolId )  ;
+    console.log(  location.state.programId )  ; 
+    console.log(  "feedback" )  ;
+    
 
 
 
@@ -39,9 +44,9 @@ function Feedback() {
        }).then( ( res) => {   
  
  
-       /*  // console.log(  res.data ) ;  
+       console.log(  res.data ) ;  
 
-         if( res.data.message === "Information retrieve successfully"){
+        if( res.data.message === "Information retrieve successfully"){
         
   
           const  tempData = res.data.data ;  
@@ -56,7 +61,7 @@ function Feedback() {
             let data1 = { 
              "id"  :  index , 
               "task" :  el.task_name ,
-              "ans" : location.state.data.bp_answer[index]
+              "ans" : location.state.data.bp_answer[index].text 
             }  
             
           tempData3.push( data1) ; 
@@ -68,14 +73,21 @@ function Feedback() {
               setData( tempData3)  ; 
 
          }
-      */
+    
  
        } ).catch(( err) => {  
            console.log( "error") ;
  
         }  ) ; 
 
-  } 
+  } else{
+    
+
+    setTimeout(() => {
+      alert( "Business Plan not submitted by student !") ;
+    }, 500) 
+  
+  }
 
 } , [])  ; 
 
@@ -181,16 +193,19 @@ function Feedback() {
 
                <div className="clientview_table_inner_div_column_name"  style={ { height : "25%"}}>  
                
-               <div    className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
+               <div    className="clientview_table_row_box"  style= {{   width: "30%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text">Details</p>
                </div>
-               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+               <div   className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  }  }>
                  <p className="header_text">Student's answer</p>
+               </div> 
+               <div   className="clientview_table_row_box"  style= {{   width: "7%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0" }  }>
+                 <p className="header_text">Img</p>
                </div>
                <div  className="clientview_table_row_box"   style= {{  width: "30%"  ,  height: "100%"    , borderRight : "1px solid #B6B7D0"}}>
                  <p className="header_text">Feedback</p>
                </div> 
-               <div   className="clientview_table_row_box"  style= {{   width: "20%"  ,  height: "100%"  }}> 
+               <div   className="clientview_table_row_box"  style= {{   width: "8%"  ,  height: "100%"  }}> 
                </div> 
 
 
@@ -207,28 +222,34 @@ function Feedback() {
               data.map( (  el  , index   )  => ( 
 
 
-                <div  key= { index }    style={ {  width : "100%" , height: "33.3%"   , display : "flex" , flexDirection : "row"   ,   borderBottom : "1px solid black" } }>  
+                <div  key= { index }    style={ {  width : "100%" , height: "33.3%"   , display : "flex" , flexDirection : "row"   ,   borderBottom : "1px solid #B6B7D0" } }>  
 
 
 
-               <div   className="clientview_table_row_box"  style= {{   width: "25%" , height: "100%", borderRight : "1px solid black" }}>
+               <div   className="clientview_table_row_box"  style= {{   width: "30%" , height: "100%", borderRight : "1px solid #B6B7D0" }}>
                  <p> {  el.task} </p>
                </div>
-               <div  className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%" , borderRight : "1px solid black"}  }>
+               <div  className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
                  <p> {  el.ans } </p>
                </div> 
 
+               <div  className="clientview_table_row_box"   style= {{   width: "7%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
+             
+             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => { }}>D</button>   
+             </div>  
 
-               <div    className="clientview_table_row_box"  style= {{  width: "30%"  ,  height: "100%"   , borderRight : "1px solid black"}}>
+
+
+               <div    className="clientview_table_row_box"  style= {{  width: "30%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
                 
                <input type="text"   style={{ width : "80%"  ,height : "60%"  , borderRadius : 15  ,   border : "1px solid #5E81F4" }}   defaultValue = {  feedbackArray[index] }    name="feedback"  onChange={  ( e ) => { updateAnswer( e ,   index  ) }}     /> 
 
                </div>  
 
 
-               <div  className="clientview_table_row_box"   style= {{   width: "20%"  ,  height: "100%"  , borderRight : "1px solid black"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
+               <div  className="clientview_table_row_box"   style= {{   width: "8%"  ,  height: "100%"    , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-               <button  style = {{  height : "40%"  , width : "36%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => { submitFeedback()   }}>Share</button>   
+               <button  style = {{  height : "40%"  , width : "70%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => {  }}>Share</button>   
                </div> 
 
 
@@ -242,15 +263,15 @@ function Feedback() {
 
             <div className="clientview_table_inner_div_column_name"  style={ { height : "25%"}}>  
                
-               <div    className="clientview_table_row_box"  style= {{   width: "33%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
+               <div    className="clientview_table_row_box"  style= {{   width: "30%" , height: "100%"   , borderRight : "1px solid #B6B7D0" }}>
                  <p className="header_text">Task Completed</p>
                </div>
-               <div   className="clientview_table_row_box"  style= {{   width: "33%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
-                 <p className="header_text">bkkk</p>
+               <div   className="clientview_table_row_box"  style= {{   width: "32%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+                 <p className="header_text" > {location.state.data.task_completed}  / {location.state.data.task_score } </p>
                </div>
-               <div  className="clientview_table_row_box"   style= {{   width: "33%"  ,  height: "100%"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
+               <div  className="clientview_table_row_box"   style= {{   width: "37%"  ,  height: "100%"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {  }}>See Student Answers</button>   
+             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15   , fontWeight : 600 }}  onClick={() => {  navigate(  "/home/dashboard/client/student/studentanswer"      ,   { state: {     userInfo :  location.state.userInfo     ,    data :  location.state.data    }}        ,  { replace : false}  )   }}>See Student Answers</button>   
              </div> 
                
 
@@ -262,8 +283,8 @@ function Feedback() {
 
               <div className="body3"> 
 
-              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2"   , borderRadius: 25 }}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
-                <p  style={ { textAlign : "center"}}>Approve (to allow download of certificate)</p>
+              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2"   , borderRadius: 25 ,   fontWeight : 600 }}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
+                <p  style={ { textAlign : "center"  }}>Approve (to allow download of certificate)</p>
               </div>
             
               </div>

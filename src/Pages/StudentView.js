@@ -70,8 +70,14 @@ function StudentView() {
         }).then( ( res) => {   
   
   
-          console.log(  res.data.data ) ; 
-           setData(  res.data.data ) ;  
+          if(   res.data.message  === "Information retrieve successfully"  ){
+           
+            setData(  res.data.data ) ; 
+}
+   
+
+
+         //  setData(  res.data.data ) ;  
            
            
          //  console.log(   res.data.data[1].name )  ;
@@ -163,7 +169,7 @@ function StudentView() {
        </div> 
 
        <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
-        <p className="header_text" style= {{ textAlign : "center"}}>View Business Plan</p>
+        <p className="header_text" style= {{ textAlign : "center"}}>Student Progress</p>
        </div> 
        <div className="clientview_table_row_box"  style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style= {{ textAlign : "center"}}>Download</p>
@@ -269,9 +275,9 @@ function StudentView() {
 
       <div className="body3"> 
 
-      <div onClick={ () => { goToNext() } } className="add_new_program_button">
+      <button onClick={ () => { goToNext() } } className="add_new_program_button">
         <p>Add new student</p>
-      </div>
+      </button>
     
       </div>
     
@@ -340,7 +346,7 @@ function StudentView() {
        </div> 
 
        <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
-        <p className="header_text" style={{  textAlign : "center"}} >View Business Plan</p>
+        <p className="header_text" style={{  textAlign : "center"}} >Student Progress</p>
        </div> 
        <div className="clientview_table_row_box"  style= {{   width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text"  >Download</p>

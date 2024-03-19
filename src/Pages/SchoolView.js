@@ -77,11 +77,12 @@ function SchoolView() {
         }).then( ( res) => {   
   
   
-          console.log(  res.data.data ) ; 
-           setData(  res.data.data ) ;  
+          console.log(  res.data.message ) ;   
+         
+          if(   res.data.message  === "Information retrieve successfully"  ){
            
-           
-         //  console.log(   res.data.data[1].name )  ;
+            setData(  res.data.data ) ; 
+}
   
         } ).catch(( err) => {  
             console.log( "error") ;

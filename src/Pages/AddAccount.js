@@ -117,11 +117,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
          
                 alert( "Please check password again!") ;  
                
-        }else if(   event.target.password.value === event.target.email.value  ){
-
-                 
-                 alert( "EmailId and password  can't be same!") ; 
-            }
+        }
         else {
       
               axios({ 
