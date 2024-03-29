@@ -101,12 +101,26 @@ function Login() {
 
     <div   className="InnerBox-1"> 
 
+   
+    <div  className="InnerBox-1" >   
+    <div style= {{ display : "flex"  , flexDirection : "row"}} >
+    <button className="button_c"  style={{ backgroundColor : "#F7E5E9"  , textDecoration : "underline"}}   onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "privacyPolicy" }}     , { replace : false}  )  }  }  >Privacy policy</button> 
+    <button className="button_c" style={{ backgroundColor : "#F7E5E9"  , textDecoration : "underline"}} onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "tandc" }}     , { replace : false}  )  }  } >Terms of service</button> 
+    <p style={{ fontWeight : "bold", marginLeft: "5px"}}>&copy;</p> 
+    <p  className="button_c"  style={{ fontWeight : "bold"}} >2024,soceo </p> 
+    </div>
+
+     </div>  
+
+
     </div>
  
 
 
     <div className="InnerBox-2">  
-     
+    
+
+
      <div  className="description1_login"> 
       <p  className="description1-text"> Welcome on board !</p>
      </div>  
@@ -135,7 +149,8 @@ function Login() {
      <div className="description2_login">
 
       <p  style={{  color : "#c23815" }}>Others contact System Admin  for login related problem</p>
-     </div>
+     </div> 
+
     </div>
   
        

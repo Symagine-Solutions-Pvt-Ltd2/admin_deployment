@@ -35,6 +35,7 @@ import Password from "./Pages/Password" ;
 import  RequireAuth from "./Pages/RequireAuth.js"  ;   
 import Feedback  from './Pages/Feedback.js';
 import StudentAnswer from './Pages/StudentAnswer.js';
+import PrivacyPolicyAndTC from "./Pages/PrivacyPolicyAndTC.js"  ; 
 
 
 
@@ -51,10 +52,11 @@ root.render(
    <Routes> 
       
  <Route path= "/"   >  
- <Route index element={<GettingStarted />} />  
+ <Route index element={<GettingStarted />} />   
  <Route path= "login"  element ={  <Login/>  } /> 
  <Route path= "forgotpassword"  element ={  <ForgotPassword/>  } />   
  <Route path= "password"  element ={  <Password/>  } />    
+ <Route path= "policy"  element ={  <PrivacyPolicyAndTC/>  } />  
    
 
 
