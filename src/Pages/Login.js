@@ -102,15 +102,15 @@ function Login() {
     <div   className="InnerBox-1"> 
 
    
-    <div  className="InnerBox-1" >   
+
     <div style= {{ display : "flex"  , flexDirection : "row"}} >
     <button className="button_c"  style={{ backgroundColor : "#F7E5E9"  , textDecoration : "underline"}}   onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "privacyPolicy" }}     , { replace : false}  )  }  }  >Privacy policy</button> 
     <button className="button_c" style={{ backgroundColor : "#F7E5E9"  , textDecoration : "underline"}} onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "tandc" }}     , { replace : false}  )  }  } >Legal notice</button> 
     <p style={{ fontWeight : "bold", marginLeft: "5px"}}>&copy;</p> 
-    <p  className="button_c"  style={{ fontWeight : "bold"}} >2024,soceo </p> 
+    <p  className="button_c"  style={{ fontWeight : "bold"}} >2024 - soceo </p> 
     </div>
 
-     </div>  
+
 
 
     </div>

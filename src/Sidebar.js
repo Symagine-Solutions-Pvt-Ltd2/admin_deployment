@@ -142,9 +142,9 @@ function SideBar( props ) {
       </div>  
 
 
-         <div className="Sidebar-logout-box">   
+         <div className="Sidebar-logout-box"  style={{   display : "flex" ,  alignItems :  "flex-end"  , justifyContent : "flex-end"}}>   
 
- 
+         <div className="Sidebar-logout-button_div" >
                       <button className="Sidebar-logout-button"  type="button"  onClick={ () => {  Logout()  }  }>   
 
 
@@ -162,6 +162,21 @@ function SideBar( props ) {
                         
       
                       </button>  
+                      </div> 
+                      <div className="Sidebar-policy-div"> 
+                       
+                      <div style= {{ display : "flex"  , flexDirection : "row"}} >
+    <button className="button_c"  style={{ backgroundColor : "#353B55"  , textDecoration : "underline"  , color : "#FFF" }}   onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "privacyPolicy" }}     , { replace : false}  )  }  }  >Privacy policy</button> 
+    <button className="button_c" style={{ backgroundColor : "#353B55"  , textDecoration : "underline" , color : "#FFF"}} onClick={()  => {        navigate(  "/policy"   ,   { state: {    screenType  :  "tandc" }}     , { replace : false}  )  }  } >Legal notice</button> 
+    <p style={{ fontWeight : "bold", marginLeft: "5px"  , color : "#FFF" }}>&copy;</p> 
+    <p  className="button_c"  style={{ fontWeight : "bold"  , color : "#FFF"}} >2024 - soceo </p> 
+    </div>
+
+                      </div>
+
+                  
+                   
+
          </div>
     </div>
 
