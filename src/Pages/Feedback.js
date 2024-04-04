@@ -61,7 +61,8 @@ function Feedback() {
             let data1 = { 
              "id"  :  index , 
               "task" :  el.task_name ,
-              "ans" : location.state.data.bp_answer[index].text 
+              "ans" : location.state.data.bp_answer[index].text   , 
+              "image" :  location.state.data.bp_answer[index].image 
             }  
             
           tempData3.push( data1) ; 
@@ -161,7 +162,47 @@ function Feedback() {
 
  } 
  
+  
 
+
+
+
+ const  bpAnswerImageDownload = ( img_url  ) => {   
+
+    console.log(  img_url )  ; 
+ 
+
+    if( img_url != ""){
+
+      axios({ 
+      
+        url : img_url ,   
+  
+        method : "GET"  , 
+       
+        headers : {
+
+          "Access-Control-Allow-Origin" : "*"
+        }
+  
+       }).then( ( res) =>{
+  
+  
+  
+       } ).catch(( err) => { 
+           console.log( "error") ;
+  
+        }  ) ;  
+   
+    
+
+    }else{
+
+
+      alert( "No image found") ;
+    }
+
+ }  
 
 
 
@@ -235,7 +276,7 @@ function Feedback() {
 
                <div  className="clientview_table_row_box"   style= {{   width: "7%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => { }}>D</button>   
+             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => { bpAnswerImageDownload( el.image) }}>D</button>   
              </div>  
 
 
