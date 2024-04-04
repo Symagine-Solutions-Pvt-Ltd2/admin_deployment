@@ -267,10 +267,10 @@ function Feedback() {
 
 
 
-               <div   className="clientview_table_row_box"  style= {{   width: "30%" , height: "100%", borderRight : "1px solid #B6B7D0" }}>
+               <div   className="clientview_table_row_box_scrollable"  style= {{   width: "30%" , height: "100%", borderRight : "1px solid #B6B7D0" }}>
                  <p> {  el.task} </p>
                </div>
-               <div  className="clientview_table_row_box"  style= {{   width: "25%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
+               <div  className="clientview_table_row_box_scrollable"  style= {{   width: "25%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
                  <p> {  el.ans } </p>
                </div> 
 

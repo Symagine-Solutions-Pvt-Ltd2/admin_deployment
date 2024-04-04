@@ -162,4 +162,24 @@
     align-items: center; 
     justify-content: center; 
    
-}
+} 
+
+
+
+.clientview_table_row_box_scrollable {
+
+    padding :2px ;  
+    overflow-y:  scroll ; 
+   
+}  
+
+
+
+.clientview_table_row_box_scrollable::-webkit-scrollbar{
+
+    width:  1px; 
+    background-color:  #B6B7D0 ;  
+   
+  
+  
+  } 
