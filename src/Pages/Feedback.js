@@ -3,6 +3,7 @@ import Sidebar from "../Sidebar"  ;
 import "../Style/ClientView.css" ; 
 import {Link , useNavigate  , useLocation} from "react-router-dom" ;
 import axios from "axios"  ;  
+import { PDFDownloadLink, Document, Page  , Text  ,  StyleSheet   , View  , Image   } from '@react-pdf/renderer'
 
 
 function Feedback() {    
@@ -166,35 +167,18 @@ function Feedback() {
 
 
 
-
+  // to download images of bplan answers submitted by students 
+   
  const  bpAnswerImageDownload = ( img_url  ) => {   
 
     console.log(  img_url )  ; 
  
 
     if( img_url != ""){
+     
+        
 
-      axios({ 
-      
-        url : img_url ,   
-  
-        method : "GET"  , 
-       
-        headers : {
 
-          "Access-Control-Allow-Origin" : "*"
-        }
-  
-       }).then( ( res) =>{
-  
-  
-  
-       } ).catch(( err) => { 
-           console.log( "error") ;
-  
-        }  ) ;  
-   
-    
 
     }else{
 
@@ -202,7 +186,57 @@ function Feedback() {
       alert( "No image found") ;
     }
 
- }  
+ }   
+
+
+ 
+
+ 
+   
+const MyDoc = () => {  
+  
+
+
+  
+
+  
+ return(
+ <Document> 
+      <Page >
+    <View>
+      <Text style={{  fontWeight : 800 }}  >Student Name : </Text>
+      <Text style= {{ fontWeight : 200 }}>{ location.state.data.student_name }</Text>
+       <Text>    </Text>
+       <br />
+       <br />
+       <Text style={{  fontWeight : 800 }}  >School Name : </Text>
+      <Text>{ location.state.data.school_name }</Text>
+      <Text>    </Text>
+      <Text>Business Plan : </Text>
+      <Text>    </Text>
+    </View>
+   {
+    data.map( ( el   , index ) => {
+     return(
+     <View key={ index } >   
+          
+       <Text>   </Text>
+        <Text>Task Name : { el.task}</Text>
+        <Text>Student Answer :  {  el.ans } </Text> 
+     
+        </View>
+     )
+   }
+
+   ) 
+}   
+
+
+</Page>
+ </Document>
+)  ; 
+
+       } 
 
 
 
@@ -276,7 +310,7 @@ function Feedback() {
 
                <div  className="clientview_table_row_box"   style= {{   width: "7%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display:"flex"  , flexDirection :"row"  , justifyContent: "space-around"}}>  
              
-             <button  style = {{  height : "40%"  , width : "50%"   , backgroundColor : "#FCC046"  , border : "0px"  , borderRadius :  15 }}  onClick={() => { bpAnswerImageDownload( el.image) }}>D</button>   
+           
              </div>  
 
 
@@ -322,12 +356,27 @@ function Feedback() {
 
               </div> 
 
-              <div className="body3"> 
+              <div className="clientview_body3"   >  
+               
+               <div    style ={{   width : "60%"  , height : "50%"  ,  display : "flex"  , flexDirection : "row"  , justifyContent : "flex-end"}}  >
 
-              <div  style = {{ width : "25%"  , height : "34%"  ,  padding : "2"   , borderRadius: 25 ,   fontWeight : 600 }}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
+        
+               <button   className="add_new_program_button" style={{  height : "60%"  ,  padding : "5px"  ,  fontWeight : "600"    }} onClick={() => {}}>  
+               <PDFDownloadLink document={<MyDoc />} fileName="business_plan.pdf"  style={{ textDecoration: 'none' }}>
+                 {({ blob, url, loading, error }) => (loading ? 'Loading document...' : <p style={{ color : "black"   }}> Download</p>)}
+                 </PDFDownloadLink>
+               </button>   
+
+               <button  style={ {  height : "60%"  ,  padding : "5px"   ,    backgroundColor:"#FCC046"  , marginTop : "2%"  ,     marginRight : "5%" , 
+    borderWidth: "0" , 
+    borderRadius:  "25px"   ,  fontWeight : "600" }} onClick={() => {    submitFeedback()  }}> Approve (to allow download of certificate) </button>  
+             
+             {/*  <div  style = {{ width : "25%"  , height : "100%"  ,  padding : "2"   , borderRadius: 25 ,   fontWeight : 600 }}   onClick={ () => { submitFeedback() } }  className="add_new_program_button">
                 <p  style={ { textAlign : "center"  }}>Approve (to allow download of certificate)</p>
-              </div>
-            
+              </div> */}
+             
+              </div> 
+
               </div>
              
             </div>
