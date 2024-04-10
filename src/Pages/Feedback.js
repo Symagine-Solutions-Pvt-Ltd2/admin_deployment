@@ -223,7 +223,7 @@ const MyDoc = () => {
        <Text>   </Text>
         <Text>Task Name : { el.task}</Text>
         <Text>Student Answer :  {  el.ans } </Text> 
-     
+        <Image   src= "https://reactnative.dev/img/tiny_logo.png"   style={{ width : "350px" , height : "350px"}}    /> 
         </View>
      )
    }
