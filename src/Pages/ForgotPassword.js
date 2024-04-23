@@ -37,7 +37,7 @@ function ForgotPassword() {
            }).then( ( res) => {   
       
              
-            console.log( res.data ) ;   
+            //console.log( res.data ) ;   
    
              if( res.data.status ===  "success"  ){
                 
@@ -51,7 +51,7 @@ function ForgotPassword() {
              }
       
            } ).catch(( err) => { 
-               console.log( "error") ;
+               //console.log( "error") ;
       
             }  ) ;  
       

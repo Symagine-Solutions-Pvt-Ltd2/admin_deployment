@@ -29,7 +29,7 @@ function ClientView(   ) {
    
 
    
-  console.log( popup) ; 
+  //console.log( popup) ; 
 
 
   const [ data , setData ] = useState( []);
@@ -39,10 +39,10 @@ function ClientView(   ) {
   const [  programId  , setProgramId ]   = useState( location.state.programId  ) ; 
    
   /* 
-  console.log( "client view" ) ; 
-  console.log(  location.state.typeId    ) ; 
-  console.log( location.state.programName   ) ; 
-  console.log( location.state.programId   ) ; 
+  //console.log( "client view" ) ; 
+  //console.log(  location.state.typeId    ) ; 
+  //console.log( location.state.programName   ) ; 
+  //console.log( location.state.programId   ) ; 
 
 
  */
@@ -50,7 +50,7 @@ function ClientView(   ) {
      
         
        navigate(  "/home/dashboard/client/addclient"   ,  { state: {    typeId : "system_admin_client"  ,   type : "system_admin"   ,    programId : programId  ,   programName : location.state.programName  ,   userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
-       console.log("ASJghshGHS") ;  
+       //console.log("ASJghshGHS") ;  
 
       }  
 
@@ -72,19 +72,19 @@ function ClientView(   ) {
   
          if(   res.data.message === "Data not found"){
  
-        //  console.log(  res ) ;  
+        //  //console.log(  res ) ;  
         setData([]) ;   
          }else if(  res.data.message === "Details retrieve successfully"  ) {
 
-         console.log(  res ) ;  
+         //console.log(  res ) ;  
           setData( res.data.data) ; 
 
          }
            
-         //  console.log(   res.data.data[1].name )  ;
+         //  //console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {  
-            console.log( "error") ;
+            //console.log( "error") ;
   
          }  ) ; 
   
@@ -98,7 +98,7 @@ function ClientView(   ) {
       
 
       setPopupInfo( cs) ;
-     // console.log( cs) ;
+     // //console.log( cs) ;
      setUserNameForPopup( cs.client_name) ;
        setPopup( true)  ;
       

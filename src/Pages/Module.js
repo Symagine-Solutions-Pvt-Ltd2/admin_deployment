@@ -30,17 +30,17 @@ function  Module() {
 
     
 /* 
-  console.log("module" ) ; 
-  console.log( location.state.courseName )  ; 
-  console.log( location.state.type_name)  ; 
-  console.log( location.state.type )  ; 
-  console.log( location.state.courseId) ; 
+  //console.log("module" ) ; 
+  //console.log( location.state.courseName )  ; 
+  //console.log( location.state.type_name)  ; 
+  //console.log( location.state.type )  ; 
+  //console.log( location.state.courseId) ; 
  */
 
   const goToNext = () => {
 
       navigate(  "/home/course/draftcourse/module/selectcontenttype"   ,  { state: {  type :  type   , courseId: location.state.courseId ,     courseName :  location.state.courseName  ,  type_name :  location.state.type_name     , userInfo :  location.state.userInfo  }}   ,  { replace : false}  ) ; 
-      console.log("ASJghshGHS") ;  
+      //console.log("ASJghshGHS") ;  
 
 
      } 
@@ -73,7 +73,7 @@ function  Module() {
 
                 
               
-               console.log(  res ) ; 
+               //console.log(  res ) ; 
            
      
      
@@ -89,7 +89,7 @@ function  Module() {
 
 
                 } ).catch(( err) => {  
-                console.log( "error") ;
+                //console.log( "error") ;
 
               } , [ popup]  ) ; 
   
@@ -118,10 +118,10 @@ function  Module() {
     
                     
                   
-                   console.log(  res ) ; 
+                   //console.log(  res ) ; 
                   // setData(  res.data.data ) ;  
            
-                  console.log(  res.data.message ) ;
+                  //console.log(  res.data.message ) ;
     
                    if(    res.data.message === "Information retrieve successfully" ){
                     setData(  res.data.data ) ;
@@ -136,7 +136,7 @@ function  Module() {
     
     
                     } ).catch(( err) => {  
-                    console.log( "error") ;
+                    //console.log( "error") ;
     
                   }  ) ; 
       
@@ -153,13 +153,13 @@ function  Module() {
        const  handleStatusChange = ( cs  ) => {    
                  
                       
-         console.log( cs  )  ;           
+         //console.log( cs  )  ;           
         setPopupInfo( cs) ; 
          setPopup( true)  ;
      
          
-    /*      console.log( cs) ; 
-         console.log( screenType) ;  */ 
+    /*      //console.log( cs) ; 
+         //console.log( screenType) ;  */ 
 
          
    } 

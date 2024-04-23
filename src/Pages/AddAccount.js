@@ -20,27 +20,27 @@ function AddAccount() {
 const [  admin ,   setAdmin  ]   = useState( "" ) ; 
 
  
-   console.log( location.state.typeId  ) ; 
+   //console.log( location.state.typeId  ) ; 
   
-  console.log( location.state.type) ; 
+  //console.log( location.state.type) ; 
   
-  console.log( location.state.programId ) ; 
+  //console.log( location.state.programId ) ; 
 
-  console.log( location.state.programName ) ;  
+  //console.log( location.state.programName ) ;  
 
-  console.log( location.state.schoolId ) ;   
+  //console.log( location.state.schoolId ) ;   
 
 
 
-  console.log("add account ") ;  
- // console.log(  admin   )   ;
+  //console.log("add account ") ;  
+ // //console.log(  admin   )   ;
 
  useEffect(() => { 
     
 
         if(   location.state.typeId  === "system_admin_student" ){
           
-                console.log("hjgj") ; 
+                //console.log("hjgj") ; 
         
         axios({ 
   
@@ -56,13 +56,13 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
         }).then( ( res) => {   
   
   
-          console.log(  res.data.data ) ;  
+          //console.log(  res.data.data ) ;  
           setModuleDetail(   res.data.data  ) ; 
            
-         //  console.log(   res.data.data[1].name )  ;
+         //  //console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {  
-            console.log( "error") ;
+            //console.log( "error") ;
   
          }  ) ;  
 
@@ -90,14 +90,14 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
     
 
         /*       
-        console.log( event.target.name.value) ;   
-        console.log( event.target.email.value) ;    
-        console.log( event.target.password.value) ;    
-        console.log( event.target.repeat_password.value) ;    
-        console.log( event.target.contact_person.value) ;    
-        console.log( event.target.student.value) ;  
-        console.log( assignedProgram ) ;   
-        console.log(  location.state.type    )   ; 
+        //console.log( event.target.name.value) ;   
+        //console.log( event.target.email.value) ;    
+        //console.log( event.target.password.value) ;    
+        //console.log( event.target.repeat_password.value) ;    
+        //console.log( event.target.contact_person.value) ;    
+        //console.log( event.target.student.value) ;  
+        //console.log( assignedProgram ) ;   
+        //console.log(  location.state.type    )   ; 
 */
   
 
@@ -106,8 +106,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
 
       
             setTimeout(() => {
-  console.log("After two second") ;
-  console.log( event.target.sbtn.disabled) ;
+  //console.log("After two second") ;
+  //console.log( event.target.sbtn.disabled) ;
   event.target.sbtn.disabled =  false;
 }, 3000) 
 
@@ -142,7 +142,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                          
                           alert( "Registered Successfully.")  ;   
                            
-                          console.log( type) ; 
+                          //console.log( type) ; 
                           navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  type    ,  programName : assignedProgram  , programId :  location.state.programId  , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
 
                         } 
@@ -152,7 +152,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                         }
                        
                      } ).catch(( err) => { 
-                         console.log( "error") ;
+                         //console.log( "error") ;
                 
                       }  ) ;  
             
@@ -173,10 +173,10 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
        
 
 
-      console.log( event.target.name.value) ;   
-      console.log( event.target.email.value) ;    
-      console.log( event.target.password.value) ;    
-      console.log( event.target.reset_password.value) ;    
+      //console.log( event.target.name.value) ;   
+      //console.log( event.target.email.value) ;    
+      //console.log( event.target.password.value) ;    
+      //console.log( event.target.reset_password.value) ;    
       
 
       if(  event.target.password.value !== event.target.reset_password.value  ) {
@@ -215,7 +215,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                   }
                  
                } ).catch(( err) => { 
-                   console.log( "error") ;
+                   //console.log( "error") ;
           
                 }  ) ;  
       
@@ -241,11 +241,11 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
     
 
       
-      console.log( event.target.name.value) ;   
-      console.log( event.target.email.value) ;    
-      console.log( event.target.password.value) ;    
-      console.log( event.target.repeat_password.value) ;    
-      console.log( event.target.contact_person.value) ;    
+      //console.log( event.target.name.value) ;   
+      //console.log( event.target.email.value) ;    
+      //console.log( event.target.password.value) ;    
+      //console.log( event.target.repeat_password.value) ;    
+      //console.log( event.target.contact_person.value) ;    
       
 
       if(  event.target.password.value !== event.target.repeat_password.value  ) {
@@ -290,7 +290,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                 }
                
              } ).catch(( err) => { 
-                 console.log( "error") ;
+                 //console.log( "error") ;
         
               }  ) ;  
     
@@ -315,19 +315,19 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
        
         
       
-      console.log( event.target.name.value) ;   
-      console.log( event.target.email.value) ;    
-      console.log( event.target.password.value) ;    
-      console.log( event.target.repeat_password.value) ;     
+      //console.log( event.target.name.value) ;   
+      //console.log( event.target.email.value) ;    
+      //console.log( event.target.password.value) ;    
+      //console.log( event.target.repeat_password.value) ;     
 
       
       event.target.sbtn.disabled = true ;  
 
-     console.log(   event.target.sbtn.disabled ) ; 
+     //console.log(   event.target.sbtn.disabled ) ; 
      
      setTimeout(() => {
-        console.log("After two second") ;
-        console.log( event.target.sbtn.disabled) ;
+        //console.log("After two second") ;
+        //console.log( event.target.sbtn.disabled) ;
         event.target.sbtn.disabled =  false;
       }, 3000) 
 
@@ -371,7 +371,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                 }
                
              } ).catch(( err) => { 
-                 console.log( "error") ;
+                 //console.log( "error") ;
         
               }  ) ;  
     
@@ -412,7 +412,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
           
              
                   
-                    console.log(  res.data) ;  
+                    //console.log(  res.data) ;  
                   
   
   
@@ -420,7 +420,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
       
                  
                } ).catch(( err) => { 
-                   console.log( "error") ;
+                   //console.log( "error") ;
           
                 }  ) ;
 
@@ -433,11 +433,11 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
      const  addStudent = ( event) => {
 
              
-      console.log( event.target.name.value) ;   
-      console.log( event.target.email.value) ;    
-      console.log( event.target.password.value) ;    
-      console.log( event.target.repeat_password.value) ; 
-      console.log( event.target.sbtn.disabled) ; 
+      //console.log( event.target.name.value) ;   
+      //console.log( event.target.email.value) ;    
+      //console.log( event.target.password.value) ;    
+      //console.log( event.target.repeat_password.value) ; 
+      //console.log( event.target.sbtn.disabled) ; 
           
       
       event.target.sbtn.disabled = true ; 
@@ -445,8 +445,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
 
       
       setTimeout(() => {
-        console.log("After two second") ;
-        console.log( event.target.sbtn.disabled) ;
+        //console.log("After two second") ;
+        //console.log( event.target.sbtn.disabled) ;
         event.target.sbtn.disabled =  false;
       }, 3000) 
 
@@ -483,9 +483,9 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                   alert( "Registered Successfully.")  ; 
                  
                 
-                  console.log(  res.data.data) ;  
-                  console.log(  res.data.data._id) ; 
-                  console.log(  location.state.programId) ; 
+                  //console.log(  res.data.data) ;  
+                  //console.log(  res.data.data._id) ; 
+                  //console.log(  location.state.programId) ; 
 
                   addStudentAnswerHolder( location.state.programId , res.data.data._id) ; 
                        
@@ -499,7 +499,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                 }
                
              } ).catch(( err) => { 
-                 console.log( "error") ;
+                 //console.log( "error") ;
         
               }  ) ;  
     

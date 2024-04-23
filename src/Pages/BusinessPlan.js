@@ -32,8 +32,8 @@ function BusinessPlan() {
 
     const handleCheckboxChange = (  option  ) => {
             
-      console.log( "kjhk") ; 
-         console.log( option) ; 
+      //console.log( "kjhk") ; 
+         //console.log( option) ; 
          setSelectedTaskType( option)  ;
 
     }
@@ -73,7 +73,7 @@ function BusinessPlan() {
   
        }).then( ( res) => {   
   
-            console.log( res) ; 
+            //console.log( res) ; 
             
             
             if(   res.data.message === "Registered Successfully."){
@@ -89,7 +89,7 @@ function BusinessPlan() {
 
 
        } ).catch(( err) => { 
-           console.log( "error") ;
+           //console.log( "error") ;
   
         }  ) ;  
    

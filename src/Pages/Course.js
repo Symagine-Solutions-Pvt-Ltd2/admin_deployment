@@ -35,12 +35,12 @@ function Course() {
 
 
 
-   // console.log( popupInfo) ; 
+   // //console.log( popupInfo) ; 
     const saveCourse = (  event  ) => { 
     
        
-      console.log( event.target.course_name.value) ;   
-      console.log( event.target.course_description.value) ;    
+      //console.log( event.target.course_name.value) ;   
+      //console.log( event.target.course_description.value) ;    
     
 
       axios({ 
@@ -62,7 +62,7 @@ function Course() {
        
 
 
-              console.log(  res ) ;  
+              //console.log(  res ) ;  
 
 
               if(   res.data.message ===  "Course added Successfully."    ){
@@ -80,7 +80,7 @@ function Course() {
 
              
            } ).catch(( err) => { 
-               console.log( "error") ;
+               //console.log( "error") ;
       
             }  ) ;  
 
@@ -117,14 +117,14 @@ function Course() {
                  }).then( ( res) => {   
 
 
-                console.log(  res.data.data ) ; 
+                //console.log(  res.data.data ) ; 
                  setData(  res.data.data ) ;  
        
        
-                    //  console.log(   res.data.data[1].name )  ;
+                    //  //console.log(   res.data.data[1].name )  ;
 
                   } ).catch(( err) => {  
-                  console.log( "error") ;
+                  //console.log( "error") ;
 
                 }  ) ;   
 
@@ -150,14 +150,14 @@ function Course() {
                      }).then( ( res) => {   
     
     
-                    console.log(  res) ; 
+                    //console.log(  res) ; 
                     setData(  res.data.data ) ;  
            
            
-                        //  console.log(   res.data.data[1].name )  ;
+                        //  //console.log(   res.data.data[1].name )  ;
     
                       } ).catch(( err) => {  
-                      console.log( "error") ;
+                      //console.log( "error") ;
     
                     }  ) ;   
 
@@ -190,8 +190,8 @@ function Course() {
                            setPopup( true)  ;
                        
                            
-                      /*      console.log( cs) ; 
-                           console.log( screenType) ;  */ 
+                      /*      //console.log( cs) ; 
+                           //console.log( screenType) ;  */ 
 
                            
                      } 

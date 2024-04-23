@@ -19,7 +19,7 @@ function   FormRow(   props ) {
  }
 
 
-  console.log( props.level )  ; 
+  //console.log( props.level )  ; 
   return (
     <div className="FormRow">  
   

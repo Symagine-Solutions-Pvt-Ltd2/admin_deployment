@@ -13,10 +13,10 @@ const Popup = (  props ) => {
   
   const userDetails  =  props.data ; 
 
-   console.log( props.data) ; 
+   //console.log( props.data) ; 
 
    
-   //console.log( props.data.type_id) ; 
+   ////console.log( props.data.type_id) ; 
   
 
 
@@ -46,13 +46,13 @@ const Popup = (  props ) => {
   
        }).then( ( res) => {   
   
-      //  console.log( res) ; 
+      //  //console.log( res) ; 
         alert( res.data.message) ;   
 
         props.setTrigger( false ) ;
          
        } ).catch(( err) => { 
-           console.log( "error") ;
+           //console.log( "error") ;
   
         }  ) ;  
 
@@ -87,12 +87,12 @@ const Popup = (  props ) => {
 
      }).then( ( res) => {   
 
-      console.log( res) ; 
+      //console.log( res) ; 
       alert( res.data.message) ;  
      props.setTrigger( false ) ;
        
      } ).catch(( err) => { 
-         console.log( "error") ;
+         //console.log( "error") ;
 
       }  ) ;  
 
@@ -120,12 +120,12 @@ const Popup = (  props ) => {
 
      }).then( ( res) => {   
 
-      console.log( res) ; 
+      //console.log( res) ; 
       alert( res.data.message) ;  
      props.setTrigger( false ) ;
        
      } ).catch(( err) => { 
-         console.log( "error") ;
+         //console.log( "error") ;
 
       }  ) ;  
 
@@ -152,12 +152,12 @@ const Popup = (  props ) => {
 
      }).then( ( res) => {   
 
-      console.log( res) ; 
+      //console.log( res) ; 
       alert( res.data.message) ;  
      props.setTrigger( false ) ;
        
      } ).catch(( err) => { 
-         console.log( "error") ;
+         //console.log( "error") ;
 
       }  ) ;   
 
@@ -186,12 +186,12 @@ const Popup = (  props ) => {
 
      }).then( ( res) => {   
 
-      console.log( res) ; 
+      //console.log( res) ; 
       alert( res.data.message) ;  
      props.setTrigger( false ) ;
        
      } ).catch(( err) => { 
-         console.log( "error") ;
+         //console.log( "error") ;
 
       }  ) ;   
 

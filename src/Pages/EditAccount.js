@@ -23,10 +23,10 @@ function  EditAccount(  {  props }) {
 
    
 
-  console.log( "edit account" ) ;
-   console.log( location.state.data ) ;   
-   console.log( location.state.typeId) ;  
-   console.log( location.state.type) ;   
+  //console.log( "edit account" ) ;
+   //console.log( location.state.data ) ;   
+   //console.log( location.state.typeId) ;  
+   //console.log( location.state.type) ;   
   
  
 
@@ -43,7 +43,7 @@ function  EditAccount(  {  props }) {
 
 
   
-   //console.log(  feedbackGivenBy) ; 
+   ////console.log(  feedbackGivenBy) ; 
 
 
     function checkFeedback1(  value ) {
@@ -93,14 +93,14 @@ function  EditAccount(  {  props }) {
          }).then( ( res) => {   
        
           
-          // console.log(  res.data ) ; 
+          // //console.log(  res.data ) ; 
            setCourseList( res.data.data); 
            setTotalPages( res.data.totalPages )  ; 
-           // console.log(    res.data.data.length  )  ; 
+           // //console.log(    res.data.data.length  )  ; 
        
        
          } ).catch(( err) => {  
-             console.log( "error") ;
+             //console.log( "error") ;
        
           }  ) ; 
            
@@ -110,10 +110,10 @@ function  EditAccount(  {  props }) {
            setSchoolHead ( feedbackGivenBy.find( checkFeedback2 ) ) ;
            setFacilitator( feedbackGivenBy.find( checkFeedback3 ) ) ; 
 
-          console.log(  "editaccount") ; 
-           console.log(  feedbackGivenBy.find( checkFeedback1 )) ; 
-           console.log( feedbackGivenBy.find( checkFeedback2 )) ; 
-           console.log(  feedbackGivenBy.find( checkFeedback3 )) ; 
+          //console.log(  "editaccount") ; 
+           //console.log(  feedbackGivenBy.find( checkFeedback1 )) ; 
+           //console.log( feedbackGivenBy.find( checkFeedback2 )) ; 
+           //console.log(  feedbackGivenBy.find( checkFeedback3 )) ; 
          } 
        
        } , [   pageNo])  ; 
@@ -129,16 +129,16 @@ function  EditAccount(  {  props }) {
 
 
 
-        console.log( event.target.name.value) ;    
-        console.log( event.target.email.value) ;      
-        console.log( event.target.contact_person.value) ;  
+        //console.log( event.target.name.value) ;    
+        //console.log( event.target.email.value) ;      
+        //console.log( event.target.contact_person.value) ;  
           
 
 
 
   
         
-   //      console.log(  location.state.type    )   ; 
+   //      //console.log(  location.state.type    )   ; 
 
 
       
@@ -160,11 +160,11 @@ axios({
                      }).then( ( res) => {   
                   
                             
-                          console.log( res) ; 
+                          //console.log( res) ; 
 
                           navigate(  "/home/dashboard/client/school"   ,   { state: {    typeId : location.state.type    ,  clientId : data.client_id    , programId : data.program_id  , programName : location.state.programName    , userInfo :  location.state.userInfo  }}     ,      { replace : false}  )   ;
                      } ).catch(( err) => { 
-                         console.log( "error") ;
+                         //console.log( "error") ;
                 
                       }  ) ;  
         
@@ -184,11 +184,11 @@ axios({
      
         
 
-        console.log( event.target.name.value) ;    
-        console.log( event.target.email.value) ;      
-        console.log( event.target.contact_person.value) ;    
-        console.log( event.target.student.value) ;  
-         console.log(  location.state.type    )   ; 
+        //console.log( event.target.name.value) ;    
+        //console.log( event.target.email.value) ;      
+        //console.log( event.target.contact_person.value) ;    
+        //console.log( event.target.student.value) ;  
+         //console.log(  location.state.type    )   ; 
 
 
       
@@ -215,8 +215,8 @@ axios({
                          
                           alert( "Data updated Successfully")  ;   
                             
-                          console.log( data) ;   
-                          console.log( res) ; 
+                          //console.log( data) ;   
+                          //console.log( res) ; 
                            navigate(  "/home/dashboard/client"   ,    { state:    {  typeId :  location.state.type  ,  programId : data.program_id  , programName : location.state.programName , userInfo :  location.state.userInfo } }     ,   { replace : false}  )   ; 
 
                         } 
@@ -229,7 +229,7 @@ axios({
 
                        
                      } ).catch(( err) => { 
-                         console.log( "error") ;
+                         //console.log( "error") ;
                 
                       }  ) ;  
       
@@ -256,14 +256,14 @@ axios({
 
 
 
-        console.log( event.target.name.value) ;    
-        console.log( event.target.email.value) ;      
+        //console.log( event.target.name.value) ;    
+        //console.log( event.target.email.value) ;      
   
          
 
 
         
-   //      console.log(  location.state.type    )   ; 
+   //      //console.log(  location.state.type    )   ; 
 
 
       
@@ -289,13 +289,13 @@ axios({
                                 alert( "Details updated Successfully")  ;   
                                   
 
-                                console.log( res) ; 
+                                //console.log( res) ; 
                                 navigate(  "/home/dashboard/client/facilitator"   ,    { state: {    typeId :  location.state.type  ,   schoolId : data.school_id     , programId : data.program_id  , userInfo :  location.state.userInfo  }}    , { replace : false}  )   ; 
       
                               } 
                               else {
                                 
-                                console.log( res) ;
+                                //console.log( res) ;
                                 alert(   res.data.message  )  ;
                               }  
       
@@ -305,7 +305,7 @@ axios({
 
                        
                      } ).catch(( err) => { 
-                         console.log( "error") ;
+                         //console.log( "error") ;
                 
                       }  ) ;  
         
@@ -333,8 +333,8 @@ axios({
  
          
      
-        console.log( event.target.name.value) ;    
-        console.log( event.target.email.value) ;     
+        //console.log( event.target.name.value) ;    
+        //console.log( event.target.email.value) ;     
          
         
 
@@ -364,20 +364,20 @@ axios({
                          
                 alert( "Details updated Successfully")  ;   
                   
-                console.log( res) ; 
+                //console.log( res) ; 
 
                 navigate(  "/home/dashboard/client/student"   ,    { state: {   typeId : location.state.type ,    schoolId : data.school_id    , programId : data.program_id  , userInfo :  location.state.userInfo   ,       }}    , { replace : false}  )   ;
     
               } 
               else {
                 
-                console.log( res) ;
+                //console.log( res) ;
                 alert(   res.data.message  )  ;
               }   
           
          
        } ).catch(( err) => { 
-           console.log( "error") ;
+           //console.log( "error") ;
   
         }  ) ;  
        
@@ -424,8 +424,8 @@ axios({
  
          
      
-      console.log( event.target.name.value) ;    
-      console.log( event.target.email.value) ;     
+      //console.log( event.target.name.value) ;    
+      //console.log( event.target.email.value) ;     
        
       
 
@@ -457,20 +457,20 @@ axios({
                        
               alert( "Details updated Successfully")  ;   
                 
-              console.log( res) ; 
+              //console.log( res) ; 
 
               navigate(  "/home/manageadmin"   ,    { state: {   userInfo :  location.state.userInfo     }}    , { replace : false}  )   ;
   
             } 
             else {
               
-              console.log( res) ;
+              //console.log( res) ;
               alert(   res.data.message  )  ;
             }   */ 
         
        
      } ).catch(( err) => { 
-         console.log( "error") ;
+         //console.log( "error") ;
 
       }  ) ;  
     
@@ -498,10 +498,10 @@ axios({
  
          
      
-        console.log(  programName) ;    
-        console.log(  feedbackGivenBy) ;     
-        console.log( selectedCourse ) ;    
-        console.log( location.state.data._id  ) ;
+        //console.log(  programName) ;    
+        //console.log(  feedbackGivenBy) ;     
+        //console.log( selectedCourse ) ;    
+        //console.log( location.state.data._id  ) ;
         
             
            axios({ 
@@ -523,7 +523,7 @@ axios({
        }).then( ( res) => {   
     
               
-            console.log( res) ;   
+            //console.log( res) ;   
 
             if(  res.data.message === "Data modified successfully"  ){ 
            
@@ -539,7 +539,7 @@ axios({
             }
          
        } ).catch(( err) => { 
-           console.log( "error") ;
+           //console.log( "error") ;
   
         }  ) ;  
 
@@ -562,8 +562,8 @@ axios({
 
      const handleCheckboxChange = (  option  ) => {
             
-        console.log( "kjhk") ; 
-           console.log( option)
+        //console.log( "kjhk") ; 
+           //console.log( option)
            setSelectedCourse( option ) ; 
 
       }
@@ -579,7 +579,7 @@ axios({
         const { value, checked } = e.target;
            
 
-        console.log(`${value} is ${checked}`); 
+        //console.log(`${value} is ${checked}`); 
 
        
         if(  value === "Client Supervisor") {
@@ -602,7 +602,7 @@ axios({
                          }
      
     
-                         console.log( feedbackGivenBy) ; 
+                         //console.log( feedbackGivenBy) ; 
                 
         } 
 
@@ -626,7 +626,7 @@ axios({
                          }
      
     
-                         console.log( feedbackGivenBy) ; 
+                         //console.log( feedbackGivenBy) ; 
 
         }else if(   value === "Facilitator"  ){
 
@@ -647,7 +647,7 @@ axios({
                          }
      
     
-                         console.log( feedbackGivenBy) ; 
+                         //console.log( feedbackGivenBy) ; 
         }
 
 
@@ -667,7 +667,7 @@ axios({
                      }
  
 
-                     console.log( feedbackGivenBy) ; 
+                     //console.log( feedbackGivenBy) ; 
  */
 
     };
@@ -683,11 +683,11 @@ axios({
          
         if( btn ===  "prev"){ 
 
-         console.log( "prev") ;             
+         //console.log( "prev") ;             
          setPageNo( pageNo -1 ) ;  
 
        }else   if( btn ===  "next" )  {
-         console.log( "next") ;  
+         //console.log( "next") ;  
         setPageNo( pageNo +1 ) ; 
        }  
           

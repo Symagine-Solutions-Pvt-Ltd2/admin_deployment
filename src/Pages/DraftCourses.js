@@ -25,9 +25,9 @@ function  DraftCourses() {
         }).then( ( res) => {   
 
 
-           console.log(  res) ;
+           //console.log(  res) ;
         } ).catch(( err) => { 
-            console.log( "error") ;
+            //console.log( "error") ;
 
          }  ) ; 
 

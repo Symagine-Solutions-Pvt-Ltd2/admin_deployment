@@ -27,13 +27,13 @@ function  UploadContent() {
 
 
 
-  console.log(  "uploadcontent"  ) ;
-  console.log(  location.state.typeId  ) ; 
-  console.log(  location.state.course_name  ) ; 
-  console.log(  location.state.type_name  ) ; 
-  console.log(  location.state.type  ) ; 
-  console.log(  location.state.sub_type  ) ;
-  console.log(location.state.courseId) ; 
+  //console.log(  "uploadcontent"  ) ;
+  //console.log(  location.state.typeId  ) ; 
+  //console.log(  location.state.course_name  ) ; 
+  //console.log(  location.state.type_name  ) ; 
+  //console.log(  location.state.type  ) ; 
+  //console.log(  location.state.sub_type  ) ;
+  //console.log(location.state.courseId) ; 
 
 
 
@@ -44,9 +44,9 @@ function  UploadContent() {
   const  uploadPicture  = (  event  ) => { 
  
     const selectedFile = document.getElementById("upload").files[0]; 
-    console.log( "file upload"  )   ; 
-    console.log(selectedFile) ;  
-    console.log( typeId ) ;   
+    //console.log( "file upload"  )   ; 
+    //console.log(selectedFile) ;  
+    //console.log( typeId ) ;   
  
 
 
@@ -54,12 +54,12 @@ function  UploadContent() {
     if(  selectedFile !== undefined  ){
 
     
-     console.log(selectedFile.name) ;
+     //console.log(selectedFile.name) ;
       
      let aa = selectedFile.name ;
      let file_extension = aa.split('.').pop();  
      file_extension =  file_extension.toLowerCase() ; 
-     console.log(  file_extension ) ;  
+     //console.log(  file_extension ) ;  
      
 
 
@@ -80,7 +80,7 @@ function  UploadContent() {
     formData.append("type_id",  type  );  
 
 
-    console.log( formData ) ;    
+    //console.log( formData ) ;    
 
 
     axios({
@@ -102,7 +102,7 @@ function  UploadContent() {
       .then((res) => {  
           
 
-       console.log(  res) ;   
+       //console.log(  res) ;   
      //  alert( res.data.message) ;
        
         
@@ -122,7 +122,7 @@ function  UploadContent() {
       }) // Handle the response from backend here
       .catch((err) => {  
 
-        console.log( err) ; 
+        //console.log( err) ; 
       }); // Catch errors if any
  
     } 
@@ -159,7 +159,7 @@ function  UploadContent() {
         .then((res) => {  
             
   
-         console.log(  res) ;   
+         //console.log(  res) ;   
          alert( res.data.message) ;  
 
         navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
@@ -167,7 +167,7 @@ function  UploadContent() {
         }) // Handle the response from backend here
         .catch((err) => {  
   
-          console.log( err) ; 
+          //console.log( err) ; 
         }); // Catch errors if any
 
 
@@ -208,10 +208,10 @@ function  UploadContent() {
     
     event.preventDefault() ; 
     const selectedFile = document.getElementById("upload").files[0];
-    console.log( "file upload"  )   ; 
-    console.log(selectedFile) ;
-    console.log( typeId ) ; 
-   // console.log(selectedFile.name) ;  
+    //console.log( "file upload"  )   ; 
+    //console.log(selectedFile) ;
+    //console.log( typeId ) ; 
+   // //console.log(selectedFile.name) ;  
      
     
  
@@ -222,7 +222,7 @@ function  UploadContent() {
       let aa = selectedFile.name ;
       let file_extension = aa.split('.').pop();  
       file_extension =  file_extension.toLowerCase() ; 
-      console.log(  file_extension ) ; 
+      //console.log(  file_extension ) ; 
       event.target.sbtn.disabled = true ;
   
   
@@ -243,7 +243,7 @@ function  UploadContent() {
     formData.append("type_id",  type  );  
 
 
-    console.log( formData ) ;    
+    //console.log( formData ) ;    
 
 
     axios({
@@ -265,7 +265,7 @@ function  UploadContent() {
       .then((res) => {  
           
 
-       console.log(  res) ;   
+       //console.log(  res) ;   
       //  alert( res.data.message) ;
        
 
@@ -286,7 +286,7 @@ function  UploadContent() {
       .catch((err) => {  
         
 
-        console.log( err) ;  
+        //console.log( err) ;  
         alert( err) ;
         event.target.sbtn.disabled = false ; 
       }); // Catch errors if any
@@ -325,7 +325,7 @@ function  UploadContent() {
         .then((res) => {  
             
   
-         console.log(  res) ;   
+         //console.log(  res) ;   
          alert( res.data.message) ; 
       //  navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
         event.target.sbtn.disabled = false ; 
@@ -333,7 +333,7 @@ function  UploadContent() {
         .catch((err) => {  
          
           event.target.sbtn.disabled = false ; 
-          console.log( err) ; 
+          //console.log( err) ; 
         }); // Catch errors if any
 
 
@@ -404,7 +404,7 @@ function  UploadContent() {
     
     if(   type ===  "module"){
 
-      console.log(   type  )  ;  
+      //console.log(   type  )  ;  
 
     axios({
       // Endpoint to send files
@@ -451,7 +451,7 @@ function  UploadContent() {
     } 
     else  if(  type ===  "workshop"  ){
        
-      console.log(   "vhgs"  )  ;   
+      //console.log(   "vhgs"  )  ;   
 
       axios({
         // Endpoint to send files
@@ -475,7 +475,7 @@ function  UploadContent() {
         .then((res) => {  
             
           alert( res.data.message) ;
-         console.log(  res) ;   
+         //console.log(  res) ;   
          event.target.sbtn.disabled = false ; 
       //   navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
         }) // Handle the response from backend here
@@ -502,31 +502,31 @@ function  UploadContent() {
   
    
     const answer1 = (  selectedOption === optionArray[0]);
- //   console.log(  answer1) ;
+ //   //console.log(  answer1) ;
     const answer2 = (  selectedOption === optionArray[1]);
-  //  console.log(  answer2) ;
+  //  //console.log(  answer2) ;
     const answer3 = (  selectedOption === optionArray[2]);
-    console.log(answer1||answer2||answer3) ;
+    //console.log(answer1||answer2||answer3) ;
    
-    /* console.log(  location.state.typeId  ) ; 
-    console.log( event.target.name.value) ; 
-    console.log(  location.state.type_name  ) ; 
-    console.log(  location.state.type  ) ; 
-   console.log( event.target.question.value) ; 
-   console.log( event.target.option1.value) ; 
-   console.log( event.target.option2.value) ; 
-   console.log( event.target.option3.value) ;  
-   console.log( location.state.course_name) ;
+    /* //console.log(  location.state.typeId  ) ; 
+    //console.log( event.target.name.value) ; 
+    //console.log(  location.state.type_name  ) ; 
+    //console.log(  location.state.type  ) ; 
+   //console.log( event.target.question.value) ; 
+   //console.log( event.target.option1.value) ; 
+   //console.log( event.target.option2.value) ; 
+   //console.log( event.target.option3.value) ;  
+   //console.log( location.state.course_name) ;
    const answer1 = (  selectedOption === optionArray[0]);
-   console.log(  answer1) ;
+   //console.log(  answer1) ;
    const answer2 = (  selectedOption === optionArray[1]);
-   console.log(  answer2) ;
+   //console.log(  answer2) ;
    const answer3 = (  selectedOption === optionArray[2]);
-   console.log(  answer3) ;
+   //console.log(  answer3) ;
  */ 
 
    
-   // console.log( "quiz") ;    
+   // //console.log( "quiz") ;    
    if(  (answer1||answer2||answer3)   ===  true  ){
     
 
@@ -571,7 +571,7 @@ function  UploadContent() {
       .then((res) => {  
           
 
-       console.log(  res) ;   
+       //console.log(  res) ;   
 
        if(  res.data.message === "quiz added Successfully."){
 
@@ -632,7 +632,7 @@ function  UploadContent() {
         .then((res) => {  
             
   
-         console.log(  res) ;   
+         //console.log(  res) ;   
   
          if(  res.data.message === "quiz added Successfully."){
   
@@ -681,7 +681,7 @@ function  UploadContent() {
     if(   type ===  "module"){ 
 
 
-      console.log(   type  )  ;  
+      //console.log(   type  )  ;  
 
     axios({
       // Endpoint to send files
@@ -722,7 +722,7 @@ function  UploadContent() {
     } 
     else  if(  type ===  "workshop"  ){
        
-      console.log(   "vhgs"  )  ;   
+      //console.log(   "vhgs"  )  ;   
 
       axios({
         // Endpoint to send files
@@ -746,7 +746,7 @@ function  UploadContent() {
         .then((res) => {  
             
           alert( res.data.message) ;
-         console.log(  res) ;   
+         //console.log(  res) ;   
          navigate(  "/home/course/draftcourse/module"   ,  { state: {   type :  location.state.type   ,           courseId :  location.state.courseId ,   courseName :  location.state.course_name  ,  type_name :   name    , userInfo :  location.state.userInfo    }}   ,  { replace : false}  ) ;
   
         }) // Handle the response from backend here
@@ -766,9 +766,9 @@ function  UploadContent() {
     const { value, checked } = e.target;
 
 
-   console.log( value) ;
+   //console.log( value) ;
    
-   console.log( checked) ;
+   //console.log( checked) ;
    
   
 
@@ -853,8 +853,8 @@ setSelectedOption( null) ;
 
   const  optionHandler = (  e , value  ) => {  
   
-    console.log( optionArray ) ; 
-    console.log( e.target.value ) ; 
+    //console.log( optionArray ) ; 
+    //console.log( e.target.value ) ; 
 
 
    if(  value === "option1"){

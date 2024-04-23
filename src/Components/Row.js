@@ -4,8 +4,8 @@
  
  const Row = ( props) => {  
      
-    console.log( "ihkh") ; 
-     console.log( props.data ) ;  
+    //console.log( "ihkh") ; 
+     //console.log( props.data ) ;  
      let data = props.data ;
   return(
     <div  className="Row"> 

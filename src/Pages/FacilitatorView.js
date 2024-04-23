@@ -33,17 +33,17 @@ function  FacilitatorView() {
     
  
 
-   /*  console.log( "facilitatorview" ) ; 
-    console.log( location.state.typeId  ) ; 
-    console.log( location.state.schoolId  ) ; 
-    console.log( location.state.programId  ) ;  */
+   /*  //console.log( "facilitatorview" ) ; 
+    //console.log( location.state.typeId  ) ; 
+    //console.log( location.state.schoolId  ) ; 
+    //console.log( location.state.programId  ) ;  */
 
 
      
     const goToNext = () => {
   
        navigate(  "/home/dashboard/client/addfacilitator"   ,   { state: {    typeId : "system_admin_facilitator"    ,   type : "facilitator_with_add_account"   ,   schoolId : location.state.schoolId       ,   programId : location.state.programId   , userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
-       console.log("ASJghshGHS") ;  
+       //console.log("ASJghshGHS") ;  
 
       }  
 
@@ -70,7 +70,7 @@ function  FacilitatorView() {
         }).then( ( res) => {   
   
   
-         // console.log(  res ) ;  
+         // //console.log(  res ) ;  
            
 
           if(   res.data.message  === "Information retrieve successfully"  ){
@@ -78,10 +78,10 @@ function  FacilitatorView() {
             setData(  res.data.data ) ; 
 }
            
-         //  console.log(   res.data.data[1].name )  ;
+         //  //console.log(   res.data.data[1].name )  ;
   
         } ).catch(( err) => {  
-            console.log( "error") ;
+            //console.log( "error") ;
   
          }  ) ; 
   
@@ -96,7 +96,7 @@ function  FacilitatorView() {
     const  handleStatusChange = ( cs  ) => {    
     
       setPopupInfo( cs) ;
-      // console.log( cs) ;
+      // //console.log( cs) ;
       setUserNameForPopup( cs.facilitator_name) ;
         setPopup( true)  ;
        

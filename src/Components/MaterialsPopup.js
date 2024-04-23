@@ -18,7 +18,7 @@ const MaterialsPopup = (  props ) =>{
 
        
     
-        //  console.log(  props.data.sub_type )   ; 
+        //  //console.log(  props.data.sub_type )   ; 
                         
    
      
@@ -46,12 +46,12 @@ const MaterialsPopup = (  props ) =>{
         
              }).then( ( res) => {   
         
-              console.log( res) ; 
+              //console.log( res) ; 
               alert( res.data.message) ;  
               props.setTrigger( false ) ;
                
              } ).catch(( err) => { 
-                 console.log( "error") ;
+                 //console.log( "error") ;
         
               }  ) ; 
 
@@ -77,12 +77,12 @@ const MaterialsPopup = (  props ) =>{
       
            }).then( ( res) => {   
       
-            console.log( res) ; 
+            //console.log( res) ; 
             alert( res.data.message) ;  
             props.setTrigger( false ) ;
              
            } ).catch(( err) => { 
-               console.log( "error") ;
+               //console.log( "error") ;
       
             }  ) ; 
       

@@ -30,11 +30,11 @@ function  ModuleContentType() {
  
   
 
-  console.log(  "modulecontenttype" ) ; 
-   console.log( location.state.courseName )  ; 
-  console.log( location.state.type_name)  ; 
-  console.log( location.state.type)  ; 
-  console.log( location.state.courseId) ; 
+  //console.log(  "modulecontenttype" ) ; 
+   //console.log( location.state.courseName )  ; 
+  //console.log( location.state.type_name)  ; 
+  //console.log( location.state.type)  ; 
+  //console.log( location.state.courseId) ; 
 
  
 

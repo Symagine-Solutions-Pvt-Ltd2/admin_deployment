@@ -20,8 +20,8 @@ function  Home() {    // frame 3
 
 
 
- console.log(   location.state.userInfo ) ;
- console.log(   location.state.typeId  ) ;  
+ //console.log(   location.state.userInfo ) ;
+ //console.log(   location.state.typeId  ) ;  
 
 
      
@@ -31,7 +31,7 @@ function  Home() {    // frame 3
    navigate(  "/home/dashboard"  ,    { state: {    typeId :  typeId   ,   userInfo :  location.state.userInfo  }} ,  { replace : false}  )  ;
 
 
-   console.log( typeId) ; 
+   //console.log( typeId) ; 
  } 
 
 

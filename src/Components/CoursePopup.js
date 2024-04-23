@@ -11,8 +11,8 @@ const CoursePopup = (  props ) => {
   //  const [  screenType , setScreenType ] =  useState( props.screenType ) ;  
    
 
-  // console.log( props.data) ; 
-   console.log( props.screenType) ; 
+  // //console.log( props.data) ; 
+   //console.log( props.screenType) ; 
 
     
    
@@ -23,7 +23,7 @@ const CoursePopup = (  props ) => {
 
     if(  props.screenType === "submit"  ){
 
-               console.log( props.data._id)   ; 
+               //console.log( props.data._id)   ; 
                  
       axios({ 
       
@@ -40,12 +40,12 @@ const CoursePopup = (  props ) => {
   
        }).then( ( res) => {   
   
-        console.log( res) ; 
+        //console.log( res) ; 
         alert( res.data.message) ;  
         props.setTrigger( false ) ;
          
        } ).catch(( err) => { 
-           console.log( "error") ;
+           //console.log( "error") ;
   
         }  ) ; 
 
@@ -67,12 +67,12 @@ const CoursePopup = (  props ) => {
   
        }).then( ( res) => {   
   
-        console.log( res) ; 
+        //console.log( res) ; 
         alert( res.data.message) ;  
         props.setTrigger( false ) ;
          
        } ).catch(( err) => { 
-           console.log( "error") ;
+           //console.log( "error") ;
   
         }  ) ; 
 
@@ -83,7 +83,7 @@ const CoursePopup = (  props ) => {
 
 
     
-   console.log( props.data) ; 
+   //console.log( props.data) ; 
    
    if(  props.data.type_id === "business plan"){
 
@@ -103,12 +103,12 @@ const CoursePopup = (  props ) => {
       
            }).then( ( res) => {   
       
-            console.log( res) ; 
+            //console.log( res) ; 
             alert( res.data.message) ;  
             props.setTrigger( false ) ;
              
            } ).catch(( err) => { 
-               console.log( "error") ;
+               //console.log( "error") ;
       
             }  ) ; 
         
@@ -132,12 +132,12 @@ const CoursePopup = (  props ) => {
       
            }).then( ( res) => {   
       
-            console.log( res) ; 
+            //console.log( res) ; 
             alert( res.data.message) ;  
             props.setTrigger( false ) ;
              
            } ).catch(( err) => { 
-               console.log( "error") ;
+               //console.log( "error") ;
       
             }  ) ; 
 

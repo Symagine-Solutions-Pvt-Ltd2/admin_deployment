@@ -53,14 +53,14 @@ function  AdminView() {
       }).then( ( res) => {   
 
 
-        console.log(  res.data.data ) ; 
+        //console.log(  res.data.data ) ; 
          setData(  res.data.data ) ;  
          
          
-       //  console.log(   res.data.data[1].name )  ;
+       //  //console.log(   res.data.data[1].name )  ;
 
       } ).catch(( err) => {  
-          console.log( "error") ;
+          //console.log( "error") ;
 
        }  ) ; 
 
@@ -73,7 +73,7 @@ function  AdminView() {
     const goToNext = () => {
   
        navigate(  "/home/manageadmin/addadminaccount"  ,     { state: {    typeId : "system_admin_admin"  ,  userInfo :  location.state.userInfo }}    ,  { replace : false}  ) ; 
-       console.log("ASJghshGHS") ;  
+       //console.log("ASJghshGHS") ;  
 
       }  
 
@@ -84,7 +84,7 @@ function  AdminView() {
       const  handleStatusChange = ( cs  ) => {    
         
         setPopupInfo( cs) ;
-      //  console.log( cs) ; 
+      //  //console.log( cs) ; 
         setUserNameForPopup( cs.name) ;
          setPopup( true)  ;
         

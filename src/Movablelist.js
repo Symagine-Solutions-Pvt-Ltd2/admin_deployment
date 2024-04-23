@@ -58,7 +58,7 @@ function  Movablelist() {
 
         <div style= {{ width: "100%"   , height : "100%" , padding : "20px"  , backgroundColor : "white"}}> 
         <DragDropContext  onDragEnd={(...props) => {
-         console.log( props);
+         //console.log( props);
         }}>    
            <Droppable   droppableId="droppable-1" > 
 

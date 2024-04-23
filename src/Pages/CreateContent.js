@@ -61,14 +61,14 @@ function CreateContent() {
   }).then( ( res) => {   
 
    
-    console.log(  res.data ) ; 
+    //console.log(  res.data ) ; 
     setCourseList( res.data.data); 
     setTotalPages( res.data.totalPages )  ; 
-     console.log(    res.data.data.length  )  ; 
+     //console.log(    res.data.data.length  )  ; 
 
 
   } ).catch(( err) => {  
-      console.log( "error") ;
+      //console.log( "error") ;
 
    }  ) ; 
  
@@ -97,9 +97,9 @@ function CreateContent() {
   const createProgram  = (   ) => { 
     
 
-    console.log(  programName) ; 
-    console.log(  feedbackGivenBy) ;
-    console.log(   selectedCourse  ) ; 
+    //console.log(  programName) ; 
+    //console.log(  feedbackGivenBy) ;
+    //console.log(   selectedCourse  ) ; 
 
 
 
@@ -122,7 +122,7 @@ function CreateContent() {
  
 
 
-        console.log(  res ) ;  
+        //console.log(  res ) ;  
 
 
          if(   res.data.message ===  "Program added Successfully."    ){
@@ -140,7 +140,7 @@ function CreateContent() {
 
        
      } ).catch(( err) => { 
-         console.log( "error") ;
+         //console.log( "error") ;
 
       }  ) ;  
 
@@ -154,8 +154,8 @@ function CreateContent() {
   const saveCourse = (  event  ) => { 
     
        
-    console.log( event.target.course_name.value) ;   
-    console.log( event.target.course_description.value) ;    
+    //console.log( event.target.course_name.value) ;   
+    //console.log( event.target.course_description.value) ;    
   
 
     axios({ 
@@ -177,7 +177,7 @@ function CreateContent() {
      
 
 
-            console.log(  res ) ;  
+            //console.log(  res ) ;  
 
 
             if(   res.data.message ===  "Course added Successfully."    ){
@@ -195,7 +195,7 @@ function CreateContent() {
 
            
          } ).catch(( err) => { 
-             console.log( "error") ;
+             //console.log( "error") ;
     
           }  ) ;  
 
@@ -216,8 +216,8 @@ function CreateContent() {
     const  createModule  =   (  event  ) => { 
     
        
-      console.log( event.target.module_name.value) ;   
-      console.log( event.target.subject_name.value) ;    
+      //console.log( event.target.module_name.value) ;   
+      //console.log( event.target.subject_name.value) ;    
     
   
       axios({ 
@@ -240,7 +240,7 @@ function CreateContent() {
        
   
   
-              console.log(  res ) ;    
+              //console.log(  res ) ;    
 
               if(   res.data.message ===  "Module added Successfully."    ){
                
@@ -257,7 +257,7 @@ function CreateContent() {
   
              
            } ).catch(( err) => { 
-               console.log( "error") ;
+               //console.log( "error") ;
       
             }  ) ;  
   
@@ -276,8 +276,8 @@ function CreateContent() {
       const  createWorkshop  =   (  event  ) => { 
     
         const selectedFile = document.getElementById("upload").files[0];
-        console.log( "file upload"  )   ; 
-        console.log(selectedFile) ; 
+        //console.log( "file upload"  )   ; 
+        //console.log(selectedFile) ; 
 
 
 
@@ -290,7 +290,7 @@ function CreateContent() {
          
 
     
-        console.log( formData) ;  
+        //console.log( formData) ;  
     
     
         axios({
@@ -312,7 +312,7 @@ function CreateContent() {
           .then((res) => {  
               
     
-           console.log(  res) ;  
+           //console.log(  res) ;  
             
 
            if(   res.data.message ===  "Workshop added Successfully."    ){
@@ -346,11 +346,11 @@ function CreateContent() {
          
          if( btn ===  "prev"){ 
 
-          console.log( "prev") ;             
+          //console.log( "prev") ;             
           setPageNo( pageNo -1 ) ;  
 
         }else   if( btn ===  "next" )  {
-          console.log( "next") ;  
+          //console.log( "next") ;  
          setPageNo( pageNo +1 ) ; 
         }  
            
@@ -366,8 +366,8 @@ function CreateContent() {
 
         const handleCheckboxChange = (  option  ) => {
             
-          console.log( "kjhk") ; 
-             console.log( option)
+          //console.log( "kjhk") ; 
+             //console.log( option)
              setSelectedCourse( option ) ; 
 
         }
@@ -383,7 +383,7 @@ function CreateContent() {
           const { value, checked } = e.target;
              
 
-        //  console.log(`${value} is ${checked}`); 
+        //  //console.log(`${value} is ${checked}`); 
 
 
            // Case 1 : The user checks the box
@@ -401,7 +401,7 @@ function CreateContent() {
                        }
    
 
-                       console.log( feedbackGivenBy) ; 
+                       //console.log( feedbackGivenBy) ; 
 
 
       };

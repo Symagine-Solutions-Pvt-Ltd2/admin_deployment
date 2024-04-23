@@ -23,9 +23,9 @@ const PasswordPopup= (  props ) => {
   
 
 
-/*   console.log(  "nvgff"  ) ;  */
-  console.log( props.userId) ; 
-  console.log( props.trigger) ; 
+/*   //console.log(  "nvgff"  ) ;  */
+  //console.log( props.userId) ; 
+  //console.log( props.trigger) ; 
   
 
    
@@ -69,8 +69,8 @@ const PasswordPopup= (  props ) => {
     setMinutes(2);
     setSeconds(59); 
 
-   // console.log(  props.email) ;  
-   // console.log(  props.token ) ;
+   // //console.log(  props.email) ;  
+   // //console.log(  props.token ) ;
      
 
    axios({ 
@@ -91,13 +91,13 @@ const PasswordPopup= (  props ) => {
     }).then( ( res) => {   
 
       
-     console.log( res ) ;
+     //console.log( res ) ;
      alert(  res.data.message)   ;  
      
   
 
     } ).catch(( err) => { 
-        console.log( "error") ;
+        //console.log( "error") ;
 
      }  ) ;  
 
@@ -110,9 +110,9 @@ const PasswordPopup= (  props ) => {
 
   const  validateOtp = (  ) => {      
           
-    console.log(  otp) ;  
-    console.log(  props.userId) ;  
-    console.log(  props.email) ;  
+    //console.log(  otp) ;  
+    //console.log(  props.userId) ;  
+    //console.log(  props.email) ;  
     
 
    axios({ 
@@ -130,7 +130,7 @@ const PasswordPopup= (  props ) => {
     }).then( ( res) => {   
 
       
-     console.log( res) ;  
+     //console.log( res) ;  
       
 
       if(  res.data.message === "OTP validation successful"){
@@ -143,7 +143,7 @@ const PasswordPopup= (  props ) => {
 
 
     } ).catch(( err) => { 
-        console.log( "error") ;
+        //console.log( "error") ;
 
      }  ) ;  
 

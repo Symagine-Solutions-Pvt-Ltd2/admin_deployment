@@ -35,15 +35,15 @@ function SchoolView() {
     const [  clientId  , setClientId  ]   = useState( location.state.clientId  ) ;   
 
   
-  /*   console.log("in school view ")  ;
+  /*   //console.log("in school view ")  ;
 
-    console.log( location.state.clientId )  ; 
+    //console.log( location.state.clientId )  ; 
 
-    console.log( location.state.programName) ;   
+    //console.log( location.state.programName) ;   
     
-    console.log( location.state.typeId ) ;  
+    //console.log( location.state.typeId ) ;  
    
-    console.log( location.state.programId) ;   */ 
+    //console.log( location.state.programId) ;   */ 
      
 
 
@@ -52,7 +52,7 @@ function SchoolView() {
     const goToNext = () => {
   
        navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   clientId : location.state.clientId ,   programId :  location.state.programId  ,  programName : location.state.programName  ,   userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
-       console.log("ASJghshGHS") ;  
+       //console.log("ASJghshGHS") ;  
 
 
 
@@ -77,7 +77,7 @@ function SchoolView() {
         }).then( ( res) => {   
   
   
-          console.log(  res.data.message ) ;   
+          //console.log(  res.data.message ) ;   
          
           if(   res.data.message  === "Information retrieve successfully"  ){
            
@@ -85,7 +85,7 @@ function SchoolView() {
 }
   
         } ).catch(( err) => {  
-            console.log( "error") ;
+            //console.log( "error") ;
   
          }  ) ; 
   
@@ -102,7 +102,7 @@ function SchoolView() {
     
     
       setPopupInfo( cs) ;
-     // console.log( cs) ;
+     // //console.log( cs) ;
      setUserNameForPopup( cs.school_name) ;
        setPopup( true)  ;
       

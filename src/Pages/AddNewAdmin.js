@@ -13,7 +13,7 @@ function AddNewAdmin() {
   // Call the parent callback function
 // props.parentCallback(event.target.myname.value);  
 
-console.log( event.target.vall  ) ;  
+//console.log( event.target.vall  ) ;  
 
   event.preventDefault();  
 
@@ -25,7 +25,7 @@ console.log( event.target.vall  ) ;
 
 
  
-     console.log(  name )  ; 
+     //console.log(  name )  ; 
     return(
       <div className="admin">
    

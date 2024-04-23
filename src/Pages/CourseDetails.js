@@ -31,10 +31,10 @@ function CourseDetails() {
 
 /* 
 
-   console.log( "coursedetails") ;  
-   console.log( location.state.typeId  ) ;
-   console.log( location.state.courseName  ) ;
-   console.log( location.state.courseId ) ; 
+   //console.log( "coursedetails") ;  
+   //console.log( location.state.typeId  ) ;
+   //console.log( location.state.courseName  ) ;
+   //console.log( location.state.courseId ) ; 
  */
 
 
@@ -42,7 +42,7 @@ function CourseDetails() {
     const goToNext = () => {
         
 
-       console.log( courseName) ; 
+       //console.log( courseName) ; 
 
         navigate(  "/home/course/draftcourse/addcoursecontent"   ,  { state: {    typeId : "addcoursecontent"    ,  courseName : location.state.courseName   , courseId : location.state.courseId  ,  userInfo :  location.state.userInfo }}   ,  { replace : false}  ) ; 
      
@@ -74,7 +74,7 @@ function CourseDetails() {
                  }).then( ( res) => {   
 
 
-                console.log(  res) ;   
+                //console.log(  res) ;   
                 if(  res.data.message === "Information retrieve successfully") {  
                 setData(  res.data.data ) ;  
                 }
@@ -82,7 +82,7 @@ function CourseDetails() {
           
 
                   } ).catch(( err) => {  
-                  console.log( "error") ;
+                  //console.log( "error") ;
 
                 }  ) ;   
 
@@ -122,8 +122,8 @@ function CourseDetails() {
      setPopup( true)  ;
  
      
-/*      console.log( cs) ; 
-     console.log( screenType) ;  */ 
+/*      //console.log( cs) ; 
+     //console.log( screenType) ;  */ 
 
     
 

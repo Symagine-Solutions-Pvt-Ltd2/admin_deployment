@@ -4,7 +4,7 @@ const Button = (  props ) => {
   
 
 
-    console.log( props.name );   
+    //console.log( props.name );   
 
 
 
