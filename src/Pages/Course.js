@@ -117,9 +117,16 @@ function Course() {
                  }).then( ( res) => {   
 
 
-                //console.log(  res.data.data ) ; 
+                //console.log(  res.data.data ) ;  
+
+                 if( res.data.status === "success"){
+
+                 
                  setData(  res.data.data ) ;  
-       
+                 } else {
+
+                  setData( []);
+                 }
        
                     //  //console.log(   res.data.data[1].name )  ;
 

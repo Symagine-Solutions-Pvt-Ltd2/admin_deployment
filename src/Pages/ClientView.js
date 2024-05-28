@@ -241,10 +241,10 @@ function ClientView(   ) {
               <div className="clientview_body3">  
 
 
-              <div onClick={ () => { goToNext() } } className="add_new_program_button">
+              <button onClick={ () => { goToNext() } } className="add_new_program_button">
                 <p>Add new client</p> 
 
-              </div>
+              </button>
             
               </div>
              

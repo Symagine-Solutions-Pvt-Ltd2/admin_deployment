@@ -208,9 +208,9 @@ function  AdminView() {
   
                 <div className="body3"   style= {{ backgroundColor : "#F8E5E9"}}> 
   
-                <div onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"}} >
+                <button onClick={ () => { goToNext() } } className="add_new_program_button"  style= { {  backgroundColor : "#FCC046"}} >
                   <p>Add new account</p>
-                </div>
+                </button>
               
                 </div>
               

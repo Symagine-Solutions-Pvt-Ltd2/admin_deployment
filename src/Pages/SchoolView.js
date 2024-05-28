@@ -270,9 +270,9 @@ function SchoolView() {
     
                   <div className="body3"> 
     
-                  <div onClick={ () => { goToNext() } } className="add_new_program_button">
+                  <button onClick={ () => { goToNext() } } className="add_new_program_button">
                     <p> Add new school </p>
-                  </div>
+                  </button>
                 
                   </div>
                 

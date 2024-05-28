@@ -93,13 +93,13 @@ function SecondView() {
         <div   className="secondview_body"> 
             
                <div  className="secondview_body_innner_div1">
-                   <div  className="secondview_body_innner_tab"  style= {{ backgroundColor : "#F06B6E"  }}  onClick={ () => {  createCourse() } } >
+                   <button className="secondview_body_innner_tab"  style= {{ backgroundColor : "#F06B6E"  , border : "0px red" }}  onClick={ () => {  createCourse() } } >
                      <p style={{ color : "#FFF"  , fontWeight: "500"}} >Create New Course</p>
-                   </div> 
+                   </button> 
 
-                   <div className="secondview_body_innner_tab"   style= {{ backgroundColor : "#5E82F4"  }}  onClick={ () => { goToDraftCourse()  } } >
+                   <button className="secondview_body_innner_tab"   style= {{ backgroundColor : "#5E82F4"  ,  border : "0px red" }}  onClick={ () => { goToDraftCourse()  } } >
                    <p style={{ color : "#FFF"  , fontWeight: "500"}}>Draft Courses</p>
-                    </div>
+                    </button>
                </div>
            
         </div>
@@ -123,19 +123,19 @@ function SecondView() {
 
 
 
-                <div  className="secondview_body_innner_tab"  style={{  width: "24.54%"  }}  onClick={ () => {  createModule() } } >
+                <button  className="secondview_body_innner_tab"  style={{  width: "24.54%"   , border : "0px red" }}  onClick={ () => {  createModule() } } >
                   <p style= {{  fontWeight : 600 }} >Create new Module</p>
-                </div> 
+                </button> 
 
-                <div className="secondview_body_innner_tab"  style={{  width: "24.54%" }}  onClick={ () => {   createWorkshop()  } } >
+                <button className="secondview_body_innner_tab"  style={{  width: "24.54%"   , border : "0px red"  }}  onClick={ () => {   createWorkshop()  } } >
                 <p style= {{  fontWeight : 600 }} >Create new Workshop</p>
-                 </div> 
+                 </button> 
 
 
                  
-                <div  className="secondview_body_innner_tab"     style={{  width: "24.54%" }} onClick={ () => {  createBplan() } } >
+                <button  className="secondview_body_innner_tab"     style={{  width: "24.54%"  , border : "0px red"  }} onClick={ () => {  createBplan() } } >
                   <p style= {{  fontWeight : 600 }}>Create business plan</p>
-                </div> 
+                </button> 
 
             </div>
         
