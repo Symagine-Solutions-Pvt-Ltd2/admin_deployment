@@ -4,7 +4,9 @@ import {Link , useNavigate } from "react-router-dom" ;
 
 import logo1 from "./Images/logo1.png"  ; 
 import LogoutIcon from '@mui/icons-material/Logout';
-import { useState  , useEffect  } from "react"; 
+import { useState  , useEffect  } from "react";  
+
+import ConfirmationBox from "./Components/ConfirmationBox.js" ; 
 
 
 
@@ -18,7 +20,8 @@ function SideBar( props ) {
 
     // //console.log( props.info) ;  
 
-   const [  userInfo   , setUserInfo ]   = useState({ }  ) ;   
+   const [  userInfo   , setUserInfo ]   = useState({ }  ) ;  
+   const[ logoutPopupInfo  , setLogoutPopupInfo ] = useState( false) ;  
   
     
    useEffect(() => { 
@@ -84,8 +87,9 @@ function SideBar( props ) {
        
 
 
-   localStorage.removeItem('items')  ; 
-   navigate(  "/login"  ,   { replace : false}  )  ;
+ //  localStorage.removeItem('items')  ;  
+   setLogoutPopupInfo( true)  ;
+ //  navigate(  "/login"  ,   { replace : false}  )  ;
 
 }
 
@@ -142,9 +146,16 @@ function SideBar( props ) {
       </div>  
 
 
-         <div className="Sidebar-logout-box"  style={{   display : "flex" ,  alignItems :  "flex-end"  , justifyContent : "flex-end"}}>   
+         <div className="Sidebar-logout-box"  style={{   display : "flex" ,  alignItems :  "flex-end"  , justifyContent : "flex-end"}}>     
 
-         <div className="Sidebar-logout-button_div" >
+
+         <ConfirmationBox  trigger= { logoutPopupInfo } setTrigger={ setLogoutPopupInfo }  >
+          </ConfirmationBox>
+
+
+
+         <div className="Sidebar-logout-button_div" > 
+
                       <button className="Sidebar-logout-button"  type="button"  onClick={ () => {  Logout()  }  }>   
 
 
