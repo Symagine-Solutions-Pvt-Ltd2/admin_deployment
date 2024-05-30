@@ -84,12 +84,8 @@ function SideBar( props ) {
   
     
   const Logout  = ()  => {
-       
-
-
- //  localStorage.removeItem('items')  ;  
+   
    setLogoutPopupInfo( true)  ;
- //  navigate(  "/login"  ,   { replace : false}  )  ;
 
 }
 
