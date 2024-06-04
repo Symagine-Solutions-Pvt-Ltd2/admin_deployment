@@ -3,6 +3,8 @@ import "../Style/Login.css"  ;
 import Button from "../Components/Button";
 import { useState  } from "react";
 import axios from "axios"  ;   
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 
 
@@ -16,6 +18,7 @@ function Login() {
   const  navigate = useNavigate() ;  
   const[ email , setEmail] = useState( "") ; 
   const[ password , setPassword ] = useState( "") ; 
+  const[ passwordVisibilty  , setPasswordVisibilty  ] = useState( false) ;  
 
   const onChangeEmail  = ( event ) => {
      
@@ -93,6 +96,25 @@ function Login() {
 
     }   
  
+   
+   
+  const onChangePasswordVisisbilty   = (  ) => {
+        
+
+    var x = document.getElementById("password_input"); 
+
+    if (x.type === "password") {
+      x.type = "text"; 
+      setPasswordVisibilty( true );
+    } else {
+      x.type = "password"; 
+      setPasswordVisibilty( false );
+    } 
+   
+    
+    } ; 
+
+
 
 
   return (
@@ -125,12 +147,31 @@ function Login() {
       <p  className="description1-text"> Welcome on board !</p>
      </div>  
 
-      <div className="input_text1"> 
-      <input  className="input_box_text"  style={{    border : "1px solid #5E81F4"  }}  placeholder="Enter your email or user id"  onChange={ onChangeEmail } /> 
+      <div className="input_text1">  
+
+      <input  className="input_box_text"    placeholder="Enter your email or user id"  onChange={ onChangeEmail } />  
+      
       </div> 
 
-      <div className="input_text2"> 
-      <input  className="input_box_text" style={{    border : "1px solid #5E81F4"  }}  placeholder="Enter your password"    onChange={ onChangePassword }/> 
+      <div className="input_text2">  
+       
+
+      <span class="ab"> {
+
+      
+      passwordVisibilty ?
+      <button  className ="login_button"  onClick={ () => { onChangePasswordVisisbilty()}}>
+      <VisibilityIcon sx={{   fontSize : 26    }}/> 
+      </button>
+      : 
+      <button    className ="login_button" onClick={ () => { onChangePasswordVisisbilty()}} >
+      <VisibilityOffIcon sx={{   fontSize : 26    }}/> 
+      </button>
+}
+       </span>
+      <input    id="password_input"   type="password" className="input_box_text"   placeholder="Enter your password"    onChange={ onChangePassword }/>  
+    
+
       </div>
       
 
