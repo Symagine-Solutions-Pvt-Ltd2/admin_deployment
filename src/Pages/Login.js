@@ -149,7 +149,7 @@ function Login() {
 
       <div className="input_text1">  
 
-      <input  className="input_box_text"    placeholder="Enter your email or user id"  onChange={ onChangeEmail } />  
+      <input   style={{    border : "1px solid #5E81F4"  }} className="input_box_text"    placeholder="Enter your email or user id"  onChange={ onChangeEmail } />  
       
       </div> 
 
@@ -169,7 +169,7 @@ function Login() {
       </button>
 }
        </span>
-      <input    id="password_input"   type="password" className="input_box_text"   placeholder="Enter your password"    onChange={ onChangePassword }/>  
+      <input   style={{    border : "1px solid #5E81F4"  }}  id="password_input"   type="password" className="input_box_text"   placeholder="Enter your password"    onChange={ onChangePassword }/>  
     
 
       </div>
