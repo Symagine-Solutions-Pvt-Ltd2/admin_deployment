@@ -693,7 +693,8 @@ function CreateContent() {
       <input type="text"
                name = "module_name"
               placeholder="Enter module name"
-              className="course_input-box"
+              className="course_input-box" 
+              required
               /> 
        
  
@@ -701,7 +702,8 @@ function CreateContent() {
       <input type="text" 
                 name = "subject_name"
               placeholder="Enter subject name"
-              className="course_input-box"  style={{ marginBottom : "4.5%"}}
+              className="course_input-box"  style={{ marginBottom : "4.5%"}} 
+              required
               /> 
   
  
@@ -740,11 +742,11 @@ function CreateContent() {
       <input type="text"
               name="workshop_name"
               placeholder="Enter workshop name"
-              className="course_input-box"
+              className="course_input-box" 
+              required
               /> 
        
- 
-   {/*    <input type="file"  className="course_input-box"  name="file"   id="upload"  />  */}  
+
 
 
     <div   className="course_input-box" >  
@@ -755,7 +757,7 @@ function CreateContent() {
                 
                  
              {/*    <img src={ logo1}  alt= { "ccv"}  height={"100%"}  />  */}
-                <input    style= {{ width : "35%"  , height : "50%"  }}   type="file"  name="file"   id="upload"  /> 
+                <input    style= {{ width : "35%"  , height : "50%"  }}   type="file"  name="file"   id="upload"   required /> 
                   
                 </label>   
 
@@ -812,7 +814,8 @@ function CreateContent() {
              <input type="text"
                      name = "course_name"
                      placeholder="Enter course name"
-                     className="course_input-box"
+                     className="course_input-box" 
+                     required
                      /> 
               
         
@@ -821,6 +824,7 @@ function CreateContent() {
                      name = "course_description"
                      placeholder="Enter short description"
                      className="course_input-box"  style={{ marginBottom : "4.5%"}}
+                     required
                      /> 
          
         
@@ -840,27 +844,6 @@ function CreateContent() {
       )   ; 
      
 
-
-
-   /*  case "program_admin" :  
-    return(
-   <div>
-    <p>CreateContent</p>  
-    
-    
-   </div>
-    ) 
-
-
-    case "content_admin" :  
-    return(
-   <div>
-    <p>CreateContent</p>  
-    
-    
-   </div>
-    )  */
-   
 
 
 

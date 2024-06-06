@@ -56,7 +56,8 @@ function BusinessPlan() {
     
         
 
-      if( selectedTaskType !== ""){
+      if( selectedTaskType !== ""){ 
+
        axios({ 
       
         url : "https://learn-up.app/admin/bp_registration"  ,   
@@ -134,7 +135,7 @@ function BusinessPlan() {
               placeholder="Enter Bussiness Plan Name"
               value= {businessPlan }    onChange={ (  e) => {  setBusinessPlan( e.target.value)} }   
        style = {{  height : "60%"   , width  : "60%" , border : "1px solid #5E82F4"  ,  borderRadius : 15}}
-              /> 
+        required      /> 
 
       </div>
 

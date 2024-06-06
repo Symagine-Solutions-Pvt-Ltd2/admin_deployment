@@ -555,7 +555,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="name"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -568,7 +569,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                            <input type="text"
                                   name="email"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -581,7 +583,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="password"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -593,7 +596,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input  type="text"
                                   name="repeat_password"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -605,7 +609,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="contact_person"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -633,7 +638,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="number"
                                   name="student"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -699,7 +705,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                                   name="name"
                                   className="addaccount_admin_input-box" 
                                   style={ { borderRadius : "16px"}} 
-                                
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -714,7 +720,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <input type="text"
                                   name="email"
                                   className="addaccount_admin_input-box"  
-                                  style={ { borderRadius : "16px"}}
+                                  style={ { borderRadius : "16px"}} 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -728,7 +735,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <input type="text"
                                   name="password"
                                   className="addaccount_admin_input-box" 
-                                  style={ { borderRadius : "16px"}}
+                                  style={ { borderRadius : "16px"}} 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -742,7 +750,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="reset_password"
-                               
+                                  required
                                   className="addaccount_admin_input-box" 
                                   style={ { borderRadius : "16px"}}
                                   /> 
@@ -816,7 +824,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="name"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box"  
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -829,7 +838,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="email"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -842,7 +852,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="password"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -854,7 +865,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="repeat_password"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -866,7 +878,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="contact_person"
-                                  className="addaccount_admin_input-box"
+                                  className="addaccount_admin_input-box" 
+                                  required
                                   /> 
                           </div>  
                 </div> 
@@ -935,7 +948,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="name"
-                               
+                                  required
                                   className="addaccount_admin_input-box"
                                   /> 
                           </div>  
@@ -949,7 +962,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="email"
-                               
+                                  required
                                   className="addaccount_admin_input-box"
                                   /> 
                           </div>  
@@ -963,7 +976,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
                                   name="password"
-                               
+                                  required
                                   className="addaccount_admin_input-box"
                                   /> 
                           </div>  
@@ -979,7 +992,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                           </div>        
                           <div className="addaccount_admin_Form-Input" >         
                           <input type="text"
-                                  name="repeat_password"
+                                  name="repeat_password" 
+                                  required
                                   className="addaccount_admin_input-box"
                                   /> 
                           </div>  
@@ -1099,7 +1113,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                         <input type="text"
                                 name="name"
                                 className="addaccount_admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -1113,7 +1128,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                         <input type="text"
                                 name="email"
                                 className="addaccount_admin_input-box"  
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -1127,7 +1143,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                         <input type="text"
                                 name="password"  
                                 className="addaccount_admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 
@@ -1142,7 +1159,8 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                         <input type="text"
                                 name="repeat_password"
                                 className="addaccount_admin_input-box" 
-                                style={ { borderRadius : "16px"}}
+                                style={ { borderRadius : "16px"}} 
+                                required
                                 /> 
                         </div>  
               </div> 

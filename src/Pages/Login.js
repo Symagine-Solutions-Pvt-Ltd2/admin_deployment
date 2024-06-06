@@ -68,7 +68,7 @@ function Login() {
 
       //console.log(   res.data ) ; 
 
-        if(   res.data.message ===  "Login successful"    ){
+        if(   res.data.message ===  "Login successful"     &&  ( res.data.data.type_id === "system_admin"  || res.data.data.type_id === "program_admin" || res.data.data.type_id === "content_admin"   )  ){
             
 
 
@@ -78,7 +78,10 @@ function Login() {
  
          navigate(  "/home"  ,    { state: {    typeId :  res.data.data.type_id  ,  userInfo : {  name : res.data.data.name   ,   type : res.data.data.type_id   }   }} ,  { replace : false}  )  ;
 
-        } 
+        }else if(     res.data.message ===  "Login successful"  ){
+
+          alert( "Invalid Credentials!")  ;  
+        }
         else {
 
           alert( res.data.message)  ;
