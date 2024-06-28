@@ -3,6 +3,7 @@ import Sidebar  from "../Sidebar" ;
 import {Link , useNavigate  , useLocation } from "react-router-dom" ; 
 import  "../Style/Course.css" ;  
 import axios from "axios"  ;    
+import SearchIcon from '@mui/icons-material/Search';
 
 
 
@@ -16,7 +17,7 @@ function Course() {
    const[ popupInfo  , setPopupInfo ] = useState("") ; 
    const[ popupScreenType  , setPopupScreenType  ] = useState("") ; 
    const[ popup  , setPopup ] = useState( false) ; 
-  
+   const [  searchInput   , setSearchInput ]   = useState( "nil") ;
 
 
 
@@ -204,7 +205,60 @@ function Course() {
                      } 
 
 
+   
 
+     
+   const onSearch  = () => {  
+
+
+    console.log(  searchInput ) ;     
+  
+  
+  
+    axios({ 
+   
+     url : "https://learn-up.app/admin/p_course"  ,   
+  
+     method : "POST"  , 
+     data : {
+       
+      "search_key" : searchInput, 
+      "page_no" :  1 ,
+       "limit" : 10000 
+  
+  
+     }
+  
+    }).then( ( res) => {   
+  
+  
+      console.log( res  ) ;
+       
+       if(  res.data.message === "No course found.") {
+        alert("No course found");
+        setData([]);
+      } else if(  res.data.message === "Information retrieve successfully" ) {
+        console.log(  res ) ;
+        setData( res.data.data);
+      }else{
+        alert("Data not found");
+        setData([]);
+      }
+    
+    }
+           ).catch(( err) => {  
+        //console.log( "error") ;
+  
+     }  ) ; 
+   }  
+
+
+
+
+
+
+
+              
 
 
 
@@ -241,7 +295,7 @@ function Course() {
       </CoursePopup>
 
         <div  className="clientview_body1"  > 
-         
+              
              </div>
 
 
@@ -340,7 +394,21 @@ function Course() {
         <div className="course_body"   >    
 
         <div  className="clientview_body1"  > 
-           
+            
+
+        <div className="clientview_body1_search_div"> 
+
+
+       
+<i style={{ position : "absolute" }}>  
+ <button className="clientview_body1_search_button"   onClick={() => { onSearch() }}>
+ <SearchIcon sx={{   fontSize : 26    }}/> 
+ </button>
+  </i>
+<input   className="clientview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
+
+
+</div>
              </div>
 
 
