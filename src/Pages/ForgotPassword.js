@@ -13,10 +13,9 @@ import PasswordPopup  from "../Components/PasswordPopup";
 function ForgotPassword() {      
   
     
-    const[ popup  , setPopup ] = useState( false) ; 
-    const[ email   , setEmail ] = useState(  "") ;   
-
-    const[ userId  , setUserId ] = useState(  "") ; 
+    const[ popup  , setPopup ] = useState( false); 
+    const[ email   , setEmail ] = useState(  "") ;  
+    const[ userId  , setUserId ] = useState(  ""); 
     const[ token   , setToken ] = useState(  "") ; 
 
     const  handleOtp = (   ) => {      
@@ -37,7 +36,7 @@ function ForgotPassword() {
            }).then( ( res) => {   
       
              
-            //console.log( res.data ) ;   
+              console.log( res ) ;   
    
              if( res.data.status ===  "success"  ){
                 

@@ -36,9 +36,9 @@ function Password() {
 
     const resetPassword = (  ) => {       
           
-        //console.log(  password1) ;  
-        //console.log(  password2) ;  
-        //console.log(  location.state.userId  ) ;  
+       console.log(  password1) ;  
+       console.log(  password2) ;  
+       console.log( location.state.screentype  ) ;  
         //console.log(  location.state.token  ) ;  
        
 
@@ -67,7 +67,7 @@ function Password() {
         }).then( ( res) => {   
     
           
-         //console.log( res.data) ;  
+           console.log( res ) ;  
           
          if(  res.data.message === "New password created"){
 
@@ -110,6 +110,7 @@ function Password() {
                  if(  res.data.status === "success"){
                   
                    alert(  res.data.message) ;  
+                   navigate( -1)  ; 
               //   navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data :   location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }    
                  } 
               else {
@@ -152,6 +153,7 @@ function Password() {
                  if(  res.data.status === "success"){
                   
                    alert(  res.data.message) ;  
+                   navigate( -1)  ;  
               //   navigate(  "/home/dashboard/client/editclient"   , {   state: {  typeId : "client"   ,   data :   location.state.data   ,   programName : location.state.programName    , type : location.state.type  ,  userInfo :  location.state.userInfo   } }  , { replace : false}  )  }    
                  } 
               else {

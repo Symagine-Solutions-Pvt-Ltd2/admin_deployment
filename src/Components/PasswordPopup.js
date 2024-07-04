@@ -135,7 +135,7 @@ const PasswordPopup= (  props ) => {
 
       if(  res.data.message === "OTP validation successful"){
          
-        navigate(  "/password"  ,    { state: { userId : props.userId  , token : res.data.data.token }} ,  { replace : false}  )  ;
+        navigate(  "/password"  ,    { state: { userId : props.userId  , token : res.data.data.token  ,  screentype : "forgotpassword"      }} ,  { replace : false}  )  ;
         
       }else{
         alert(  res.data.message) ; 
