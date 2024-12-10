@@ -73,7 +73,7 @@ function   GettingStarted() {
             <div  className="illustrsation1"> 
               
 
-            <img src={ getStarted}  alt= { "lfd"}   width={ "100%"}  height = { "100%"}  /> 
+            <img  src={ getStarted}  alt= { "lfd"}   width={ "100%"}  height = { "100%"}  /> 
             </div>
            </div>
 
