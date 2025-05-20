@@ -1,11 +1,9 @@
-import "../Style/ClientView.css"  ;
 import {Link , useNavigate  , useLocation} from "react-router-dom" ; 
 import { useState  , useEffect   } from "react"; 
 import Sidebar from "../Sidebar"  ; 
 import axios from "axios"  ;  
 import SearchIcon from '@mui/icons-material/Search';
-
- 
+import  "../Style/StudentView.css" ;
 
 
 
@@ -165,13 +163,13 @@ function StudentView() {
 
     return(
        
-    <div className="clientview">  
+    <div className="studentview">  
 
-    <div className="clientview_sidebar"  style={{ borderRadius : 25}} >
+    <div className="studentview_sidebar"  style={{ borderRadius : 25}} >
            <Sidebar    info = {  location.state.userInfo}/> 
     </div>  
 
-    <div className="clientview_body">   
+    <div className="studentview_body">   
 
      
 
@@ -186,20 +184,20 @@ function StudentView() {
 
 
           
-     <div  className="clientview_body1">   
+     <div  className="studentview_body1">   
 
 
       
-     <div className="clientview_body1_search_div"> 
+     <div className="studentview_body1_search_div"> 
 
 
        
 <i style={{ position : "absolute" }}>  
- <button className="clientview_body1_search_button"   onClick={() => { onSearch() }}>
+ <button className="studentview_body1_search_button"   onClick={() => { onSearch() }}>
  <SearchIcon sx={{   fontSize : 26    }}/> 
  </button>
   </i>
-<input   className="clientview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
+<input   className="studentview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
 
 
 </div>
@@ -210,40 +208,40 @@ function StudentView() {
 
 
 
-      <div className="clientview_table_outer_div_body2">   
+      <div className="studentview_table_outer_div_body2">   
 
 
-       <div className="clientview_table_inner_div_column_name">    
+       <div className="studentview_table_inner_div_column_name">    
 
 
-       <div  className="clientview_table_row_box" style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
+       <div  className="studentview_table_row_box" style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p className="header_text">Sl No</p>
        </div>
 
-       <div  className="clientview_table_row_box"  style= {{   width: "15%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
+       <div  className="studentview_table_row_box"  style= {{   width: "15%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
          <p className="header_text"  style= {{ textAlign : "center"}}>Name of school</p>
        </div> 
 
-       <div   className="clientview_table_row_box" style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+       <div   className="studentview_table_row_box" style= {{   width: "17%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
          <p className="header_text" style= {{ textAlign : "center"}}>Name of student</p>
        </div> 
 
-       <div   className="clientview_table_row_box" style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+       <div   className="studentview_table_row_box" style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
          <p className="header_text" style= {{ textAlign : "center"}}>Status (submitted Business Plan)</p>
        </div> 
-       <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
+       <div  className="studentview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style= {{ textAlign : "center"}}>Certificate issued</p>
        </div> 
 
-       <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
+       <div   className="studentview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style= {{ textAlign : "center"}}>Student Progress</p>
        </div> 
         
-       <div    className="clientview_table_row_box" style= {{   width: "11%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+       <div    className="studentview_table_row_box" style= {{   width: "11%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style= {{ textAlign : "center"}}>Account Status</p>
        </div>
 
-       <div    className="clientview_table_row_box" style= {{   width: "15%"  ,    height: "100%"  }}> 
+       <div    className="studentview_table_row_box" style= {{   width: "15%"  ,    height: "100%"  }}> 
         <p className="header_text">Account status</p>
        </div>
     </div>   
@@ -252,7 +250,7 @@ function StudentView() {
 
 
 
-      <div  className="clientview_table_inner_div_table_row">
+      <div  className="studentview_table_inner_div_table_row">
            
             
 
@@ -265,30 +263,30 @@ function StudentView() {
       <div  key ={index} style= {{ width : "100%" , height: "25%"  , borderBottom : "1px solid #B6B7D0" , display : "flex" , flexDirection : "row"}} >  
 
 
-      <div   className="clientview_table_row_box"  style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
+      <div   className="studentview_table_row_box"  style= {{   width: "8%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p>{ index +1 }</p>
        </div>  
 
 
-       <div  className="clientview_table_row_box" style= {{   width: "15%" , height: "100%" , borderRight : "1px solid #B6B7D0" }}>
+       <div  className="studentview_table_row_box" style= {{   width: "15%" , height: "100%" , borderRight : "1px solid #B6B7D0" }}>
          <p> {  el.school_name }</p>
        </div> 
 
 
-       <div   className="clientview_table_row_box" style= {{   width: "17%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
+       <div   className="studentview_table_row_box" style= {{   width: "17%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
          <p> { el.student_name } </p>
        </div> 
 
 
-       <div  className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
+       <div  className="studentview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
          <p> {  el.bp_submitted  }</p>
        </div>  
 
-       <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+       <div   className="studentview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
          <p>{el.certificate }</p>
        </div>  
 
-       <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+       <div    className="studentview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
 
           
         <input   className="inner_table_btn" style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {    navigate(  "/home/dashboard/client/student/viewplan"      ,   { state: { typeId :   location.state.typeId ,  schoolId : location.state.schoolId      ,   programId:  location.state.programId  ,   userInfo :  location.state.userInfo     ,    data :  el   }}        ,  { replace : false}  )     }  } /> 
@@ -299,14 +297,14 @@ function StudentView() {
 
 
 
-       <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+       <div    className="studentview_table_row_box"  style= {{  width: "11%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
         <p> { el.status } </p>
        </div>   
 
  
 
 
-       <div   className="clientview_table_row_box"   style= {{   width: "15%"  ,    height: "100%"     ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
+       <div   className="studentview_table_row_box"   style= {{   width: "15%"  ,    height: "100%"     ,  display: "flex"  ,   flexDirection : "row"   , justifyContent : "space-around"}}> 
                     
          <input   className="inner_table_btn"    style={{ height: "40%"  , width : "40%"}}   type="button" value = "status"  onClick= { () => {handleStatusChange( el) } }/> 
                     
@@ -329,12 +327,23 @@ function StudentView() {
 
       </div> 
 
-      <div className="body3"> 
 
-      <button onClick={ () => { goToNext() } } className="add_new_program_button">
-        <p>Add new student</p>
-      </button>
-    
+  
+
+      <div className="studentview_body3"  > 
+        
+             <div className="studentview_body3_inner_view1"   >
+            
+              <button  className= "schoolview_body3_inner_view_button3">
+              <p> Business plan submission </p>
+            </button>
+
+            <button onClick={ () => { goToNext() } } className="schoolview_body3_inner_view_button3">
+              <p> Add new school </p>
+            </button>  
+
+             </div> 
+          
       </div>
     
     </div>
@@ -348,13 +357,13 @@ function StudentView() {
 
     return(
        
-    <div className="clientview">  
+    <div className="studentview">  
 
-    <div className="clientview_sidebar"   style={{ borderRadius : 25}} >
+    <div className="studentview_sidebar"   style={{ borderRadius : 25}} >
            <Sidebar    info = {  location.state.userInfo}/> 
     </div>  
 
-    <div className="clientview_body">   
+    <div className="studentview_body">   
 
      
 
@@ -369,19 +378,19 @@ function StudentView() {
 
 
           
-     <div  className="clientview_body1"> 
+     <div  className="studentview_body1"> 
       
 
-     <div className="clientview_body1_search_div"> 
+     <div className="studentview_body1_search_div"> 
 
 
        
 <i style={{ position : "absolute" }}>  
- <button className="clientview_body1_search_button"   onClick={() => { onSearch() }}>
+ <button className="studentview_body1_search_button"   onClick={() => { onSearch() }}>
  <SearchIcon sx={{   fontSize : 26    }}/> 
  </button>
   </i>
-<input   className="clientview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
+<input   className="studentview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
 
 
 </div>
@@ -391,37 +400,37 @@ function StudentView() {
 
 
 
-      <div className="clientview_table_outer_div_body2">   
+      <div className="studentview_table_outer_div_body2">   
 
 
-       <div className="clientview_table_inner_div_column_name">    
+       <div className="studentview_table_inner_div_column_name">    
 
 
-       <div  className="clientview_table_row_box" style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
+       <div  className="studentview_table_row_box" style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p className="header_text">Sl No</p>
        </div>
 
-       <div  className="clientview_table_row_box"  style= {{   width: "20%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
+       <div  className="studentview_table_row_box"  style= {{   width: "20%" , height: "100%"    , borderRight : "1px solid #B6B7D0" }}>
          <p className="header_text"   style ={{  textAlign : "center" }}>Name of school</p>
        </div> 
 
-       <div   className="clientview_table_row_box" style= {{   width: "21%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
+       <div   className="studentview_table_row_box" style= {{   width: "21%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
          <p className="header_text"  style ={{  textAlign : "center" }} >Name of student</p>
        </div> 
 
-       <div   className="clientview_table_row_box" style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+       <div   className="studentview_table_row_box" style= {{  width: "15%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
          <p className="header_text"   style={{  textAlign : "center"}} >Status (submitted Business Plan)</p>
        </div> 
-       <div  className="clientview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
+       <div  className="studentview_table_row_box"  style= {{   width: "11%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style={{  textAlign : "center"}} >Certificate issued</p>
        </div> 
 
-       <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
+       <div   className="studentview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text" style={{  textAlign : "center"}} >Student Progress</p>
        </div> 
       
         
-       <div    className="clientview_table_row_box" style= {{   width: "12%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+       <div    className="studentview_table_row_box" style= {{   width: "12%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
         <p className="header_text">Account Status</p>
        </div>
 
@@ -432,7 +441,7 @@ function StudentView() {
 
 
 
-      <div  className="clientview_table_inner_div_table_row">
+      <div  className="studentview_table_inner_div_table_row">
            
             
 
@@ -445,30 +454,30 @@ function StudentView() {
       <div  key ={index} style= {{ width : "100%" , height: "25%"  , borderBottom : "1px solid #B6B7D0" , display : "flex" , flexDirection : "row"}} >  
 
 
-      <div   className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
+      <div   className="studentview_table_row_box"  style= {{   width: "10%"  ,  height: "100%"    ,  borderRight : "1px solid #B6B7D0" }}>
        <p>{ index +1 }</p>
        </div>  
 
 
-       <div  className="clientview_table_row_box" style= {{   width: "20%" , height: "100%" , borderRight : "1px solid #B6B7D0" }}>
+       <div  className="studentview_table_row_box" style= {{   width: "20%" , height: "100%" , borderRight : "1px solid #B6B7D0" }}>
          <p> {  el.school_name }</p>
        </div> 
 
 
-       <div   className="clientview_table_row_box" style= {{   width: "21%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
+       <div   className="studentview_table_row_box" style= {{   width: "21%" ,  height: "100%" , borderRight : "1px solid #B6B7D0"}  }>
          <p> { el.student_name } </p>
        </div> 
 
 
-       <div  className="clientview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
+       <div  className="studentview_table_row_box"  style= {{  width: "15%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}}>
          <p> {  el.bp_submitted  }</p>
        </div>  
 
-       <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+       <div   className="studentview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
          <p>{el.certificate }</p>
        </div>  
 
-       <div    className="clientview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+       <div    className="studentview_table_row_box"  style= {{  width: "11%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
 
           
         <input    className="inner_table_btn"  style={{ height: "40%"  , width : "60%"}}  type="button" value = "view"  onClick={()  => {  navigate(  "/home/dashboard/client/student/viewplan"      ,   { state: { typeId :   location.state.typeId ,  schoolId : location.state.schoolId      ,   programId:  location.state.programId  ,   userInfo :  location.state.userInfo     ,    data :  el   }}        ,  { replace : false}  )     }  } /> 
@@ -480,7 +489,7 @@ function StudentView() {
 
 
 
-       <div    className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+       <div    className="studentview_table_row_box"  style= {{  width: "12%"  ,    height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
         <p> { el.status } </p>
        </div>   
 

@@ -9,15 +9,12 @@
     align-items: flex-end; 
     justify-content: center;   
  
-
- 
 }     
 
 
 
-.logout_popup_inner{
-
-
+.logout_popup_inner{ 
+    
     position: relative;
     width : 80% ; 
     height : 18% ;

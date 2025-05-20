@@ -15,6 +15,7 @@ import login from "../Images/login.jpg"  ;
 function Login() {    
 
   
+  
   const  navigate = useNavigate() ;  
   const[ email , setEmail] = useState( "") ; 
   const[ password , setPassword ] = useState( "") ; 
@@ -119,7 +120,7 @@ function Login() {
 
 
 
-
+  
   return (
     <div  className="OuterBox"  style={{  backgroundImage : `url(${login })`,  backgroundSize : "contain"   , backgroundRepeat : "no-repeat"   , backgroundPosition : "center"}}   > 
 

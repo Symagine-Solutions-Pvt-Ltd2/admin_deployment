@@ -1,4 +1,13 @@
 
+
+
+
+
+
+
+
+
+
 *{
  
     padding:  0 ;
@@ -10,7 +19,7 @@
 
 
 
- .clientview{
+ .studentview{
 
     height: 100vh ;
     width : 100vw ; 
@@ -21,7 +30,7 @@
    }   
 
 
-.clientview_sidebar{ 
+.studentview_sidebar{ 
   
   
     
@@ -36,7 +45,7 @@
 
 
 
-.clientview_body{ 
+.studentview_body{ 
   
 
     display: flex;
@@ -50,7 +59,7 @@
 } 
 
 
-.clientview_body1{
+.studentview_body1{
 
     height:  10% ;
     width : 100%; 
@@ -64,7 +73,7 @@
 
 
 
-.clientview_body1_search_div{
+.studentview_body1_search_div{
   
     width : 50% ; 
     background-color: #FFFFFF;  
@@ -82,7 +91,7 @@
 
 
 
-.clientview_body1_search_input{
+.studentview_body1_search_input{
 
   
 
@@ -98,7 +107,7 @@
 
 
 
-.clientview_body1_search_button{
+.studentview_body1_search_button{
 
   
 
@@ -128,7 +137,7 @@
 
 
 
-.clientview_table_outer_div_body2{
+.studentview_table_outer_div_body2{
    
 
     height:  67% ;
@@ -140,7 +149,7 @@
 }  
 
 
-.clientview_table_inner_div_column_name{
+.studentview_table_inner_div_column_name{
   
     height:  20% ;
     width : 100%;  
@@ -153,7 +162,7 @@
 
 
  
-.clientview_table_inner_div_column_name::-webkit-scrollbar{
+.studentview_table_inner_div_column_name::-webkit-scrollbar{
 
     width:  8px; 
     background-color: #B6B7D0 ;
@@ -164,7 +173,7 @@
 
 
 
-.clientview_table_inner_div_table_row{
+.studentview_table_inner_div_table_row{
   
     height:  80% ;
     width : 100%;  
@@ -175,7 +184,7 @@
  
 
 
-.clientview_table_inner_div_table_row::-webkit-scrollbar{
+.studentview_table_inner_div_table_row::-webkit-scrollbar{
 
     width:  8px; 
     background-color:  #B6B7D0 ; 
@@ -185,7 +194,7 @@
  
 
 
-.clientview_table_row_button{
+.studentview_table_row_button{
 
    
     background-color:#FCC046  ;
@@ -197,7 +206,7 @@
 
 
 
-.clientview_body3{
+.studentview_body3{
 
      
     height:  23% ;
@@ -210,21 +219,31 @@
 }
     
 
-.add_new_program_button{
-   margin-top:  2%;
-    height:  24.82% ;
-    width : 18%;  
-    background-color: brown; 
-    margin-right: 5%;
-    border-radius:  25; 
+.studentview_body3_inner_view1{
+
+ 
+ height : 50% ;
+ width : 40% ; 
+ display: flex;
+ justify-content: space-around; 
+ align-items: flex-end ;
+
+}
+
+.schoolview_body3_inner_view_button3{
+
+  width : 30% ; 
+  height : 50% ; 
+  border-radius:  18px ; 
+  background-color: #FCC046;
+  border : 0px solid red ; 
 
 
 }
-  
 
 
 
-.clientview_table_row_box{
+.studentview_table_row_box{
 
      
 
@@ -236,7 +255,7 @@
 
 
 
-.clientview_table_row_box_scrollable {
+.studentview_table_row_box_scrollable {
 
     padding :2px ;  
     overflow-y:  scroll ; 
@@ -245,7 +264,7 @@
 
 
 
-.clientview_table_row_box_scrollable::-webkit-scrollbar{
+.studentview_table_row_box_scrollable::-webkit-scrollbar{
 
     width:  1px; 
     background-color:  #B6B7D0 ;  
@@ -253,3 +272,13 @@
   
   
   } 
+
+
+
+
+
+
+
+
+
+
