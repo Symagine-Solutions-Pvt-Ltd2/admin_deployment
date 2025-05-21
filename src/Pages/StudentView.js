@@ -8,8 +8,10 @@ import  "../Style/StudentView.css" ;
 
 
 
+
 // popup 
 import Popup from "../Components/Popup"; 
+import BusinessPlanPopup from "../Components/BusinessPlanPopUp";
 
 
 
@@ -29,6 +31,8 @@ function StudentView() {
    // for popup 
    const[ popupInfo  , setPopupInfo ] = useState("") ;
    const[ popup  , setPopup ] = useState( false) ; 
+   const[ businessPlanPopup  , setBusinessPlanPopup ] = useState( false) ;
+   const[ businessPlanInfo  , setBusinessPlanInfo ] = useState("") ;
    const[ userNameForPopup  , setUserNameForPopup ] = useState( "") ; 
    
 /* 
@@ -101,7 +105,24 @@ function StudentView() {
         setPopup( true)  ;
       
  } 
- 
+  
+
+
+    const  handleBplanStatusChange = ( cs  ) => {    
+     
+
+      console.log( location.state.schoolId ) ;
+      
+      if( location.state.schoolId !== ""){
+       setBusinessPlanInfo( location.state.schoolId  ) ;
+
+      } 
+      // //console.log( cs) ;
+      //  setUserNameForPopup( cs.student_name) ;
+        setBusinessPlanPopup( true)  ;
+      
+ } 
+  
   
    
 
@@ -174,7 +195,7 @@ function StudentView() {
      
 
 
-
+   <BusinessPlanPopup  trigger= { businessPlanPopup  } setTrigger={ setBusinessPlanPopup }   data={ businessPlanInfo}   />
 
 
     <Popup  trigger= { popup  } setTrigger={ setPopup }   data={ popupInfo}   >
@@ -194,7 +215,7 @@ function StudentView() {
        
 <i style={{ position : "absolute" }}>  
  <button className="studentview_body1_search_button"   onClick={() => { onSearch() }}>
- <SearchIcon sx={{   fontSize : 26    }}/> 
+ <SearchIcon sx={{   fontSize : 26    , zIndex: 0  }}/> 
  </button>
   </i>
 <input   className="studentview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  
@@ -334,7 +355,7 @@ function StudentView() {
         
              <div className="studentview_body3_inner_view1"   >
             
-              <button  className= "schoolview_body3_inner_view_button3">
+              <button  className= "schoolview_body3_inner_view_button3"    onClick={ () => { handleBplanStatusChange(  )}}    >
               <p> Business plan submission </p>
             </button>
 
@@ -387,7 +408,7 @@ function StudentView() {
        
 <i style={{ position : "absolute" }}>  
  <button className="studentview_body1_search_button"   onClick={() => { onSearch() }}>
- <SearchIcon sx={{   fontSize : 26    }}/> 
+ <SearchIcon sx={{   fontSize : 26    , zIndex: 0   }}/> 
  </button>
   </i>
 <input   className="studentview_body1_search_input"   type="text" placeholder="Search by name..."    onChange={  ( e ) => {  setSearchInput( e.target.value )} }/>  

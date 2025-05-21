@@ -116,6 +116,7 @@
     background-color: #FFFFFF;
     border : 0px red ;
     border-radius:  15px ;
+    z-index: 0 ;
 
 }  
 
