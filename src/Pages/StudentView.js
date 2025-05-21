@@ -360,7 +360,7 @@ function StudentView() {
             </button>
 
             <button onClick={ () => { goToNext() } } className="schoolview_body3_inner_view_button3">
-              <p> Add new school </p>
+              <p> Add new student </p>
             </button>  
 
              </div> 
