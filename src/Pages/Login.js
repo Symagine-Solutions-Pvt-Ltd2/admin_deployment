@@ -160,7 +160,7 @@ function Login() {
       <div className="input_text2">  
        
 
-      <span class="ab"> {
+      <span className="ab"> {
 
       
       passwordVisibilty ?
