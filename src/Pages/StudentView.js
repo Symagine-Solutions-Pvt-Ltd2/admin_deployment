@@ -389,7 +389,8 @@ function StudentView() {
      
 
 
-
+   
+   <BusinessPlanPopup  trigger= { businessPlanPopup  } setTrigger={ setBusinessPlanPopup }   data={ businessPlanInfo}   />
 
 
     <Popup  trigger= { popup  } setTrigger={ setPopup }   >
@@ -533,13 +534,23 @@ function StudentView() {
 
       </div> 
 
-      <div className="body3"> 
+     
+      <div className="studentview_body3"  > 
+        
+             <div className="studentview_body3_inner_view1"   >
+            
+              <button  className= "schoolview_body3_inner_view_button3"    onClick={ () => { handleBplanStatusChange(  )}}    >
+              <p> Business plan submission </p>
+            </button>
 
-      <button onClick={ () => { goToNext() } } className="add_new_program_button">
-        <p>Add new student</p>
-      </button>
-    
+            <button onClick={ () => { goToNext() } } className="schoolview_body3_inner_view_button3">
+              <p> Add new student </p>
+            </button>  
+
+             </div> 
+          
       </div>
+    
     
     </div>
 
