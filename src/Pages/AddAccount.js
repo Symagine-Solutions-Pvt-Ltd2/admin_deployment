@@ -18,6 +18,7 @@ function AddAccount() {
    const [  moduleDetail  , setModuleDetail ]   = useState( null  ) ;  
      // to select the admin type
 const [  admin ,   setAdmin  ]   = useState( "" ) ; 
+ const [  studyMode ,   setStudyMode  ]   = useState( "" ) ; 
 
  
    //console.log( location.state.typeId  ) ; 
@@ -270,12 +271,15 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                  "contact_person" :   event.target.contact_person.value  ,
                  "program_id" : location.state.programId   , 
                  "client_id" :  location.state.clientId , 
-                     
+                "study_mode" : studyMode
                
               }
         
              }).then( ( res) => {   
-        
+            
+
+                console.log( res) ;  
+
                 if(   res.data.message ===  "Registered Successfully."    ){
                  
                   alert( "Registered Successfully.")  ;  
@@ -298,7 +302,9 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
 
         }
 
-     
+      
+
+
 
         event.preventDefault() ; 
       } 
@@ -512,7 +518,12 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
      }
    
  
-
+    
+        const handleCheckboxChangeForMode  = (  option  ) => {
+            
+       setStudyMode( option) ; 
+        }
+    
  
 
 
@@ -885,7 +896,7 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                 </div> 
                 
 
-                <div className="addaccount_form_row">
+        <div className="addaccount_form_row">
                 <div className="addaccount_admin_Form-Description" >   
                           <p className="header_text">Program Assigned</p> 
                 </div>     
@@ -894,8 +905,51 @@ const [  admin ,   setAdmin  ]   = useState( "" ) ;
                          
                  <p>{ assignedProgram }</p>
                  </div>  
-    </div> 
+               </div> 
+         
+         
         
+        <div className="addaccount_form_row">
+                <div className="addaccount_admin_Form-Description" >   
+                          <p className="header_text">Study Mode</p> 
+                </div>     
+
+                <div className="addaccount_admin_Form-Input"  style = {{  display : "flex"  , justifyContent : "space-around"}}  >         
+                          
+
+                     <div style={ {  width : "20%"  , height : "50%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+                            
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Online</p>   
+                              </div>
+    
+    
+                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+     
+                             <input   type="checkbox"  value="online"  checked = {  studyMode === "online" }    onChange={  () => handleCheckboxChangeForMode("online") }   />   
+                             </div>
+    
+                          
+    
+                        </div> 
+
+                            <div style={ {  width : "20%"  , height : "50%" , backgroundColor : "pink" , borderRadius : "20px" ,  display: "flex"  ,   flexDirection : "row"  , overflow : "hidden"}}>
+                            
+                            <div style = {{  backgroundColor : "#FCC046" ,  width : "70%"  , justifyContent : "center" , display : "flex"  , alignItems : "center"}}>
+                              <p  style = {{ fontSize : 12   , textAlign : "center"  , fontWeight : "500"}} >Offline</p>   
+                              </div>
+    
+    
+                            <div style={{ backgroundColor : "#FCC046" , width : "30%" , display : "flex" ,   alignItems : "center" , justifyContent : "center"}}>
+     
+                            <input   type="checkbox"  value="offline"   checked = { studyMode === "offline" }    onChange={  () => handleCheckboxChangeForMode( "offline") }        />   
+                             </div>
+    
+                          
+    
+                        </div> 
+                 </div>  
+               </div> '
   
            
            

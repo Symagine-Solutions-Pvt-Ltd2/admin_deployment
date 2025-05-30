@@ -6,10 +6,6 @@ import axios from "axios"  ;
 import SearchIcon from '@mui/icons-material/Search';
 
 
- 
-
-
-
 
 // popup 
 import Popup from "../Components/Popup";
@@ -55,9 +51,6 @@ function SchoolView() {
        navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   clientId : location.state.clientId ,   programId :  location.state.programId  ,  programName : location.state.programName  ,   userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
        //console.log("ASJghshGHS") ;  
 
-
-
-
       }   
     
 
@@ -78,7 +71,7 @@ function SchoolView() {
         }).then( ( res) => {   
   
   
-          //console.log(  res.data.message ) ;   
+          console.log(  res) ;   
          
           if(   res.data.message  === "Information retrieve successfully"  ){
            
@@ -110,6 +103,12 @@ function SchoolView() {
  } 
 
   
+
+
+
+
+
+
 
 
   const handleChange1 = ( el ) => {
@@ -144,11 +143,11 @@ function SchoolView() {
     window.location.reload();
   }); 
     
-    
-
-
+  
   }
    
+
+
 
 
 
@@ -275,35 +274,39 @@ function SchoolView() {
                 
 
 
-               <div    className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
-               <p className="header_text">Sl No</p>
+               <div    className="clientview_table_row_box"    style= {{   width: "5%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
+               <p className="header_text" >Sl. No</p>
                </div> 
                <div    className="clientview_table_row_box"   style= {{   width: "12%" , height: "100%"  , borderRight : "1px solid #B6B7D0" }}>
-                 <p className="header_text">Name of school</p>
+                 <p className="header_text">Name of School</p>
                </div>
                <div    className="clientview_table_row_box"  style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
                  <p className="header_text">Contact Person</p>
                </div>
                <div    className="clientview_table_row_box"  style= {{  width: "13%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-                 <p className="header_text">Contact Email Id</p>
+                 <p className="header_text">Contact Email</p>
                </div> 
-               <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+               <div  className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
                 <p className="header_text">Facilitators</p>
                </div> 
 
-               <div   className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
+               <div   className="clientview_table_row_box"  style= {{  width: "10%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
                 <p className="header_text">Students</p>
                </div> 
                <div className="clientview_table_row_box"  style= {{   width: "7%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
-                <p className="header_text"  style = {{  textAlign : "center"  }}>Account status</p>
+                <p className="header_text"  style = {{  textAlign : "center"  }}>Change Account Status</p>
                </div> 
-               <div   className="clientview_table_row_box" style= {{   width: "18%"  ,    height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}> 
-                <p className="header_text">Account status</p>
+               <div   className="clientview_table_row_box" style= {{   width: "14%"  ,    height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}> 
+                <p className="header_text">Status</p>
                </div>
               
-                 <div   className="clientview_table_row_box" style= {{   width: "8%"  ,    height: "100%"  }}> 
-                <p className="header_text">Offline App</p>
+                 <div   className="clientview_table_row_box" style= {{   width: "8%"  ,    height: "100%" ,  borderRight : "1px solid #B6B7D0"   }}> 
+                <p className="header_text">Study Mode</p>
                  </div>
+                 
+                <div   className="clientview_table_row_box" style= {{   width: "10%"  ,    height: "100%"  ,  borderRight : "1px solid #B6B7D0"  }}> 
+                <p className="header_text">App Status</p>
+                </div>
               
     
                   </div>  
@@ -324,7 +327,7 @@ function SchoolView() {
 
 
 
-                  <div   className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
+                  <div   className="clientview_table_row_box"    style= {{   width: "5%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
                    <p> {index+1}</p>
                    </div>  
 
@@ -337,7 +340,7 @@ function SchoolView() {
                    <div  className="clientview_table_row_box"   style= {{  width: "13%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , overflow : "hidden"}}>
                      <p> { el.email_id}</p>
                    </div> 
-                   <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>   
+                   <div  className="clientview_table_row_box"   style= {{   width: "10%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>   
 
 
                    <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "25%"}}>  
@@ -349,7 +352,7 @@ function SchoolView() {
                    </div>   
 
 
-            <div  className="clientview_table_row_box"  style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>  
+            <div  className="clientview_table_row_box"  style= {{   width: "10%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>  
 
                      <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "25%"}}> 
                                <p> { el.total_students}</p>
@@ -364,7 +367,7 @@ function SchoolView() {
                     <p> { el.status } </p>
                    </div>  
 
-            <div    className="clientview_table_row_box"   style= {{   width: "18%"  ,    height: "100%"   ,  display: "flex"  ,   flexDirection : "row"  , justifyContent  : 'space-around'  , borderRight : "1px solid #B6B7D0" }}> 
+            <div    className="clientview_table_row_box"   style= {{   width: "14%"  ,    height: "100%"   ,  display: "flex"  ,   flexDirection : "row"  , justifyContent  : 'space-around'  , borderRight : "1px solid #B6B7D0" }}> 
                       
 
             <input className="inner_table_btn"   style={{ height: "40%"  , width : "36%"}}   type="button" value = "Status"    onClick= { () => {handleStatusChange( el) } }   /> 
@@ -378,11 +381,22 @@ function SchoolView() {
 
                
             <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "8%" ,  borderRight : "1px solid #B6B7D0" }}>  
-                         
-               <input className="inner_table_btn"   style={{ height: "40%"  , width : "70%"}}   type="button" value ={  el.offline_app === "false" ? "Enable" : "Disable" }   onClick= { () => {handleChange1( el) } }   /> 
-
+               
+              {  el.study_mode ===  "online" ? <p>Online</p> : <p>Offline</p> } 
+                 
             </div>
-                               
+
+             <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "10%" ,  borderRight : "1px solid #B6B7D0" }}>  
+
+
+                 {  el.study_mode !==  "online" ?
+                         
+               <input className="inner_table_btn"   style={{ height : "40%"  , width : "70%"}}   type="button" value ={  el.offline_app === "false" ? "Enable" : "Disable" }   onClick= { () => {handleChange1( el) } }   /> 
+              
+               : <p>Enabled</p>
+                 }
+            </div>
+                            
 
          </div>  
 
@@ -458,32 +472,37 @@ function SchoolView() {
           
 
 
-         <div    className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
-         <p className="header_text" >Sl No</p>
+         <div    className="clientview_table_row_box"    style= {{   width: "5%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
+         <p className="header_text" >Sl. No</p>
          </div> 
          <div    className="clientview_table_row_box"   style= {{   width: "15%" , height: "100%"  , borderRight : "1px solid #B6B7D0" }}>
-           <p className="header_text" >Name of school</p>
+           <p className="header_text" >Name of School</p>
          </div>
          <div    className="clientview_table_row_box"  style= {{   width: "11%" ,  height: "100%"  , borderRight : "1px solid #B6B7D0"}  }>
            <p className="header_text" >Contact Person</p>
          </div>
-         <div    className="clientview_table_row_box"  style= {{  width: "17%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
-           <p className="header_text" >Contact Email Id</p>
+         <div    className="clientview_table_row_box"  style= {{  width: "16%"  ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}}>
+           <p className="header_text" >Contact Email</p>
          </div> 
-         <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
+         <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"}}> 
           <p className="header_text" >Facilitators</p>
          </div> 
 
-         <div   className="clientview_table_row_box"  style= {{  width: "15%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
+         <div   className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"   , borderRight : "1px solid #B6B7D0"}}> 
           <p className="header_text" >Students</p>
          </div> 
-         <div className="clientview_table_row_box"  style= {{   width: "12%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
-          <p className="header_text" >Account status</p>
+         <div className="clientview_table_row_box"  style= {{   width: "11%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
+          <p className="header_text" >Status</p>
          </div> 
         
-         <div   className="clientview_table_row_box" style= {{   width: "8%"  ,    height: "100%"  }}> 
-                <p className="header_text">Offline App</p>
+         <div   className="clientview_table_row_box" style= {{   width: "8%"  ,    height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}> 
+                <p className="header_text">Study Mode</p>
         </div>
+         
+          <div   className="clientview_table_row_box" style= {{   width: "10%"  ,    height: "100%"  ,  borderRight : "1px solid #B6B7D0" }}> 
+                <p className="header_text">App Status</p>
+        </div>
+
 
         
 
@@ -505,7 +524,7 @@ function SchoolView() {
 
 
 
-            <div   className="clientview_table_row_box"    style= {{   width: "7%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
+            <div   className="clientview_table_row_box"    style= {{   width: "5%"  ,  height: "100%"   ,  borderRight : "1px solid #B6B7D0" }}>
              <p> {index+1}</p>
              </div>  
 
@@ -515,10 +534,10 @@ function SchoolView() {
              <div   className="clientview_table_row_box"  style= {{   width: "11%" ,  height: "100%"   , borderRight : "1px solid #B6B7D0"}  }>
                <p> {  el.contact_person}</p>
              </div>
-             <div  className="clientview_table_row_box"   style= {{  width: "17%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , overflow : "hidden"}}>
+             <div  className="clientview_table_row_box"   style= {{  width: "16%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , overflow : "hidden"}}>
                <p> { el.email_id}</p>
              </div> 
-             <div  className="clientview_table_row_box"   style= {{   width: "15%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>   
+             <div  className="clientview_table_row_box"   style= {{   width: "12%"  ,  height: "100%"  , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>   
 
 
              <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "40%"}}>   
@@ -532,7 +551,7 @@ function SchoolView() {
              </div>   
 
 
-      <div  className="clientview_table_row_box"  style= {{   width: "15%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>  
+      <div  className="clientview_table_row_box"  style= {{   width: "12%"  ,  height: "100%" , borderRight : "1px solid #B6B7D0"  , display: "flex"  ,   flexDirection : "row"}}>  
 
                <div  className="clientview_table_row_box"   style={{ height: "40%"  , width : "40%"}}> 
                          <p> { el.total_students}</p>
@@ -543,15 +562,22 @@ function SchoolView() {
              </div>  
 
 
-             <div   className="clientview_table_row_box"  style= {{  width: "12%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
+             <div   className="clientview_table_row_box"  style= {{  width: "11%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
               <p> { el.status } </p>
              </div>  
             
+            
+             <div   className="clientview_table_row_box"  style= {{  width: "8%"  ,    height: "100%"  , borderRight : "1px solid #B6B7D0"}}> 
+              {  el.study_mode ===  "online" ? <p>Online</p> : <p>Offline</p> } 
+             </div> 
               
-            <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "8%" ,  borderRight : "1px solid #B6B7D0" }}>  
+            <div  className="clientview_table_row_box"  style={{ height: "100%"  , width : "10%" ,  borderRight : "1px solid #B6B7D0" }}>  
+                 {  el.study_mode !==  "online" ?
                          
-               <input className="inner_table_btn"   style={{ height: "40%"  , width : "70%"}}   type="button" value ={  el.offline_app === "false" ? "Enable" : "Disable" }   onClick= { () => {handleChange1( el) } }   /> 
-
+               <input className="inner_table_btn"   style={{ height : "40%"  , width : "70%"}}   type="button" value ={  el.offline_app === "false" ? "Enable" : "Disable" }   onClick= { () => {handleChange1( el) } }   /> 
+              
+               : <p>Enabled</p>
+                 }
             </div>
 
       

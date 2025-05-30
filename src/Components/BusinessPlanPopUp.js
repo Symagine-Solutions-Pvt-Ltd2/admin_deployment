@@ -99,7 +99,7 @@ const BusinessPlanPopup = (  props ) => {
                  <div className="businessplanpopup-inner-div1" > 
                  
   
-                         <label className='businessplanpopup-inner-div1_label1'  htmlFor="end_date">student Date :</label>
+                         <label className='businessplanpopup-inner-div1_label1'  htmlFor="end_date">End Date :</label>
                           <input  className='businessplanpopup-inner-div1_input1' type="date" id="end" name="end_date" />
                         
                   </div> 
