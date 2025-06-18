@@ -42,10 +42,9 @@ function SchoolView() {
    
     //console.log( location.state.programId) ;   */ 
      
+   const [currentTime, setCurrentTime] = useState(new Date());
 
 
-
-    
     const goToNext = () => {
   
        navigate(  "/home/dashboard/client/addschool"   ,   { state: {    typeId : "system_admin_school"  ,   type : "system_admin"   ,   clientId : location.state.clientId ,   programId :  location.state.programId  ,  programName : location.state.programName  ,   userInfo :  location.state.userInfo   }}   ,  { replace : false}  ) ; 
@@ -54,7 +53,9 @@ function SchoolView() {
       }   
     
 
-      useEffect(() => { 
+      useEffect(() => {  
+
+       
 
         axios({ 
   
@@ -81,7 +82,57 @@ function SchoolView() {
         } ).catch(( err) => {  
             //console.log( "error") ;
   
-         }  ) ; 
+         }  ) ;   
+    
+
+
+       
+
+          axios({ 
+  
+         url : "https://learn-up.app/offline_app/reload_seconds" ,   
+         method : "POST"  , 
+         data : {
+           
+  
+         }
+  
+        }).then( ( res) => {   
+  
+              console.log( res ) ; 
+          console.log(  res.data.reload_time ) ;  
+         const reloadTime = parseInt(res.data.reload_time);
+
+           if( reloadTime >  0  && !('reloadTime' in localStorage)  ) {  
+                   console.log( res ) ; 
+                   localStorage.setItem('reloadTime', JSON.stringify(reloadTime)); 
+                   console.log("ahagsy") ; 
+           }
+           
+           if( 'reloadTime' in localStorage  &&  reloadTime <= 0   ) {
+                
+                 localStorage.removeItem('reloadTime');
+                 
+           }
+     
+         
+      /*     if(   res.data.message  === "Information retrieve successfully"  ){
+           
+            setData(  res.data.data ) ; 
+} */
+  
+        } ).catch(( err) => {  
+            console.log( err) ;
+  
+         }  ) ;   
+   
+
+         
+        
+
+
+
+
   
     } , [  popup])  ; 
  
@@ -90,6 +141,64 @@ function SchoolView() {
     
     
     
+
+  useEffect(() => { 
+
+     
+       const reloadTime = parseInt(localStorage.getItem('reloadTime'));
+        
+         console.log( "fdshg")  ; 
+       console.log( reloadTime )  ; 
+       
+
+       if (reloadTime) { 
+
+      const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+     
+       const d = new Date();
+    
+       console.log( d.getHours()) ;
+       console.log( d.getMinutes()) ;
+
+   //    if(  `${d.getHours()}` === "17" &&  `${d.getMinutes()}` === "59"  )  {
+            alert("hj") ;
+            
+             window.location.reload() ;  
+            
+    //   }
+    }, reloadTime); 
+    
+    return () => {
+      clearInterval(intervalId);
+    };
+       }else{
+         alert( "Reload time issue!") ; 
+       }
+/* 
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+     
+       const d = new Date();
+    
+       console.log( d.getHours()) ;
+       console.log( d.getMinutes()) ;
+
+   //    if(  `${d.getHours()}` === "17" &&  `${d.getMinutes()}` === "59"  )  {
+             alert("hj") ;
+             window.location.reload() ; 
+    //   }
+    }, 60000); // 1000 m */
+
+  }, [currentTime]);
+   
+
+
+
+
+
+    
+
 
     
     const  handleStatusChange = ( cs  ) => {    
